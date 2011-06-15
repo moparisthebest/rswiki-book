@@ -1,4 +1,4 @@
-Welcome to '''RSWiki''', our goal is to accurately document the rs2 protocol(s).
+Welcome to '''RSWiki''', our goal is to accurately document the rs2 protocol(s) and much more.
 
 == Useful links: ==
 * ''More to come...''
