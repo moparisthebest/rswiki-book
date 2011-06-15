@@ -1,8 +1,6 @@
-'''MediaWiki has been successfully installed.'''
+'''Welcome to RSWiki'''
+Our goal is to accurately document the rs2 protocol(s).
 
-Consult the [http://meta.wikimedia.org/wiki/Help:Contents User's Guide] for information on using the wiki software.
-
-== Welcome ==
-* [http://www.mediawiki.org/wiki/Manual:Configuration_settings Configuration settings list]
-* [http://www.mediawiki.org/wiki/Manual:FAQ MediaWiki FAQ]
-* [https://lists.wikimedia.org/mailman/listinfo/mediawiki-announce MediaWiki release mailing list]
+== Useful links: ==
+* [Protocol Documentation]
+* ''More to come...''
