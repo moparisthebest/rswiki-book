@@ -1,8 +1,4 @@
-'''Welcome to RSWiki'''
-
-----
-
-Our goal is to accurately document the rs2 protocol(s).
+'''Welcome to RSWiki''', our goal is to accurately document the rs2 protocol(s).
 
 == Useful links: ==
 * [Protocol Documentation]
