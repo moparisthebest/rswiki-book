@@ -8,7 +8,7 @@ When the client sends a packet to the server, the first byte encapsulates its op
 super_ wrote shit on this somewhere
 
 == '''Incoming Data''' ==
-//TODO: document packet structures
+'''TODO:''' Document packet structures
 
 == '''Outgoing Data''' ==
 '''TODO:''' document packet structures
