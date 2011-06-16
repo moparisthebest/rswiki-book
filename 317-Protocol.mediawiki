@@ -1,8 +1,10 @@
 [[Category Packet]]
 [[Category Packet 317]]
 
-== '''Login''' ==
+== '''Packet structure''' ==
+When the client sends a packet to the server, the first byte encapsulates its opcode. The server then associates this packet opcode to its respective predefined size. If the packet does not contain a fixed size, the opcode will be followed by either a byte or a word for its proper size.
 
+== '''Login''' ==
 
 == '''Incoming Data''' ==
 
