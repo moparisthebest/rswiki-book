@@ -11,4 +11,4 @@ super_ wrote shit on this somewhere
 '''TODO:''' Document packet structures
 
 == '''Outgoing Data''' ==
-'''TODO:''' document packet structures
+'''TODO:''' Document packet structures
