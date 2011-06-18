@@ -1,0 +1,3 @@
+{{Crappy}}
+
+This page refers to the RSC #202 client revision (the original distribution by eXemplar) - it is said that #202's protocol is identical to #204.
