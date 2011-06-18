@@ -27,3 +27,17 @@ super_ wrote shit on this somewhere
 
 == '''Outgoing Data''' ==
 '''TODO:''' Document packet structures
+
+<table border="1" cellpadding="3" cellspacing="3">
+	<tr>
+		<td><b>opcode</b></td>
+		<td><b>usage</b></td>
+		<td><b>payload</b></td>
+	</tr>
+
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
