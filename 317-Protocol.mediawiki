@@ -40,18 +40,14 @@ The player updating process consists of 4 parts:
 The client begins by reading 1 bit. This bit tells the client whether or not it is currently updating
 'our player', or the player the client is controlling. If it's not updating our player, it exits and goes onto step b.
 If it is, it then reads 2 bits. The value is called the movement update type. There are 4 recognized movement update types:
-* 0
-* 1
-* 2
-* 3
 
-Type 0 basically tells the client there is nothing to update for our player, just add its index to the local updating list.
+* Type 0 basically tells the client there is nothing to update for our player, just add its index to the local updating list.
 
-Type 1 tells the client you moved in one direction. The client reads 3 bits, which represents the direction you moved in, and then 1 bit, which states whether further update is required. If so, it adds it to the updating list. This is used in walking.
+* Type 1 tells the client you moved in one direction. The client reads 3 bits, which represents the direction you moved in, and then 1 bit, which states whether further update is required. If so, it adds it to the updating list. This is used in walking.
 
-Type 2 functions in much of the same way as its previous, only this time it reads two 3 bit values. The first represents the player's last direction, and the second it's current direction. Trailing behind it is also the 1 bit 'update required' flag as type 1. This is used in running.
+* Type 2 functions in much of the same way as its previous, only this time it reads two 3 bit values. The first represents the player's last direction, and the second it's current direction. Trailing behind it is also the 1 bit 'update required' flag as type 1. This is used in running.
 
-Type 3 on the other hand is different. It reads in 2 bits which represents our player's plane, or its level of height, in the game world.
+* Type 3 on the other hand is different. It reads in 2 bits which represents our player's plane, or its level of height, in the game world.
 
 Only 0-3 inclusive are appropriate planes supported by the client. It then reads 1 bit, which describes whether or not to clear the awaiting-waypoint queue, basically to stop client from further queued stepping, such as used in teleporting.
 After this, it reads the 'update required' bit, and checks to see if further update is required. Directly after, it reads two 7 bit quantities, representing the new relative X and relative Y coordinates of our player to our current map region's origin. It then sets our players position to the plane, x, and y positions as told to.
