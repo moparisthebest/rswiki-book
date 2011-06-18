@@ -2,4 +2,6 @@ Welcome to '''RSWiki''', our goal is to accurately document the rs2 protocol(s) 
 
 == Useful links: ==
 * [http://rswiki.gyrat.in/index.php?title=Category:Crappy_articles]Articles that need contributions.
+* [http://rswiki.gyrat.in/index.php?title=Category:RS2] RS2 Documentation
+* [http://rswiki.gyrat.in/index.php?title=Category:RSC] RSC Documentation
 * ''More to come...''
