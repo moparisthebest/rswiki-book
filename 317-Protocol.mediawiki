@@ -41,6 +41,7 @@ The client begins by reading 1 bit. This bit tells the client whether or not it 
 'our player', or the player the client is controlling. If it's not updating our player, it exits and goes onto step b.
 If it is, it then reads 2 bits. The value is called the movement update type. There are 4 recognized movement update types:
 
+
 * Type 0 basically tells the client there is nothing to update for our player, just add its index to the local updating list.
 
 * Type 1 tells the client you moved in one direction. The client reads 3 bits, which represents the direction you moved in, and then 1 bit, which states whether further update is required. If so, it adds it to the updating list. This is used in walking.
@@ -48,6 +49,7 @@ If it is, it then reads 2 bits. The value is called the movement update type. Th
 * Type 2 functions in much of the same way as its previous, only this time it reads two 3 bit values. The first represents the player's last direction, and the second it's current direction. Trailing behind it is also the 1 bit 'update required' flag as type 1. This is used in running.
 
 * Type 3 on the other hand is different. It reads in 2 bits which represents our player's plane, or its level of height, in the game world.
+
 
 Only 0-3 inclusive are appropriate planes supported by the client. It then reads 1 bit, which describes whether or not to clear the awaiting-waypoint queue, basically to stop client from further queued stepping, such as used in teleporting.
 After this, it reads the 'update required' bit, and checks to see if further update is required. Directly after, it reads two 7 bit quantities, representing the new relative X and relative Y coordinates of our player to our current map region's origin. It then sets our players position to the plane, x, and y positions as told to.
@@ -60,18 +62,15 @@ The client begins by reading an 8 bit value telling the client how many players 
 for each player there is to update.
 
 Inside this loop, the client reads 1 bit. This is the movement update required flag. If the flag is 0, it sets the current updating player's last update cycle time to the current game logic loop cycle time, and adds the player to the local player list. If the flag is not 0, it then reads the movement update type, which is a 2 bit quantity. The following known types are:
-* 0
-* 1
-* 2
-* 3
 
-If the type is 0, the client updates the current player's last update cycle time, adds the current player to the local player list, and adds it to the updating list.
 
-If the type is 1, the client updates the current player's last update cycle time and adds the current player to the local player list as well, but also reads in 3 bit quantity. This represents the current player's direction it walked to. It then reads the a 1 bit value that specifies whether or not to add the player to the updating list.
+* 0, the client updates the current player's last update cycle time, adds the current player to the local player list, and adds it to the updating list.
 
-If the type is 2, the client does the exact same thing as the type 2 update, except it reads in two of the 3 bit quantities. The first represents the current player's last direction, and the second its current direction running.
+* 1, the client updates the current player's last update cycle time and adds the current player to the local player list as well, but also reads in 3 bit quantity. This represents the current player's direction it walked to. It then reads the a 1 bit value that specifies whether or not to add the player to the updating list.
 
-And lastly, if the type is 3, it only adds the player to the needing-update list, or so believed. Type 3 is not well known.
+* 2, the client does the exact same thing as the type 2 update, except it reads in two of the 3 bit quantities. The first represents the current player's last direction, and the second its current direction running.
+
+* 3, it only adds the player to the needing-update list, or so believed. Type 3 is not well known.
 
 
 
@@ -121,67 +120,35 @@ The following is what most people think of when they say 'update mask' and 'upda
 
 
 Inside this method, many different bitwise masks are compared to the player's flag, and if the mask is set, logic is performed. These masks are frequently called update masks. A list of player update masks are below:
-* 0x400
-* 0x100
-* 0x8
-* 0x4
-* 0x80
-* 0x1
-* 0x10
-* 0x2
-* 0x20
-* 0x200
+
+* '''0x400''' Not much is known about this mask, other than that the last value read is a sprite direction id.
 
 
-
-'''0x400'''
-
-Not much is known about this mask, other than that the last value read is a sprite direction id.
+* '''0x100''' The 0x100 mask is responsible for player graphics updating. The data associated is a little-endian unsigned short which represents the graphics id, and an int which is the graphics delay.
 
 
-'''0x100'''
-
-The 0x100 mask is responsible for player graphics updating. The data associated is a little-endian unsigned short which represents the graphics id, and an int which is the graphics delay.
+* '''0x8''' Animations are handled by the 0x8 mask. The payload for this update is a little-endian unsigned short that is the animation id, and an unsigned inversed byte which states the animation's delay.
 
 
-'''0x8'''
-
-Animations are handled by the 0x8 mask. The payload for this update is a little-endian unsigned short that is the animation id, and an unsigned inversed byte which states the animation's delay.
+* '''0x4''' The beloved 0x4 mask takes care of forced player text that is only displayed above the player's model. The only data associated with this is a jagex ASCII string with a terminator of 10.
 
 
-'''0x4'''
-
-The beloved 0x4 mask takes care of forced player text that is only displayed above the player's model. The only data associated with this is a jagex ASCII string with a terminator of 10.
+* '''0x80''' Unlike the previous, the 0x80 mask handles normal player chat text. The client will read a little-endian unsigned short which holds chat text attributes. It holds the text color and chat effects. Next, the client reads an unsigned byte which states the player's priveleges (normal player, player moderator, moderator, staff) to give the chatter's name a crown. Right behind it trails an unsigned inversed byte that gives chat text length in bytes. Trailing afterwards is dictionary-compressed chat text. All chat text characters become indexes into a valid character table and are written as nibbles (4 bit quantities).
 
 
-'''0x80'''
-
-Unlike the previous, the 0x80 mask handles normal player chat text. The client will read a little-endian unsigned short which holds chat text attributes. It holds the text color and chat effects. Next, the client reads an unsigned byte which states the player's priveleges (normal player, player moderator, moderator, staff) to give the chatter's name a crown. Right behind it trails an unsigned inversed byte that gives chat text length in bytes. Trailing afterwards is dictionary-compressed chat text. All chat text characters become indexes into a valid character table and are written as nibbles (4 bit quantities).
+* '''0x1''' Updating the player's current interacting-entity is done via mask 0x1. The entity id is written as a little-endian unsigned short.
 
 
-'''0x1'''
-
-Updating the player's current interacting-entity is done via mask 0x1. The entity id is written as a little-endian unsigned short.
+* '''0x10''' The 0x10 mask updates appearance of the player in exact same way as in updating player list. Only difference is that appearance is updated from a set-sized buffer filled from the current buffer. An unsigned inversed byte is read first which describes appearance buffer size, and the buffer is filled.
 
 
-'''0x10'''
-
-The 0x10 mask updates appearance of the player in exact same way as in updating player list. Only difference is that appearance is updated from a set-sized buffer filled from the current buffer. An unsigned inversed byte is read first which describes appearance buffer size, and the buffer is filled.
+* '''0x2''' Facing coordinate updating is signified by the 0x2 mask. The player's facing-towards X and Y are set to read values; specifically, an unsigned lower-inverted short and little-endian unsigned short, respectively.
 
 
-'''0x2'''
-
-Facing coordinate updating is signified by the 0x2 mask. The player's facing-towards X and Y are set to read values; specifically, an unsigned lower-inverted short and little-endian unsigned short, respectively.
+* '''0x20''' Notifying client's of a player's health is done via the 0x20 mask. The hitpoint damage done to the player is sent as an unsigned byte, followed by the hit type as a positive inverted byte. The player's current and max health are read as an unsigned inverted byte and unsigned byte, respectively.
 
 
-'''0x20'''
-
-Notifying client's of a player's health is done via the 0x20 mask. The hitpoint damage done to the player is sent as an unsigned byte, followed by the hit type as a positive inverted byte. The player's current and max health are read as an unsigned inverted byte and unsigned byte, respectively.
-
-
-'''0x200'''
-
-The 0x200 mask acts in the same way as the 0x20 mask and is most likely associated with special attacks from weapons that have the ability to hit twice at the same time. Hitpoint damage is an unsigned byte, the hit type an unsigned inverted byte, and the current and maximum health being an unsigned byte and unsigned inverted byte, respectively.
+* '''0x200''' The 0x200 mask acts in the same way as the 0x20 mask and is most likely associated with special attacks from weapons that have the ability to hit twice at the same time. Hitpoint damage is an unsigned byte, the hit type an unsigned inverted byte, and the current and maximum health being an unsigned byte and unsigned inverted byte, respectively.
 
 
 After the client processes every single player in the update player list, it ends player updating.
