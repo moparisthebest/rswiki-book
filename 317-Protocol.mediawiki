@@ -14,11 +14,15 @@ Every connection to the RuneScape main 'gateway' server sends a single byte of d
 
 The connection type we will cover in the following paragraphs is the login connection type, 14. After the login handshake initiating connection type, the client writes a small bit of data derived from the logging in player's username. This is believed to help select the appropriate login server. On successful handshake, the server sends back 8 ignored bytes.
 
+
 At this point, the client reads in one byte, called the status code. The status code 0 is expected to start the login protocol correctly. If the status code is 0, the client reads a long, dubbed by many as the server session key. This is used to help generate a unique seed for the client session's packet opcode masking. The client then stores two ints that are the upper and lower ints of the client session key, which has the same purpose as the server's key. The client then starts writing the login block, which is RSA encrypted.
+
 
 The login block starts with the byte 10, which is considered a magic number. Following it is the client session key and server session key longs. After the session keys, the session's UID (unique identifier or user identifier) is written to the block. This is used to distinguish between multiple sessions. Trailing behind the UID comes the client's username and password written as modified C-strings that are rather terminated with a 10 byte than a NUL byte. This block is then RSA encrypted and stored for later use.
 
+
 Now starts the login request packet. It starts off with a flag telling the server whether or not the client is reconnecting or connecting for the first time. The byte is 18 or 16, respectively. [NOW CLASSIFIED AS A CONNECTION TYPE] Following is the size of the rest of the login response packet, including the login block that trails at the end, to tip the server how much data it should expect. Later comes the magic number byte 255, and right behind it the client revision short. The packet is just about crafted completely. A flag byte that represents if the client is running in low memory or high memory modes is sent, and after the 9 CRC32 checksums of the file system 0 basic archives (this includes versionlist, media, config, etc.). To top it off, the RSA encrypted login block is appended to the end and the packet is sent to the server.
+
 
 The ISAAC ciphers are seeded for packet opcode masking after adding 50 to each int of the session keys, and the status code is reread. This finishes the login protocol.
 
