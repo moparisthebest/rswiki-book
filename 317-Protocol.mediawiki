@@ -197,10 +197,12 @@ After the client processes every single player in the update player list, it end
 	<tr>
 		<td><b>opcode</b></td>
 		<td><b>usage</b></td>
+		<td><b>size</b></td>
 		<td><b>payload</b></td>
 	</tr>
 
 	<tr>
+		<td></td>
 		<td></td>
 		<td></td>
 		<td></td>
