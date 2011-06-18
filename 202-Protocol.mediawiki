@@ -35,10 +35,12 @@ This page refers to the RSC #202 client revision (the original distribution by e
 	<tr>
 		<td><b>opcode</b></td>
 		<td><b>usage</b></td>
+		<td><b>size</b></td>
 		<td><b>payload</b></td>
 	</tr>
 
 	<tr>
+		<td></td>
 		<td></td>
 		<td></td>
 		<td></td>
