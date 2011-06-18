@@ -36,10 +36,12 @@ Just for fun if anyone gives two shits.
 	<tr>
 		<td><b>opcode</b></td>
 		<td><b>usage</b></td>
+		<td><b>size</b></td>
 		<td><b>payload</b></td>
 	</tr>
 
 	<tr>
+		<td></td>
 		<td></td>
 		<td></td>
 		<td></td>
