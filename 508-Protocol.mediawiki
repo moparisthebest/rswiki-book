@@ -1,3 +1,44 @@
 {{Crappy}}
 
 I'm sure this is very similar if not the same to #503.
+
+
+== '''Packet structure''' ==
+?
+
+== '''Login''' ==
+?
+
+== '''Incoming Data''' ==
+'''TODO:''' Document packet structures
+
+<table border="1" cellpadding="3" cellspacing="3">
+	<tr>
+		<td><b>opcode</b></td>
+		<td><b>usage</b></td>
+		<td><b>payload</b></td>
+	</tr>
+
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+
+== '''Outgoing Data''' ==
+'''TODO:''' Document packet structures
+
+<table border="1" cellpadding="3" cellspacing="3">
+	<tr>
+		<td><b>opcode</b></td>
+		<td><b>usage</b></td>
+		<td><b>payload</b></td>
+	</tr>
+
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
