@@ -18,10 +18,12 @@ Not much progress has been made with this revision, don't worry about it too muc
 	<tr>
 		<td><b>opcode</b></td>
 		<td><b>usage</b></td>
+		<td><b>size</b></td>
 		<td><b>payload</b></td>
 	</tr>
 
 	<tr>
+		<td></td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -35,10 +37,12 @@ Not much progress has been made with this revision, don't worry about it too muc
 	<tr>
 		<td><b>opcode</b></td>
 		<td><b>usage</b></td>
+		<td><b>size</b></td>
 		<td><b>payload</b></td>
 	</tr>
 
 	<tr>
+		<td></td>
 		<td></td>
 		<td></td>
 		<td></td>
