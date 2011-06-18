@@ -147,6 +147,7 @@ Not much is known about this mask, other than that the last value read is a spri
 
 The 0x100 mask is responsible for player graphics updating. The data associated is a little-endian unsigned short which represents the graphics id, and an int which is the graphics delay.
 
+
 '''0x8'''
 
 Animations are handled by the 0x8 mask. The payload for this update is a little-endian unsigned short that is the animation id, and an unsigned inversed byte which states the animation's delay.
