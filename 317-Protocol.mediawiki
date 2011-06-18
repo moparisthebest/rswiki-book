@@ -26,6 +26,9 @@ Now starts the login request packet. It starts off with a flag telling the serve
 
 The ISAAC ciphers are seeded for packet opcode masking after adding 50 to each int of the session keys, and the status code is reread. This finishes the login protocol.
 
+== '''Player Updating''' ==
+TODO
+
 == '''Incoming Data''' ==
 '''TODO:''' Document packet structures
 
