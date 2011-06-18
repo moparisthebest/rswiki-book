@@ -16,10 +16,12 @@ I'm sure this is very similar if not the same to #503.
 	<tr>
 		<td><b>opcode</b></td>
 		<td><b>usage</b></td>
+		<td><b>size</b></td>
 		<td><b>payload</b></td>
 	</tr>
 
 	<tr>
+		<td></td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -33,10 +35,12 @@ I'm sure this is very similar if not the same to #503.
 	<tr>
 		<td><b>opcode</b></td>
 		<td><b>usage</b></td>
+		<td><b>size</b></td>
 		<td><b>payload</b></td>
 	</tr>
 
 	<tr>
+		<td></td>
 		<td></td>
 		<td></td>
 		<td></td>
