@@ -1,4 +1,4 @@
-{{Crappy}}
+[[Category RSC]]
 
 This page refers to the RSC #204 client revision, all of the opcodes are the same with the exception of the last three in the Outgoing Data section.
 
