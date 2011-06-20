@@ -1,14 +1,1 @@
 This page will display any information regarding RSC.
-
-== RSC #202 ==
-* [[202 Protocol]]
-* [[204 Items|202 Items]]
-* [[204 NPCs|202 NPCs]]
-* [[204 Objects|202 Objects]]
-
-
-== RSC #203/#204 ==
-* [[204 Protocol]]
-* [[204 Items]]
-* [[204 NPCs]]
-* [[204 Objects]]
