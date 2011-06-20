@@ -12,6 +12,106 @@ This page refers to the RSC #202 client revision (the original distribution by e
 == '''Incoming Data''' ==
 '''TODO:''' Document packet structures
 <pre>
+#define IDX_WEIRD_USERNAME    32
+#define IDX_LOGIN             0
+#define IDO_LOGOUT_ACK        39                    // acknowledge logout command from server
+#define IDO_PING              153                   // send ping to server, so it knows we're still there
+#define IDO_IGNORE_ADD        25                    // add name to ignore list
+#define IDO_IGNORE_REMOVE     108                   // remove name from ignore list
+#define IDO_FRIENDS_ADD       168                   // add name to friends list
+#define IDO_FRIENDS_REMOVE    52                    // remove name from friends list
+#define IDO_PM_FRIEND         254                   // send pm to someone in friends list
+#define IDO_SEND_CHAT         145
+#define IDO_SEND_SERVER_CMD   90                    // sends a command to the server (type "::xxx" in chat and it sends command 'xxx')
+#define IDO_UPDATE_SETTINGS   176                   // changes settings (chatblock, privateblock, tradeblock, duelblock)
+
+#define IDO_LOGOUT            129
+#define IDO_CHAR_DESIGN       218                   // send character design (makeover mage, creation)
+#define IDO_SLEEPWORD         72
+#define IDO_NEW_PLAYER_ACK    83                    // send ids of newly added player back to server, if it wants to
+
+#define IDO_EXCEPTION_SEND    156
+#define IDO_WALKCMD_1         246
+#define IDO_WALKCMD_2         132
+#define IDO_CLICKDIALOGITEM   154
+#define IDO_SETCOMBATSTYLE    41
+#define IDO_WITHDRAW          183
+#define IDO_DEPOSIT           198
+#define IDO_CLOSE_BANK        48
+#define IDO_BUYITEM           128
+#define IDO_SELLITEM          255
+#define IDO_CLOSE_SHOP        253
+#define IDO_CANCEL_TRADE      216
+#define IDO_CONFIRM_TRADE     53
+#define IDO_TRADE_UPDATE      70
+#define IDO_ACCEPT_TRADE      211
+#define IDO_DUEL_CONFIRM_1    87
+#define IDO_DUEL_UPDATE       123
+#define IDO_DUEL_FLAG_1       225
+#define IDO_DUEL_FLAG_2       252
+#define IDO_CANCEL_DUEL       35
+#define IDO_PRAYER_OFF        248
+#define IDO_PRAYER_ON         56
+#define IDO_CHANGE_SETTINGS   157
+
+// action commands...
+#define IDO_CAST_GR_ITEM      104
+#define IDO_USEWITH_GR_ITEM   34
+#define IDO_TAKE_ITEM         245
+#define IDO_CAST_WALLOBJ      67
+#define IDO_USEWITH_WALLOBJ   36
+#define IDO_WALLOBJ_CMD1      126
+#define IDO_WALLOBJ_CMD2      235
+#define IDO_CAST_OBJECT       17
+#define IDO_USEWITH_OBJECT    94
+#define IDO_OBJECT_CMD1       51
+#define IDO_OBJECT_CMD2       40
+
+#define IDO_CAST_INVITEM      49
+#define IDO_USEWITH_INVITEM   27
+#define IDO_REMOVE_ITEM       92
+#define IDO_WEAR_ITEM         181
+#define IDO_INVITEM_CMD       89
+#define IDO_DROP_ITEM         147
+
+#define IDO_CAST_NPC          71
+#define IDO_USEWITH_NPC       142
+#define IDO_TALK_NPC          177
+#define IDO_NPC_CMD           74
+#define IDO_ATTACK_NPC        73
+
+#define IDO_CAST_PLAYER       55
+#define IDO_USEWITH_PLAYER    16
+#define IDO_ATTACK_PLAYER     57
+#define IDO_DUEL_PLAYER       222
+#define IDO_TRADE_PLAYER      166
+#define IDO_FOLLOW_PLAYER     68
+
+#define IDO_CAST_GROUND       232
+#define IDO_CAST_SELF         206
+
+#define IDO_REPORT_ABUSE      7
+</pre>
+
+<table border="1" cellpadding="3" cellspacing="3">
+	<tr>
+		<td><b>opcode</b></td>
+		<td><b>usage</b></td>
+		<td><b>size</b></td>
+		<td><b>payload</b></td>
+	</tr>
+
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+
+== '''Outgoing Data''' ==
+'''TODO:''' Document packet structures
+<pre>
 // login responses...
 #define IDX_MOD_ACCEPTED      25                    // logged in as player mod
 #define IDX_LOGIN_SUCCESS     0
@@ -93,106 +193,6 @@ This page refers to the RSC #202 client revision (the original distribution by e
 #define IDI_SLEEP_SUCCESS     103
 #define IDI_SLEEP_FAILED      15
 #define IDI_SYSTEM_UPDATE     172
-</pre>
-
-<table border="1" cellpadding="3" cellspacing="3">
-	<tr>
-		<td><b>opcode</b></td>
-		<td><b>usage</b></td>
-		<td><b>size</b></td>
-		<td><b>payload</b></td>
-	</tr>
-
-	<tr>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-</table>
-
-== '''Outgoing Data''' ==
-'''TODO:''' Document packet structures
-<pre>
-#define IDX_WEIRD_USERNAME    32
-#define IDX_LOGIN             0
-#define IDO_LOGOUT_ACK        39                    // acknowledge logout command from server
-#define IDO_PING              153                   // send ping to server, so it knows we're still there
-#define IDO_IGNORE_ADD        25                    // add name to ignore list
-#define IDO_IGNORE_REMOVE     108                   // remove name from ignore list
-#define IDO_FRIENDS_ADD       168                   // add name to friends list
-#define IDO_FRIENDS_REMOVE    52                    // remove name from friends list
-#define IDO_PM_FRIEND         254                   // send pm to someone in friends list
-#define IDO_SEND_CHAT         145
-#define IDO_SEND_SERVER_CMD   90                    // sends a command to the server (type "::xxx" in chat and it sends command 'xxx')
-#define IDO_UPDATE_SETTINGS   176                   // changes settings (chatblock, privateblock, tradeblock, duelblock)
-
-#define IDO_LOGOUT            129
-#define IDO_CHAR_DESIGN       218                   // send character design (makeover mage, creation)
-#define IDO_SLEEPWORD         72
-#define IDO_NEW_PLAYER_ACK    83                    // send ids of newly added player back to server, if it wants to
-
-#define IDO_EXCEPTION_SEND    156
-#define IDO_WALKCMD_1         246
-#define IDO_WALKCMD_2         132
-#define IDO_CLICKDIALOGITEM   154
-#define IDO_SETCOMBATSTYLE    41
-#define IDO_WITHDRAW          183
-#define IDO_DEPOSIT           198
-#define IDO_CLOSE_BANK        48
-#define IDO_BUYITEM           128
-#define IDO_SELLITEM          255
-#define IDO_CLOSE_SHOP        253
-#define IDO_CANCEL_TRADE      216
-#define IDO_CONFIRM_TRADE     53
-#define IDO_TRADE_UPDATE      70
-#define IDO_ACCEPT_TRADE      211
-#define IDO_DUEL_CONFIRM_1    87
-#define IDO_DUEL_UPDATE       123
-#define IDO_DUEL_FLAG_1       225
-#define IDO_DUEL_FLAG_2       252
-#define IDO_CANCEL_DUEL       35
-#define IDO_PRAYER_OFF        248
-#define IDO_PRAYER_ON         56
-#define IDO_CHANGE_SETTINGS   157
-
-// action commands...
-#define IDO_CAST_GR_ITEM      104
-#define IDO_USEWITH_GR_ITEM   34
-#define IDO_TAKE_ITEM         245
-#define IDO_CAST_WALLOBJ      67
-#define IDO_USEWITH_WALLOBJ   36
-#define IDO_WALLOBJ_CMD1      126
-#define IDO_WALLOBJ_CMD2      235
-#define IDO_CAST_OBJECT       17
-#define IDO_USEWITH_OBJECT    94
-#define IDO_OBJECT_CMD1       51
-#define IDO_OBJECT_CMD2       40
-
-#define IDO_CAST_INVITEM      49
-#define IDO_USEWITH_INVITEM   27
-#define IDO_REMOVE_ITEM       92
-#define IDO_WEAR_ITEM         181
-#define IDO_INVITEM_CMD       89
-#define IDO_DROP_ITEM         147
-
-#define IDO_CAST_NPC          71
-#define IDO_USEWITH_NPC       142
-#define IDO_TALK_NPC          177
-#define IDO_NPC_CMD           74
-#define IDO_ATTACK_NPC        73
-
-#define IDO_CAST_PLAYER       55
-#define IDO_USEWITH_PLAYER    16
-#define IDO_ATTACK_PLAYER     57
-#define IDO_DUEL_PLAYER       222
-#define IDO_TRADE_PLAYER      166
-#define IDO_FOLLOW_PLAYER     68
-
-#define IDO_CAST_GROUND       232
-#define IDO_CAST_SELF         206
-
-#define IDO_REPORT_ABUSE      7
 </pre>
 
 <table border="1" cellpadding="3" cellspacing="3">
