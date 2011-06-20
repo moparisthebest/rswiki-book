@@ -1,3 +1,4 @@
+[[Category RSC]]
 <table border="1" cellpadding="3" cellspacing="3">
 <tr><td></td><td>id</td><td>item name</td><td>description</td><td>wieldable</td><td>stackable</td></tr> 
 
