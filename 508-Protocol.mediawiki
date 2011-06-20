@@ -1,4 +1,4 @@
-{{Crappy}}
+[[Category RS2]]
 
 
 == '''Packet structure''' ==
