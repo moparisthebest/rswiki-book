@@ -1,4 +1,4 @@
-Welcome to '''RSWiki''', our goal is to accurately document the rsc/rs2 protocol(s) and much more. Please check out the <u>Articles that need contributions</u> in the useful links to contribute!
+Welcome to '''RSWiki''', our goal is to accurately document the rsc/rs2 protocol(s) and much more. Please check out the <u>articles that need contributions</u> in the useful links to contribute!
 
 == Useful links: ==
 * [[RSWiki Community portal|All main articles (many need contributions, especially red links)]]
