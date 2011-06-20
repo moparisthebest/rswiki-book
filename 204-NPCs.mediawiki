@@ -1,4 +1,4 @@
-{{NPCs}}
+[[Category NPCs]]
 
 <table border="1" cellpadding="3" cellspacing="3">
 <tr><td><b>id</b></td><td><b>npc name</b></td><td><b>level</b></td><td><b>description</b></td><td><b>attackable</b></td></tr> 
