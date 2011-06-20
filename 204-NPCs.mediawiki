@@ -1,0 +1,797 @@
+<table border="1" cellpadding="3" cellspacing="3">
+<tr><td><b>id</b></td><td><b>npc name</b></td><td><b>level</b></td><td><b>description</b></td><td><b>attackable</b></td></tr> 
+ 
+<tr><td>0</td><td>Unicorn</td><td>21</td><td>It's a unicorn</td><td>X</td></tr> 
+<tr><td>1</td><td>Bob</td><td>2</td><td>An axe seller</td><td>-</td></tr> 
+<tr><td>2</td><td>Sheep</td><td>0</td><td>A very wooly sheep</td><td>-</td></tr> 
+<tr><td>3</td><td>Chicken</td><td>3</td><td>Yep definitely a chicken</td><td>X</td></tr> 
+<tr><td>4</td><td>Goblin</td><td>13</td><td>An ugly green creature</td><td>X</td></tr> 
+<tr><td>5</td><td>Hans</td><td>3</td><td>A castle servant</td><td>X</td></tr> 
+<tr><td>6</td><td>cow</td><td>8</td><td>It's a multi purpose cow</td><td>X</td></tr> 
+<tr><td>7</td><td>cook</td><td>15</td><td>The head cook of Lumbridge castle</td><td>-</td></tr> 
+<tr><td>8</td><td>Bear</td><td>24</td><td>Eek! A bear!</td><td>X</td></tr> 
+<tr><td>9</td><td>Priest</td><td>0</td><td>A priest of Saradomin</td><td>-</td></tr> 
+<tr><td>10</td><td>Urhney</td><td>8</td><td>He looks a little grumpy</td><td>-</td></tr> 
+<tr><td>11</td><td>Man</td><td>9</td><td>One of runescapes many citizens</td><td>X</td></tr> 
+<tr><td>12</td><td>Bartender</td><td>0</td><td>I could get a beer off him</td><td>-</td></tr> 
+<tr><td>13</td><td>Camel</td><td>0</td><td>Oh its a camel</td><td>-</td></tr> 
+<tr><td>14</td><td>Gypsy</td><td>0</td><td>An old gypsy lady</td><td>-</td></tr> 
+<tr><td>15</td><td>Ghost</td><td>12</td><td>Ooh spooky</td><td>-</td></tr> 
+<tr><td>16</td><td>Sir Prysin</td><td>40</td><td>One of the king's knights</td><td>-</td></tr> 
+<tr><td>17</td><td>Traiborn the wizard</td><td>12</td><td>An old wizard</td><td>-</td></tr> 
+<tr><td>18</td><td>Captain Rovin</td><td>51</td><td>The head of the palace guard</td><td>-</td></tr> 
+<tr><td>19</td><td>Rat</td><td>8</td><td>Overgrown vermin</td><td>X</td></tr> 
+<tr><td>20</td><td>Reldo</td><td>12</td><td>I think he's the librarian</td><td>-</td></tr> 
+<tr><td>21</td><td>mugger</td><td>10</td><td>He jumps out and attacks people</td><td>X</td></tr> 
+<tr><td>22</td><td>Lesser Demon</td><td>79</td><td>Lesser but still pretty big</td><td>X</td></tr> 
+<tr><td>23</td><td>Giant Spider</td><td>8</td><td>I think this spider has been genetically modified</td><td>X</td></tr> 
+<tr><td>24</td><td>Man</td><td>30</td><td>A shifty looking man</td><td>-</td></tr> 
+<tr><td>25</td><td>Jonny the beard</td><td>10</td><td>I can see why he's called the beard</td><td>X</td></tr> 
+<tr><td>26</td><td>Baraek</td><td>30</td><td>A fur trader</td><td>-</td></tr> 
+<tr><td>27</td><td>Katrine</td><td>25</td><td>She doesn't look to friendly</td><td>-</td></tr> 
+<tr><td>28</td><td>Tramp</td><td>7</td><td>A scruffy looking chap</td><td>-</td></tr> 
+<tr><td>29</td><td>Rat</td><td>2</td><td>A small muddy rat</td><td>X</td></tr> 
+<tr><td>30</td><td>Romeo</td><td>45</td><td>He looks mildly confused</td><td>-</td></tr> 
+<tr><td>31</td><td>Juliet</td><td>2</td><td>She looks a little stressed</td><td>-</td></tr> 
+<tr><td>32</td><td>Father Lawrence</td><td>0</td><td>A kindly looking priest</td><td>-</td></tr> 
+<tr><td>33</td><td>Apothecary</td><td>6</td><td>I wonder if he has any good potions</td><td>-</td></tr> 
+<tr><td>34</td><td>spider</td><td>2</td><td>Incey wincey</td><td>X</td></tr> 
+<tr><td>35</td><td>Delrith</td><td>30</td><td>A freshly summoned demon</td><td>X</td></tr> 
+<tr><td>36</td><td>Veronica</td><td>2</td><td>She doesn't look too happy</td><td>-</td></tr> 
+<tr><td>37</td><td>Weaponsmaster</td><td>25</td><td>The phoenix gang quartermaster</td><td>X</td></tr> 
+<tr><td>38</td><td>Professor Oddenstein</td><td>4</td><td>A mad scientist if I ever saw one</td><td>-</td></tr> 
+<tr><td>39</td><td>Curator</td><td>2</td><td>He looks like he's daydreaming</td><td>-</td></tr> 
+<tr><td>40</td><td>skeleton</td><td>21</td><td>It rattles as it walks</td><td>X</td></tr> 
+<tr><td>41</td><td>zombie</td><td>24</td><td>The living dead</td><td>X</td></tr> 
+<tr><td>42</td><td>king</td><td>30</td><td>King Roald the VIII</td><td>-</td></tr> 
+<tr><td>43</td><td>Giant bat</td><td>32</td><td>An angry flying rodent</td><td>X</td></tr> 
+<tr><td>44</td><td>Bartender</td><td>0</td><td>A friendly barman</td><td>-</td></tr> 
+<tr><td>45</td><td>skeleton</td><td>31</td><td>It rattles as it walks</td><td>X</td></tr> 
+<tr><td>46</td><td>skeleton</td><td>25</td><td>It rattles as it walks</td><td>X</td></tr> 
+<tr><td>47</td><td>Rat</td><td>13</td><td>overgrown vermin</td><td>X</td></tr> 
+<tr><td>48</td><td>Horvik the Armourer</td><td>16</td><td>He looks strong</td><td>-</td></tr> 
+<tr><td>49</td><td>Bear</td><td>0</td><td>A  bear</td><td>-</td></tr> 
+<tr><td>50</td><td>skeleton</td><td>19</td><td>It rattles when it walks</td><td>X</td></tr> 
+<tr><td>51</td><td>Shopkeeper</td><td>0</td><td>Maybe he'd like to buy some of my junk</td><td>-</td></tr> 
+<tr><td>52</td><td>zombie</td><td>19</td><td>The living dead</td><td>X</td></tr> 
+<tr><td>53</td><td>Ghost</td><td>25</td><td>Ooh spooky</td><td>X</td></tr> 
+<tr><td>54</td><td>Aubury</td><td>0</td><td>I think he might be a shop keeper</td><td>-</td></tr> 
+<tr><td>55</td><td>Shopkeeper</td><td>0</td><td>I wonder what he's got for sale</td><td>-</td></tr> 
+<tr><td>56</td><td>shopkeeper</td><td>0</td><td>I can buy swords off him</td><td>-</td></tr> 
+<tr><td>57</td><td>Darkwizard</td><td>13</td><td>He works evil magic</td><td>X</td></tr> 
+<tr><td>58</td><td>lowe</td><td>0</td><td>The owner of the archery store</td><td>-</td></tr> 
+<tr><td>59</td><td>Thessalia</td><td>0</td><td>A young shop assistant</td><td>-</td></tr> 
+<tr><td>60</td><td>Darkwizard</td><td>25</td><td>He works evil magic</td><td>X</td></tr> 
+<tr><td>61</td><td>Giant</td><td>37</td><td>A very large foe</td><td>X</td></tr> 
+<tr><td>62</td><td>Goblin</td><td>7</td><td>An ugly green creature</td><td>X</td></tr> 
+<tr><td>63</td><td>farmer</td><td>15</td><td>He grows the crops in this area</td><td>X</td></tr> 
+<tr><td>64</td><td>Thief</td><td>21</td><td>He'll take anything that isn't nailed down</td><td>X</td></tr> 
+<tr><td>65</td><td>Guard</td><td>28</td><td>He tries to keep order around here</td><td>X</td></tr> 
+<tr><td>66</td><td>Black Knight</td><td>46</td><td>A sinister looking knight</td><td>X</td></tr> 
+<tr><td>67</td><td>Hobgoblin</td><td>32</td><td>A large ugly green creature</td><td>X</td></tr> 
+<tr><td>68</td><td>zombie</td><td>32</td><td>The living dead</td><td>X</td></tr> 
+<tr><td>69</td><td>Zaff</td><td>0</td><td>He trades in staffs</td><td>-</td></tr> 
+<tr><td>70</td><td>Scorpion</td><td>21</td><td>An extremely vicious scorpion</td><td>X</td></tr> 
+<tr><td>71</td><td>silk trader</td><td>0</td><td>He sells silk</td><td>-</td></tr> 
+<tr><td>72</td><td>Man</td><td>9</td><td>One of Runescapes many citizens</td><td>X</td></tr> 
+<tr><td>73</td><td>Guide</td><td>1</td><td>He gives hints to new adventurers</td><td>-</td></tr> 
+<tr><td>74</td><td>Giant Spider</td><td>31</td><td>I think this spider has been genetically modified</td><td>X</td></tr> 
+<tr><td>75</td><td>Peksa</td><td>9</td><td>A helmet salesman</td><td>-</td></tr> 
+<tr><td>76</td><td>Barbarian</td><td>16</td><td>Not civilised looking</td><td>X</td></tr> 
+<tr><td>77</td><td>Fred the farmer</td><td>9</td><td>An old farmer</td><td>-</td></tr> 
+<tr><td>78</td><td>Gunthor the Brave</td><td>37</td><td>The barbarians fearless leader</td><td>X</td></tr> 
+<tr><td>79</td><td>Witch</td><td>25</td><td>She's got warts</td><td>X</td></tr> 
+<tr><td>80</td><td>Ghost</td><td>25</td><td>Ooh spooky</td><td>X</td></tr> 
+<tr><td>81</td><td>Wizard</td><td>16</td><td>An old wizard</td><td>X</td></tr> 
+<tr><td>82</td><td>Shop Assistant</td><td>0</td><td>Maybe he'd like to buy some of my junk</td><td>-</td></tr> 
+<tr><td>83</td><td>Shop Assistant</td><td>0</td><td>Maybe he'd like to buy some of my junk</td><td>-</td></tr> 
+<tr><td>84</td><td>Zeke</td><td>0</td><td>He sells Scimitars</td><td>-</td></tr> 
+<tr><td>85</td><td>Louie Legs</td><td>0</td><td>He might want to sell something</td><td>-</td></tr> 
+<tr><td>86</td><td>Warrior</td><td>18</td><td>A member of Al Kharid's military</td><td>X</td></tr> 
+<tr><td>87</td><td>Shopkeeper</td><td>0</td><td>I wonder what he's got for sale</td><td>-</td></tr> 
+<tr><td>88</td><td>Shop Assistant</td><td>0</td><td>Maybe she'd like to buy some of my junk</td><td>-</td></tr> 
+<tr><td>89</td><td>Highwayman</td><td>13</td><td>He holds up passers by</td><td>X</td></tr> 
+<tr><td>90</td><td>Kebab Seller</td><td>0</td><td>A seller of strange food</td><td>-</td></tr> 
+<tr><td>91</td><td>Chicken</td><td>3</td><td>Yep definitely a chicken</td><td>-</td></tr> 
+<tr><td>92</td><td>Ernest</td><td>3</td><td>A former chicken</td><td>-</td></tr> 
+<tr><td>93</td><td>Monk</td><td>13</td><td>A Peaceful monk</td><td>X</td></tr> 
+<tr><td>94</td><td>Dwarf</td><td>18</td><td>A short angry guy</td><td>X</td></tr> 
+<tr><td>95</td><td>Banker</td><td>9</td><td>He can look after my money</td><td>-</td></tr> 
+<tr><td>96</td><td>Count Draynor</td><td>43</td><td>A vicious vampire</td><td>X</td></tr> 
+<tr><td>97</td><td>Morgan</td><td>9</td><td>A frigtened villager</td><td>-</td></tr> 
+<tr><td>98</td><td>Dr Harlow</td><td>9</td><td>His nose is very red</td><td>-</td></tr> 
+<tr><td>99</td><td>Deadly Red spider</td><td>36</td><td>I think this spider has been genetically modified</td><td>X</td></tr> 
+<tr><td>100</td><td>Guard</td><td>28</td><td>He's here to guard this fortress</td><td>X</td></tr> 
+<tr><td>101</td><td>Cassie</td><td>25</td><td>She sells shields</td><td>-</td></tr> 
+<tr><td>102</td><td>White Knight</td><td>56</td><td>A chivalrous knight</td><td>X</td></tr> 
+<tr><td>103</td><td>Ranael</td><td>25</td><td>A shopkeeper of some sort</td><td>-</td></tr> 
+<tr><td>104</td><td>Moss Giant</td><td>62</td><td>his beard seems to have a life of its own</td><td>X</td></tr> 
+<tr><td>105</td><td>Shopkeeper</td><td>0</td><td>I wonder what he's got for sale</td><td>-</td></tr> 
+<tr><td>106</td><td>Shop Assistant</td><td>0</td><td>Maybe he'd like to buy some of my junk</td><td>-</td></tr> 
+<tr><td>107</td><td>Witch</td><td>25</td><td>She's got warts</td><td>-</td></tr> 
+<tr><td>108</td><td>Black Knight</td><td>46</td><td>A sinister looking knight</td><td>X</td></tr> 
+<tr><td>109</td><td>Greldo</td><td>7</td><td>A small green warty creature</td><td>X</td></tr> 
+<tr><td>110</td><td>Sir Amik Varze</td><td>56</td><td>The leader of the white knights</td><td>-</td></tr> 
+<tr><td>111</td><td>Guildmaster</td><td>40</td><td>He's in charge of this place</td><td>-</td></tr> 
+<tr><td>112</td><td>Valaine</td><td>25</td><td>She runs the champion's store</td><td>-</td></tr> 
+<tr><td>113</td><td>Drogo</td><td>18</td><td>He runs a mining store</td><td>-</td></tr> 
+<tr><td>114</td><td>Imp</td><td>5</td><td>A cheeky little imp</td><td>X</td></tr> 
+<tr><td>115</td><td>Flynn</td><td>16</td><td>The mace salesman</td><td>-</td></tr> 
+<tr><td>116</td><td>Wyson the gardener</td><td>8</td><td>An old gardener</td><td>-</td></tr> 
+<tr><td>117</td><td>Wizard Mizgog</td><td>12</td><td>An old wizard</td><td>-</td></tr> 
+<tr><td>118</td><td>Prince Ali</td><td>20</td><td>A young prince</td><td>-</td></tr> 
+<tr><td>119</td><td>Hassan</td><td>20</td><td>the Chancellor to the emir</td><td>-</td></tr> 
+<tr><td>120</td><td>Osman</td><td>20</td><td>He looks a little shifty</td><td>-</td></tr> 
+<tr><td>121</td><td>Joe</td><td>40</td><td>Lady Keli's head guard</td><td>-</td></tr> 
+<tr><td>122</td><td>Leela</td><td>20</td><td>She comes from Al Kharid</td><td>-</td></tr> 
+<tr><td>123</td><td>Lady Keli</td><td>20</td><td>An Infamous bandit</td><td>-</td></tr> 
+<tr><td>124</td><td>Ned</td><td>20</td><td>An old sailor</td><td>-</td></tr> 
+<tr><td>125</td><td>Aggie</td><td>25</td><td>A witch</td><td>-</td></tr> 
+<tr><td>126</td><td>Prince Ali</td><td>10</td><td>That is an effective disguise</td><td>-</td></tr> 
+<tr><td>127</td><td>Jailguard</td><td>34</td><td>I wonder what he's guarding</td><td>X</td></tr> 
+<tr><td>128</td><td>Redbeard Frank</td><td>25</td><td>A pirate</td><td>-</td></tr> 
+<tr><td>129</td><td>Wydin</td><td>0</td><td>A grocer</td><td>-</td></tr> 
+<tr><td>130</td><td>shop assistant</td><td>0</td><td>I can buy swords off him</td><td>-</td></tr> 
+<tr><td>131</td><td>Brian</td><td>0</td><td>An axe seller</td><td>-</td></tr> 
+<tr><td>132</td><td>squire</td><td>0</td><td>A young squire</td><td>-</td></tr> 
+<tr><td>133</td><td>Head chef</td><td>15</td><td>He looks after the chef's guild</td><td>-</td></tr> 
+<tr><td>134</td><td>Thurgo</td><td>18</td><td>A short angry guy</td><td>-</td></tr> 
+<tr><td>135</td><td>Ice Giant</td><td>68</td><td>He's got icicles in his beard</td><td>X</td></tr> 
+<tr><td>136</td><td>King Scorpion</td><td>36</td><td>Wow scorpions shouldn't grow that big</td><td>X</td></tr> 
+<tr><td>137</td><td>Pirate</td><td>27</td><td>A vicious pirate</td><td>X</td></tr> 
+<tr><td>138</td><td>Sir Vyvin</td><td>56</td><td>One of the white knights of Falador</td><td>-</td></tr> 
+<tr><td>139</td><td>Monk of Zamorak</td><td>29</td><td>An evil cleric</td><td>X</td></tr> 
+<tr><td>140</td><td>Monk of Zamorak</td><td>19</td><td>An evil cleric</td><td>X</td></tr> 
+<tr><td>141</td><td>Wayne</td><td>16</td><td>An armourer</td><td>-</td></tr> 
+<tr><td>142</td><td>Barmaid</td><td>25</td><td>a pretty barmaid</td><td>-</td></tr> 
+<tr><td>143</td><td>Dwarven shopkeeper</td><td>18</td><td>I wonder if he wants to buy any of my junk</td><td>-</td></tr> 
+<tr><td>144</td><td>Doric</td><td>18</td><td>A dwarven smith</td><td>-</td></tr> 
+<tr><td>145</td><td>Shopkeeper</td><td>0</td><td>I wonder what he's got for sale</td><td>-</td></tr> 
+<tr><td>146</td><td>Shop Assistant</td><td>0</td><td>Maybe he'd like to buy some of my junk</td><td>-</td></tr> 
+<tr><td>147</td><td>Guide</td><td>1</td><td>She gives hints to new adventurers</td><td>-</td></tr> 
+<tr><td>148</td><td>Hetty</td><td>25</td><td>A witch</td><td>-</td></tr> 
+<tr><td>149</td><td>Betty</td><td>25</td><td>A witch</td><td>-</td></tr> 
+<tr><td>150</td><td>Bartender</td><td>0</td><td>I could get a beer off him</td><td>-</td></tr> 
+<tr><td>151</td><td>General wartface</td><td>13</td><td>An ugly green creature</td><td>-</td></tr> 
+<tr><td>152</td><td>General Bentnoze</td><td>13</td><td>An ugly green creature</td><td>-</td></tr> 
+<tr><td>153</td><td>Goblin</td><td>13</td><td>An ugly green creature</td><td>X</td></tr> 
+<tr><td>154</td><td>Goblin</td><td>13</td><td>An ugly green creature</td><td>X</td></tr> 
+<tr><td>155</td><td>Herquin</td><td>0</td><td>A gem merchant</td><td>-</td></tr> 
+<tr><td>156</td><td>Rommik</td><td>0</td><td>The owner of the crafting shop</td><td>-</td></tr> 
+<tr><td>157</td><td>Grum</td><td>0</td><td>Grum the goldsmith</td><td>-</td></tr> 
+<tr><td>158</td><td>Ice warrior</td><td>57</td><td>A strange inhuman warrior</td><td>X</td></tr> 
+<tr><td>159</td><td>Warrior</td><td>27</td><td>A skilled fighter</td><td>X</td></tr> 
+<tr><td>160</td><td>Thrander</td><td>16</td><td>A smith of some sort</td><td>-</td></tr> 
+<tr><td>161</td><td>Border Guard</td><td>18</td><td>a guard from Al Kharid</td><td>-</td></tr> 
+<tr><td>162</td><td>Border Guard</td><td>18</td><td>a guard from Al Kharid</td><td>-</td></tr> 
+<tr><td>163</td><td>Customs Officer</td><td>16</td><td>She is here to stop smugglers</td><td>-</td></tr> 
+<tr><td>164</td><td>Luthas</td><td>16</td><td>The owner of the banana plantation</td><td>-</td></tr> 
+<tr><td>165</td><td>Zambo</td><td>16</td><td>He will sell me exotic rum</td><td>-</td></tr> 
+<tr><td>166</td><td>Captain Tobias</td><td>20</td><td>An old sailor</td><td>-</td></tr> 
+<tr><td>167</td><td>Gerrant</td><td>0</td><td>I wonder what he's got for sale</td><td>-</td></tr> 
+<tr><td>168</td><td>Shopkeeper</td><td>0</td><td>I wonder what he's got for sale</td><td>-</td></tr> 
+<tr><td>169</td><td>Shop Assistant</td><td>0</td><td>Maybe he'd like to buy some of my junk</td><td>-</td></tr> 
+<tr><td>170</td><td>Seaman Lorris</td><td>20</td><td>A young sailor</td><td>-</td></tr> 
+<tr><td>171</td><td>Seaman Thresnor</td><td>20</td><td>A young sailor</td><td>-</td></tr> 
+<tr><td>172</td><td>Tanner</td><td>45</td><td>He makes leather</td><td>-</td></tr> 
+<tr><td>173</td><td>Dommik</td><td>0</td><td>The owner of the crafting shop</td><td>-</td></tr> 
+<tr><td>174</td><td>Abbot Langley</td><td>13</td><td>A Peaceful monk</td><td>-</td></tr> 
+<tr><td>175</td><td>Thordur</td><td>18</td><td>He runs a a tourist attraction</td><td>-</td></tr> 
+<tr><td>176</td><td>Brother Jered</td><td>13</td><td>human</td><td>-</td></tr> 
+<tr><td>177</td><td>Rat</td><td>13</td><td>Overgrown vermin</td><td>X</td></tr> 
+<tr><td>178</td><td>Ghost</td><td>25</td><td>Ooh spooky</td><td>X</td></tr> 
+<tr><td>179</td><td>skeleton</td><td>31</td><td>it rattles when it walks</td><td>X</td></tr> 
+<tr><td>180</td><td>zombie</td><td>32</td><td>the living dead</td><td>X</td></tr> 
+<tr><td>181</td><td>Lesser Demon</td><td>79</td><td>Lesser but still very big</td><td>X</td></tr> 
+<tr><td>182</td><td>Melzar the mad</td><td>45</td><td>He looks totally insane</td><td>X</td></tr> 
+<tr><td>183</td><td>Scavvo</td><td>10</td><td>He has lopsided eyes</td><td>-</td></tr> 
+<tr><td>184</td><td>Greater Demon</td><td>87</td><td>big red and incredibly evil</td><td>X</td></tr> 
+<tr><td>185</td><td>Shopkeeper</td><td>0</td><td>I wonder what he's got for sale</td><td>-</td></tr> 
+<tr><td>186</td><td>Shop Assistant</td><td>0</td><td>Maybe he'd like to buy some of my junk</td><td>-</td></tr> 
+<tr><td>187</td><td>Oziach</td><td>0</td><td>A strange little man</td><td>-</td></tr> 
+<tr><td>188</td><td>Bear</td><td>26</td><td>Eek! A bear!</td><td>X</td></tr> 
+<tr><td>189</td><td>Black Knight</td><td>46</td><td>An armoured follower of Zamorak</td><td>X</td></tr> 
+<tr><td>190</td><td>chaos Dwarf</td><td>59</td><td>a dwarf gone bad</td><td>X</td></tr> 
+<tr><td>191</td><td>dwarf</td><td>18</td><td>A dwarf who looks after the mining guild</td><td>-</td></tr> 
+<tr><td>192</td><td>Wormbrain</td><td>7</td><td>Dumb even by goblin standards</td><td>X</td></tr> 
+<tr><td>193</td><td>Klarense</td><td>20</td><td>A young sailor</td><td>-</td></tr> 
+<tr><td>194</td><td>Ned</td><td>20</td><td>An old sailor</td><td>-</td></tr> 
+<tr><td>195</td><td>skeleton</td><td>54</td><td>A Taller than normal skeleton</td><td>X</td></tr> 
+<tr><td>196</td><td>Dragon</td><td>110</td><td>A powerful and ancient dragon</td><td>X</td></tr> 
+<tr><td>197</td><td>Oracle</td><td>57</td><td>A mystic of unknown race</td><td>-</td></tr> 
+<tr><td>198</td><td>Duke of Lumbridge</td><td>30</td><td>Duke Horacio of Lumbridge</td><td>-</td></tr> 
+<tr><td>199</td><td>Dark Warrior</td><td>21</td><td>A warrior touched by chaos</td><td>X</td></tr> 
+<tr><td>200</td><td>Druid</td><td>29</td><td>A worshipper of Guthix</td><td>X</td></tr> 
+<tr><td>201</td><td>Red Dragon</td><td>140</td><td>A big powerful dragon</td><td>X</td></tr> 
+<tr><td>202</td><td>Blue Dragon</td><td>105</td><td>A mother dragon</td><td>X</td></tr> 
+<tr><td>203</td><td>Baby Blue Dragon</td><td>50</td><td>Young but still dangerous</td><td>X</td></tr> 
+<tr><td>204</td><td>Kaqemeex</td><td>29</td><td>A wise druid</td><td>-</td></tr> 
+<tr><td>205</td><td>Sanfew</td><td>29</td><td>An old druid</td><td>-</td></tr> 
+<tr><td>206</td><td>Suit of armour</td><td>29</td><td>A dusty old suit of armour</td><td>-</td></tr> 
+<tr><td>207</td><td>Adventurer</td><td>13</td><td>A cleric</td><td>-</td></tr> 
+<tr><td>208</td><td>Adventurer</td><td>12</td><td>A wizard</td><td>-</td></tr> 
+<tr><td>209</td><td>Adventurer</td><td>56</td><td>A Warrior</td><td>-</td></tr> 
+<tr><td>210</td><td>Adventurer</td><td>25</td><td>An archer</td><td>-</td></tr> 
+<tr><td>211</td><td>Leprechaun</td><td>18</td><td>A funny little man who lives in a tree</td><td>-</td></tr> 
+<tr><td>212</td><td>Monk of entrana</td><td>13</td><td>A Peaceful monk</td><td>-</td></tr> 
+<tr><td>213</td><td>Monk of entrana</td><td>13</td><td>A Peaceful monk</td><td>-</td></tr> 
+<tr><td>214</td><td>zombie</td><td>32</td><td>The living dead</td><td>X</td></tr> 
+<tr><td>215</td><td>Monk of entrana</td><td>13</td><td>A Peaceful monk</td><td>-</td></tr> 
+<tr><td>216</td><td>tree spirit</td><td>95</td><td>Ooh spooky</td><td>X</td></tr> 
+<tr><td>217</td><td>cow</td><td>8</td><td>It's a dairy cow</td><td>-</td></tr> 
+<tr><td>218</td><td>Irksol</td><td>2</td><td>Is he invisible or just a set of floating clothes?</td><td>-</td></tr> 
+<tr><td>219</td><td>Fairy Lunderwin</td><td>2</td><td>A fairy merchant</td><td>-</td></tr> 
+<tr><td>220</td><td>Jakut</td><td>2</td><td>An unusual looking merchant</td><td>-</td></tr> 
+<tr><td>221</td><td>Doorman</td><td>56</td><td>He guards the entrance to the faerie market</td><td>-</td></tr> 
+<tr><td>222</td><td>Fairy Shopkeeper</td><td>0</td><td>I wonder what he's got for sale</td><td>-</td></tr> 
+<tr><td>223</td><td>Fairy Shop Assistant</td><td>0</td><td>Maybe he'd like to buy some of my junk</td><td>-</td></tr> 
+<tr><td>224</td><td>Fairy banker</td><td>9</td><td>He can look after my money</td><td>-</td></tr> 
+<tr><td>225</td><td>Giles</td><td>30</td><td>He runs an ore exchange store</td><td>-</td></tr> 
+<tr><td>226</td><td>Miles</td><td>30</td><td>He runs a bar exchange store</td><td>-</td></tr> 
+<tr><td>227</td><td>Niles</td><td>30</td><td>He runs a fish exchange store</td><td>-</td></tr> 
+<tr><td>228</td><td>Gaius</td><td>16</td><td>he sells very big swords</td><td>-</td></tr> 
+<tr><td>229</td><td>Fairy Ladder attendant</td><td>0</td><td>A worker in the faerie market</td><td>-</td></tr> 
+<tr><td>230</td><td>Jatix</td><td>29</td><td>A hard working druid</td><td>-</td></tr> 
+<tr><td>231</td><td>Master Crafter</td><td>0</td><td>The man in charge of the crafter's guild</td><td>-</td></tr> 
+<tr><td>232</td><td>Bandit</td><td>29</td><td>He's ready for a fight</td><td>X</td></tr> 
+<tr><td>233</td><td>Noterazzo</td><td>29</td><td>A bandit shopkeeper</td><td>-</td></tr> 
+<tr><td>234</td><td>Bandit</td><td>29</td><td>A wilderness outlaw</td><td>X</td></tr> 
+<tr><td>235</td><td>Fat Tony</td><td>15</td><td>A Gourmet Pizza chef</td><td>-</td></tr> 
+<tr><td>236</td><td>Donny the lad</td><td>39</td><td>A bandit leader</td><td>X</td></tr> 
+<tr><td>237</td><td>Black Heather</td><td>39</td><td>A bandit leader</td><td>X</td></tr> 
+<tr><td>238</td><td>Speedy Keith</td><td>39</td><td>A bandit leader</td><td>X</td></tr> 
+<tr><td>239</td><td>White wolf sentry</td><td>31</td><td>A vicious mountain wolf</td><td>X</td></tr> 
+<tr><td>240</td><td>Boy</td><td>39</td><td>He doesn't seem very happy</td><td>-</td></tr> 
+<tr><td>241</td><td>Rat</td><td>2</td><td>He seems to live here</td><td>-</td></tr> 
+<tr><td>242</td><td>Nora T Hag</td><td>25</td><td>She's got warts</td><td>-</td></tr> 
+<tr><td>243</td><td>Grey wolf</td><td>64</td><td>A sinister looking wolf</td><td>X</td></tr> 
+<tr><td>244</td><td>shapeshifter</td><td>24</td><td>I've not seen anyone like this before</td><td>X</td></tr> 
+<tr><td>245</td><td>shapeshifter</td><td>34</td><td>I think this spider has been genetically modified</td><td>-</td></tr> 
+<tr><td>246</td><td>shapeshifter</td><td>44</td><td>Eek! A bear!</td><td>-</td></tr> 
+<tr><td>247</td><td>shapeshifter</td><td>54</td><td>A sinister looking wolf</td><td>-</td></tr> 
+<tr><td>248</td><td>White wolf</td><td>41</td><td>A vicious mountain wolf</td><td>X</td></tr> 
+<tr><td>249</td><td>Pack leader</td><td>71</td><td>A vicious mountain wolf</td><td>X</td></tr> 
+<tr><td>250</td><td>Harry</td><td>0</td><td>I wonder what he's got for sale</td><td>-</td></tr> 
+<tr><td>251</td><td>Thug</td><td>18</td><td>He likes hitting things</td><td>X</td></tr> 
+<tr><td>252</td><td>Firebird</td><td>6</td><td>Probably not a chicken</td><td>X</td></tr> 
+<tr><td>253</td><td>Achetties</td><td>46</td><td>One of Asgarnia's greatest heros</td><td>-</td></tr> 
+<tr><td>254</td><td>Ice queen</td><td>103</td><td>The leader of the ice warriors</td><td>X</td></tr> 
+<tr><td>255</td><td>Grubor</td><td>15</td><td>A rough looking thief</td><td>-</td></tr> 
+<tr><td>256</td><td>Trobert</td><td>13</td><td>A well dressed thief</td><td>-</td></tr> 
+<tr><td>257</td><td>Garv</td><td>28</td><td>A diligent guard</td><td>-</td></tr> 
+<tr><td>258</td><td>guard</td><td>27</td><td>A vicious pirate</td><td>-</td></tr> 
+<tr><td>259</td><td>Grip</td><td>46</td><td>Scar face petes head guard</td><td>X</td></tr> 
+<tr><td>260</td><td>Alfonse the waiter</td><td>9</td><td>He should get a clean apron</td><td>-</td></tr> 
+<tr><td>261</td><td>Charlie the cook</td><td>15</td><td>Head cook of the Shrimp and parrot</td><td>-</td></tr> 
+<tr><td>262</td><td>Guard Dog</td><td>46</td><td>He doesn't seem pleased to see me</td><td>X</td></tr> 
+<tr><td>263</td><td>Ice spider</td><td>64</td><td>I think this spider has been genetically modified</td><td>X</td></tr> 
+<tr><td>264</td><td>Pirate</td><td>30</td><td>A vicious pirate</td><td>X</td></tr> 
+<tr><td>265</td><td>Jailer</td><td>51</td><td>Guards prisoners for the black knights</td><td>X</td></tr> 
+<tr><td>266</td><td>Lord Darquarius</td><td>76</td><td>A black knight commander</td><td>X</td></tr> 
+<tr><td>267</td><td>Seth</td><td>30</td><td>He runs a fish exchange store</td><td>-</td></tr> 
+<tr><td>268</td><td>Banker</td><td>9</td><td>He can look after my money</td><td>-</td></tr> 
+<tr><td>269</td><td>Helemos</td><td>46</td><td>A retired hero</td><td>-</td></tr> 
+<tr><td>270</td><td>Chaos Druid</td><td>19</td><td>A crazy evil druid</td><td>X</td></tr> 
+<tr><td>271</td><td>Poison Scorpion</td><td>26</td><td>It has a very vicious looking tail</td><td>X</td></tr> 
+<tr><td>272</td><td>Velrak the explorer</td><td>3</td><td>he looks cold and hungry</td><td>-</td></tr> 
+<tr><td>273</td><td>Sir Lancelot</td><td>56</td><td>A knight of the round table</td><td>-</td></tr> 
+<tr><td>274</td><td>Sir Gawain</td><td>56</td><td>A knight of the round table</td><td>-</td></tr> 
+<tr><td>275</td><td>King Arthur</td><td>56</td><td>A wise old king</td><td>-</td></tr> 
+<tr><td>276</td><td>Sir Mordred</td><td>58</td><td>An evil knight</td><td>X</td></tr> 
+<tr><td>277</td><td>Renegade knight</td><td>51</td><td>He isn't very friendly</td><td>X</td></tr> 
+<tr><td>278</td><td>Davon</td><td>27</td><td>An amulet trader</td><td>-</td></tr> 
+<tr><td>279</td><td>Bartender</td><td>0</td><td>I could get some grog off him</td><td>-</td></tr> 
+<tr><td>280</td><td>Arhein</td><td>0</td><td>A merchant</td><td>-</td></tr> 
+<tr><td>281</td><td>Morgan le faye</td><td>25</td><td>An evil sorceress</td><td>-</td></tr> 
+<tr><td>282</td><td>Candlemaker</td><td>16</td><td>He makes and sells candles</td><td>-</td></tr> 
+<tr><td>283</td><td>lady</td><td>0</td><td>She has a hint of magic about her</td><td>-</td></tr> 
+<tr><td>284</td><td>lady</td><td>0</td><td>She has a hint of magic about her</td><td>-</td></tr> 
+<tr><td>285</td><td>lady</td><td>0</td><td>She has a hint of magic about her</td><td>-</td></tr> 
+<tr><td>286</td><td>Beggar</td><td>7</td><td>A scruffy looking chap</td><td>-</td></tr> 
+<tr><td>287</td><td>Merlin</td><td>12</td><td>An old wizard</td><td>-</td></tr> 
+<tr><td>288</td><td>Thrantax</td><td>90</td><td>A freshly summoned demon</td><td>-</td></tr> 
+<tr><td>289</td><td>Hickton</td><td>0</td><td>The owner of the archery store</td><td>-</td></tr> 
+<tr><td>290</td><td>Black Demon</td><td>156</td><td>A big scary jet black demon</td><td>X</td></tr> 
+<tr><td>291</td><td>Black Dragon</td><td>200</td><td>A fierce dragon with black scales!</td><td>X</td></tr> 
+<tr><td>292</td><td>Poison Spider</td><td>63</td><td>I think this spider has been genetically modified</td><td>X</td></tr> 
+<tr><td>293</td><td>Monk of Zamorak</td><td>47</td><td>An evil cleric</td><td>X</td></tr> 
+<tr><td>294</td><td>Hellhound</td><td>114</td><td>Hello nice doggy</td><td>X</td></tr> 
+<tr><td>295</td><td>Animated axe</td><td>46</td><td>a magic axe with a mind of it's own</td><td>X</td></tr> 
+<tr><td>296</td><td>Black Unicorn</td><td>31</td><td>It's a sort of unicorn</td><td>X</td></tr> 
+<tr><td>297</td><td>Frincos</td><td>13</td><td>A Peaceful monk</td><td>-</td></tr> 
+<tr><td>298</td><td>Otherworldly being</td><td>66</td><td>Is he invisible or just a set of floating clothes?</td><td>X</td></tr> 
+<tr><td>299</td><td>Owen</td><td>30</td><td>He runs a fish exchange store</td><td>-</td></tr> 
+<tr><td>300</td><td>Thormac the sorceror</td><td>25</td><td>A powerful sorcerrer</td><td>-</td></tr> 
+<tr><td>301</td><td>Seer</td><td>16</td><td>An old wizard</td><td>-</td></tr> 
+<tr><td>302</td><td>Kharid Scorpion</td><td>21</td><td>a smaller less dangerous scorpion</td><td>-</td></tr> 
+<tr><td>303</td><td>Kharid Scorpion</td><td>21</td><td>a smaller less dangerous scorpion</td><td>-</td></tr> 
+<tr><td>304</td><td>Kharid Scorpion</td><td>21</td><td>a smaller less dangerous scorpion</td><td>-</td></tr> 
+<tr><td>305</td><td>Barbarian guard</td><td>16</td><td>Not very civilised</td><td>-</td></tr> 
+<tr><td>306</td><td>Bartender</td><td>0</td><td>I could get a beer off him</td><td>-</td></tr> 
+<tr><td>307</td><td>man</td><td>9</td><td>A well dressed nobleman</td><td>-</td></tr> 
+<tr><td>308</td><td>gem trader</td><td>0</td><td>He sells gems</td><td>-</td></tr> 
+<tr><td>309</td><td>Dimintheis</td><td>9</td><td>A well dressed nobleman</td><td>-</td></tr> 
+<tr><td>310</td><td>chef</td><td>15</td><td>A busy looking chef</td><td>-</td></tr> 
+<tr><td>311</td><td>Hobgoblin</td><td>48</td><td>An ugly green creature</td><td>X</td></tr> 
+<tr><td>312</td><td>Ogre</td><td>58</td><td>A large dim looking humanoid</td><td>X</td></tr> 
+<tr><td>313</td><td>Boot the Dwarf</td><td>18</td><td>A short angry guy</td><td>-</td></tr> 
+<tr><td>314</td><td>Wizard</td><td>16</td><td>A young wizard</td><td>-</td></tr> 
+<tr><td>315</td><td>Chronozon</td><td>121</td><td>Chronozon the blood demon</td><td>X</td></tr> 
+<tr><td>316</td><td>Captain Barnaby</td><td>20</td><td>An old sailor</td><td>-</td></tr> 
+<tr><td>317</td><td>Customs Official</td><td>16</td><td>She's here to stop smugglers</td><td>-</td></tr> 
+<tr><td>318</td><td>Man</td><td>9</td><td>One of Runescape's citizens</td><td>X</td></tr> 
+<tr><td>319</td><td>farmer</td><td>15</td><td>An humble peasant</td><td>X</td></tr> 
+<tr><td>320</td><td>Warrior</td><td>27</td><td>A skilled fighter</td><td>X</td></tr> 
+<tr><td>321</td><td>Guard</td><td>28</td><td>He tries to keep the law and order around here</td><td>X</td></tr> 
+<tr><td>322</td><td>Knight</td><td>56</td><td>A knight of Ardougne</td><td>X</td></tr> 
+<tr><td>323</td><td>Paladin</td><td>71</td><td>A paladin of Ardougne</td><td>X</td></tr> 
+<tr><td>324</td><td>Hero</td><td>83</td><td>A Hero of Ardougne</td><td>X</td></tr> 
+<tr><td>325</td><td>Baker</td><td>15</td><td>He sells hot baked bread</td><td>-</td></tr> 
+<tr><td>326</td><td>silk merchant</td><td>0</td><td>He buys silk</td><td>-</td></tr> 
+<tr><td>327</td><td>Fur trader</td><td>0</td><td>A buyer and seller of animal furs</td><td>-</td></tr> 
+<tr><td>328</td><td>silver merchant</td><td>0</td><td>He deals in silver</td><td>-</td></tr> 
+<tr><td>329</td><td>spice merchant</td><td>15</td><td>He sells exotic spices</td><td>-</td></tr> 
+<tr><td>330</td><td>gem merchant</td><td>0</td><td>He sells gems</td><td>-</td></tr> 
+<tr><td>331</td><td>Zenesha</td><td>25</td><td>A shopkeeper of some sort</td><td>-</td></tr> 
+<tr><td>332</td><td>Kangai Mau</td><td>0</td><td>A tribesman</td><td>-</td></tr> 
+<tr><td>333</td><td>Wizard Cromperty</td><td>12</td><td>An old wizard</td><td>-</td></tr> 
+<tr><td>334</td><td>RPDT employee</td><td>12</td><td>A delivery man</td><td>-</td></tr> 
+<tr><td>335</td><td>Horacio</td><td>8</td><td>An old gardener</td><td>-</td></tr> 
+<tr><td>336</td><td>Aemad</td><td>16</td><td>He helps run the adventurers store</td><td>-</td></tr> 
+<tr><td>337</td><td>Kortan</td><td>16</td><td>He helps run the adventurers store</td><td>-</td></tr> 
+<tr><td>338</td><td>zoo keeper</td><td>20</td><td>He looks after Ardougne city zoo</td><td>X</td></tr> 
+<tr><td>339</td><td>Make over mage</td><td>0</td><td>He can change how I look</td><td>-</td></tr> 
+<tr><td>340</td><td>Bartender</td><td>0</td><td>I could get a beer off him</td><td>-</td></tr> 
+<tr><td>341</td><td>chuck</td><td>0</td><td>A wood merchant</td><td>-</td></tr> 
+<tr><td>342</td><td>Rogue</td><td>21</td><td>He needs a shave</td><td>X</td></tr> 
+<tr><td>343</td><td>Shadow spider</td><td>53</td><td>Is it a spider or is it a shadow</td><td>X</td></tr> 
+<tr><td>344</td><td>Fire Giant</td><td>109</td><td>A big guy with red glowing skin</td><td>X</td></tr> 
+<tr><td>345</td><td>Grandpa Jack</td><td>20</td><td>A wistful old man</td><td>-</td></tr> 
+<tr><td>346</td><td>Sinister stranger</td><td>43</td><td>not your average fisherman</td><td>-</td></tr> 
+<tr><td>347</td><td>Bonzo</td><td>30</td><td>Fishing competition organiser</td><td>-</td></tr> 
+<tr><td>348</td><td>Forester</td><td>21</td><td>He looks after McGrubor's wood</td><td>X</td></tr> 
+<tr><td>349</td><td>Morris</td><td>30</td><td>Fishing competition organiser</td><td>-</td></tr> 
+<tr><td>350</td><td>Brother Omad</td><td>13</td><td>A Peaceful monk</td><td>-</td></tr> 
+<tr><td>351</td><td>Thief</td><td>21</td><td>A dastardly blanket thief</td><td>X</td></tr> 
+<tr><td>352</td><td>Head Thief</td><td>34</td><td>A dastardly blanket thief</td><td>X</td></tr> 
+<tr><td>353</td><td>Big Dave</td><td>15</td><td>A well built fisherman</td><td>-</td></tr> 
+<tr><td>354</td><td>Joshua</td><td>15</td><td>A grumpy fisherman</td><td>-</td></tr> 
+<tr><td>355</td><td>Mountain Dwarf</td><td>18</td><td>A short angry guy</td><td>-</td></tr> 
+<tr><td>356</td><td>Mountain Dwarf</td><td>28</td><td>A short angry guy</td><td>X</td></tr> 
+<tr><td>357</td><td>Brother Cedric</td><td>13</td><td>A Peaceful monk</td><td>-</td></tr> 
+<tr><td>358</td><td>Necromancer</td><td>34</td><td>A crazy evil necromancer</td><td>X</td></tr> 
+<tr><td>359</td><td>zombie</td><td>24</td><td>The living dead</td><td>X</td></tr> 
+<tr><td>360</td><td>Lucien</td><td>21</td><td>He walks with a slight limp</td><td>-</td></tr> 
+<tr><td>361</td><td>The Fire warrior of lesarkus</td><td>63</td><td>A strange red humanoid</td><td>X</td></tr> 
+<tr><td>362</td><td>guardian of Armadyl</td><td>54</td><td>A worshipper of Armadyl</td><td>-</td></tr> 
+<tr><td>363</td><td>guardian of Armadyl</td><td>54</td><td>A worshipper of Armadyl</td><td>-</td></tr> 
+<tr><td>364</td><td>Lucien</td><td>21</td><td>He walks with a limp</td><td>X</td></tr> 
+<tr><td>365</td><td>winelda</td><td>25</td><td>A witch</td><td>-</td></tr> 
+<tr><td>366</td><td>Brother Kojo</td><td>13</td><td>A Peaceful monk</td><td>-</td></tr> 
+<tr><td>367</td><td>Dungeon Rat</td><td>16</td><td>Overgrown vermin</td><td>X</td></tr> 
+<tr><td>368</td><td>Master fisher</td><td>15</td><td>The man in charge of the fishing guild</td><td>-</td></tr> 
+<tr><td>369</td><td>Orven</td><td>30</td><td>He runs a fish exchange store</td><td>-</td></tr> 
+<tr><td>370</td><td>Padik</td><td>30</td><td>He runs a fish exchange store</td><td>-</td></tr> 
+<tr><td>371</td><td>Shopkeeper</td><td>0</td><td>He smells of fish</td><td>-</td></tr> 
+<tr><td>372</td><td>Lady servil</td><td>2</td><td>She look's wealthy</td><td>-</td></tr> 
+<tr><td>373</td><td>Guard</td><td>28</td><td>It's one of General Khazard's guard's</td><td>-</td></tr> 
+<tr><td>374</td><td>Guard</td><td>28</td><td>It's one of General Khazard's guard's</td><td>-</td></tr> 
+<tr><td>375</td><td>Guard</td><td>28</td><td>It's one of General Khazard's guard's</td><td>-</td></tr> 
+<tr><td>376</td><td>Guard</td><td>28</td><td>It's one of General Khazard's guard's</td><td>-</td></tr> 
+<tr><td>377</td><td>Jeremy Servil</td><td>0</td><td>A young squire</td><td>-</td></tr> 
+<tr><td>378</td><td>Justin Servil</td><td>0</td><td>Jeremy servil's father</td><td>-</td></tr> 
+<tr><td>379</td><td>fightslave joe</td><td>0</td><td>He look's mistreated and weak</td><td>-</td></tr> 
+<tr><td>380</td><td>fightslave kelvin</td><td>0</td><td>He look's mistreated and weak</td><td>-</td></tr> 
+<tr><td>381</td><td>local</td><td>7</td><td>A scruffy looking chap</td><td>-</td></tr> 
+<tr><td>382</td><td>Khazard Bartender</td><td>0</td><td>A tough looking barman</td><td>-</td></tr> 
+<tr><td>383</td><td>General Khazard</td><td>100</td><td>He look's real nasty</td><td>X</td></tr> 
+<tr><td>384</td><td>Khazard Ogre</td><td>58</td><td>Khazard's strongest ogre warrior</td><td>X</td></tr> 
+<tr><td>385</td><td>Guard</td><td>28</td><td>It's one of General Khazard's guard's</td><td>-</td></tr> 
+<tr><td>386</td><td>Khazard Scorpion</td><td>46</td><td>A large angry scorpion</td><td>X</td></tr> 
+<tr><td>387</td><td>hengrad</td><td>0</td><td>He look's mistreated and weak</td><td>-</td></tr> 
+<tr><td>388</td><td>Bouncer</td><td>122</td><td>Hello nice doggy</td><td>X</td></tr> 
+<tr><td>389</td><td>Stankers</td><td>0</td><td>A cheerful looking fellow</td><td>-</td></tr> 
+<tr><td>390</td><td>Docky</td><td>20</td><td>An old sailor</td><td>-</td></tr> 
+<tr><td>391</td><td>Shopkeeper</td><td>0</td><td>Maybe he'd like to buy some of my junk</td><td>-</td></tr> 
+<tr><td>392</td><td>Fairy queen</td><td>2</td><td>A very little queen</td><td>-</td></tr> 
+<tr><td>393</td><td>Merlin</td><td>12</td><td>An old wizard</td><td>-</td></tr> 
+<tr><td>394</td><td>Crone</td><td>25</td><td>A strange old lady</td><td>-</td></tr> 
+<tr><td>395</td><td>High priest of entrana</td><td>13</td><td>A Peaceful monk</td><td>-</td></tr> 
+<tr><td>396</td><td>elkoy</td><td>3</td><td>It's a tree gnome</td><td>-</td></tr> 
+<tr><td>397</td><td>remsai</td><td>3</td><td>It's a tree gnome</td><td>-</td></tr> 
+<tr><td>398</td><td>bolkoy</td><td>3</td><td>It's a tree gnome</td><td>-</td></tr> 
+<tr><td>399</td><td>local gnome</td><td>3</td><td>It's a young tree gnome</td><td>X</td></tr> 
+<tr><td>400</td><td>bolren</td><td>3</td><td>It's a gnome he look's important</td><td>-</td></tr> 
+<tr><td>401</td><td>Black Knight titan</td><td>146</td><td>He is blocking the way</td><td>X</td></tr> 
+<tr><td>402</td><td>kalron</td><td>3</td><td>he look's lost</td><td>X</td></tr> 
+<tr><td>403</td><td>brother Galahad</td><td>13</td><td>A Peaceful monk</td><td>-</td></tr> 
+<tr><td>404</td><td>tracker 1</td><td>3</td><td>It's a tree gnome</td><td>-</td></tr> 
+<tr><td>405</td><td>tracker 2</td><td>3</td><td>It's a tree gnome</td><td>-</td></tr> 
+<tr><td>406</td><td>tracker 3</td><td>3</td><td>It's a tree gnome</td><td>-</td></tr> 
+<tr><td>407</td><td>Khazard troop</td><td>28</td><td>It's one of General Khazard's warrior's</td><td>X</td></tr> 
+<tr><td>408</td><td>commander montai</td><td>3</td><td>It's a tree gnome</td><td>-</td></tr> 
+<tr><td>409</td><td>gnome troop</td><td>3</td><td>It's a tree gnome trooper</td><td>X</td></tr> 
+<tr><td>410</td><td>khazard warlord</td><td>100</td><td>He look's real nasty</td><td>X</td></tr> 
+<tr><td>411</td><td>Sir Percival</td><td>56</td><td>He's covered in pieces of straw</td><td>-</td></tr> 
+<tr><td>412</td><td>Fisher king</td><td>30</td><td>an old king</td><td>-</td></tr> 
+<tr><td>413</td><td>maiden</td><td>2</td><td>She has a far away look in her eyes</td><td>-</td></tr> 
+<tr><td>414</td><td>Fisherman</td><td>30</td><td>an old fisherman</td><td>-</td></tr> 
+<tr><td>415</td><td>King Percival</td><td>56</td><td>The new fisher king</td><td>-</td></tr> 
+<tr><td>416</td><td>unhappy peasant</td><td>25</td><td>He looks tired and hungry</td><td>X</td></tr> 
+<tr><td>417</td><td>happy peasant</td><td>25</td><td>He looks well fed and full of energy</td><td>X</td></tr> 
+<tr><td>418</td><td>ceril</td><td>9</td><td>It's Sir ceril carnillean a local noblemen</td><td>-</td></tr> 
+<tr><td>419</td><td>butler</td><td>9</td><td>It's the carnillean family butler</td><td>-</td></tr> 
+<tr><td>420</td><td>carnillean guard</td><td>28</td><td>It's a carnillean family guard</td><td>X</td></tr> 
+<tr><td>421</td><td>Tribesman</td><td>39</td><td>A primative warrior</td><td>X</td></tr> 
+<tr><td>422</td><td>henryeta</td><td>2</td><td>It's a wealthy looking woman</td><td>-</td></tr> 
+<tr><td>423</td><td>philipe</td><td>0</td><td>It's a young well dressed boy</td><td>-</td></tr> 
+<tr><td>424</td><td>clivet</td><td>20</td><td>A strange looking man in black </td><td>-</td></tr> 
+<tr><td>425</td><td>cult member</td><td>20</td><td>An suspicous looking man in black </td><td>X</td></tr> 
+<tr><td>426</td><td>Lord hazeel</td><td>100</td><td>He could do with some sun</td><td>X</td></tr> 
+<tr><td>427</td><td>alomone</td><td>42</td><td>A musculer looking man in black </td><td>-</td></tr> 
+<tr><td>428</td><td>Khazard commander</td><td>41</td><td>It's one of General Khazard's commander's</td><td>X</td></tr> 
+<tr><td>429</td><td>claus</td><td>15</td><td>the carnillean family cook</td><td>-</td></tr> 
+<tr><td>430</td><td>1st plague sheep</td><td>0</td><td>The sheep has the plague</td><td>-</td></tr> 
+<tr><td>431</td><td>2nd plague sheep</td><td>0</td><td>The sheep has the plague</td><td>-</td></tr> 
+<tr><td>432</td><td>3rd plague sheep</td><td>0</td><td>The sheep has the plague</td><td>-</td></tr> 
+<tr><td>433</td><td>4th plague sheep</td><td>0</td><td>The sheep has the plague</td><td>-</td></tr> 
+<tr><td>434</td><td>Farmer brumty</td><td>15</td><td>He looks after livestock in this area</td><td>-</td></tr> 
+<tr><td>435</td><td>Doctor orbon</td><td>15</td><td>A local doctor</td><td>-</td></tr> 
+<tr><td>436</td><td>Councillor Halgrive</td><td>20</td><td>A town counceller</td><td>-</td></tr> 
+<tr><td>437</td><td>Edmond</td><td>20</td><td>A local civilian</td><td>-</td></tr> 
+<tr><td>438</td><td>Citizen</td><td>11</td><td>He look's tired</td><td>X</td></tr> 
+<tr><td>439</td><td>Citizen</td><td>10</td><td>He look's frightened</td><td>X</td></tr> 
+<tr><td>440</td><td>Citizen</td><td>12</td><td>She look's frustrated</td><td>X</td></tr> 
+<tr><td>441</td><td>Citizen</td><td>20</td><td>He look's angry</td><td>X</td></tr> 
+<tr><td>442</td><td>Citizen</td><td>15</td><td>He look's disillusioned</td><td>X</td></tr> 
+<tr><td>443</td><td>Jethick</td><td>15</td><td>A cynical old man</td><td>-</td></tr> 
+<tr><td>444</td><td>Mourner</td><td>2</td><td>A mourner or plague healer</td><td>-</td></tr> 
+<tr><td>445</td><td>Mourner</td><td>2</td><td>A mourner or plague healer</td><td>-</td></tr> 
+<tr><td>446</td><td>Ted Rehnison</td><td>9</td><td>The head of the Rehnison family</td><td>-</td></tr> 
+<tr><td>447</td><td>Martha Rehnison</td><td>12</td><td>A fairly poor looking woman</td><td>-</td></tr> 
+<tr><td>448</td><td>Billy Rehnison</td><td>45</td><td>The Rehnisons eldest son</td><td>-</td></tr> 
+<tr><td>449</td><td>Milli Rehnison</td><td>39</td><td>She doesn't seem very happy</td><td>-</td></tr> 
+<tr><td>450</td><td>Alrena</td><td>2</td><td>She look's concerned</td><td>-</td></tr> 
+<tr><td>451</td><td>Mourner</td><td>2</td><td>A mourner or plague healer</td><td>-</td></tr> 
+<tr><td>452</td><td>Clerk</td><td>2</td><td>A bueracratic administrator</td><td>-</td></tr> 
+<tr><td>453</td><td>Carla</td><td>2</td><td>She look's upset</td><td>-</td></tr> 
+<tr><td>454</td><td>Bravek</td><td>30</td><td>The city warder of West Ardougne</td><td>-</td></tr> 
+<tr><td>455</td><td>Caroline</td><td>2</td><td>A well dressed middle aged lady</td><td>-</td></tr> 
+<tr><td>456</td><td>Holgart</td><td>20</td><td>An old sailor</td><td>-</td></tr> 
+<tr><td>457</td><td>Holgart</td><td>20</td><td>An old sailor</td><td>-</td></tr> 
+<tr><td>458</td><td>Holgart</td><td>20</td><td>An old sailor</td><td>-</td></tr> 
+<tr><td>459</td><td>kent</td><td>45</td><td>caroline's husband</td><td>-</td></tr> 
+<tr><td>460</td><td>bailey</td><td>15</td><td>the fishing platform cook</td><td>-</td></tr> 
+<tr><td>461</td><td>kennith</td><td>0</td><td>A young scared looking boy</td><td>-</td></tr> 
+<tr><td>462</td><td>Platform Fisherman</td><td>30</td><td>an emotionless fisherman</td><td>X</td></tr> 
+<tr><td>463</td><td>Platform Fisherman</td><td>30</td><td>an emotionless fisherman</td><td>X</td></tr> 
+<tr><td>464</td><td>Platform Fisherman</td><td>30</td><td>an emotionless fisherman</td><td>X</td></tr> 
+<tr><td>465</td><td>Elena</td><td>2</td><td>She doesn't look too happy</td><td>-</td></tr> 
+<tr><td>466</td><td>jinno</td><td>30</td><td>He doesn't seem to mind his lack of legs</td><td>-</td></tr> 
+<tr><td>467</td><td>Watto</td><td>30</td><td>He doesn't seem to mind his lack of legs</td><td>-</td></tr> 
+<tr><td>468</td><td>Recruiter</td><td>51</td><td>A member of the Ardougne royal army</td><td>-</td></tr> 
+<tr><td>469</td><td>Head mourner</td><td>2</td><td>In charge of people with silly outfits</td><td>-</td></tr> 
+<tr><td>470</td><td>Almera</td><td>2</td><td>A woman of the wilderness</td><td>-</td></tr> 
+<tr><td>471</td><td>hudon</td><td>0</td><td>A young boisterous looking lad</td><td>-</td></tr> 
+<tr><td>472</td><td>hadley</td><td>30</td><td>A happy looking fellow</td><td>-</td></tr> 
+<tr><td>473</td><td>Rat</td><td>7</td><td>Overgrown vermin</td><td>X</td></tr> 
+<tr><td>474</td><td>Combat instructor</td><td>51</td><td>He will tell me how to fight</td><td>-</td></tr> 
+<tr><td>475</td><td>golrie</td><td>3</td><td>It's a tree gnome</td><td>-</td></tr> 
+<tr><td>476</td><td>Guide</td><td>1</td><td>She gives hints to new adventurers</td><td>-</td></tr> 
+<tr><td>477</td><td>King Black Dragon</td><td>245</td><td>The biggest meanest dragon around</td><td>X</td></tr> 
+<tr><td>478</td><td>cooking instructor</td><td>15</td><td>Talk to him to learn about runescape food</td><td>-</td></tr> 
+<tr><td>479</td><td>fishing instructor</td><td>15</td><td>He smells of fish</td><td>-</td></tr> 
+<tr><td>480</td><td>financial advisor</td><td>0</td><td>He knows about money</td><td>-</td></tr> 
+<tr><td>481</td><td>gerald</td><td>15</td><td>An old fisherman</td><td>-</td></tr> 
+<tr><td>482</td><td>mining instructor</td><td>18</td><td>A short angry guy</td><td>-</td></tr> 
+<tr><td>483</td><td>Elena</td><td>2</td><td>She looks concerned</td><td>-</td></tr> 
+<tr><td>484</td><td>Omart</td><td>30</td><td>A nervous looking fellow</td><td>-</td></tr> 
+<tr><td>485</td><td>Bank assistant</td><td>9</td><td>She can look after my stuff</td><td>-</td></tr> 
+<tr><td>486</td><td>Jerico</td><td>15</td><td>He looks friendly enough</td><td>-</td></tr> 
+<tr><td>487</td><td>Kilron</td><td>15</td><td>He looks shifty</td><td>-</td></tr> 
+<tr><td>488</td><td>Guidor's wife</td><td>2</td><td>She looks rather concerned</td><td>-</td></tr> 
+<tr><td>489</td><td>Quest advisor</td><td>51</td><td>I wonder what advise he has to impart</td><td>-</td></tr> 
+<tr><td>490</td><td>chemist</td><td>4</td><td>human</td><td>-</td></tr> 
+<tr><td>491</td><td>Mourner</td><td>2</td><td>A mourner or plague healer</td><td>-</td></tr> 
+<tr><td>492</td><td>Mourner</td><td>2</td><td>A mourner or plague healer</td><td>-</td></tr> 
+<tr><td>493</td><td>Wilderness guide</td><td>29</td><td>He's ready for a fight</td><td>-</td></tr> 
+<tr><td>494</td><td>Magic Instructor</td><td>12</td><td>An old wizard</td><td>-</td></tr> 
+<tr><td>495</td><td>Mourner</td><td>22</td><td>A mourner or plague healer</td><td>X</td></tr> 
+<tr><td>496</td><td>Community instructor</td><td>2</td><td>This is the last advisor - honest</td><td>-</td></tr> 
+<tr><td>497</td><td>boatman</td><td>20</td><td>An old sailor</td><td>-</td></tr> 
+<tr><td>498</td><td>skeleton mage</td><td>21</td><td>It rattles as it walks</td><td>X</td></tr> 
+<tr><td>499</td><td>controls guide</td><td>29</td><td>He's ready for a fight</td><td>-</td></tr> 
+<tr><td>500</td><td>nurse sarah</td><td>2</td><td>She's quite a looker</td><td>-</td></tr> 
+<tr><td>501</td><td>Tailor</td><td>29</td><td>He's ready for a party</td><td>-</td></tr> 
+<tr><td>502</td><td>Mourner</td><td>25</td><td>A mourner or plague healer</td><td>X</td></tr> 
+<tr><td>503</td><td>Guard</td><td>28</td><td>He tries to keep order around here</td><td>-</td></tr> 
+<tr><td>504</td><td>Chemist</td><td>29</td><td>He looks clever enough</td><td>-</td></tr> 
+<tr><td>505</td><td>Chancy</td><td>29</td><td>He's ready for a bet</td><td>-</td></tr> 
+<tr><td>506</td><td>Hops</td><td>29</td><td>He's drunk</td><td>-</td></tr> 
+<tr><td>507</td><td>DeVinci</td><td>29</td><td>He has a colourful personality</td><td>-</td></tr> 
+<tr><td>508</td><td>Guidor</td><td>29</td><td>He's not that ill</td><td>-</td></tr> 
+<tr><td>509</td><td>Chancy</td><td>29</td><td>He's ready for a bet</td><td>-</td></tr> 
+<tr><td>510</td><td>Hops</td><td>29</td><td>He's drunk</td><td>-</td></tr> 
+<tr><td>511</td><td>DeVinci</td><td>29</td><td>He has a colourful personality</td><td>-</td></tr> 
+<tr><td>512</td><td>king Lathas</td><td>30</td><td>King Lanthas of east ardounge</td><td>-</td></tr> 
+<tr><td>513</td><td>Head wizard</td><td>12</td><td>He runs the wizards guild</td><td>-</td></tr> 
+<tr><td>514</td><td>Magic store owner</td><td>12</td><td>An old wizard</td><td>-</td></tr> 
+<tr><td>515</td><td>Wizard Frumscone</td><td>12</td><td>A confused looking wizard</td><td>-</td></tr> 
+<tr><td>516</td><td>target practice zombie</td><td>24</td><td>The living dead</td><td>X</td></tr> 
+<tr><td>517</td><td>Trufitus</td><td>6</td><td>A wise old witch doctor</td><td>-</td></tr> 
+<tr><td>518</td><td>Colonel Radick</td><td>51</td><td>A soldier of the town of Yanille</td><td>X</td></tr> 
+<tr><td>519</td><td>Soldier</td><td>28</td><td>A soldier of the town of Yanille</td><td>X</td></tr> 
+<tr><td>520</td><td>Bartender</td><td>0</td><td>I could get a beer off him</td><td>-</td></tr> 
+<tr><td>521</td><td>Jungle Spider</td><td>47</td><td>A venomous deadly spider</td><td>X</td></tr> 
+<tr><td>522</td><td>Jiminua</td><td>0</td><td>She looks very interested in selling some of her wares.</td><td>-</td></tr> 
+<tr><td>523</td><td>Jogre</td><td>58</td><td>An aggressive humanoid</td><td>X</td></tr> 
+<tr><td>524</td><td>Guard</td><td>28</td><td>He tries to keep order around here</td><td>-</td></tr> 
+<tr><td>525</td><td>Ogre</td><td>58</td><td>Useful for ranged training</td><td>X</td></tr> 
+<tr><td>526</td><td>Guard</td><td>28</td><td>He tries to keep order around here</td><td>-</td></tr> 
+<tr><td>527</td><td>Guard</td><td>28</td><td>He tries to keep order around here</td><td>-</td></tr> 
+<tr><td>528</td><td>shop keeper</td><td>0</td><td>he sells weapons</td><td>-</td></tr> 
+<tr><td>529</td><td>Bartender</td><td>0</td><td>I could get a beer off him</td><td>-</td></tr> 
+<tr><td>530</td><td>Frenita</td><td>0</td><td>runs a cookery shop</td><td>-</td></tr> 
+<tr><td>531</td><td>Ogre chieftan</td><td>78</td><td>A slightly bigger uglier ogre</td><td>X</td></tr> 
+<tr><td>532</td><td>rometti</td><td>3</td><td>It's a well dressed tree gnome</td><td>-</td></tr> 
+<tr><td>533</td><td>Rashiliyia</td><td>80</td><td>A willowy ethereal being who floats above the ground</td><td>-</td></tr> 
+<tr><td>534</td><td>Blurberry</td><td>3</td><td>It's a red faced tree gnome</td><td>-</td></tr> 
+<tr><td>535</td><td>Heckel funch</td><td>3</td><td>It's another jolly tree gnome</td><td>-</td></tr> 
+<tr><td>536</td><td>Aluft Gianne</td><td>3</td><td>It's a tree gnome chef</td><td>-</td></tr> 
+<tr><td>537</td><td>Hudo glenfad</td><td>3</td><td>It's another jolly tree gnome</td><td>-</td></tr> 
+<tr><td>538</td><td>Irena</td><td>0</td><td>human</td><td>-</td></tr> 
+<tr><td>539</td><td>Mosol</td><td>0</td><td>A jungle warrior</td><td>-</td></tr> 
+<tr><td>540</td><td>Gnome banker</td><td>3</td><td>It's tree gnome banker</td><td>-</td></tr> 
+<tr><td>541</td><td>King Narnode Shareen</td><td>3</td><td>It's a gnome he look's important</td><td>-</td></tr> 
+<tr><td>542</td><td>UndeadOne</td><td>62</td><td>One of Rashaliyas Minions</td><td>X</td></tr> 
+<tr><td>543</td><td>Drucas</td><td>20</td><td>engraver</td><td>-</td></tr> 
+<tr><td>544</td><td>tourist</td><td>29</td><td>human</td><td>-</td></tr> 
+<tr><td>545</td><td>King Narnode Shareen</td><td>3</td><td>It's a gnome he look's important</td><td>-</td></tr> 
+<tr><td>546</td><td>Hazelmere</td><td>3</td><td>An ancient looking gnome</td><td>-</td></tr> 
+<tr><td>547</td><td>Glough</td><td>3</td><td>An rough looking gnome</td><td>-</td></tr> 
+<tr><td>548</td><td>Shar</td><td>0</td><td>Concerned about the economy</td><td>-</td></tr> 
+<tr><td>549</td><td>Shantay</td><td>0</td><td>human</td><td>-</td></tr> 
+<tr><td>550</td><td>charlie</td><td>0</td><td>Poor guy?</td><td>X</td></tr> 
+<tr><td>551</td><td>Gnome guard</td><td>31</td><td>A tree gnome guard</td><td>X</td></tr> 
+<tr><td>552</td><td>Gnome pilot</td><td>3</td><td>He can fly the glider</td><td>-</td></tr> 
+<tr><td>553</td><td>Mehman</td><td>29</td><td>local</td><td>-</td></tr> 
+<tr><td>554</td><td>Ana</td><td>16</td><td>This lady doesn't look as if she belongs here.</td><td>-</td></tr> 
+<tr><td>555</td><td>Chaos Druid warrior</td><td>44</td><td>A crazy evil druid</td><td>X</td></tr> 
+<tr><td>556</td><td>Gnome pilot</td><td>3</td><td>He can fly the glider</td><td>-</td></tr> 
+<tr><td>557</td><td>Shipyard worker</td><td>44</td><td>He look's busy</td><td>X</td></tr> 
+<tr><td>558</td><td>Shipyard worker</td><td>44</td><td>He look's busy</td><td>X</td></tr> 
+<tr><td>559</td><td>Shipyard worker</td><td>44</td><td>He look's busy</td><td>X</td></tr> 
+<tr><td>560</td><td>Shipyard foreman</td><td>62</td><td>He look's busy</td><td>-</td></tr> 
+<tr><td>561</td><td>Shipyard foreman</td><td>62</td><td>He look's busy</td><td>-</td></tr> 
+<tr><td>562</td><td>Gnome guard</td><td>23</td><td>A tree gnome guard</td><td>X</td></tr> 
+<tr><td>563</td><td>Femi</td><td>3</td><td>It's a little tree gnome</td><td>-</td></tr> 
+<tr><td>564</td><td>Femi</td><td>3</td><td>It's a little tree gnome</td><td>-</td></tr> 
+<tr><td>565</td><td>Anita</td><td>3</td><td>It's a little tree gnome</td><td>-</td></tr> 
+<tr><td>566</td><td>Glough</td><td>3</td><td>An rough looking gnome</td><td>-</td></tr> 
+<tr><td>567</td><td>Salarin the twisted</td><td>69</td><td>A crazy evil druid</td><td>X</td></tr> 
+<tr><td>568</td><td>Black Demon</td><td>175</td><td>A big scary jet black demon</td><td>X</td></tr> 
+<tr><td>569</td><td>Gnome pilot</td><td>3</td><td>He can fly the glider</td><td>-</td></tr> 
+<tr><td>570</td><td>Gnome pilot</td><td>3</td><td>He can fly the glider</td><td>-</td></tr> 
+<tr><td>571</td><td>Gnome pilot</td><td>3</td><td>He can fly the glider</td><td>-</td></tr> 
+<tr><td>572</td><td>Gnome pilot</td><td>3</td><td>He can fly the glider</td><td>-</td></tr> 
+<tr><td>573</td><td>Sigbert the Adventurer</td><td>56</td><td>A Warrior</td><td>-</td></tr> 
+<tr><td>574</td><td>Yanille Watchman</td><td>33</td><td>He watches out for invading ogres</td><td>X</td></tr> 
+<tr><td>575</td><td>Tower guard</td><td>33</td><td>He stops people going up the tower</td><td>-</td></tr> 
+<tr><td>576</td><td>Gnome Trainer</td><td>11</td><td>He can advise on training</td><td>-</td></tr> 
+<tr><td>577</td><td>Gnome Trainer</td><td>11</td><td>He can advise on training</td><td>-</td></tr> 
+<tr><td>578</td><td>Gnome Trainer</td><td>11</td><td>He can advise on training</td><td>-</td></tr> 
+<tr><td>579</td><td>Gnome Trainer</td><td>11</td><td>He can advise on training</td><td>-</td></tr> 
+<tr><td>580</td><td>Blurberry barman</td><td>3</td><td>He serves cocktails</td><td>-</td></tr> 
+<tr><td>581</td><td>Gnome waiter</td><td>3</td><td>He can serve you gnome food</td><td>-</td></tr> 
+<tr><td>582</td><td>Gnome guard</td><td>27</td><td>A tree gnome guard</td><td>X</td></tr> 
+<tr><td>583</td><td>Gnome child</td><td>3</td><td>that's a little gnome</td><td>X</td></tr> 
+<tr><td>584</td><td>Earth warrior</td><td>52</td><td>A strange inhuman warrior</td><td>X</td></tr> 
+<tr><td>585</td><td>Gnome child</td><td>3</td><td>He's a little fellow</td><td>X</td></tr> 
+<tr><td>586</td><td>Gnome child</td><td>3</td><td>hello little gnome</td><td>X</td></tr> 
+<tr><td>587</td><td>Gulluck</td><td>10</td><td>He sells weapons</td><td>-</td></tr> 
+<tr><td>588</td><td>Gunnjorn</td><td>16</td><td>Not civilised looking</td><td>-</td></tr> 
+<tr><td>589</td><td>Zadimus</td><td>0</td><td>Ghostly Visage of the dead Zadimus</td><td>-</td></tr> 
+<tr><td>590</td><td>Brimstail</td><td>3</td><td>An ancient looking gnome</td><td>-</td></tr> 
+<tr><td>591</td><td>Gnome child</td><td>3</td><td>He's a little fellow</td><td>-</td></tr> 
+<tr><td>592</td><td>Gnome local</td><td>9</td><td>A tree gnome villager</td><td>X</td></tr> 
+<tr><td>593</td><td>Gnome local</td><td>3</td><td>A tree gnome villager</td><td>X</td></tr> 
+<tr><td>594</td><td>Moss Giant</td><td>62</td><td>his beard seems to have a life of its own</td><td>X</td></tr> 
+<tr><td>595</td><td>Gnome Baller</td><td>70</td><td>A tree gnome ball player</td><td>X</td></tr> 
+<tr><td>596</td><td>Goalie</td><td>70</td><td>A gnome ball goal catcher</td><td>-</td></tr> 
+<tr><td>597</td><td>Gnome Baller</td><td>70</td><td>A tree gnome ball player</td><td>X</td></tr> 
+<tr><td>598</td><td>Gnome Baller</td><td>70</td><td>A tree gnome ball player</td><td>X</td></tr> 
+<tr><td>599</td><td>Gnome Baller</td><td>70</td><td>A tree gnome ball player</td><td>X</td></tr> 
+<tr><td>600</td><td>Gnome Baller</td><td>70</td><td>A tree gnome ball player</td><td>X</td></tr> 
+<tr><td>601</td><td>Referee</td><td>3</td><td>He controls the game</td><td>-</td></tr> 
+<tr><td>602</td><td>Gnome Baller</td><td>70</td><td>A tree gnome ball player</td><td>X</td></tr> 
+<tr><td>603</td><td>Gnome Baller</td><td>70</td><td>A tree gnome ball player</td><td>X</td></tr> 
+<tr><td>604</td><td>Gnome Baller</td><td>70</td><td>A tree gnome ball player</td><td>X</td></tr> 
+<tr><td>605</td><td>Gnome Baller</td><td>70</td><td>A tree gnome ball player</td><td>X</td></tr> 
+<tr><td>606</td><td>Gnome Baller</td><td>70</td><td>A tree gnome ball player</td><td>X</td></tr> 
+<tr><td>607</td><td>Gnome Baller</td><td>70</td><td>A tree gnome ball player</td><td>X</td></tr> 
+<tr><td>608</td><td>Gnome Baller</td><td>70</td><td>A tree gnome ball player</td><td>X</td></tr> 
+<tr><td>609</td><td>Gnome Baller</td><td>70</td><td>He's on your team</td><td>-</td></tr> 
+<tr><td>610</td><td>Gnome Baller</td><td>70</td><td>He's on your team</td><td>-</td></tr> 
+<tr><td>611</td><td>Cheerleader</td><td>3</td><td>It's a little tree gnome</td><td>-</td></tr> 
+<tr><td>612</td><td>Cheerleader</td><td>3</td><td>It's a little tree gnome</td><td>-</td></tr> 
+<tr><td>613</td><td>Nazastarool Zombie</td><td>83</td><td>One of Rashaliyas Minions</td><td>X</td></tr> 
+<tr><td>614</td><td>Nazastarool Skeleton</td><td>83</td><td>One of Rashaliyas Minions</td><td>X</td></tr> 
+<tr><td>615</td><td>Nazastarool Ghost</td><td>83</td><td>One of Rashaliyas Minions</td><td>X</td></tr> 
+<tr><td>616</td><td>Fernahei</td><td>6</td><td>An enthusiastic fishing shop owner</td><td>-</td></tr> 
+<tr><td>617</td><td>Jungle Banker</td><td>9</td><td>He can look after my money</td><td>-</td></tr> 
+<tr><td>618</td><td>Cart Driver</td><td>15</td><td>He drives the cart</td><td>-</td></tr> 
+<tr><td>619</td><td>Cart Driver</td><td>15</td><td>He drives the cart</td><td>-</td></tr> 
+<tr><td>620</td><td>Obli</td><td>0</td><td>An intelligent looking shop owner</td><td>-</td></tr> 
+<tr><td>621</td><td>Kaleb</td><td>0</td><td>This is Kaleb Paramaya - a warm and friendly inn owner</td><td>-</td></tr> 
+<tr><td>622</td><td>Yohnus</td><td>0</td><td>This is Yohnus - he runs the local blacksmiths</td><td>-</td></tr> 
+<tr><td>623</td><td>Serevel</td><td>0</td><td>This is Serevel - he sells tickets for the 'Lady of the Waves'</td><td>-</td></tr> 
+<tr><td>624</td><td>Yanni</td><td>0</td><td>Yanni Salika - He buys and sells antiques.</td><td>-</td></tr> 
+<tr><td>625</td><td>Official</td><td>3</td><td>He helps the referee</td><td>-</td></tr> 
+<tr><td>626</td><td>Koftik</td><td>16</td><td>The kings top tracker</td><td>-</td></tr> 
+<tr><td>627</td><td>Koftik</td><td>16</td><td>The kings top tracker</td><td>-</td></tr> 
+<tr><td>628</td><td>Koftik</td><td>16</td><td>The kings top tracker</td><td>-</td></tr> 
+<tr><td>629</td><td>Koftik</td><td>16</td><td>The kings top tracker</td><td>-</td></tr> 
+<tr><td>630</td><td>Blessed Vermen</td><td>14</td><td>A undead servent of iban</td><td>X</td></tr> 
+<tr><td>631</td><td>Blessed Spider</td><td>35</td><td>One of iban's eight legged friends</td><td>X</td></tr> 
+<tr><td>632</td><td>Paladin</td><td>71</td><td>A paladin of Ardougne</td><td>X</td></tr> 
+<tr><td>633</td><td>Paladin</td><td>71</td><td>A paladin of Ardougne</td><td>X</td></tr> 
+<tr><td>634</td><td>slave</td><td>16</td><td>He seems possessed</td><td>X</td></tr> 
+<tr><td>635</td><td>slave</td><td>16</td><td>He seems possessed</td><td>X</td></tr> 
+<tr><td>636</td><td>slave</td><td>16</td><td>He seems to have been here a while</td><td>X</td></tr> 
+<tr><td>637</td><td>slave</td><td>16</td><td>He seems possessed</td><td>X</td></tr> 
+<tr><td>638</td><td>slave</td><td>16</td><td>He seems to have been here a while</td><td>X</td></tr> 
+<tr><td>639</td><td>slave</td><td>16</td><td>He seems possessed</td><td>X</td></tr> 
+<tr><td>640</td><td>slave</td><td>16</td><td>He seems to have been here a while</td><td>X</td></tr> 
+<tr><td>641</td><td>Kalrag</td><td>78</td><td>I think this is one of Ibans pets</td><td>X</td></tr> 
+<tr><td>642</td><td>Niloof</td><td>18</td><td>A short angry guy</td><td>-</td></tr> 
+<tr><td>643</td><td>Kardia the Witch</td><td>25</td><td>She's got warts</td><td>-</td></tr> 
+<tr><td>644</td><td>Souless</td><td>16</td><td>He seems an empty shell</td><td>X</td></tr> 
+<tr><td>645</td><td>Othainian</td><td>78</td><td>big red and incredibly evil</td><td>X</td></tr> 
+<tr><td>646</td><td>Doomion</td><td>98</td><td>A big scary jet black demon</td><td>X</td></tr> 
+<tr><td>647</td><td>Holthion</td><td>78</td><td>big red and incredibly evil</td><td>X</td></tr> 
+<tr><td>648</td><td>Klank</td><td>18</td><td>A short angry guy</td><td>-</td></tr> 
+<tr><td>649</td><td>Iban</td><td>21</td><td>You feel terror just looking at him</td><td>-</td></tr> 
+<tr><td>650</td><td>Koftik</td><td>16</td><td>The kings top tracker</td><td>-</td></tr> 
+<tr><td>651</td><td>Goblin guard</td><td>48</td><td>An imposing green creature</td><td>X</td></tr> 
+<tr><td>652</td><td>Observatory Professor</td><td>4</td><td>He works in the observatory</td><td>-</td></tr> 
+<tr><td>653</td><td>Ugthanki</td><td>45</td><td>A dangerous type of spitting camel that can temporarily blind an opponent.</td><td>X</td></tr> 
+<tr><td>654</td><td>Observatory assistant</td><td>4</td><td>The Professor's assistant</td><td>-</td></tr> 
+<tr><td>655</td><td>Souless</td><td>24</td><td>A servent to zamorak</td><td>X</td></tr> 
+<tr><td>656</td><td>Dungeon spider</td><td>22</td><td>A nasty poisonous arachnid</td><td>X</td></tr> 
+<tr><td>657</td><td>Kamen</td><td>18</td><td>A short angry guy</td><td>-</td></tr> 
+<tr><td>658</td><td>Iban disciple</td><td>19</td><td>An evil follower of Iban</td><td>X</td></tr> 
+<tr><td>659</td><td>Koftik</td><td>16</td><td>The kings top tracker</td><td>-</td></tr> 
+<tr><td>660</td><td>Goblin</td><td>19</td><td>These goblins have grown strong</td><td>X</td></tr> 
+<tr><td>661</td><td>Chadwell</td><td>16</td><td>A sturdy looking gent</td><td>-</td></tr> 
+<tr><td>662</td><td>Professor</td><td>4</td><td>The owner of the observatory</td><td>-</td></tr> 
+<tr><td>663</td><td>San Tojalon</td><td>120</td><td>The animated spirit of San Tojalon</td><td>X</td></tr> 
+<tr><td>664</td><td>Ghost</td><td>29</td><td>A doomed victim of zamorak</td><td>X</td></tr> 
+<tr><td>665</td><td>Spirit of Scorpius</td><td>100</td><td>The undead spirit of the follower of Zamorak</td><td>-</td></tr> 
+<tr><td>666</td><td>Scorpion</td><td>21</td><td>There are nasty scorpions around this grave</td><td>-</td></tr> 
+<tr><td>667</td><td>Dark Mage</td><td>0</td><td>He works in the ways of dark magic</td><td>-</td></tr> 
+<tr><td>668</td><td>Mercenary</td><td>50</td><td>He seems to be guarding an area</td><td>X</td></tr> 
+<tr><td>669</td><td>Mercenary Captain</td><td>64</td><td>He's in control of the local guards.</td><td>X</td></tr> 
+<tr><td>670</td><td>Mercenary</td><td>39</td><td>He seems to be guarding an area</td><td>X</td></tr> 
+<tr><td>671</td><td>Mining Slave</td><td>16</td><td>A chained slave forced to mine rocks.</td><td>X</td></tr> 
+<tr><td>672</td><td>Watchtower wizard</td><td>12</td><td>A learned man</td><td>-</td></tr> 
+<tr><td>673</td><td>Ogre Shaman</td><td>100</td><td>An intelligent form of ogre</td><td>-</td></tr> 
+<tr><td>674</td><td>Skavid</td><td>3</td><td>Servant race to the ogres</td><td>-</td></tr> 
+<tr><td>675</td><td>Ogre guard</td><td>78</td><td>These ogres protect the city</td><td>-</td></tr> 
+<tr><td>676</td><td>Ogre guard</td><td>78</td><td>These ogres protect the city</td><td>-</td></tr> 
+<tr><td>677</td><td>Ogre guard</td><td>78</td><td>These ogres protect the city</td><td>-</td></tr> 
+<tr><td>678</td><td>Skavid</td><td>3</td><td>Servant race to the ogres</td><td>-</td></tr> 
+<tr><td>679</td><td>Skavid</td><td>3</td><td>Servant race to the ogres</td><td>-</td></tr> 
+<tr><td>680</td><td>Og</td><td>78</td><td>The chieftan of this ogre tribe</td><td>-</td></tr> 
+<tr><td>681</td><td>Grew</td><td>78</td><td>The chieftan of this ogre tribe</td><td>-</td></tr> 
+<tr><td>682</td><td>Toban</td><td>78</td><td>The chieftan of this ogre tribe</td><td>-</td></tr> 
+<tr><td>683</td><td>Gorad</td><td>78</td><td>A high ranking ogre official</td><td>X</td></tr> 
+<tr><td>684</td><td>Ogre guard</td><td>96</td><td>this creature looks very tough</td><td>X</td></tr> 
+<tr><td>685</td><td>Yanille Watchman</td><td>33</td><td>A captured guard of Yanille</td><td>-</td></tr> 
+<tr><td>686</td><td>Ogre merchant</td><td>58</td><td>He sells ogre-inspired items</td><td>-</td></tr> 
+<tr><td>687</td><td>Ogre trader</td><td>58</td><td>He trades in metals</td><td>-</td></tr> 
+<tr><td>688</td><td>Ogre trader</td><td>58</td><td>He trades in food</td><td>-</td></tr> 
+<tr><td>689</td><td>Ogre trader</td><td>58</td><td>He trades in food</td><td>-</td></tr> 
+<tr><td>690</td><td>Mercenary</td><td>39</td><td>He seems to be guarding an area</td><td>X</td></tr> 
+<tr><td>691</td><td>City Guard</td><td>78</td><td>high ranking ogre guards</td><td>-</td></tr> 
+<tr><td>692</td><td>Mercenary</td><td>39</td><td>He seems to be guarding this area</td><td>X</td></tr> 
+<tr><td>693</td><td>Lawgof</td><td>18</td><td>He guards the mines</td><td>-</td></tr> 
+<tr><td>694</td><td>Dwarf</td><td>18</td><td>A short angry guy</td><td>X</td></tr> 
+<tr><td>695</td><td>lollk</td><td>18</td><td>He looks scared</td><td>-</td></tr> 
+<tr><td>696</td><td>Skavid</td><td>3</td><td>Servant race to the ogres</td><td>-</td></tr> 
+<tr><td>697</td><td>Ogre guard</td><td>78</td><td>These ogres protect the city</td><td>X</td></tr> 
+<tr><td>698</td><td>Nulodion</td><td>18</td><td>He's the head of black guard weapon development</td><td>-</td></tr> 
+<tr><td>699</td><td>Dwarf</td><td>18</td><td>A short angry guy</td><td>X</td></tr> 
+<tr><td>700</td><td>Al Shabim</td><td>0</td><td>The leader of a nomadic Bedabin desert people - sometimes referred to as the 'Tenti's'</td><td>-</td></tr> 
+<tr><td>701</td><td>Bedabin Nomad</td><td>0</td><td>A Bedabin nomad - they live in the harshest extremes in the desert</td><td>-</td></tr> 
+<tr><td>702</td><td>Captain Siad</td><td>48</td><td>He's in control of the whole mining camp.</td><td>X</td></tr> 
+<tr><td>703</td><td>Bedabin Nomad Guard</td><td>70</td><td>A Bedabin nomad guard - he's protecting something important</td><td>X</td></tr> 
+<tr><td>704</td><td>Ogre citizen</td><td>58</td><td>A denizen of Gu'Tanoth</td><td>X</td></tr> 
+<tr><td>705</td><td>Rock of ages</td><td>150</td><td>A huge boulder</td><td>X</td></tr> 
+<tr><td>706</td><td>Ogre</td><td>58</td><td>A large dim looking humanoid</td><td>X</td></tr> 
+<tr><td>707</td><td>Skavid</td><td>3</td><td>Servant race to the ogres</td><td>-</td></tr> 
+<tr><td>708</td><td>Skavid</td><td>3</td><td>Servant race to the ogres</td><td>-</td></tr> 
+<tr><td>709</td><td>Skavid</td><td>3</td><td>Servant race to the ogres</td><td>-</td></tr> 
+<tr><td>710</td><td>Draft Mercenary Guard</td><td>50</td><td>He's quickly drafted in to deal with trouble makers</td><td>X</td></tr> 
+<tr><td>711</td><td>Mining Cart Driver</td><td>15</td><td>He drives the mining cart</td><td>-</td></tr> 
+<tr><td>712</td><td>kolodion</td><td>12</td><td>He runs the mage arena</td><td>-</td></tr> 
+<tr><td>713</td><td>kolodion</td><td>12</td><td>He runs the mage arena</td><td>X</td></tr> 
+<tr><td>714</td><td>Gertrude</td><td>20</td><td>A busy housewife</td><td>-</td></tr> 
+<tr><td>715</td><td>Shilop</td><td>0</td><td>A young boisterous looking lad</td><td>-</td></tr> 
+<tr><td>716</td><td>Rowdy Guard</td><td>50</td><td>He looks as if he's spoiling for trouble</td><td>X</td></tr> 
+<tr><td>717</td><td>Shantay Pass Guard</td><td>32</td><td>He seems to be guarding the Shantay Pass</td><td>X</td></tr> 
+<tr><td>718</td><td>Rowdy Slave</td><td>16</td><td>A slave who's looking for trouble.</td><td>X</td></tr> 
+<tr><td>719</td><td>Shantay Pass Guard</td><td>32</td><td>He seems to be guarding the Shantay Pass</td><td>-</td></tr> 
+<tr><td>720</td><td>Assistant</td><td>0</td><td>He is an assistant to Shantay and helps him to run the pass.</td><td>-</td></tr> 
+<tr><td>721</td><td>Desert Wolf</td><td>31</td><td>A vicious Desert wolf</td><td>X</td></tr> 
+<tr><td>722</td><td>Workman</td><td>9</td><td>This person is working on the site</td><td>-</td></tr> 
+<tr><td>723</td><td>Examiner</td><td>2</td><td>As you examine the examiner you examine that she is indeed an examiner!!</td><td>-</td></tr> 
+<tr><td>724</td><td>Student</td><td>0</td><td>A student busily digging!</td><td>-</td></tr> 
+<tr><td>725</td><td>Student</td><td>20</td><td>A student busily digging!</td><td>-</td></tr> 
+<tr><td>726</td><td>Guide</td><td>12</td><td>This person specialises in panning for gold</td><td>-</td></tr> 
+<tr><td>727</td><td>Student</td><td>18</td><td>A student busily digging!</td><td>-</td></tr> 
+<tr><td>728</td><td>Archaeological expert</td><td>15</td><td>An expert on archaeology!</td><td>-</td></tr> 
+<tr><td>729</td><td>civillian</td><td>18</td><td>He looks aggitated!</td><td>X</td></tr> 
+<tr><td>730</td><td>civillian</td><td>0</td><td>She looks aggitated!</td><td>-</td></tr> 
+<tr><td>731</td><td>civillian</td><td>0</td><td>She looks aggitated!</td><td>-</td></tr> 
+<tr><td>732</td><td>civillian</td><td>15</td><td>He looks aggitated!</td><td>-</td></tr> 
+<tr><td>733</td><td>Murphy</td><td>15</td><td>The man in charge of the fishing trawler</td><td>-</td></tr> 
+<tr><td>734</td><td>Murphy</td><td>15</td><td>The man in charge of the fishing trawler</td><td>-</td></tr> 
+<tr><td>735</td><td>Sir Radimus Erkle</td><td>10</td><td>A huge muscular man in charge of the Legends Guild</td><td>-</td></tr> 
+<tr><td>736</td><td>Legends Guild Guard</td><td>50</td><td>This guard is protecting the entrance to the Legends Guild.</td><td>-</td></tr> 
+<tr><td>737</td><td>Escaping Mining Slave</td><td>16</td><td>An emancipated slave with cool Desert Clothes.</td><td>-</td></tr> 
+<tr><td>738</td><td>Workman</td><td>9</td><td>This person is working in the mine</td><td>-</td></tr> 
+<tr><td>739</td><td>Murphy</td><td>15</td><td>The man in charge of the fishing trawler</td><td>-</td></tr> 
+<tr><td>740</td><td>Echned Zekin</td><td>50</td><td>An evil spirit of the underworld.</td><td>-</td></tr> 
+<tr><td>741</td><td>Donovan the Handyman</td><td>9</td><td>It's the family odd jobs man</td><td>-</td></tr> 
+<tr><td>742</td><td>Pierre the Dog Handler</td><td>9</td><td>It's the guy who looks after the family guard dog</td><td>-</td></tr> 
+<tr><td>743</td><td>Hobbes the Butler</td><td>9</td><td>It's the family butler</td><td>-</td></tr> 
+<tr><td>744</td><td>Louisa The Cook</td><td>0</td><td>It's the family cook</td><td>-</td></tr> 
+<tr><td>745</td><td>Mary The Maid</td><td>25</td><td>The family maid</td><td>-</td></tr> 
+<tr><td>746</td><td>Stanford The Gardener</td><td>8</td><td>It's the family Gardener</td><td>-</td></tr> 
+<tr><td>747</td><td>Guard</td><td>28</td><td>He looks like he's in over his head here</td><td>-</td></tr> 
+<tr><td>748</td><td>Guard Dog</td><td>46</td><td>He doesn't seem pleased to see me</td><td>-</td></tr> 
+<tr><td>749</td><td>Guard</td><td>8</td><td>***EMPTY PLEASE USE OR REPLACE***</td><td>-</td></tr> 
+<tr><td>750</td><td>Man</td><td>9</td><td>A thirsty looking man</td><td>-</td></tr> 
+<tr><td>751</td><td>Anna Sinclair</td><td>9</td><td>The first child of the late Lord Sinclair</td><td>-</td></tr> 
+<tr><td>752</td><td>Bob Sinclair</td><td>9</td><td>The second child of the late Lord Sinclair</td><td>-</td></tr> 
+<tr><td>753</td><td>Carol Sinclair</td><td>9</td><td>The third child of the late Lord Sinclair</td><td>-</td></tr> 
+<tr><td>754</td><td>David Sinclair</td><td>9</td><td>The fourth child of the late Lord Sinclair</td><td>-</td></tr> 
+<tr><td>755</td><td>Elizabeth Sinclair</td><td>9</td><td>The fifth child of the late Lord Sinclair</td><td>-</td></tr> 
+<tr><td>756</td><td>Frank Sinclair</td><td>9</td><td>The sixth child of the late Lord Sinclair</td><td>-</td></tr> 
+<tr><td>757</td><td>kolodion</td><td>65</td><td>He's a shape shifter</td><td>X</td></tr> 
+<tr><td>758</td><td>kolodion</td><td>68</td><td>He's a shape shifter</td><td>X</td></tr> 
+<tr><td>759</td><td>kolodion</td><td>46</td><td>He's a shape shifter</td><td>X</td></tr> 
+<tr><td>760</td><td>kolodion</td><td>98</td><td>He's a shape shifter</td><td>X</td></tr> 
+<tr><td>761</td><td>Irvig Senay</td><td>125</td><td>The animated spirit of Irvig Senay</td><td>X</td></tr> 
+<tr><td>762</td><td>Ranalph Devere</td><td>130</td><td>The animated spirit of Ranalph Devere</td><td>X</td></tr> 
+<tr><td>763</td><td>Poison Salesman</td><td>7</td><td>Peter Potter - Poison Purveyor</td><td>-</td></tr> 
+<tr><td>764</td><td>Gujuo</td><td>60</td><td>A tall charismatic looking jungle native - he approaches with confidence</td><td>-</td></tr> 
+<tr><td>765</td><td>Jungle Forester</td><td>15</td><td>A woodsman who specialises in large and exotic timber</td><td>-</td></tr> 
+<tr><td>766</td><td>Ungadulu</td><td>75</td><td>An ancient looking Shaman</td><td>X</td></tr> 
+<tr><td>767</td><td>Ungadulu</td><td>75</td><td>An ancient looking Shaman - he looks very strange with glowing red eyes...</td><td>X</td></tr> 
+<tr><td>768</td><td>Death Wing</td><td>80</td><td>A supernatural creature of the underworld</td><td>X</td></tr> 
+<tr><td>769</td><td>Nezikchened</td><td>172</td><td>An ancient powerful Demon of the Underworld...</td><td>X</td></tr> 
+<tr><td>770</td><td>Dwarf Cannon engineer</td><td>18</td><td>He's the head of black guard weapon development</td><td>-</td></tr> 
+<tr><td>771</td><td>Dwarf commander</td><td>18</td><td>He guards the mines</td><td>-</td></tr> 
+<tr><td>772</td><td>Viyeldi</td><td>80</td><td>The spirit of a dead sorcerer</td><td>X</td></tr> 
+<tr><td>773</td><td>Nurmof</td><td>18</td><td>He sells pickaxes</td><td>-</td></tr> 
+<tr><td>774</td><td>Fatigue expert</td><td>10</td><td>He looks wide awake</td><td>-</td></tr> 
+<tr><td>775</td><td>Karamja Wolf</td><td>61</td><td>A hungry</td><td>X</td></tr> 
+<tr><td>776</td><td>Jungle Savage</td><td>87</td><td>A savage and fearless Jungle warrior</td><td>X</td></tr> 
+<tr><td>777</td><td>Oomlie Bird</td><td>32</td><td>A variety of flightless jungle fowl - it has a sharp beak and a bad temper.</td><td>X</td></tr> 
+<tr><td>778</td><td>Sidney Smith</td><td>30</td><td>Sidney Smith - Certification clerk</td><td>-</td></tr> 
+<tr><td>779</td><td>Siegfried Erkle</td><td>25</td><td>An eccentric shop keeper - related to the Grand Vizier of the Legends Guild</td><td>-</td></tr> 
+<tr><td>780</td><td>Tea seller</td><td>9</td><td>He has delicious tea to buy</td><td>-</td></tr> 
+<tr><td>781</td><td>Wilough</td><td>0</td><td>A young son of gertrudes</td><td>-</td></tr> 
+<tr><td>782</td><td>Philop</td><td>0</td><td>Gertrudes youngest</td><td>-</td></tr> 
+<tr><td>783</td><td>Kanel</td><td>0</td><td>Gertrudes youngest's twin brother</td><td>-</td></tr> 
+<tr><td>784</td><td>chamber guardian</td><td>15</td><td>He hasn't seen much sun latley</td><td>-</td></tr> 
+<tr><td>785</td><td>Sir Radimus Erkle</td><td>10</td><td>A huge muscular man in charge of the Legends Guild</td><td>-</td></tr> 
+<tr><td>786</td><td>Pit Scorpion</td><td>35</td><td>Very vicious little scorpions</td><td>X</td></tr> 
+<tr><td>787</td><td>Shadow Warrior</td><td>64</td><td>A sinsistar shadowy figure</td><td>X</td></tr> 
+<tr><td>788</td><td>Fionella</td><td>25</td><td>She runs the legend's general store</td><td>-</td></tr> 
+<tr><td>789</td><td>Battle mage</td><td>52</td><td>He kills in the name of guthix</td><td>X</td></tr> 
+<tr><td>790</td><td>Battle mage</td><td>52</td><td>He kills in the name of zamarok</td><td>X</td></tr> 
+<tr><td>791</td><td>Battle mage</td><td>52</td><td>He kills in the name of Saradomin</td><td>X</td></tr> 
+<tr><td>792</td><td>Gundai</td><td>15</td><td>He must get lonely out here</td><td>-</td></tr> 
+<tr><td>793</td><td>Lundail</td><td>15</td><td>He sells rune stones</td><td>-</td></tr>
