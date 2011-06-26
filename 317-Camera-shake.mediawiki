@@ -1,0 +1,7 @@
+[[Category Packet]]
+[[Category Packet 317]]
+== Camera Shake ==
+
+=== Description ===
+
+Causes the camera to shake.
