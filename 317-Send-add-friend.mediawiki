@@ -1,0 +1,17 @@
+[[Category Packet]]
+[[Category Packet 317]]
+<h3><span class="mw-headline"> Description </span></h3>
+
+<p>Sends friend data to the client
+</p>
+<h3><span class="mw-headline"> Packet Structure </span></h3>
+<table border="2">
+<tr>
+<th> Data type
+</th><th> Description
+</th></tr>
+<tr>
+
+<td> Long </td><td> The player name </td></tr>
+<td> Byte </td> <td> The world (10 = "online" for most clients) </td>
+</table>
