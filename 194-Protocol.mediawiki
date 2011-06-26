@@ -10,40 +10,74 @@ Just for fun if anyone gives two shits.
 == '''Login''' ==
 ?
 
-== '''Incoming Data''' ==
-'''TODO:''' Document packet structures
+===Server -> Client Packets===
 
-<table border="1" cellpadding="3" cellspacing="3">
-	<tr>
-		<td><b>opcode</b></td>
-		<td><b>usage</b></td>
-		<td><b>size</b></td>
-		<td><b>payload</b></td>
-	</tr>
+{| border=2
+|-
+! Opcode
+! Type
+! Length (bytes)
+! Name
+! Description
+|-
+| 137
+| FIXED
+| 2
+| [[194 Show interface|Show interface]]
+| Displays a normal interface.
+|-
+| 164
+| VARIABLE_BYTE
+| N/A
+| [[194 Send message|Send message]]
+| Sends a server message (e.g. 'Welcome to RuneScape') or trade/duel request. 
+|-
+| 192
+| FIXED
+| 0
+| [[194 Logout|Logout]]
+| Disconnects the client from the server.
+|-
+| 206
+| VARIABLE_BYTE
+| N/A
+| [[194 Set MIDI|Set MIDI]]
+| Sets the current song playing on the client.
+|-
+| 210
+| FIXED
+| 3
+| [[194 Send sidebar interface|Send sidebar interface]]
+| Assigns an interface to one of the tabs in the game sidebar.
+|-
+| 240
+| FIXED
+| 0
+| [[194 Clear screen|Clear screen]]
+| Clears the screen of all open interfaces. 
+|-
+|}
 
-	<tr>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-</table>
+===Client -> Server Packets===
 
-== '''Outgoing Data''' ==
-'''TODO:''' Document packet structures
-
-<table border="1" cellpadding="3" cellspacing="3">
-	<tr>
-		<td><b>opcode</b></td>
-		<td><b>usage</b></td>
-		<td><b>size</b></td>
-		<td><b>payload</b></td>
-	</tr>
-
-	<tr>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-</table>
+{| border=2
+|-
+! Opcode
+! Type
+! Length (bytes)
+! Name
+! Description
+|-
+| 54
+| VARIABLE_BYTE
+| N/A
+| Send Chat Message
+| Sends a chat message to the server.
+|-
+| 237
+| VARIABLE_BYTE
+| N/A
+| Send Command
+| Sends a command (any message prefixed with ::) to the server.
+|-
+|}
