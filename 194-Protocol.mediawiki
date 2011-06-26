@@ -10,6 +10,8 @@ Just for fun if anyone gives two shits.
 == '''Login''' ==
 ?
 
+== '''Game Protocol''' ==
+
 ===Server -> Client Packets===
 
 {| border=2
