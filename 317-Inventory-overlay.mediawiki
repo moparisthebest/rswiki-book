@@ -1,0 +1,21 @@
+[[Category Packet]]
+[[Category Packet 317]]
+{{packet|name=Child frame|description=Attaches an interface within an interface|opcode=248|type=Fixed|length=4|revision=317}}
+== Child Frame ==
+
+=== Description ===
+
+This packet attaches an interface to the chat box.
+
+=== Packet Structure ===
+{|border=2
+! Data Type
+! Description
+|-
+| [[Data Types#Standard data types|Short]] [[Data Types#Non Standard data types|Special A]]
+| The interface being attached to.
+|-
+| [[Data Types#Standard data types|Short]]
+| The interface being attached.
+|-
+|}
