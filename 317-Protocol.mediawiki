@@ -469,40 +469,516 @@ Inside this method, many different bitwise masks are compared to the player's fl
 
 After the client processes every single player in the update player list, it ends player updating.
 
-== '''Incoming Data''' ==
-'''TODO:''' Document packet structures
+==Game Protocol==
+The game protocol is the in-game communication of player actions between the server and client.
+<br/>
+===Server -> Client Packets===
 
-<table border="1" cellpadding="3" cellspacing="3">
-	<tr>
-		<td><b>opcode</b></td>
-		<td><b>usage</b></td>
-		<td><b>size</b></td>
-		<td><b>payload</b></td>
-	</tr>
+{| border=2
+|-
+! Opcode
+! Type
+! Length (bytes)
+! Name
+! Description
+|-
+| 1
+| FIXED
+| 0
+| [[317 Animation reset|Animation reset]]
+| Resets all animations in the immediate area.
+|-
+| 24
+| FIXED
+| 1
+| [[317 Flash sidebar|Flash sidebar]]
+| Causes a sidebar icon to start flashing.
+|-
+| 35
+| FIXED
+| 4
+| [[317 Camera shake|Camera shake]]
+| Causes the camera to shake.
+|-
+| 50
+| FIXED
+| 9
+| [[317 Send add friend|Send add friend]]
+| Sends a friend to the friend list.
+|-
+| 68
+| FIXED
+| 0
+| [[317 Reset button state|Reset button state]]
+| Resets the button state for all buttons.
+|-
+| 71
+| FIXED
+| 3
+| [[317 Send sidebar interface|Send sidebar interface]]
+| Assigns an interface to one of the tabs in the game sidebar.
+|-
+| 73
+| FIXED
+| 4
+| [[317 Load map region|Load map region]]
+| Loads a new map region.
+|-
+| 79
+| FIXED
+| 4
+| [[317 Scroll position|Scroll position]]
+| Sets the scrollbar position of an interface.
+|-
+| 97
+| FIXED
+| 2
+| [[317 Show interface|Show interface]]
+| Displays a normal interface.
+|-
+|-
+| 99
+| FIXED
+| 1
+| [[317 Minimap State|Minimap State]]
+| Sets the mini map's state.
+|-
+| 107
+| FIXED
+| 0
+| [[317 Reset camera|Reset camera]]
+| Resets the camera position.
+|-
+| 109
+| FIXED
+| 0
+| [[317 Logout|Logout]]
+| Disconnects the client from the server.
+|-
+| 110
+| FIXED
+| 1
+| [[317 Run energy|Run energy]]
+| Sends the players run energy level.
+|-
+| 114
+| FIXED
+| 2
+| [[317 System update|System update]]
+| Sends how many seconds until a 'System Update.'
+|-
+| 122
+| FIXED
+| 4
+| [[317 Interface color|Interface color]]
+| Changes the color of an interface.
+|-
+| 126
+| VARIABLE_SHORT
+| N/A
+| [[317 Send text|Send text]]
+| Attaches text to an interface.
+|-
+| 135
+| FIXED
+| 6
+| [[317 Skill level|Skill level]]
+| Sends a skill level to the client.
+|-
+| 164
+| FIXED
+| 2
+| [[317 Chat interface|Chat interface]]
+| Shows an interface in the chat box.
+|-
+| 176
+| FIXED
+| 10
+| [[317 Open welcome screen|Open welcome screen]]
+| Displays the welcome screen.
+|-
+| 196
+| VARIABLE_BYTE
+| N/A
+| [[317 Send private message|Send private message]]
+| Sends a private message to another player.
+|-
+| 206
+| FIXED
+| 3
+| [[317 Chat settings|Chat settings]]
+| Sends the chat privacy settings.
+|-
+| 208
+| FIXED
+| 2
+| [[317 Walkable interface|Walkable interface]]
+| Displays an interface in walkable mode.
+|-
+| 219
+| FIXED
+| 0
+| [[317 Clear screen|Clear screen]]
+| Clears the screen of all open interfaces.
+|-
+| 221
+| FIXED
+| 1
+| [[Friends list status|Friends list status]]
+| Friends list load status.
+|-
+| 240
+| FIXED
+| 2
+| [[317 Weight|Weight]]
+| Sends the players weight amount.
+|-
+| 241
+| VARIABLE_SHORT
+| N/A
+| [[317 Construct map region|Construct map region]]
+| Constructs a dynamic map region using a palette of 8*8 tiles.
+|-
+| 246
+| FIXED
+| 6
+| [[317 Interface item|Interface item]]
+| Displays an item model inside an interface.
+|-
+| 248
+| FIXED
+| 4 
+| [[317 Child frame|Child frame]]
+| Attaches an interface within an interface.
+|-
+| 249
+| FIXED
+| 3
+| [[317 Initialize player|Initialize player]]
+| Sends the player's membership status and their current index on the server's player list.
+|-
+| 253
+| VARIABLE_BYTE
+| N/A
+| [[317 Send message|Send message]]
+| Sends a server message (e.g. 'Welcome to RuneScape') or trade/duel request.
+|-
+|}
 
-	<tr>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-</table>
+===Client -> Server Packets===
 
-== '''Outgoing Data''' ==
-'''TODO:''' Document packet structures
-
-<table border="1" cellpadding="3" cellspacing="3">
-	<tr>
-		<td><b>opcode</b></td>
-		<td><b>usage</b></td>
-		<td><b>size</b></td>
-		<td><b>payload</b></td>
-	</tr>
-
-	<tr>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-</table>
+{| border=2
+|-
+! Opcode
+! Type
+! Length (bytes)
+! Name
+! Description
+|-
+| 0
+| FIXED
+| 0
+| [[317 Idle|Idle]]
+| Sent when there are no actions being performed by the player for this cycle.
+|-
+| 3
+| FIXED
+| 1
+| [[317 Focus change|Focus change]]
+| Sent when the game client window goes out of focus.
+|-
+| 4
+| VARIABLE BYTE
+| N/A
+| [[317 Chat|Chat]]
+| Sent when the player enters a chat message.
+|-
+| 14
+| FIXED
+| 8
+| [[317 Item on player|Item on player]]
+| Sent when a player uses an item on another player.
+|-
+| 17
+| FIXED
+| 2
+| [[317 NPC action 2|NPC action 2]]
+| Sent when a player clicks the second option of an NPC.
+|-
+| 21
+| FIXED
+| 2
+| [[317 NPC action 3|NPC action 3]]
+| Sent when a player clicks the third option of an NPC.
+|-
+| 25
+| FIXED
+| 10
+| [[317 Item on floor|Item on floor]]
+| Sent when a player uses an item on another item thats on the floor.
+|-
+| 39
+| FIXED
+| 2
+| [[317 Follow|Follow]]
+| Sent when a player clicks the follow option on another player.
+|-
+| 40
+| FIXED
+| N/A
+| [[317 NPC Dialogue|NpcDialogue]]
+| N/A
+|-
+| 41
+| FIXED
+| 6
+| [[317 Equip item|Equip item]]
+| Sent when a player equips an item.
+|-
+| 43
+| FIXED
+| 6
+| [[317 Bank 10 items|Bank 10 items]]
+| Sent when a player banks 10 of a certain item.
+|-
+| 53
+| FIXED
+| 4
+| [[317 Item on item|Item on item]]
+| Sent when a player uses an item with another item.
+|-
+| 70
+| FIXED
+| 6
+| [[317 Object action 3|Object action 3]]
+| Sent when the player clicks the third action available for an object.
+|-
+| 72
+| FIXED
+| 2
+| [[317 Attack (NPC)|Attack (NPC)]]
+| Sent when a player attacks an NPC.
+|-
+| 73
+| FIXED
+| 2
+| [[317 Trade request|Trade request]]
+| Sent when a player requests a trade with another player.
+|-
+| 74
+| FIXED
+| 8
+| [[317 Remove ignore|Remove ignore]]
+| Sent when a player removes a player from their ignore list.
+|-
+| 79
+| FIXED
+| 6
+| [[317 Light item|Light item]]
+| Sent when a player attempts to light logs on fire.
+|-
+| 86
+| FIXED
+| 4
+| [[317 Camera movement|Camera movement]]
+| Sent when the player moves the camera.
+|-
+| 87
+| FIXED
+| 6
+| [[317 Drop item|Drop item]]
+| Sent when a player wants to drop an item onto the ground.
+|-
+| 95
+| FIXED
+| 3
+| [[317 Privacy options|Privacy options]]
+| Sent when a player changes their privacy options (i.e. public chat).
+|-
+| 98
+| VARIABLE_BYTE
+| N/A
+| [[317 Walk on command|Walk on command]]
+| Sent when the player should walk somewhere according to a certain action performed, such as clicking an object.
+|-
+| 101
+| FIXED
+| 13
+| [[317 Design screen|Design screen]] 
+| Sent when a player is choosing their character design options.
+|-
+| 103
+| VARIABLE_BYTE
+| N/A
+| [[317 Player command|Player command]]
+| Sent when the player enters a command in the chat box (e.g. "::command")
+|-
+| 117
+| FIXED
+| 6
+| [[317 Bank 5 items|Bank 5 items]]
+| Sent when a player banks 5 of a certain item.
+|-
+| 121
+| FIXED
+| 0
+| [[317 Loading finished|Loading finished]]
+| Sent when the client finishes loading a map region.
+|-
+| 122
+| FIXED
+| 6
+| [[317 Item action 1|Item action 1]]
+| Sent when the player clicks the first option of an item, such as "Bury" for bones.
+|-
+| 126
+| VARIABLE BYTE
+| N/A
+| [[317 Private message|Private message]]
+| Sent when a player sends a private message to another player.
+|-
+| 129
+| FIXED
+| 6
+| [[317 Bank all items|Bank all items]]
+| Sent when a player banks all of a certain item that they have in their inventory.
+|-
+| 130
+| FIXED
+| 0
+| [[317 Close window|Close window]]
+| Sent when a player presses the close, exit or cancel button on an interface.
+|-
+| 132
+| FIXED
+| 6
+| [[317 Object action 1|Object action 1]]
+| Sent when the player clicks the first option of an object, such as "Cut" for trees.
+|-
+| 133
+| FIXED
+| 8
+| [[317 Add ignore|Add ignore]]
+| Sent when a player adds a player to their ignore list.
+|-
+| 135
+| FIXED
+| 6
+| [[317 Bank X items part-1|Bank X items part-1]]
+| Sent when a player requests to bank an X amount of items.
+|-
+| 139
+| FIXED
+| 2
+| [[317 Trade answer|Trade answer]]
+| Sent when a player answers a trade request from another player.
+|-
+| 145
+| FIXED
+| 6
+| [[317 Unequip item|Unequip item]]
+| Sent when a player unequips an item.
+|-
+| 155
+| FIXED
+| 2
+| [[317 NPC action 1|NPC action 1]]
+| Sent when a player clicks first option of an NPC, such as "Talk."
+|-
+| 164
+| VARIABLE_BYTE
+| N/A
+| [[317 Regular walk|Regular walk]]
+| Sent when the player walks regularly.
+|-
+| 185
+| FIXED
+| 2
+| [[317 Button click|Button click]]
+| Sent when a player clicks an in-game button.
+|-
+| 188
+| FIXED
+| 8
+| [[317 Add friend|Add friend]]
+| Sent when a player adds a friend to their friend list.
+|-
+| 192
+| FIXED
+| 12
+| [[317 Item on object|Item on object]]
+| Sent when a a player uses an item on an object.
+|-
+| 202
+| FIXED
+| 0
+| [[317 Idle logout|Idle logout]]
+| Sent when the player has become idle and should be logged out.
+|-
+| 208
+| FIXED
+| 4
+| [[317 Bank X items part-2|Bank X items part-2]]
+| Sent when a player enters an X amount of items they want to bank.
+|-
+| 210
+| FIXED
+| 0
+| [[317 Region change|Region change]]
+| Sent when a player enters a new map region.
+|-
+| 214
+| FIXED
+| 7
+| [[317 Move item|Move item]]
+| Sent when a player moves an item from one slot to another.
+|-
+| 215
+| FIXED
+| 8
+| [[317 Remove friend|Remove friend]]
+| Sent when a player removes a friend from their friend list.
+|-
+| 218
+| FIXED
+| 8
+| [[317 Report player|Report player]]
+| Sent when a player reports another player.
+|-
+| 236
+| FIXED
+| 6
+| [[317 Pickup ground item|Pickup ground item]]
+| Sent when the player picks up an item from the ground.
+|-
+| 237
+| FIXED
+| 8
+| [[317 Magic on items|Magic on items]]
+| Sent when a player casts magic on the items in their inventory.
+|-
+| 241
+| FIXED
+| 4
+| [[317 Mouse click|Mouse click]]
+| Sent when the player clicks somewhere on the game screen.
+|-
+| 248
+| VARIABLE_BYTE
+| N/A
+| [[317 Map walk|Map walk]]
+| Sent when the player walks using the map. Has 14 additional (assumed to be anticheat) bytes added to the end of it that are ignored.
+|-
+| 252
+| FIXED
+| 6
+| [[317 Object action 2|Object action 2]]
+| Sent when the player clicks the second option available for an object.
+|-
+| 253
+| FIXED
+| 6
+| [[317 Ground Item Action|Ground Item Action]]
+| Sent when the player clicks the first option for a ground item (I.E. 'Light Logs')
+|-
+|}
