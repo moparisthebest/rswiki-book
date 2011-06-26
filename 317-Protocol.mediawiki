@@ -30,6 +30,318 @@ Now starts the login request packet. It starts off with a flag telling the serve
 
 The ISAAC ciphers are seeded for packet opcode masking after adding 50 to each int of the session keys, and the status code is reread. This finishes the login protocol.
 
+== '''Login Protocol Breakdown''' ==
+The login is comprised of four stages in which the client and server switch in regards to which one is reading and which one is writing.
+<br/>
+===Variables:===
+The login process has a lot of variable data, compiled here is a list of the variables and their different values.
+====Name Hash====
+A hash of the player name, thought to be used to select an appropriate login server. This has no use in current private servers.
+
+====Server Session Key====
+The server-session-key is one of two ciphers used to encrypt the game protocol, using the ISAAC algorithms.
+<br/>
+===="Data File Version"====
+<!-- Colby -->
+The CRC checks for the cache files.
+<br/>
+
+====User ID====
+The ID of the user.
+<br/>
+====Username====
+The username of the player, used to identify their account.
+<br/>
+====Password====
+The password of the player account, used so only they can log into their account.
+<br/>
+====Client Session Key====
+The client-session-key is one of two ciphers used to encrypt the game protocol, using the ISAAC algorithms.
+<br/>
+====Connect Status====
+The status of the connection.
+{|border=2
+! Value
+! Status
+|-
+| 16
+| Signifies that the connection is new.
+|-
+| 18
+| Signifies that the session is reconnecting a previously lost connection.
+|-
+|}
+
+====Size====
+The size of the unencrypted login packet, used to determine how many bytes need to be read from the stream by the server.
+<br/>
+====Client Version====
+The memory-version of the game client.
+{|border=2
+! Value
+! Status
+|-
+| 0
+| Signifies the client is a low-memory client.
+|-
+| 1
+| Signifies that the client is a high-memory client.
+|-
+|}
+
+====CRC Values====
+9 4-byte values, Each containing the CRC of their respective cache files. Used by the server to verify client is up to date.
+<br/>
+
+====Player Status====
+The in-game player status - player, player moderator, or administrator.
+<br/>
+{|border=2
+! Value
+! Status
+|-
+| 0
+| Signifies that this player is a normal player.
+|-
+| 1
+| Signifies that this player is a player moderator.
+|-
+| 2
+| Signifies that this player is an administrator.
+|-
+|}
+
+====Flagged====
+If set to 1, information about mouse movements etc. are sent to the server. Suspected bot accounts are flagged.
+<br/>
+====Response Codes====
+At the beginning and end of the login procedure, we send different values to the client to allow or deny a login. The various values show different messages on the login box on the client or do something internally.
+<br/>
+{| border=2
+! Value
+! Response
+|-
+| -1
+| Waits for 2000ms and tries again while counting failures.
+|-
+| 0
+| Exchanges session keys, player name, password, etc.
+|-
+| 1
+| Waits for 2000ms and tries again.
+|-
+| 2
+| Client made a successful login.
+|-
+| 3
+| "Invalid username or password."
+|-
+| 4
+| "Your account has been disabled. Please check your message-center for details."
+|-
+| 5
+| "Your account is already logged in. Try again in 60 secs..."
+|-
+| 6
+| "RuneScape has been updated! Please reload this page."
+|-
+| 7
+| "This world is full. Please use a different world."
+|-
+| 8
+| "Unable to connect. Login server offline."
+|-
+| 9
+| "Login limit exceeded. Too many connections from your address."
+|-
+| 10
+| "Unable to connect. Bad session id."
+|-
+| 11
+| "Login server rejected session. Please try again."
+|-
+| 12
+| "You need a members account to login to this world. Please subscribe, or use a different world."
+|-
+| 13
+| "Could not complete login. Please try using a different world."
+|-
+| 14
+| "The server is being updated. Please wait 1 minute and try again."
+|-
+| 15
+| See the [[#Regarding response code 15|notes below]].
+|-
+| 16
+| "Login attempts exceeded. Please wait 1 minute and try again."
+|-
+| 17
+| "You are standing in a members-only area. To play on this world move to a free area first."
+|-
+| 20
+| "Invalid loginserver requested. Please try using a different world."
+|-
+| 21
+| "You have only just left another world. Your profile will be transferred in: (number) seconds."
+|-
+| None of the above
+| "Unexpected server response. Please try using a different world."
+|-
+|}
+
+==== Regarding response code 15 ====
+On the server, players are not unregistered for quite some time. This can be best witnessed when the client forcefully closes the connection while in combat. If you're quick enough before the player dies or kills the NPC, login attempts during that time return that the account is already logged in. This probably explains why the message says "try again in 60 seconds", and they just reused the response when the player is truly logged in.
+
+Going along with this "players aren't offline yet" idea, when the client experiences some lag and performs a reconnect, it sends byte 18 as it's [[#Connect Status|connection type]] to the server.
+
+The server most likely saves this as a boolean (reconnect = var == 18;). When the login is entirely validated, meaning the password's are okay and the server isn't full, it can either send back the normal response, 2, or 15.
+
+But why 15? If you look at the client code, you'll see that the chat messages aren't cleared. If you've ever had a poor connection you've noticed that your chat stays there upon a reconnect, and this is exactly why.
+<!-- thanks to Colby for this contribution-->
+When you implement response code 15 though, you do NOT need to send the "player status" or the "flagged" bytes.
+
+===Login Process:===
+====Stage 1: Client -> Server====
+{| border=2
+|-
+! Data Type
+! Value
+|-
+| ubyte
+| 14
+|-
+| ubyte
+| "name hash"
+|-
+|}
+<br/>
+
+====Stage 2: Server -> Client====
+{| border=2
+|-
+! Data Type
+! Value
+|-
+| byte
+| 0
+|-
+| byte
+| 0
+|-
+| byte
+| 0
+|-
+| byte
+| 0
+|-
+| byte
+| 0
+|-
+| byte
+| 0
+|-
+| byte
+| 0
+|-
+| byte
+| 0
+|-
+| byte
+| "response code"
+|-
+| [[QWord|long]]
+| "server session key"
+|-
+|}
+<br/>
+
+====Stage 3: Client -> Server====
+{| border=2
+|-
+! Data Type
+! Value
+|-
+| byte
+| "connect status"
+|-
+| byte
+| "size"
+|-
+| byte
+| 255
+|-
+| [[Word|short]]
+| 317
+|-
+| byte
+| "client version"
+|-
+| [[DWord|int]]
+| "crc values"[0]
+|-
+| [[DWord|int]]
+| "crc values"[1]
+|-
+| [[DWord|int]]
+| "crc values"[2]
+|-
+| [[DWord|int]]
+| "crc values"[3]
+|-
+| [[DWord|int]]
+| "crc values"[4]
+|-
+| [[DWord|int]]
+| "crc values"[5]
+|-
+| [[DWord|int]]
+| "crc values"[6]
+|-
+| [[DWord|int]]
+| "crc values"[7]
+|-
+| [[DWord|int]]
+| "crc values"[8]
+|-
+| byte
+| 10
+|-
+| [[QWord|long]]
+| "client session key"
+|-
+| [[QWord|long]]
+| "server session key"
+|-
+| [[DWord|int]]
+| "user id"
+|-
+| [[RS String|RS String]]
+| "username"
+|-
+| [[RS String|RS String]]
+| "password"
+|-
+|}
+<br/>
+
+====Stage 4: Server -> Client====
+{| border=2
+|-
+! Data Type
+! Value
+|-
+| byte
+| "response code"
+|-
+| byte
+| "player status"
+|-
+| byte
+| "flagged"
+|-
+|}
+<br/>
+
 == '''Player Updating''' ==
 The player updating process consists of 4 parts:
 * a) Our player movement updates
