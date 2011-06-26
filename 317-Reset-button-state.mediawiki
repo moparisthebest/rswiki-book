@@ -1,0 +1,8 @@
+[[Category Packet]]
+[[Category Packet 317]]
+{{packet|name=Reset button state|description=Resets the button states for all buttons.|opcode=68|type=Fixed|length=0|revision=317}}
+== Reset Button State ==
+
+=== Description ===
+
+This packet resets the button states for all buttons.
