@@ -7,7 +7,5 @@ Welcome to '''RSWiki''', our goal is to accurately document the rsc/rs2 protocol
 * [[Category JAGGRAB Protocol|JAGGRAB Protocol]]
 * [[Category Ondemand Protocol|Ondemand Protocol]]
 * [[Category Archive Format|Archive Format]]
-* [[Category Archive Format|Archive Format]]
-* [[Category Archive Format|Archive Format]]
-* [[Category Archive Format|Archive Format]]
+* [[Category Data Types|Data Types]]
 * ''More to come...''
