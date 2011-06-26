@@ -1,0 +1,19 @@
+[[Category Packet]]
+[[Category Packet 317]]
+{{packet|name=Send message|description=Sends a server message, trade or duel request to the client's chat panel.|opcode=253|type=Variable Byte|length=N/A|revision=317}}
+== Send Message ==
+
+=== Description ===
+
+Sends a server side message (e.g. 'Welcome to RuneScape'), or trade/duel request (:tradereq:playername and :duelreq:playername) to the client.
+
+=== Packet Structure ===
+
+{| border=2
+! Data type
+! Description
+|-
+| [[RS String|RS String]]
+| The message.
+|-
+|}
