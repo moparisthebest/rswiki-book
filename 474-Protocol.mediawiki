@@ -11,40 +11,76 @@ When the client sends a packet to the server, the first byte encapsulates its op
 == '''Login''' ==
 ?
 
-== '''Incoming Data''' ==
-'''TODO:''' Document packet structures
+== '''Game Protocol''' ==
 
-<table border="1" cellpadding="3" cellspacing="3">
-	<tr>
-		<td><b>opcode</b></td>
-		<td><b>usage</b></td>
-		<td><b>size</b></td>
-		<td><b>payload</b></td>
-	</tr>
+===Server -> Client Packets===
 
-	<tr>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-</table>
+{| border=2
+|-
+! Opcode
+! Type
+! Length (bytes)
+! Name
+! Description
+|-
+| 209
+| VARIABLE_BYTE
+| N/A
+| [[474 Send message|Send message]]
+| Sends a server message (e.g. 'Welcome to RuneScape') or trade/duel request. 
+|-
+| 231
+| VARIABLE_SHORT
+| N/A
+| [[474 Send string|Send string]]
+| Replaces a string of text. (e.g. Replace: 'Click here to Play' with 'Play Now!') 
+|-
+|}
 
-== '''Outgoing Data''' ==
-'''TODO:''' Document packet structures
+===Client -> Server Packets===
 
-<table border="1" cellpadding="3" cellspacing="3">
-	<tr>
-		<td><b>opcode</b></td>
-		<td><b>usage</b></td>
-		<td><b>size</b></td>
-		<td><b>payload</b></td>
-	</tr>
-
-	<tr>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-</table>
+{| border=2
+|-
+! Opcode
+! Type
+! Length (bytes)
+! Name
+! Description
+|-
+| 1
+| FIXED
+| 8
+| [[474 Remove ignore|Remove ignore]]
+| Sent when a player removes a player from their ignore list. 
+|-
+| 13
+| FIXED
+| 12
+| [[474 Item on NPC|Item on NPC]]
+| Sent when a player uses an item on an NPC. 
+|-
+| 21
+| FIXED
+| 2
+| [[474 Npc action 2|Npc action 2]]
+| Sent when a player clicks the second option of an NPC. 
+|-
+| 31
+| FIXED
+| 6
+| [[474 Object action 1|Object action 1]]
+| Sent when the player clicks the first option of an object, such as "Cut" for trees. 
+|-
+| 34
+| FIXED
+| 1
+| [[474 Focus change|Focus change]]
+| Sent when the game client window goes out of focus. 
+|-
+| 35
+| FIXED
+| 8
+| [[474 Magic on player|Magic on player]]
+| Sent when the player casts magic on another player.  
+|-
+|}
