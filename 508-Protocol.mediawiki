@@ -30,40 +30,83 @@ Now starts the login request packet. It starts off with a flag telling the serve
 
 The ISAAC ciphers are seeded for packet opcode masking after adding 50 to each int of the session keys, and the status code is reread. This finishes the login protocol.
 
-== '''Incoming Data''' ==
-'''TODO:''' Document packet structures
+== '''Game Protocol''' ==
+Game packet header:
 
-<table border="1" cellpadding="3" cellspacing="3">
-	<tr>
-		<td><b>opcode</b></td>
-		<td><b>usage</b></td>
-		<td><b>size</b></td>
-		<td><b>payload</b></td>
-	</tr>
+<pre>
+ubyte - opcode
+ubyte - packet size only if packet size is sent as -1
+ushort - packet size only if packet size is sent as -2
+</pre>
 
-	<tr>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-</table>
+After the header is read by the server, the packet specific data is then read and decoded by the server.
 
-== '''Outgoing Data''' ==
-'''TODO:''' Document packet structures
+===Server -> Client Packets===
+{| border=2
+|-
+! Opcode
+! Type
+! Length (bytes)
+! Name
+! Description
+|-
+| 8
+| FIXED
+| 2
+| [[508 System update|System update]]
+| Displays the system update counter on the player's client.
+|-
+| 93
+| FIXED
+| 7
+| [[508 Send interface|Send interface]]
+|
+|-
+| 99
+| FIXED
+| 1
+| [[508 Run energy|Run energy]]
+| Sets the players run energy.
+|-
+| 104
+| FIXED
+| 0
+| [[508 Logout|Logout]]
+| Logs the player out.
+|-
+| 217
+| FIXED
+| 6
+| [[508 Send skill levels|Send skill levels]]
+| Sends the player's skill levels to the client to be drawn on the skill tab.
+|-
+| 218
+| VARIABLE BYTE
+| N/A
+| [[508 Send message|Send message]]
+| Writes a string to the client's chat box.
+|-
+| 239
+| FIXED
+| 3
+| [[508 Set window pane|Set window pane]]
+|
+|-
+| 252
+| VARIABLE BYTE
+| N/A
+| [[508 Send player option|Send player option]]
+| 
+|}
 
-<table border="1" cellpadding="3" cellspacing="3">
-	<tr>
-		<td><b>opcode</b></td>
-		<td><b>usage</b></td>
-		<td><b>size</b></td>
-		<td><b>payload</b></td>
-	</tr>
+===Client -> Server Packets===
 
-	<tr>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-</table>
+{| border=2
+|-
+! Opcode
+! Type
+! Length (bytes)
+! Name
+! Description
+|-
+|}
