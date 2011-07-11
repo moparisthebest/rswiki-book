@@ -5,7 +5,7 @@
 === Description ===
 This packet is sent when the player attempts to cast magic onto another.
 
-== Packet Structure ==
+=== Packet Structure ===
 {|border=2
 ! Data Type
 ! Description
