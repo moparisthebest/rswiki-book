@@ -699,6 +699,12 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 Item on player|Item on player]]
 | Sent when a player uses an item on another player.
 |-
+| 16
+| FIXED
+| 1
+| [[317 Alternate item option 2|Alternate item option 2]]
+| Sent when a player uses an item. This is an alternate item option.
+|-
 | 17
 | FIXED
 | 2
