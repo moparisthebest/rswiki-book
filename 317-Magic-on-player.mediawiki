@@ -13,7 +13,7 @@ This packet is sent when the player attempts to cast magic onto another.
 | [[Data Types#Standard data types|Short]] [[Data Types#Non Standard Data Types|Special A]]
 | The player index.
 |-
-| [[Data Types#Standard data types|Short]] [[Data Types#Non Standard Data Types|Little]]
+| [[Data Types#Standard data types|Short]] [[Data Types#Byte Order|Little]]
 | The spell ID.
 |-
 |}
