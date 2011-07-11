@@ -1,0 +1,20 @@
+[[Category Packet]]
+[[Category Packet 317]]
+
+== Magic on Player ==
+'''Description'''
+This packet is sent when the player attempts to cast magic onto another.
+
+
+== Packet Structure ==
+{|border=2
+! Data Type
+! Description
+|-
+| [[Data Types#Standard data types|Short]] [[Data Types#Non Standard Data Types|Special A]]
+| The player index.
+|-
+| [[Data Types#Standard data types|Short]] [[Data Types#Non Standard Data Types|Little]]
+| The spell ID.
+|-
+|}
