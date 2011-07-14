@@ -976,8 +976,8 @@ The game protocol is the in-game communication of player actions between the ser
 | Sent when the player walks using the map. Has 14 additional (assumed to be anticheat) bytes added to the end of it that are ignored.
 |-
 | 249
-| VARIABLE_BYTE
-| N/A
+| FIXED
+| 4
 | [[317 Magic on player|Magic on player]]
 | Sent when a player attempts to cast magic on another player.
 |-
