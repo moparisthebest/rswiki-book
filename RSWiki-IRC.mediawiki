@@ -3,6 +3,7 @@ Want to chat with RSWiki members? Discuss anything and everything? Join our IRC 
 == '''Connection Information''' ==
 ===IRC Server(s)===
 irc.gyrat.in
+
 irc.thehost.me
 
 ===Channel(s)===
