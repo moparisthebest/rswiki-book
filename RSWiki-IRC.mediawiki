@@ -1,6 +1,30 @@
 Want to chat with RSWiki members? Discuss anything and everything? Join our IRC network!
 
 == '''Connection Information''' ==
+===IRC Server(s)===
+irc.gyrat.in
+irc.thehost.me
+
+===Channel(s)===
+#303
+
 
 
 == '''How To Guide (New Users)''' ==
+===Important commands===
+====Register your nickname====
+/msg nickserv register YourPassword YourEmail
+
+
+====Identifying Yourself====
+/msg nickserv identify YourPassword
+
+
+====Joining a channel====
+/join #channelname
+
+
+===IRC Clients===
+[http://www.mirc.com/get.html mIRC]
+[http://xchat.org/download/ X-Chat]
+[http://irssi.org/download irssi]
