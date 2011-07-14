@@ -6,8 +6,8 @@ irc.gyrat.in
 irc.thehost.me
 
 ===Channel(s)===
-#303
-
+<nowiki>#303
+</nowiki>
 
 
 == '''How To Guide (New Users)''' ==
