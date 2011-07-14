@@ -26,5 +26,7 @@ irc.thehost.me
 
 ===IRC Clients===
 [http://www.mirc.com/get.html mIRC]
+
 [http://xchat.org/download/ X-Chat]
+
 [http://irssi.org/download irssi]
