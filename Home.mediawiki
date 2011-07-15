@@ -1,6 +1,8 @@
 <center>
 Welcome to '''RSWiki''', our goal is to accurately document the rsc/rs2 protocol(s) and much more!
 
+Read the [[Rules]], you may be sorry.
+
 Want to meet the community? Check out our [[RSWiki IRC|Official IRC]]!
 </center>
 
