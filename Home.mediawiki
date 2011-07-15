@@ -1,7 +1,7 @@
 <!--------------------------------------Main heading----------------------------------------->
 {| id="mainpage-welcome-box" style="width:100%; background:#f6f6f6; border:1px solid #ccc;"
 | style="width:61%; text-align:center; white-space:nowrap; color:#000;" |
-<div style="font-size:150%; border:none; margin:0; padding:.1em; color:#000;">Welcome to RSWiki,</div>
+<div style="font-size:150%; border:none; margin:0; padding:.1em; color:#000;">Welcome to RSWiki</div>
 <div style="top:+0.2em; font-size:90%;">Our goal is to accurately document the rsc/rs2 protocol(s) and much more!</div>
 | style="width:13%;" |
 '''[[Rules]]'''<br />
