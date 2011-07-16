@@ -89,4 +89,10 @@ When the client sends a packet to the server, the first byte encapsulates its op
 | [[474 Magic on player|Magic on player]]
 | Sent when the player casts magic on another player.  
 |-
+| 226
+| FIXED
+| 2
+| [[474 Examine object|Examine object]]
+| Sent when you examine an object.  
+|-
 |}
