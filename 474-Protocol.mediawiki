@@ -71,6 +71,12 @@ When the client sends a packet to the server, the first byte encapsulates its op
 | [[474 Object action 1|Object action 1]]
 | Sent when the player clicks the first option of an object, such as "Cut" for trees. 
 |-
+| 203
+| FIXED
+| 6
+| [[474 Object action 2|Object action 2]]
+| Sent when the player clicks the second option of an object, such as "Use-quickly" for Bank Booths. 
+|-
 | 34
 | FIXED
 | 1
