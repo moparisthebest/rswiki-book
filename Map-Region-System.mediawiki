@@ -43,7 +43,7 @@ There is no calculation for a map and there is no Map X or Map Y. A Map is howev
 
 The active chunk is the chunk in which the player resides. The definite rendering chunks are the chunks in which will be rendered on the players screen no matter where they are in the active chunk. The indefinite rendering chunks are the chunks in which depending on where the player is within the active chunk they may be rendered or not. Remember this depends on the +- distance of 32 from the players absolute position. The queue chunks are pre-loaded chunks in which after the active chunk is moved may be disposed of or activated depending upon the direction in which the active chunk changes.
 
-==How Regions are Loaded==
+==Loading==
 
 These were the regions loaded for the coordinates [3183, 3217]:
 
