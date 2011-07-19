@@ -4,15 +4,15 @@ Everyone knows that a coordinate system is in place to navigate through the Rune
 == Definitions ==
 ===Tile=== 
 A tile is a representation of an absolute coordinate. 
+
 ''Example: Varrock Coordinates [3211, 3424] represents one tile.''
 
 ===Tile Chunk===
 A chunk of tiles, 8 x 8 in size. Also known as a region before the scope of a region was understood. The chunk is considered a point so it has X and Y coordinates. There are two forms of a Chunk, formatted and non; a formatted chunks equation is:
 
-[code]
-int chunkX = (getAbsoluteX() >> 3) - 6;
-int chunkY = (getAbsoluteY() >> 3) - 6;
-[/code]
+
+ int chunkX = (getAbsoluteX() >> 3) - 6;
+ int chunkY = (getAbsoluteY() >> 3) - 6;
 
 This centers the chunk on the map, more on that later.
 
