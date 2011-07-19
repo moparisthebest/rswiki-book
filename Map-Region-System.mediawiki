@@ -22,7 +22,7 @@ The normal chunk equation is:
  int chunkX = (getAbsoluteX() >> 3);
  int chunkY = (getAbsoluteY() >> 3);
 
-''Example: The Coordinates [3211, 3424] Chunk X (formatted) is [b]395[/b] and the Chunk Y (un-formatted) is 428.''
+''Example: The Coordinates [3211, 3424] Chunk X (formatted) is 395 and the Chunk Y (un-formatted) is 428.''
 
 ===Region===
 A region is 64 x 64 in size, or 8 x 8 in chunks. The region is considered a point so it has X and Y coordinates. The equation for finding the region the coordinates is within is:
@@ -30,13 +30,13 @@ A region is 64 x 64 in size, or 8 x 8 in chunks. The region is considered a poin
  int regionx = (getUnformattedRegionX() >> 3); //getUnformatedRegionX()/8;
  int regiony = (getUnformattedRegionY() >> 3); //getUnformatedRegionY()/8;
 
-''Example: The Coordinates [3211, 3424] Region X is [b]50[/b] and the Region Y is 53.''
+''Example: The Coordinates [3211, 3424] Region X is 50 and the Region Y is 53.''
 
 Note: The Region X and Region Y coordinates are traditionally not used in server location calculations; but practical region systems should use this calculation for many purposes.
 
 
 ===Map===
-There is no calculation for a map and there is no Map X or Map Y. A Map is however a 104 x 104 area made up of 13 x 13 chunks. Why is the number not even you may ask? Because it has a center. The [7, 7] map chunk of the map is the center and is also the [b]formatted chunk[/b]. When a region update is called by the server, a new map is called but you must understand that the formatted chunk never changes; the tiles in the map however are updated and trimmed. When the player moves out of the formatted chunk the map is re-positioned to make that chunk the center yet again. As I said, a new update is not needed every time the player enters a new region but when the range of +- 32 from the point in the center of the chunk is reached a update is required to update the map to the new objects so that the 'black space' or fog is not reached. Confused? 
+There is no calculation for a map and there is no Map X or Map Y. A Map is however a 104 x 104 area made up of 13 x 13 chunks. Why is the number not even you may ask? Because it has a center. The [7, 7] map chunk of the map is the center and is also the formatted chunk. When a region update is called by the server, a new map is called but you must understand that the formatted chunk never changes; the tiles in the map however are updated and trimmed. When the player moves out of the formatted chunk the map is re-positioned to make that chunk the center yet again. As I said, a new update is not needed every time the player enters a new region but when the range of +- 32 from the point in the center of the chunk is reached a update is required to update the map to the new objects so that the 'black space' or fog is not reached. Confused? 
 
 ===Diagram===
 [http://www.gliffy.com/pubdoc/2764885/L.png External Image]
