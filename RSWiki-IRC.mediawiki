@@ -7,7 +7,7 @@ irc.gyrat.in
 irc.thehost.me
 
 ===Channel(s)===
-<nowiki>#303
+<nowiki>#RSWiki
 </nowiki>
 
 
