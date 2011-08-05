@@ -15,7 +15,7 @@ Displays an item model inside an interface.
 |-
 | [[Data Types#Little Endian|Little Endian]] [[Data Types#Standard data types|Short]] || Interface ID.
 |-
-| [[Data Types#Standard data types|Short]] || The items rotation.
+| [[Data Types#Standard data types|Short]] || The item's model zoom.
 |-
 | [[Data Types#Standard data types|Short]] || The item ID.
 |}
