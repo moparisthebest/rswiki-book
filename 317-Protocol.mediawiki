@@ -648,7 +648,7 @@ The game protocol is the in-game communication of player actions between the ser
 | 248
 | FIXED
 | 4 
-| [[317 Child frame|Child frame]]
+| [[317 Inventory overlay|Inventory overlay]]
 | Attaches an interface within an interface.
 |-
 | 249
