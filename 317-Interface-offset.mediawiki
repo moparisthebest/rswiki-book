@@ -1,7 +1,7 @@
 [[Category Packet]]
 [[Category Packet 317]]
 {{packet|name=Interface offset|description=Sets the offset for drawing of an interface|opcode=70|type=Fixed|length=6|revision=317}}
-== Interface animation ==
+== Interface offset ==
 
 === Description ===
 
