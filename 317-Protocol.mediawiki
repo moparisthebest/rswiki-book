@@ -609,6 +609,12 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 Send private message|Send private message]]
 | Sends a private message to another player.
 |-
+| 200
+| FIXED
+| 8
+| [[317 Interface animation|Interface animation]]
+| Sets an interface's model animation.
+|-
 | 206
 | FIXED
 | 3
