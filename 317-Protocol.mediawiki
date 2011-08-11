@@ -524,6 +524,12 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 Send sidebar interface|Send sidebar interface]]
 | Assigns an interface to one of the tabs in the game sidebar.
 |-
+| 72
+| FIXED
+| 2
+| [[317 Clear inventory|Clear inventory]]
+| Clears an interface's inventory.
+|-
 | 73
 | FIXED
 | 4
@@ -627,6 +633,12 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 Walkable interface|Walkable interface]]
 | Displays an interface in walkable mode.
 |-
+| 214
+| VARIABLE_SHORT
+| N/A
+| [[317 Send add ignore|Send add ignore]]
+| Sends a ignored player to the ignore list.
+|-
 | 219
 | FIXED
 | 0
@@ -636,8 +648,14 @@ The game protocol is the in-game communication of player actions between the ser
 | 221
 | FIXED
 | 1
-| [[Friends list status|Friends list status]]
+| [[317 Friends list status|Friends list status]]
 | Friends list load status.
+|-
+| 230
+| FIXED
+| 8
+| [[317 Interface model rotation|Interface model rotation]]
+| Sets an interface's model rotation and zoom
 |-
 | 240
 | FIXED
