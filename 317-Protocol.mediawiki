@@ -512,6 +512,12 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 Reset button state|Reset button state]]
 | Resets the button state for all buttons.
 |-
+| 70
+| FIXED
+| 12
+| [[317 Interface offset|Interface offset]]
+| Sets the offset for drawing of an interface.
+|-
 | 71
 | FIXED
 | 3
@@ -649,7 +655,7 @@ The game protocol is the in-game communication of player actions between the ser
 | FIXED
 | 4 
 | [[317 Inventory overlay|Inventory overlay]]
-| Attaches an interface within an interface.
+| Displays an interface over the sidebar area.
 |-
 | 249
 | FIXED
