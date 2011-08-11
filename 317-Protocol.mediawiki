@@ -514,7 +514,7 @@ The game protocol is the in-game communication of player actions between the ser
 |-
 | 70
 | FIXED
-| 12
+| 6
 | [[317 Interface offset|Interface offset]]
 | Sets the offset for drawing of an interface.
 |-
@@ -611,7 +611,7 @@ The game protocol is the in-game communication of player actions between the ser
 |-
 | 200
 | FIXED
-| 8
+| 4
 | [[317 Interface animation|Interface animation]]
 | Sets an interface's model animation.
 |-
