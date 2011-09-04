@@ -471,6 +471,31 @@ After the client processes every single player in the update player list, it end
 
 ==Game Protocol==
 The game protocol is the in-game communication of player actions between the server and client.
+
+Server -> Client Packets use Output Streams. The Server writes information using the Output Streams, and then the Client Receives packet information with input stream's...
+
+In order for a Packet to be sent to the client, from the server, a frame is needed to be created first. After the frame frame has been created, the information from the Output Streams, are written, so this makes the information sent to the client for the certain packet. A method in java, for sending the packets information would be like:
+
+<pre>
+	public void sendMessage(String message) {
+		if(getOutStream() != null) {
+			outStream().createFrameVarSize(253);
+			outStream().writeString(s);
+			outStream().endFrameVarSize();
+		}
+	}
+</pre>
+
+The Client might will read it like: 
+
+<pre>
+if(packetType == 253) {
+	String message = inputStream.readString();
+	pushMessage("", 4, null);
+	return true; // false to make the packet not work... true to make it work...
+} 
+</pre>
+
 <br/>
 ===Server -> Client Packets===
 
