@@ -1,5 +1,6 @@
 [[Category Packet]]
 [[Category Packet 317]]
+{{packet|name=Alternate Item Option 2|description=Sent when the player clicks the alternate second option of an item.|opcode=16|type=Fixed|length=6|revision=317}}
 == Alternate Item Option 2 ==
 
 === Description ===
