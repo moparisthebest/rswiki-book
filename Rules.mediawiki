@@ -13,4 +13,7 @@ Any link or upload that contains copywrited material (ex: a client revision or c
 
 
 === '''Posting Unreliable Information''' === 
-The wiki is an education resource, so posting misinformed information is not optimal for learning - please avoid this.
+The wiki is an education resource, so posting misinformed information is not optimal for learning - please avoid this. This includes edits with unclear explanations or bad information.
+
+=== '''Proprietary Code'''===
+No server-specific code, only easily interpretable pseudo-code.
