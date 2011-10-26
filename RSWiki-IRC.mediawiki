@@ -5,9 +5,8 @@ Want to chat with RSWiki members? Discuss anything and everything? Join our IRC 
 irc.moparisthebest.com
 
 ===Channel(s)===
-<nowiki>#RSWiki
+<nowiki>#mopar / #moparscape
 </nowiki>
-
 
 == '''How To Guide (New Users)''' ==
 ===Important commands===
