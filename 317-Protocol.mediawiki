@@ -588,7 +588,7 @@ The game protocol is the in-game communication of player actions between the ser
 | 126
 | VARIABLE_SHORT
 | N/A
-| [[317 Send text|Send text]]
+| [[317 Set interface text|Set interface text]]
 | Attaches text to an interface.
 |-
 | 135
