@@ -9,8 +9,6 @@ Sends the IDs of all the users that this player has in their ignore.
 
 This packet has a slightly different structure than the other packets.
 
-NOTE: Due to my lack of knowledge about Wiki syntax, I am not sure how to wrap the following text in [code] tags.
-
     int entries = packetSize / 8;
     for (int i = 0; i < entries; i++) {
         ignoreList[i] = stream.readLong();
