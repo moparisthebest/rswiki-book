@@ -38,19 +38,16 @@ Blank at the moment.
 ! Name
 ! Description
 |-
-|-
 | 49
 | VARIABLE BYTE
 | 13
 | [[464 Character Design|Character Design]]
-| 
+| Sent when accepting the player's appearance on the design screen.
 |-
 | 115
 | VARIABLE BYTE
 | N/A
 | [[464 Chat|Chat]]
 | Sent when the player enters a chat message. 
-|-
-Sent when the player enters a chat message. 
 |-
 |}
