@@ -20,6 +20,12 @@ Blank at the moment.
 ! Name
 ! Description
 |-
+| 163
+| Fixed
+| 1
+| [[317 Run Energy|Run Energy]]
+| Sends the players run energy percentage.
+|-
 |}
 
 ===Client -> Server Packets===
