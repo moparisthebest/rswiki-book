@@ -33,10 +33,18 @@ Blank at the moment.
 ! Description
 |-
 |-
+| 49
+| VARIABLE BYTE
+| 13
+| [[464 Character Design|Character Design]]
+| 
+|-
 | 115
 | VARIABLE BYTE
 | N/A
-| [[464 Chat|Idle]]
+| [[464 Chat|Chat]]
 | Sent when the player enters a chat message. 
+|-
+Sent when the player enters a chat message. 
 |-
 |}
