@@ -32,4 +32,11 @@ Blank at the moment.
 ! Name
 ! Description
 |-
+|-
+| 115
+| VARIABLE BYTE
+| N/A
+| [[464 Chat|Idle]]
+| Sent when the player enters a chat message. 
+|-
 |}
