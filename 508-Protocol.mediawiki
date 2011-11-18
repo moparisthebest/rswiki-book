@@ -109,4 +109,10 @@ After the header is read by the server, the packet specific data is then read an
 ! Name
 ! Description
 |-
+| 63
+| FIXED
+| 6
+| [[508 Dialogue Options|Dialogue Options.]]
+| Sent when a player clicks an dialogue button. The data sent is InterfaceId, buttonId, and something yet not discovered.
+|-
 |}
