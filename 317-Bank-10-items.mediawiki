@@ -13,7 +13,7 @@ This packet is sent when the player attempts to bank 10 of a certain item.<br>
 ! Data Type
 ! Description
 |-
-| [[Data Types#Big Endian|Big Endian]] [[Data Types#Standard data types|Short]]
+| [[Data Types#Little Endian|Little Endian]] [[Data Types#Standard data types|Short]]
 | The frame ID.
 |-
 | [[Data Types#Standard data types|Short]] [[Data Types#Non Standard Data Types|Special A]]
