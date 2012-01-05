@@ -21,7 +21,7 @@ Changes the zoom and rotation of the interface id's media given.
 | [[Data Types#Standard data types|Word]]
 | The rotation1.
 |-
-| [[Data Types#Big Endian|Big Endian]] [[Data Types#Standard data types|Word]] [[Data Types#Standard data types|Special A]]
+| [[Data Types#Big Endian|Big Endian]] [[Data Types#Standard data types|Word]] [[Data Types#Non Standard data types|Special A]]
 | The rotation2.
 |-
 |}
