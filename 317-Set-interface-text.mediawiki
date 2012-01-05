@@ -19,3 +19,6 @@ Sets the text for the specific interface.
 | The interface id
 |-
 |}
+=== Information ===
+I do not recommend you use this to change the text color.
+I refer you to [[317 Interface color|Interface Color]] for the proper way to do so.
