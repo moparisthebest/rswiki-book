@@ -1,7 +1,93 @@
 [[Category Packet]]
 [[Category Packet 317]]
-== Camera Shake ==
+{{packet|name=Camera Shake|description=Makes the camera shake.|opcode=35|type=Fixed|length=4|revision=317}}
+== Load Map Region ==
 
 === Description ===
+description=Makes the camera shake.
 
-Causes the camera to shake.
+=== Packet Structure ===
+
+{| border=2
+! Data type
+! Description
+|-
+| [[Data Types#Standard data types|Byte]]
+| Shake Type
+|-
+| [[Data Types#Standard data types|Byte]]
+| Magnitude 1
+|-
+| [[Data Types#Standard data types|Byte]]
+| Magnitude 2
+|-
+| [[Data Types#Standard data types|Byte]]
+| Magnitude 3
+|-
+|}
+
+=== Other Information ===
+There are various loops/arrays within the map region loading functionality of the client which have been misunderstood by many.
+{| border=2
+! Shake Type
+! Description
+|-
+| 0
+| Shakes only on the X axis. (Camera Position)
+|-
+| 1
+| Shakes only on the Z axis. (Camera Position)
+|-
+| 2
+| Shakes only on the Y axis. (Camera Position)
+|-
+| 3
+| Shakes only on the X curve. (Camera Curve?)
+|-
+| 4
+| Shakes only on the Y curve. (Camera Curve?)
+|-
+|}
+
+=== What it's doing ===
+Below will show you the calculations it's doing to modify the screen's position to emulate an earthquake or just a shiver or shake.
+{| border=2
+! Calculation
+! Formula
+|-
+| Magnitude
+| ((Math.random() * (double)(Magnitude1[ShakeType] * 2 + 1) - (double)Magnitude1[ShakeType]) + Math.sin((double) anIntArray1030[ShakeType] * 3 ((double) Magnitude3[ShakeType] / 100D)) * Magnitude2[ShakeType])
+|-
+|}
+
+=== Shake Types ===
+{| border=2
+! Shake Type
+! Action
+|-
+| 0
+| xCameraPos += [[Magnitude|Magnitude]]
+|-
+| 1
+| zCameraPos += [[Magnitude|Magnitude]]
+|-
+| 2
+| yCameraPos += [[Magnitude|Magnitude]]
+|-
+| 3
+| xCameraCurve = xCameraCurve + [[Magnitude|Magnitude]] & 0x7ff;
+|-
+| 4
+| yCameraCurve += [[Magnitude|Magnitude]]
+|-
+|}
+
+=== Note ===
+For shake type four it checks the yCameraCurve to make sure it's not out of bounds:
+{| border=2
+|-
+|if (yCameraCurve < 128) then yCameraCurve = 128
+|-
+|if (yCameraCurve > 383) then yCameraCurve = 383
+|-
+|}
