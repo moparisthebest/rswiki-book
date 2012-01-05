@@ -1,0 +1,23 @@
+[[Category Packet]]
+[[Category Packet 317]]
+== Skill Level ==
+
+=== Description ===
+
+This packet changes the experience and level of a given skill id.
+
+=== Packet Structure ===
+{|border=2
+! Data Type
+! Description
+|-
+| [[Data Types#Byte|Byte]]
+| The skill ID.
+|-
+| [[Data Types#DWord|DWord]]
+| The skill experience.
+|-
+| [[Data Types#Byte|Byte]]
+| The skill level.
+|-
+|}
