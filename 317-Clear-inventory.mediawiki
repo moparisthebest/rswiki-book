@@ -12,7 +12,7 @@ This packet creates a loop through a given inventory interface id and sets the i
 ! Data Type
 ! Description
 |-
-| [[Data Types#Big Endian|Big Endian]] [[Data Types#Standard data types|Word]]]]
+| [[Data Types#Big Endian|Big Endian]] [[Data Types#Standard data types|Word]]
 | The interface ID.
 |-
 |}
