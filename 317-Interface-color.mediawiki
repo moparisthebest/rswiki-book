@@ -16,7 +16,7 @@ This packet changes the color of an interface that is text.
 | The interface ID.
 |-
 | [[Data Types#Little Endian|Little Endian]] [[Data Types#Standard data types|Short]] [[Data Types#Non Standard Data Types|Special A]]
-| The color. (0xffffff)
+| The color.
 |-
 |}
 
