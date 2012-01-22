@@ -5,7 +5,7 @@
 
 === Description ===
 
-This packet is sent when the game client window goes in and out of focus. The payload consists of one Byte that is either 1 or 0; 1 if the client is in focus and 0 if not.
+This packet is sent when the game client window goes in and out of focus. The payload consists of one byte that is either 1 or 0; 1 if the client is in focus and 0 if not.
 
 === Packet Structure ===
 {|border=2
