@@ -22,3 +22,18 @@ This packet changes the color of an interface that is text.
 
 === Information ===
 You use this packet to change the color of text in an interface.
+
+{|border=2
+! Color
+! Code
+|-
+| Green
+| 0x3366
+|-
+| Yellow
+| 0x33FF66
+|-
+| Red
+| 0x6000
+|-
+|}
