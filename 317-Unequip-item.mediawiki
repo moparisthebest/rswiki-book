@@ -13,10 +13,10 @@ This packet is sent when a player unequips an item.
 ! Description
 |-
 | Unsigned [[Data Types#Standard data types|Short]] [[Data Types#Non Standard Data Types|Special A]]
-| The items slot ID.
+| The interface ID.
 |-
 | Unsigned [[Data Types#Standard data types|Short]] [[Data Types#Non Standard Data Types|Special A]]
-| The interface ID.
+| The items slot ID.
 |-
 | Unsigned [[Data Types#Standard data types|Short]] [[Data Types#Non Standard Data Types|Special A]]
 | The item ID.
