@@ -13,7 +13,7 @@ This is sent when a player equips an item in-game.
 ! Data type
 ! Description
 |-
-| Unsigned [[Data Types#Standard data types|Short]] [[Data Types#Non Standard Data Types|Special A]]
+| Unsigned [[Data Types#Standard data types|Short]]
 | The ID of the item.
 |-
 | Unsigned [[Data Types#Standard data types|Short]] [[Data Types#Non Standard Data Types|Special A]]
