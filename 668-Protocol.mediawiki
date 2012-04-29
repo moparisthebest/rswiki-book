@@ -26,53 +26,12 @@ Needs documentation on how to login
 ! Name
 ! Description
 |-
-| 8
-| FIXED
-| 2
-| [[508 System update|System update]]
+| 69
+| VARIABLE_SHORT
+| -
+| [[668 System update|System update]]
 | Displays the system update counter on the player's client.
 |-
-| 93
-| FIXED
-| 7
-| [[508 Send interface|Send interface]]
-|
-|-
-| 99
-| FIXED
-| 1
-| [[508 Run energy|Run energy]]
-| Sets the players run energy.
-|-
-| 104
-| FIXED
-| 0
-| [[508 Logout|Logout]]
-| Logs the player out.
-|-
-| 217
-| FIXED
-| 6
-| [[508 Send skill levels|Send skill levels]]
-| Sends the player's skill levels to the client to be drawn on the skill tab.
-|-
-| 218
-| VARIABLE BYTE
-| N/A
-| [[508 Send message|Send message]]
-| Writes a string to the client's chat box.
-|-
-| 239
-| FIXED
-| 3
-| [[508 Set window pane|Set window pane]]
-|
-|-
-| 252
-| VARIABLE BYTE
-| N/A
-| [[508 Send player option|Send player option]]
-| 
 |}
 
 ===Client -> Server Packets===
