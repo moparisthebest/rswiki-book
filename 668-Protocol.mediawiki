@@ -8,38 +8,14 @@ When the client sends a packet to the server, the first byte encapsulates its op
 Every connection to the main 'gateway' server sends a single byte of data, mostly well known as the connection type. The connection type tells the main server which type of connection you wish to initiate. The old engine list consists of:
 
 * Login initiation - connection type 14
-* Update - connection type 15
-* Fresh login - connection type 16
-* JAGGRAB - connection type 17
-* Reconnecting login - connection type 18
-* Worldlist - varies, connection type 255 in #508
+* JAGGRAB - connection type 15
+* Create account - connection type 28
+* Facebook login - connection type 29
 * Potentially more...
 
-
-The connection type we will cover in the following paragraphs is the login connection type, 14. After the login handshake initiating connection type, the client writes a small bit of data derived from the logging in player's username. This is believed to help select the appropriate login server. On successful handshake, the server sends back 8 ignored by
-
-
-At this point, the client reads in one byte, called the status code. The status code 0 is expected to start the login protocol correctly. If the status code is 0, the client reads a long, dubbed by many as the server session key. This is used to help generate a unique seed for the client session's packet opcode masking. The client then stores two ints that are the upper and lower ints of the client session key, which has the same purpose as the server's key. The client then starts writing the login block, which is RSA encrypted.
-
-
-The login block starts with the byte 10, which is considered a magic number. Following it is the client session key and server session key longs. Trailing behind the session keys comes the client's username packed to a 64-bit long and password written as a C-string (NUL-terminated ASCII). This block is then RSA encrypted and stored for later use.
-
-
-Now starts the login request packet. It starts off with a flag telling the server whether or not the client is reconnecting or connecting for the first time [NOW CLASSIFIED AS CONNECTION TYPE]. The byte is 18 or 16, respectively. Following is the size of the rest of the login response packet, including the login block that trails at the end, to tip the server how much data it should expect. Later comes the client revision int. After the client revision, an unknown byte is written that seems to always be zero (possibly the memory usage game-type flag [low mem/high mem]), followed by constantly zero byte and yet another zero byte. Next the packet writes the game applet width and height in pixels as shorts, followed quickly after by the UID (unique identifier or user identifier). Next comes the C-string settings string passed as a param to the applet, and after it the int affiliate identifier (probably identifies the game affiliate it was run on) with another int right after it. This int that trails behind is an unknown int that only has 22 bits used, all of which represent various flags within the client. Any clues as to what they are would be nice. The packet is just about crafted completely. [In 525, a strange short is written here]. To finish off the main chunk, the client writes all cache's reference table index-based CRC32 checksums as ints (29 in 539, 27 in 508, etc). To top it off, the RSA encrypted login block is appended to the end and the packet is sent to the server.
-
-
-The ISAAC ciphers are seeded for packet opcode masking after adding 50 to each int of the session keys, and the status code is reread. This finishes the login protocol.
-
-== '''Game Protocol''' ==
-Game packet header:
-
 <pre>
-ubyte - opcode
-ubyte - packet size only if packet size is sent as -1
-ushort - packet size only if packet size is sent as -2
+Needs documentation on how to login
 </pre>
-
-After the header is read by the server, the packet specific data is then read and decoded by the server.
 
 ===Server -> Client Packets===
 {| border=2
