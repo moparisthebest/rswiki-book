@@ -496,6 +496,12 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 Flash sidebar|Flash sidebar]]
 | Causes a sidebar icon to start flashing.
 |-
+| 27
+| FIXED
+| 0
+| [[317 Input amount|Input Amount]]
+| Displays the "Input amount" interface.
+|-
 | 35
 | FIXED
 | 4
