@@ -599,7 +599,7 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 Set interface text|Set interface text]]
 | Attaches text to an interface.
 |-
-| 135
+| 134
 | FIXED
 | 6
 | [[317 Skill level|Skill level]]
