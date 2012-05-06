@@ -1,6 +1,6 @@
 [[Category Packet]]
 [[Category Packet 317]]
-{{packet|name=Skill level|description=Changes the experience and level of a given skill id.|opcode=135|type=Fixed|length=6|revision=317}}
+{{packet|name=Skill level|description=Changes the experience and level of a given skill id.|opcode=134|type=Fixed|length=6|revision=317}}
 == Skill Level ==
 
 === Description ===
