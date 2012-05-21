@@ -142,7 +142,7 @@ At the beginning and end of the login procedure, we send different values to the
 | "Your account has been disabled. Please check your message-center for details."
 |-
 | 5
-| "Your account is already logged in. Try again in 60 secs..."
+| "Your account is already logged in. Please try again in 60 secs..."
 |-
 | 6
 | "RuneScape has been updated! Please reload this page."
@@ -157,7 +157,7 @@ At the beginning and end of the login procedure, we send different values to the
 | "Login limit exceeded. Too many connections from your address."
 |-
 | 10
-| "Unable to connect. Bad session id."
+| "Unable to connect. Bad session ID."
 |-
 | 11
 | "Login server rejected session. Please try again."
