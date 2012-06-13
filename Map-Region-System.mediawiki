@@ -39,7 +39,7 @@ Note: The Region X and Region Y coordinates are traditionally not used in server
 There is no calculation for a map, and there is no Map X or Map Y. A Map is, however, a 104 x 104 area made up of 13 x 13 chunks. Why is the number not even you may ask? Because it has a center. The [7, 7] map chunk of the map is the center, and is also the formatted chunk. When a region update is called by the server, a new map is called, but you must understand that the formatted chunk never changes; the tiles in the map, however, are updated and trimmed. When the player moves out of the formatted chunk, the map is re-positioned to make that chunk the center yet again. As I said, a new update is not needed every time the player enters a new region, but when the range of +- 32 from the point in the center of the chunk is reached, an update is required to update the map to the new objects so that the 'black space' or fog is not reached. Confused?
 
 ===Diagram===
-[http://www.gliffy.com/pubdoc/2764885/L.png External Image]
+[http://i.imgur.com/C3huO.png External Image]
 
 The active chunk is the chunk in which the player resides. The definite rendering chunks are the chunks in which will be rendered on the players screen no matter where they are in the active chunk. The indefinite rendering chunks are the chunks in which depending on where the player is within the active chunk they may be rendered or not. Remember this depends on the +- distance of 32 from the players absolute position. The queue chunks are pre-loaded chunks in which after the active chunk is moved may be disposed of or activated depending upon the direction in which the active chunk changes.
 
@@ -47,7 +47,7 @@ The active chunk is the chunk in which the player resides. The definite renderin
 
 These were the regions loaded for the coordinates [3183, 3217]:
 
-[http://www.gliffy.com/pubdoc/2764957/L.png External Image]
+[http://i.imgur.com/ydl78.png External Image]
 
 If you can imagine a puzzle, a 64 x 64 piece does not fit equally within the 104 x 104 area. So bits of each region are taken that are within the 104 x 104 map area. 
 
