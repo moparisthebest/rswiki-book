@@ -764,8 +764,8 @@ The game protocol is the in-game communication of player actions between the ser
 | 39
 | FIXED
 | 2
-| [[317 Follow|Follow]]
-| Sent when a player clicks the follow option on another player.
+| [[317 Trade answer|Trade answer]]
+| Sent when a player answers a trade request from another player.
 |-
 | 40
 | FIXED
@@ -914,8 +914,8 @@ The game protocol is the in-game communication of player actions between the ser
 | 139
 | FIXED
 | 2
-| [[317 Trade answer|Trade answer]]
-| Sent when a player answers a trade request from another player.
+| [[317 Follow|Follow]]
+| Sent when a player clicks the follow option on another player.
 |-
 | 145
 | FIXED
