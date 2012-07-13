@@ -49,8 +49,9 @@ The CRC checks for the cache files.
 <br/>
 
 ====User ID====
-The ID of the user.
+A client-side randomly generated integer. This could be used in reassigning sessions to players that have lost connection. It is stored as a packed integer in a file named 'uid.dat' in the cache directory.
 <br/>
+
 ====Username====
 The username of the player, used to identify their account.
 <br/>
