@@ -1,10 +1,10 @@
 [[Category Packet]]
 [[Category Packet 317]]
-{{packet|name=Camera Shake|description=Makes the camera shake.|opcode=35|type=Fixed|length=4|revision=317}}
+{{packet|name=Camera Oscillate|description=Makes the camera shake.|opcode=35|type=Fixed|length=4|revision=317}}
 == Load Map Region ==
 
 === Description ===
-description=Makes the camera shake.
+description=Begins camera oscillation, which is implemented using a configurable sinusoidal oscillator that advances once per render.
 
 === Packet Structure ===
 
@@ -13,81 +13,87 @@ description=Makes the camera shake.
 ! Description
 |-
 | [[Data Types#Standard data types|Byte]]
-| Shake Type
+| Parameter (camera X, Z, Y, yaw, pitch)
 |-
 | [[Data Types#Standard data types|Byte]]
-| Magnitude 1
+| Jitter - for randomization
 |-
 | [[Data Types#Standard data types|Byte]]
-| Magnitude 2
+| Amplitude
 |-
 | [[Data Types#Standard data types|Byte]]
-| Magnitude 3
+| Frequency (scaled by 100)
 |-
 |}
 
 === Other Information ===
-There are various loops/arrays within the map region loading functionality of the client which have been misunderstood by many.
+The oscillate event enables the client to oscillate one of 5 of it's position parameters, i.e. corresponding to the camera's degrees of freedom; parameters 0, 1, and 2 refer to the location of the camera, while 3 and 4 deal with the camera's orientation. Together, these enable complex effects involving manipulation of the camera position to give rise to simulated earth-quakes and camera shock.
 {| border=2
-! Shake Type
+! Parameter
 ! Description
 |-
 | 0
-| Shakes only on the X axis. (Camera Position)
+| Camera location along world X axis (a horizontal axis, aligned with map grid X)
 |-
 | 1
-| Shakes only on the Z axis. (Camera Position)
+| Camera location along world Z axis (vertical axis)
 |-
 | 2
-| Shakes only on the Y axis. (Camera Position)
+| Camera location along world Y axis (a horizontal axis, aligned with map grid Y)
 |-
 | 3
-| Shakes only on the X curve. (Camera Curve?)
+| Camera orientation in world X plane w.r.t. world Z axis, i.e. yaw
 |-
 | 4
-| Shakes only on the Y curve. (Camera Curve?)
+| Camera orientation in world Z plane w.r.t. world X axis, i.e. pitch
 |-
 |}
+Note there is no built-in way to manipulate camera roll, as this is not one of the camera's degrees of freedom.
 
 === What it's doing ===
-Below will show you the calculations it's doing to modify the screen's position to emulate an earthquake or just a shiver or shake.
+Every time the world is rendered, each camera parameter that is enabled for oscillation is offset by a value computed as follows:
 {| border=2
 ! Calculation
 ! Formula
 |-
-| Magnitude
-| ((Math.random() * (double)(Magnitude1[ShakeType] * 2 + 1) - (double)Magnitude1[ShakeType]) + Math.sin((double) anIntArray1030[ShakeType] * 3 ((double) Magnitude3[ShakeType] / 100D)) * Magnitude2[ShakeType])
+| Delta
+| (int) ((Math.random() * (double) (jitter * 2 + 1) - (double) jitter) + Math.sin((double) phase * ((double) frequency / 100D)) * (double) amplitude);
 |-
 |}
+Each parameter's phase accumulator (phase) is incremented by 1 each logic update.
 
-=== Shake Types ===
+=== Parameter ===
+The offset itself is detailed as follows for each parameter:
 {| border=2
-! Shake Type
+! Parameter
 ! Action
 |-
 | 0
-| xCameraPos += [[Magnitude|Magnitude]]
+| camera_x += delta
 |-
 | 1
-| zCameraPos += [[Magnitude|Magnitude]]
+| camera_z += delta
 |-
 | 2
-| yCameraPos += [[Magnitude|Magnitude]]
+| camera_y += delta
 |-
 | 3
-| xCameraCurve = xCameraCurve + [[Magnitude|Magnitude]] & 0x7ff;
+| camera_yaw = camera_yaw + delta & 0x7ff;
 |-
 | 4
-| yCameraCurve += [[Magnitude|Magnitude]]
+| camera_pitch += delta
 |-
 |}
+Note that the camera's yaw is corrected modulo 0x7ff, or 2048, which is equivalent to 2{{{pi}}} radians in Jagex's binary angle system.
+This is not done to the camera pitch, which is instead clamped (see below).
 
 === Note ===
-For shake type four it checks the yCameraCurve to make sure it's not out of bounds:
+For oscillating the camera pitch, clamping is done to ensure the angle not out of bounds:
 {| border=2
 |-
-|if (yCameraCurve < 128) then yCameraCurve = 128
+|if (camera_pitch < 128) then camera_pitch = 128
 |-
-|if (yCameraCurve > 383) then yCameraCurve = 383
+|if (camera_pitch > 383) then camera_pitch = 383
 |-
 |}
+This is do to Jagex restricting the possible range of orientations the camera may take.
