@@ -4,7 +4,7 @@
 == Camera oscillate ==
 
 === Description ===
-description=Begins camera oscillation, which is implemented using a configurable sinusoidal oscillator to offset a specific degree of freedom.
+Begins camera oscillation, which is implemented using a configurable sinusoidal oscillator to offset a specific degree of freedom.
 
 === Packet Structure ===
 
