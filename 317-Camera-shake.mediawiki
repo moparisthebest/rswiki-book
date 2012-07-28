@@ -1,10 +1,10 @@
 [[Category Packet]]
 [[Category Packet 317]]
-{{packet|name=Camera Oscillate|description=Makes the camera shake.|opcode=35|type=Fixed|length=4|revision=317}}
-== Load Map Region ==
+{{packet|name=Camera oscillate|description=Begin camera oscillation|opcode=35|type=Fixed|length=4|revision=317}}
+== Camera oscillate ==
 
 === Description ===
-description=Begins camera oscillation, which is implemented using a configurable sinusoidal oscillator that advances once per render.
+description=Begins camera oscillation, which is implemented using a configurable sinusoidal oscillator to offset a specific degree of freedom.
 
 === Packet Structure ===
 
