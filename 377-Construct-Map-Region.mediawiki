@@ -1,6 +1,6 @@
 [[Category Packet]]
 [[Category Packet 377]]
-{{packet|name=Construct Map Region|description=Creates a map region.|opcode=53|type=Variable|length=89|revision=377}}
+{{packet|name=Construct Map Region|description=Creates a map region.|opcode=53|type=Variable Short|length=N/A|revision=377}}
 == Interface Animation ==
 
 === Description ===
