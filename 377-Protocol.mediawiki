@@ -66,8 +66,8 @@
 ! Displays an interface in walkable mode.
 |-
 ! 53
-! FIXED
-! 89
+! VARIABLE_SHORT
+! N/A
 ! [[377 Construct Map Region|Construct Map Region]]
 ! Constructs a map region given the region's x and y coordinate.
 |-
