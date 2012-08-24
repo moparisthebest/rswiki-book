@@ -109,3 +109,11 @@ Middle endian big int: C3 D4 A1 B2
 Middle endian small int: B2 A1 D4 C3
 
 (A1 smallest D4 biggest byte)
+
+== Bit Access ==
+
+=== Initiating Bit Access ===
+
+Whenever data is to be sent to the server or to the client using bits; the stream needs to be prepared by setting the bit position. The bit position can be calculated by grabbing the current buffer position and multiplying it by 8. This can be seen below.
+
+ int bitPos = bufferPos * 8;
