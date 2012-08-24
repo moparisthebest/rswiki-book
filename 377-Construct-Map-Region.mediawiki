@@ -25,8 +25,6 @@ Sets the animation for a model on an interface.
 
 === Information ===
 
-The size of the packet will vary based on whether a tile exists or not. This means that the smallest size of the packet will be 89 bytes but could vary as high as 2285 bytes.
-
 If the tile exists then a 1 gets written to the output stream as a 1 otherwise a zero gets written to the stream.
 
 If the tile does exist then you would follow that 1 bit with 26 bits of information about the tile.
