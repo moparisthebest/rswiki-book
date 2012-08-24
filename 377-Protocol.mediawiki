@@ -67,7 +67,7 @@
 |-
 ! 53
 ! FIXED
-! 4
+! 89
 ! [[377 Construct Map Region|Construct Map Region]]
 ! Constructs a map region given the region's x and y coordinate.
 |-
