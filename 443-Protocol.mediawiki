@@ -106,6 +106,12 @@
 ! [[443 Set Spawn Sector|Set Spawn Sector]]
 ! Sets the sector on the map where entities will be spawned.
 |-
+! 133
+! FIXED
+! 2
+! [[443 Reset Sector|Reset Sector]]
+! Resets all the ground items and still objects in a sector.
+|-
 ! 41
 ! FIXED
 ! 0
