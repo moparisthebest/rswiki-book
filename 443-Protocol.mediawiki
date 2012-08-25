@@ -3,6 +3,9 @@
 ==Game Protocol==
 
 
+
+
+
 ===Server > Client Packets===
 
 {| border=2
