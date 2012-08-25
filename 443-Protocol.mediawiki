@@ -12,6 +12,10 @@
 ! Login (initial)
 ! Out of game client state where the client initially engages to log in to the server.
 |-
+! 25
+! Scene Graph Rebuild
+! Ingame client state where the client rebuilds the scene graph.
+|-
 ! 30
 ! Ingame 
 ! Default ingame client state.
