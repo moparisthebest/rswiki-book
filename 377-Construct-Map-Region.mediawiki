@@ -30,8 +30,8 @@ If the tile exists then a 1 gets written to the output stream as a 1 otherwise a
 If the tile does exist then you would follow that 1 bit with 26 bits of information about the tile.
 
  int info = inStream.readBits(26);
- int unknown = info >> 24 & 3;
- int unknown = info >> 1 & 3;
+ int heightLevel = info >> 24 & 3;
+ int rotation = info >> 1 & 3;
  int regionX = info >> 14 & 0x3ff;
  int regionY = info >> 3 & 0x7ff;
 
