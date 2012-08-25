@@ -1,10 +1,23 @@
 [[Category RS2]]
 
+==Client States==
+
+{| border=3
+|-
+! Opcode
+! Name
+! Description
+|-
+! 30
+! Ingame 
+! Default ingame client state.
+|-
+! 35
+! Ingame (screen overlay)
+! Ingame client state where the screen is overlayed with a widget.
+|}
+
 ==Game Protocol==
-
-
-
-
 
 ===Server > Client Packets===
 
