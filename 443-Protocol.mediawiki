@@ -64,6 +64,12 @@
 ! [[443 Display Window|Display Window]]
 ! Displays a widget as a window.
 |-
+! 6
+! FIXED
+! 2
+! [[443 Display Chatbox Interface|Display Chatbox Interface]]
+! Displays the chatbox as a widget.
+|-
 ! 3
 ! FIXED
 ! 6
