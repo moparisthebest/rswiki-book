@@ -59,4 +59,22 @@
 ! 0
 ! [[443 Logout|Logout]]
 ! Logs the client out from the server.
-|-}
+|}
+
+
+===Client > Server Protocol===
+
+{| border = 2
+|-
+! Opcode
+! Type
+! Length (bytes)
+! Name
+! Description
+|-
+! 70
+! FIXED
+! 0
+! [[443 Close Window|Close Window]]
+! Called when the currently opened window is closed.
+|}
