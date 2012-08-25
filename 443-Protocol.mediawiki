@@ -46,6 +46,12 @@
 ! [[443 Update Skill|Update Skill]]
 ! Updates a skill by sending its experience and dynamic level.
 |-
+! 226
+! FIXED
+! 1
+! [[443 Update Run Energy|Update Run Energy]]
+! Updates the amount of run energy the player has.
+|-
 ! 192
 ! VARIABLE SHORT
 ! NA
