@@ -8,7 +8,7 @@
 
 ===Server > Client Packets===
 
-{| border=3; padding = 3
+{| border=3
 |-
 ! Opcode
 ! Type
