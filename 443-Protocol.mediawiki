@@ -1,7 +1,5 @@
 [[Category RS2]]
 
-[[Category RS2]]
-
 ==Game Protocol==
 
 ===Server > Client Packets===
@@ -16,48 +14,48 @@
 ! 29
 ! VARIABLE SHORT
 ! NA
-! [[414 Player Update|Player Update]]
+! [[443 Player Update|Player Update]]
 ! Updates the players within the client's view.
 |-
 ! 121 
 ! VARIABLE SHORT
 ! NA
-! [[414 Rebuild Map|Rebuild Scene Graph]]
+! [[443 Rebuild Map|Rebuild Scene Graph]]
 ! Rebuilds the players scene graph.
 |-
 ! 157
 ! VARIABLE BYTE
 ! NA
-! [[414 Send Message|Send Message]]
+! [[443 Send Message|Send Message]]
 ! Sends a message to the client's chatbox.
 |-
 ! 58
 ! FIXED
 ! 6
-! [[414 Update Skill|Update Skill]]
+! [[443 Update Skill|Update Skill]]
 ! Updates a skill by sending its experience and dynamic level.
 |-
 ! 160
 ! FIXED
 ! 4
-! [[414 Display Window|Display Window]]
+! [[443 Display Window|Display Window]]
 ! Displays a widget as a window.
 |-
 ! 228
 ! VARIABLE SHORT
 ! NA
-! [[414 Send Items|Send Items]]
+! [[443 Send Items|Send Items]]
 ! Sends the items in an item container.
 |- 
 ! 213
 ! VARIABLE SHORT
 ! NA
-! [[414 Update Items|Update Items]]
+! [[443 Update Items|Update Items]]
 ! Updates the items in an item container from their slot id.
 |-
 ! 41
 ! FIXED
 ! 0
-! [[414 Logout|Logout]]
+! [[443 Logout|Logout]]
 ! Logs the client out from the server.
 |-}
