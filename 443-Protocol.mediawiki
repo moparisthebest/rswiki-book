@@ -52,6 +52,12 @@
 ! [[443 Class Check Request|Class Check Request]]
 ! Parses a request for a class check request.
 |-
+! 163
+! FIXED
+! 0
+! [[443 Reset States|Reset States]]
+! Resets all the client state variables.
+|-
 ! 160
 ! FIXED
 ! 4
