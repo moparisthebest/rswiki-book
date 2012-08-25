@@ -388,7 +388,7 @@ Inside this loop, the client reads 1 bit. This is the movement update required f
 
 * 2, the client does the exact same thing as the type 2 update, except it reads in two of the 3 bit quantities. The first represents the current player's last direction, and the second its current direction running.
 
-* 3, it only adds the player to the needing-update list, or so believed. Type 3 is not well known.
+* 3, the client queues to remove the player from the list of players to be updated but it is possible such as in the instances for when players teleport to add them back to the list of players to be updated during the populate update.
 
 
 
