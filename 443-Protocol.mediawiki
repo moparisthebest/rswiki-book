@@ -1,5 +1,9 @@
 [[Category RS2]]
 
+[[Category RS2]]
+
+==Game Protocol==
+
 ===Server > Client Packets===
 {| border=2
 |-
