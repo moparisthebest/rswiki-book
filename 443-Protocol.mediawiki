@@ -9,6 +9,10 @@
 ! Description
 |-
 ! 0
+! Loading (initial)
+! Out of game client state where the client is initially loading itself to the login screen.
+|-
+! 5
 ! Loading
 ! Out of game client state where the client is loading itself to the login screen.
 |-
