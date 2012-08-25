@@ -64,6 +64,12 @@
 ! [[443 Class Check Request|Class Check Request]]
 ! Parses a request for a class check request.
 |-
+! 74
+! FIXED
+! 6
+! [[443 Set State Value|Set State Value (large)]]
+! Sets the value of a client state variable.
+|-
 ! 163
 ! FIXED
 ! 0
