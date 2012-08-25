@@ -3,6 +3,7 @@
 ==Game Protocol==
 
 ===Server > Client Packets===
+
 {| border=2
 |-
 ! Opcode
