@@ -94,6 +94,12 @@
 ! [[443 Display Item On Widget|Display Item on Widget]]
 ! Displays the model of an item on a widget.
 |-
+! 147
+! FIXED
+! 10
+! [[443 Set Model Rotation|Set Model Rotation]]
+! Sets the x and y rotation of a model on a widget.
+|-
 ! 228
 ! VARIABLE SHORT
 ! NA
