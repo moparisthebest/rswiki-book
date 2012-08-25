@@ -2,6 +2,7 @@
 
 ==Game Protocol==
 
+
 ===Server > Client Packets===
 
 {| border=2
@@ -66,8 +67,6 @@
 ! [[443 Logout|Logout]]
 ! Logs the client out from the server.
 |}
-
-
 
 ===Client > Server Protocol===
 
