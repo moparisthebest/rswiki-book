@@ -115,7 +115,7 @@
 
 ===Client > Server Protocol===
 
-{| border = 2
+{| border = 3, padding = 2
 |-
 ! Opcode
 ! Type
