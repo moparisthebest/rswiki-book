@@ -14,7 +14,11 @@
 |-
 ! 35
 ! Ingame (screen overlay)
-! Ingame client state where the screen is overlayed with a widget.
+! Ingame client state where the client screen is overlayed with a widget.
+|-
+! 40
+! Login
+! Out of game client state where the client engages to log in to the server.
 |}
 
 ==Game Protocol==
