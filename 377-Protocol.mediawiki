@@ -2,7 +2,13 @@
 [[Category Packet 377]]
 [[Category RS2]]
 
-===Server -> Client Packets===
+=== Login Protocol ===
+
+The Login protocol is identical to the [[317 Protocol#Login Protocol Overview|317 Login protocol]].
+
+== Game Protocol ==
+
+=== Server -> Client Packets ===
 {| border=2
 |-
 ! Opcode
