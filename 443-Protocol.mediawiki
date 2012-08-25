@@ -88,6 +88,12 @@
 ! [[443 Change Inactive Color|Change Inactive Color]]
 ! Changes the widget's inactive color.
 |-
+! 137
+! FIXED
+! 10
+! [[443 Display Item On Widget|Display Item on Widget]]
+! Displays the model of an item on a widget.
+|-
 ! 228
 ! VARIABLE SHORT
 ! NA
