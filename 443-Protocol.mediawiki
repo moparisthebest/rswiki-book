@@ -91,7 +91,7 @@
 ! 245 
 ! FIXED
 ! 0
-! [[443 Reset Items|Reset_Items]]
+! [[443 Reset Items|Reset Items]]
 ! Resets all the items in an item container.
 |-
 ! 41
