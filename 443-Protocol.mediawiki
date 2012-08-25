@@ -25,8 +25,14 @@
 ! 121 
 ! VARIABLE SHORT
 ! NA
-! [[443 Rebuild Map|Rebuild Scene Graph]]
+! [[443 Rebuild Scene Graph|Rebuild Scene Graph]]
 ! Rebuilds the players scene graph.
+|-
+! 193
+! VARIABLE SHORT
+! NA
+! [[443 Rebuild Scene Graph|Rebuild Custom Scene Graph]]
+! Builds a custom scene graph.
 |-
 ! 157
 ! VARIABLE BYTE
