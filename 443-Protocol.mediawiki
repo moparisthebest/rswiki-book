@@ -36,6 +36,12 @@
 ! [[443 Update Skill|Update Skill]]
 ! Updates a skill by sending its experience and dynamic level.
 |-
+! 192
+! VARIABLE SHORT
+! NA
+! [[443 Execute Client Script|Execute Client Script]]
+! Executes a client script.
+|-
 ! 160
 ! FIXED
 ! 4
@@ -60,7 +66,6 @@
 ! [[443 Logout|Logout]]
 ! Logs the client out from the server.
 |}
-
 
 ===Client > Server Protocol===
 
