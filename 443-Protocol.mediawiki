@@ -88,6 +88,12 @@
 ! [[443 Update Items|Update Items]]
 ! Updates the items in an item container from their slot id.
 |-
+! 245 
+! FIXED
+! 0
+! [[443 Reset Items|Reset_Items]]
+! Resets all the items in an item container.
+|-
 ! 41
 ! FIXED
 ! 0
