@@ -94,6 +94,12 @@
 ! [[443 Reset Items|Reset Items]]
 ! Resets all the items in an item container.
 |-
+! 82
+! FIXED
+! 2
+! [[443 Set Spawn Sector|Set Spawn Sector]]
+! Sets the sector on the map where entities will be spawned.
+|-
 ! 41
 ! FIXED
 ! 0
