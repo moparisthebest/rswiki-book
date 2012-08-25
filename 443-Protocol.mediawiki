@@ -52,6 +52,12 @@
 ! [[443 Display Window|Display Window]]
 ! Displays a widget as a window.
 |-
+! 3
+! FIXED
+! 6
+! [[443 Change Inactive Color|Change Inactive Color]]
+! Changes the widget's inactive color.
+|-
 ! 228
 ! VARIABLE SHORT
 ! NA
@@ -70,10 +76,6 @@
 ! [[443 Logout|Logout]]
 ! Logs the client out from the server.
 |}
-
-
-
-
 
 ===Client > Server Protocol===
 
