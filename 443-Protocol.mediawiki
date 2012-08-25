@@ -67,6 +67,8 @@
 ! Logs the client out from the server.
 |}
 
+
+
 ===Client > Server Protocol===
 
 {| border = 2
