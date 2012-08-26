@@ -268,6 +268,12 @@ Client states are used to switch between different graphic and logic procedures.
 ! [[443 Add Friend|Add Friend]]
 ! Called when a new name has been added to the friend list.
 |-
+! 159
+! FIXED
+! 8
+! [[443 Add Ignore|Add Ignore]]
+! Called when a new name has been added to the ignore list.
+|-
 ! 70
 ! FIXED
 ! 0
