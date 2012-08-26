@@ -161,6 +161,12 @@ Client states are used to switch between different graphic and logic procedures.
 ! [[443 Display Chatbox Interface|Display Chatbox Interface]]
 ! Displays the chatbox as a widget.
 |-
+! 178
+! FIXED
+! 0
+! [[443 Close Displayed Widgets|Close Displayed Widgets]]
+! Closes all the displayed widgets except for the chatbox interface.
+|-
 ! 51
 ! FIXED
 ! 0
