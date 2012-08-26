@@ -94,6 +94,12 @@ Client states are used to switch between different graphic and logic procedures.
 ! 1
 ! [[443 Update Run Energy|Update Run Energy]]
 ! Updates the amount of run energy the player has.
+|- 
+! 87
+! FIXED
+! 1 
+! [[443 Set Minimap State|Set Minimap State]]
+! Sets the minimap state.
 |-
 ! 192
 ! VARIABLE SHORT
