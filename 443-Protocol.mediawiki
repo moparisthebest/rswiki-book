@@ -65,6 +65,12 @@ Client states are used to switch between different graphic and logic procedures.
 ! [[443 Player Update|Player Update]]
 ! Updates the players within the client's view.
 |-
+! 238
+! VARIABLE SHORT
+! NA
+! [[443 NPC Update|NPC Update]]
+! Updates the npcs within the client's view.
+|-
 ! 121 
 ! VARIABLE SHORT
 ! NA
