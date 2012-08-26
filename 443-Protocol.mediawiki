@@ -173,6 +173,12 @@ Client states are used to switch between different graphic and logic procedures.
 ! [[443 Change Inactive Color|Change Inactive Color]]
 ! Changes the widget's inactive color.
 |-
+! 31
+! FIXED
+! 4
+! [[443 Display Player On Widget|Display Player on Widget]]
+! Displays the local player on a widget.
+|-
 ! 137
 ! FIXED
 ! 10
