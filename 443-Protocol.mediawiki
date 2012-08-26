@@ -197,6 +197,12 @@ Client states are used to switch between different graphic and logic procedures.
 ! [[443 Set Spawn Sector|Set Spawn Sector]]
 ! Sets the sector on the map where entities will be spawned.
 |-
+! 244
+! VARIABLE SHORT
+! NA
+! [[443 Spawn Sector|Spawn Sector]]
+! Parses the sector of the map to spawn entities, then the actual entity spawns.
+|-
 ! 133
 ! FIXED
 ! 2
