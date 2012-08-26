@@ -161,6 +161,12 @@ Client states are used to switch between different graphic and logic procedures.
 ! [[443 Display Chatbox Interface|Display Chatbox Interface]]
 ! Displays the chatbox as a widget.
 |-
+! 51
+! FIXED
+! 0
+! [[443 Fetch Input|Fetch Input]]
+! Fetches input from the chatbox.
+|-
 ! 3
 ! FIXED
 ! 6
