@@ -2,6 +2,8 @@
 
 ==Client States==
 
+Client states are used to switch between different graphic and logic procedures. The state of the client is global.
+
 {| border=3
 |-
 ! Opcode
