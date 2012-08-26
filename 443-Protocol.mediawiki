@@ -155,6 +155,12 @@ Client states are used to switch between different graphic and logic procedures.
 ! [[443 Set Model Rotation|Set Model Rotation]]
 ! Sets the x and y rotation of a model on a widget.
 |-
+! 73
+! FIXED 
+! 8 
+! [[443 Rotate Model|Rotate Model]]
+! Sets the amount to rotate the model continuously about the x axis.
+|-
 ! 228
 ! VARIABLE SHORT
 ! NA
