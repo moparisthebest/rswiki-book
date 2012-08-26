@@ -83,6 +83,12 @@ Client states are used to switch between different graphic and logic procedures.
 ! [[443 Rebuild Scene Graph|Rebuild Custom Scene Graph]]
 ! Builds a custom scene graph.
 |-
+! 199
+! FIXED
+! 3
+! [[443 Set Location|Set Location]]
+! Sets the location on the map of where the player is.
+|-
 ! 157
 ! VARIABLE BYTE
 ! NA
