@@ -113,6 +113,12 @@ Client states are used to switch between different graphic and logic procedures.
 ! [[443 Set Minimap State|Set Minimap State]]
 ! Sets the minimap state.
 |-
+! 117
+! FIXED
+! 1
+! [[443 System Update|System Update]]
+! Informs the client that a system update will be happening.
+|-
 ! 192
 ! VARIABLE SHORT
 ! NA
