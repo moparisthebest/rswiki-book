@@ -280,6 +280,12 @@ Client states are used to switch between different graphic and logic procedures.
 ! [[Class Check|Class Check Response]]
 ! Response to a class check request sent from the server.
 |-
+! 4
+! NA
+! VARIABLE BYTE
+! [[443 Chat|Chat]]
+! Called when the client enters in a chat message.
+|-
 ! 174
 ! NA
 ! VARIABLE BYTE
