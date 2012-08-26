@@ -179,6 +179,12 @@ Client states are used to switch between different graphic and logic procedures.
 ! [[443 Change Inactive Color|Change Inactive Color]]
 ! Changes the widget's inactive color.
 |-
+! 232
+! FIXED
+! 10
+! [[443 Set Offset|Set Offset]]
+! Sets the x and y offset of a widget.
+|-
 ! 31
 ! FIXED
 ! 4
