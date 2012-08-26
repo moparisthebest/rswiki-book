@@ -125,6 +125,12 @@ Client states are used to switch between different graphic and logic procedures.
 ! [[443 Set State Value|Set State Value (large)]]
 ! Sets the value of a client state variable.
 |-
+! 62
+! FIXED
+! 3
+! [[443 Set State Value|Set State Value (small)]]
+! Sets the value of a client state variable.
+|-
 ! 163
 ! FIXED
 ! 0
