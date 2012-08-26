@@ -161,6 +161,12 @@ Client states are used to switch between different graphic and logic procedures.
 ! [[443 Display Window|Display Window]]
 ! Displays a widget as a window.
 |-
+! 221
+! FIXED
+! 4
+! [[443 Display Screen Overlay|Display Screen Overlay]]
+! Displays widgets over the entire screen of the client.
+|-
 ! 6
 ! FIXED
 ! 2
