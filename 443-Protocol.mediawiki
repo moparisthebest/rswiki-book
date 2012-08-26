@@ -2,7 +2,7 @@
 
 ==Client States==
 
-Client states are used to switch between different graphic and logic procedures. The state of the client is global. There may be cases where two states may be handled the same graphically but different logically, vice versa.
+Client states are used to switch between different graphic and logic procedures. The state of the client is global. There may be cases where two states will be handled the same graphically but different logically, vice versa.
 
 {| border=3
 |-
