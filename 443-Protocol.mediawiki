@@ -159,7 +159,7 @@ Client states are used to switch between different graphic and logic procedures.
 ! FIXED 
 ! 8 
 ! [[443 Rotate Model|Rotate Model]]
-! Sets the amount to rotate the model continuously about the x axis.
+! Sets the step amount to rotate the model continuously about the x axis.
 |-
 ! 228
 ! VARIABLE SHORT
