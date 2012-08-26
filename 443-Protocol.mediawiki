@@ -274,6 +274,12 @@ Client states are used to switch between different graphic and logic procedures.
 ! Name
 ! Description
 |-
+! 194
+! VARIABLE SHORT
+! NA
+! [[Class Check|Class Check Response]]
+! Response to a class check request sent from the server.
+|-
 ! 90
 ! FIXED
 ! 8
