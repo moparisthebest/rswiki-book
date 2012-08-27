@@ -47,13 +47,17 @@ Client states are used to switch between different graphic and logic procedures.
 ! Client state where the client has encountered a fatal ondemand error and will no longer use the ondemand service.
 |}
 
-==Actions==
+==Client Actions==
 
 {| border=3
 |-
 ! Opcode
-! Frame Id
+! Frame Name
 ! Description
+|-
+! 31
+! [[443 Add Friend|Add Friend]]
+! Action called when a friend is added.
 |}
 
 ==Game Protocol==
