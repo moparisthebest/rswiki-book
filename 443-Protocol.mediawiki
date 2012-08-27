@@ -197,6 +197,13 @@ Client states are used to switch between different graphic and logic procedures.
 ! position x
 ! position y
 ! Action for the fifth option of a ground item.
+|-
+! 1006
+! [[443 Object Examine|Object_Examine]]
+! id
+! position x
+! position y
+! Action for the examine option of an object.
 |}
 
 ==Game Protocol==
