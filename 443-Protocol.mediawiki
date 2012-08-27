@@ -56,7 +56,6 @@ Client states are used to switch between different graphic and logic procedures.
 ! Variable 0
 ! Variable 1
 ! Variable 2
-! Action Name
 ! Description
 |-
 ! 31
@@ -64,7 +63,6 @@ Client states are used to switch between different graphic and logic procedures.
 ! NA
 ! NA
 ! NA
-! #{ name_of_friend_to_add }
 ! Action for when a friend is added.
 |-
 ! 2
@@ -72,7 +70,6 @@ Client states are used to switch between different graphic and logic procedures.
 ! NA
 ! NA
 ! NA
-! #{ name_of_friend_to_remove }
 ! Action for when a friend is removed.
 |-
 ! 21
@@ -80,7 +77,6 @@ Client states are used to switch between different graphic and logic procedures.
 ! NA
 ! NA
 ! NA
-! #{ name_of_ignore_to_add }
 ! Action for when an ignore is added.
 |-
 ! 50
@@ -88,7 +84,6 @@ Client states are used to switch between different graphic and logic procedures.
 ! NA
 ! NA
 ! NA
-! #{ name_of_ignore_to_remove }
 ! Action for when an ignore is removed.
 |-
 ! 41
@@ -96,7 +91,6 @@ Client states are used to switch between different graphic and logic procedures.
 ! id
 ! position x
 ! position y
-! #{ action } #{ npc_name }
 ! Action for the first option of a NPC.
 |-
 ! 17
@@ -104,7 +98,6 @@ Client states are used to switch between different graphic and logic procedures.
 ! id
 ! position x
 ! position y
-! #{ action } #{ npc_name }
 ! Action for the second option of a NPC.
 |-
 ! 13
@@ -112,7 +105,6 @@ Client states are used to switch between different graphic and logic procedures.
 ! id
 ! position x
 ! position y
-! #{ action } #{ npc_name }
 ! Action for the third option of a NPC.
 |-
 ! 53
@@ -120,7 +112,6 @@ Client states are used to switch between different graphic and logic procedures.
 ! id
 ! position x
 ! position y
-! #{ action } #{ npc_name }
 ! Action for the fourth option of a NPC.
 |-
 ! 46
@@ -128,7 +119,6 @@ Client states are used to switch between different graphic and logic procedures.
 ! id
 ! position x
 ! position y
-! #{ action } #{ npc_name }
 ! Action for the fifth option of a NPC.
 |}
 
