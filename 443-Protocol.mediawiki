@@ -162,6 +162,41 @@ Client states are used to switch between different graphic and logic procedures.
 ! position x
 ! position y
 ! Action for the fifth option of a NPC.
+|-
+! 40
+! [[443 Ground Item Option 0|Ground Item Option 0]]
+! id
+! position x
+! position y
+! Action for the first option of a ground item.
+|-
+! 38
+! [[443 Ground Item Option 1|Ground Item Option 1]]
+! id
+! position x
+! position y
+! Action for the second option of a ground item.
+|-
+! 34
+! [[443 Ground Item Option 2|Ground Item Option 2]]
+! id
+! position x
+! position y
+! Action for the third option of a ground item.
+|-
+! 11
+! [[443 Ground Item Option 3|Ground Item Option 3]]
+! id
+! position x
+! position y
+! Action for the fourth option of a ground item.
+|-
+! 3
+! [[443 Ground Item Option 4|Ground Item Option 4]]
+! id
+! position x
+! position y
+! Action for the fifth option of a ground item.
 |}
 
 ==Game Protocol==
