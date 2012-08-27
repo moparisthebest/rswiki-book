@@ -163,6 +163,13 @@ Client states are used to switch between different graphic and logic procedures.
 ! position y
 ! Action for the fifth option of a NPC.
 |-
+! 1001
+! [[443 Npc Examine|Npc Examine]]
+! id
+! position x
+! position y
+! Action for the examine option of a Npc.
+|-
 ! 40
 ! [[443 Ground Item Option 0|Ground Item Option 0]]
 ! id
@@ -199,7 +206,7 @@ Client states are used to switch between different graphic and logic procedures.
 ! Action for the fifth option of a ground item.
 |-
 ! 1006
-! [[443 Object Examine|Object_Examine]]
+! [[443 Object Examine|Object Examine]]
 ! id
 ! position x
 ! position y
