@@ -86,6 +86,20 @@ Client states are used to switch between different graphic and logic procedures.
 ! NA
 ! Action for when an ignore is removed.
 |-
+! 44
+! [[443 Player Option 0|Player Option 0]]
+! id
+! position x
+! position y
+! Action for the first option of a player.
+|-
+! 22
+! [[443 Player Option 1|Player Option 1]]
+! id
+! position x
+! position y
+! Action for the second option of a player.
+|-
 ! 41
 ! [[443 Npc Option 0|Npc Option 0]]
 ! id
