@@ -133,7 +133,6 @@ Client states are used to switch between different graphic and logic procedures.
 ! id
 ! position x
 ! position y
-! #{ action } #{ npc_name }
 ! Action for the first option of a NPC.
 |-
 ! 17
