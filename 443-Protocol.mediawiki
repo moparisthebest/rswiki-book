@@ -90,6 +90,13 @@ Client states are used to switch between different graphic and logic procedures.
 ! NA
 ! #{ name_of_ignore_to_remove }
 ! Action for when an ignore is removed.
+|-
+! 41
+! [[443 Npc Option 0|Npc Option 0]]
+! id
+! position x
+! position y
+! #{ action } #{ npc_name }
 |}
 
 ==Game Protocol==
