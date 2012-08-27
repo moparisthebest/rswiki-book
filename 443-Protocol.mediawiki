@@ -53,22 +53,42 @@ Client states are used to switch between different graphic and logic procedures.
 |-
 ! Opcode
 ! Frame Name
+! Variable 0
+! Variable 1
+! Variable 2
+! Action Name
 ! Description
 |-
 ! 31
 ! [[443 Add Friend|Add Friend]]
+! NA
+! NA
+! NA
+! #{ name_of_friend_to_add }
 ! Action for when a friend is added.
 |-
 ! 2
 ! [[443 Remove Friend|Remove Friend]]
+! NA
+! NA
+! NA
+! #{ name_of_friend_to_remove }
 ! Action for when a friend is removed.
 |-
 ! 21
 ! [[443 Add Ignore|Add Ignore]]
+! NA
+! NA
+! NA
+! #{ name_of_ignore_to_add }
 ! Action for when an ignore is added.
 |-
 ! 50
 ! [[443 Remove Ignore|Remove Ignore]]
+! NA
+! NA
+! NA
+! #{ name_of_ignore_to_remove }
 ! Action for when an ignore is removed.
 |}
 
