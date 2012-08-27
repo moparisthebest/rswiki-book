@@ -47,6 +47,15 @@ Client states are used to switch between different graphic and logic procedures.
 ! Client state where the client has encountered a fatal ondemand error and will no longer use the ondemand service.
 |}
 
+==Actions==
+
+{| border=3
+|-
+! Opcode
+! Frame Id
+! Description
+|}
+
 ==Game Protocol==
 
 ===Server Frames===
