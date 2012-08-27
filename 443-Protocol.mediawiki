@@ -170,6 +170,48 @@ Client states are used to switch between different graphic and logic procedures.
 ! position y
 ! Action for the examine option of a Npc.
 |-
+! 28
+! [[443 Item Option 0|Item Option 0]]
+! id
+! slot
+! widget id
+! Action for the first option of a widget item.
+|-
+! 28
+! [[443 Item Option 0|Item Option 0]]
+! id
+! slot
+! widget id
+! Action for the first option of a widget item.
+|-
+! 16
+! [[443 Item Option 1|Item Option 1]]
+! id
+! slot
+! widget id
+! Action for the second option of a widget item.
+|-
+! 54
+! [[443 Item Option 2|Item Option 2]]
+! id
+! slot
+! widget id
+! Action for the third option of a widget item.
+|-
+! 32
+! [[443 Item Option 3|Item Option 3]]
+! id
+! slot
+! widget id
+! Action for the fourth option of a widget item.
+|-
+! 19
+! [[443 Item Option 4|Item Option 4]]
+! id
+! slot
+! widget id
+! Action for the fifth option of a widget item.
+|-
 ! 40
 ! [[443 Ground Item Option 0|Ground Item Option 0]]
 ! id
