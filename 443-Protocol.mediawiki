@@ -59,9 +59,17 @@ Client states are used to switch between different graphic and logic procedures.
 ! [[443 Add Friend|Add Friend]]
 ! Action for when a friend is added.
 |-
+! 2
+! [[443 Remove Friend|Remove Friend]]
+! Action for when a friend is removed.
+|-
 ! 21
 ! [[443 Add Ignore|Add Ignore]]
 ! Action for when an ignore is added.
+|-
+! 50
+! [[443 Remove Ignore|Remove Ignore]]
+! Action for when an ignore is removed.
 |}
 
 ==Game Protocol==
