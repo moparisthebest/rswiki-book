@@ -177,13 +177,6 @@ Client states are used to switch between different graphic and logic procedures.
 ! widget id
 ! Action for the first option of a widget item.
 |-
-! 28
-! [[443 Item Option 0|Item Option 0]]
-! id
-! slot
-! widget id
-! Action for the first option of a widget item.
-|-
 ! 16
 ! [[443 Item Option 1|Item Option 1]]
 ! id
