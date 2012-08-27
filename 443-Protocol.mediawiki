@@ -97,7 +97,23 @@ Client states are used to switch between different graphic and logic procedures.
 ! position x
 ! position y
 ! #{ action } #{ npc_name }
-! Action for the 0 or first option of a NPC.
+! Action for the first option of a NPC.
+|-
+! 17
+! [[443 Npc Option 1|Npc Option 1]]
+! id
+! position x
+! position y
+! #{ action } #{ npc_name }
+! Action for the second option of a NPC.
+|-
+! 13
+! [[443 Npc Option 2|Npc Option 2]]
+! id
+! position x
+! position y
+! #{ action } #{ npc_name }
+! Action for the third option of a NPC.
 |}
 
 ==Game Protocol==
