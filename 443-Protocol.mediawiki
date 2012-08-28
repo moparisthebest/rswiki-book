@@ -301,35 +301,35 @@ Client states are used to switch between different graphic and logic procedures.
 ! info hash
 ! position x
 ! position y
-! Action for the first option of a ground item.
+! Action for the first option of an object.
 |-
 ! 57
 ! [[443 Object Option 1|Object Option 1]]
 ! info hash
 ! position x
 ! position y
-! Action for the second option of a ground item.
+! Action for the second option of an object.
 |-
 ! 43
 ! [[443 Object Option 2|Object Option 2]]
 ! info hash
 ! position x
 ! position y
-! Action for the third option of a ground item.
+! Action for the third option of an object.
 |-
 ! 6
 ! [[443 Object Option 3|Object Option 3]]
 ! info hash
 ! position x
 ! position y
-! Action for the fourth option of a ground item.
+! Action for the fourth option of an object.
 |-
 ! 1005
 ! [[443 Object Option 4|Object Option 4]]
 ! info hash
 ! position x
 ! position y
-! Action for the fifth option of a ground item.
+! Action for the fifth option of an object.
 |-
 ! 1006
 ! [[443 Object Examine|Object Examine]]
