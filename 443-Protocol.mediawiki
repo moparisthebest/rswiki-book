@@ -170,13 +170,6 @@ Client states are used to switch between different graphic and logic procedures.
 ! position y
 ! Action for the fifth option of a NPC.
 |-
-! 1001
-! [[443 Npc Examine|Npc Examine]]
-! id
-! position x
-! position y
-! Action for the examine option of a Npc.
-|-
 ! 55
 ! [[443 Object Option 0|Object Option 0]]
 ! info hash
@@ -211,13 +204,6 @@ Client states are used to switch between different graphic and logic procedures.
 ! position x
 ! position y
 ! Action for the fifth option of an object.
-|-
-! 1006
-! [[443 Object Examine|Object Examine]]
-! id
-! position x
-! position y
-! Action for the examine option of an object.
 |}
 
 ===Widget===
@@ -302,7 +288,7 @@ Client states are used to switch between different graphic and logic procedures.
 ! Action for the fifth option of an item on a widget.
 |}
 
-===Other===
+===Examine===
 
 {| border=3
 |-
@@ -313,12 +299,38 @@ Client states are used to switch between different graphic and logic procedures.
 ! Variable 2
 ! Description
 |-
+! 1006
+! [[443 Object Examine|Object Examine]]
+! id
+! position x
+! position y
+! Action for the examine option of an object.
+|-
+! 1001
+! [[443 Npc Examine|Npc Examine]]
+! id
+! position x
+! position y
+! Action for the examine option of a Npc.
+|-
 ! 1004
 ! [[443 Item Examine|Item Examine]]
 ! id
 ! slot
 ! widget id
 ! Action for the examine option of a widget item.
+|}
+
+===Other===
+
+{| border=3
+|-
+! Opcode
+! Frame Name
+! Variable 0
+! Variable 1
+! Variable 2
+! Description
 |-
 ! 40
 ! [[443 Ground Item Option 0|Ground Item Option 0]]
