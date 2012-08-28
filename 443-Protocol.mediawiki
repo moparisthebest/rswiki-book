@@ -318,7 +318,7 @@ Client states are used to switch between different graphic and logic procedures.
 ! id
 ! slot
 ! widget id
-! Action for the examine option of a widget item.
+! Action for the examine option of an item.
 |}
 
 ===Other===
