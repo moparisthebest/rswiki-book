@@ -100,13 +100,6 @@ Client states are used to switch between different graphic and logic procedures.
 ! position y
 ! Action for the second option of a player.
 |-
-! 22
-! [[443 Player Option 1|Player Option 1]]
-! id
-! position x
-! position y
-! Action for the second option of a player.
-|-
 ! 52
 ! [[443 Player Option 2|Player Option 2]]
 ! id
