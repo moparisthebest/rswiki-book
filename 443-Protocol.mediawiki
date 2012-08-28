@@ -49,6 +49,8 @@ Client states are used to switch between different graphic and logic procedures.
 
 ==Client Actions==
 
+===Social===
+
 {| border=3
 |-
 ! Opcode
@@ -85,6 +87,18 @@ Client states are used to switch between different graphic and logic procedures.
 ! NA
 ! NA
 ! Action for when an ignore is removed.
+|}
+
+===Other===
+
+{| border=3
+|-
+! Opcode
+! Frame Name
+! Variable 0
+! Variable 1
+! Variable 2
+! Description
 |-
 ! 44
 ! [[443 Player Option 0|Player Option 0]]
