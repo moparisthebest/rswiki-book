@@ -325,11 +325,11 @@ Client states are used to switch between different graphic and logic procedures.
 ! Action for the examine option of an object.
 |-
 ! 29
-! [[443 Close Displayed Widgets|Close Displayed Widgets]]
+! [[443 Close Window|Close Window]]
 ! NA
 ! NA
 ! NA
-! Action for when the currently open widgets are closed.
+! Action for when the currently open window is closed.
 |}
 
 ==Game Protocol==
