@@ -29,11 +29,11 @@
 
 | style="padding:0 0.5em;" |
 | style="width:50%; vertical-align:top; border:1px solid #abd5f5; background-color:#f1f5fc;" |
-<div style="border-bottom:1px solid #abd5f5; background-color:#d0e5f5; padding:0.2em 0.5em; font-size:110%;">'''Cache Documentation'''</div>
+<div style="border-bottom:1px solid #abd5f5; background-color:#d0e5f5; padding:0.2em 0.5em; font-size:110%;">'''[[Category Cache|Cache Documentation]]'''</div>
 <div style="border-bottom:1px solid #abd5f5; padding:0.4em 1em 0.3em;">
-* [[Category JAGGRAB Protocol|JAGGRAB Documentation]]
-* [[Category Ondemand Protocol|Ondemand Documentation]]
-* [[Category Archive Format|Archive Format Documentation]]
+* [[JAGGRAB Protocol|JAGGRAB Documentation]]
+* [[Ondemand Protocol|Ondemand Documentation]]
+* [[Archive Format|Archive Format Documentation]]
 </div>
 
 <div style="border-bottom:1px solid #abd5f5; background-color:#d0e5f5; padding:0.2em 0.5em; font-size:110%;">'''Data Types'''</div>
