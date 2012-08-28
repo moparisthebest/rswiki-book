@@ -205,6 +205,41 @@ Client states are used to switch between different graphic and logic procedures.
 ! widget id
 ! Action for the fifth option of an item on a widget.
 |-
+! 35
+! [[443 Widget Item Option 0|Widget Item Option 0]]
+! id
+! slot
+! widget id
+! Action for the first option of an item on a widget.
+|-
+! 30
+! [[443 Widget Item Option 1|Widget Item Option 1]]
+! id
+! slot
+! widget id
+! Action for the second option of an item on a widget.
+|-
+! 26
+! [[443 Widget Item Option 2|Widget Item Option 2]]
+! id
+! slot
+! widget id
+! Action for the third option of an item on a widget.
+|-
+! 25
+! [[443 Widget Item Option 3|Widget Item Option 3]]
+! id
+! slot
+! widget id
+! Action for the fourth option of an item on a widget.
+|-
+! 49
+! [[443 Widget Item Option 4|Widget Item Option 4]]
+! id
+! slot
+! widget id
+! Action for the fifth option of an item on a widget.
+|-
 ! 1004
 ! [[443 Item Examine|Item Examine]]
 ! id
