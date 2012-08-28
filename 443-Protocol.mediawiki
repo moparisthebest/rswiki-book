@@ -551,6 +551,50 @@ Client states are used to switch between different graphic and logic procedures.
 
 ===Client Frames===
 
+==== Actions ====
+
+
+{| border = 3, padding = 2
+|-
+! Opcode
+! Type
+! Length (bytes)
+! Name
+! Description
+|-
+! 90
+! FIXED
+! 8
+! [[443 Add Friend|Add Friend]]
+! Called when a new name has been added to the friend list.
+|-
+! 159
+! FIXED
+! 8
+! [[443 Remove Friend|Remove Friend]]
+! Called when a name has been removed from the friend list.
+|-
+! 198
+! FIXED
+! 8
+! [[443 Add Ignore|Add Ignore]]
+! Called when a new name has been added to the ignore list.
+|-
+! 250
+! FIXED
+! 8
+! [[443 Remove Ignore|Remove Ignore]]
+! Called when a name has been removed from the ignore list.
+|-
+! 70
+! FIXED
+! 0
+! [[443 Closed Window|Closed Window]]
+! Called when the currently opened window is closed.
+|}
+
+==== Other ====
+
 {| border = 3, padding = 2
 |-
 ! Opcode
@@ -582,34 +626,4 @@ Client states are used to switch between different graphic and logic procedures.
 ! VARIABLE BYTE
 ! [[443 Command|Command]]
 ! Called when the client inputs a command.
-|-
-! 90
-! FIXED
-! 8
-! [[443 Add Friend|Add Friend]]
-! Called when a new name has been added to the friend list.
-|-
-! 159
-! FIXED
-! 8
-! [[443 Remove Friend|Remove Friend]]
-! Called when a name has been removed from the friend list.
-|-
-! 198
-! FIXED
-! 8
-! [[443 Add Ignore|Add Ignore]]
-! Called when a new name has been added to the ignore list.
-|-
-! 250
-! FIXED
-! 8
-! [[443 Remove Ignore|Remove Ignore]]
-! Called when a name has been removed from the ignore list.
-|-
-! 70
-! FIXED
-! 0
-! [[443 Closed Window|Closed Window]]
-! Called when the currently opened window is closed.
 |}
