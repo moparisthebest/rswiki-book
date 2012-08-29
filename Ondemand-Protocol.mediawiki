@@ -2,7 +2,7 @@
 
 == Introduction ==
 
-The 'Ondemand' protocol is used to stream updates to the cache. The client knows which files to update from the CRC file downloaded using the [[Category JAGGRAB Protocol|JAGGRAB protocol]].
+The 'Ondemand' protocol is used to stream updates to the cache. The client knows which files to update from the CRC file downloaded using the [[JAGGRAB Protocol|JAGGRAB protocol]].
 
 == Request packet ==
 
