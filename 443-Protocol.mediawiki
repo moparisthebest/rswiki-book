@@ -360,19 +360,19 @@ Client states are used to switch between different graphic and logic procedures.
 ! position y
 ! Action for the examine option of a Npc.
 |-
-! 1004
-! [[443 Item Examine|Item Examine]]
-! id
-! slot
-! widget id
-! Action for the examine option of an item.
-|-
 ! 1003
 ! [[443 Ground Item Examine|Ground Item Examine]]
 ! id
 ! position x
 ! position y
 ! Action for the examine option of a ground item.
+|-
+! 1004
+! [[443 Item Examine|Item Examine]]
+! id
+! slot
+! widget id
+! Action for the examine option of an item.
 |}
 
 ===Other===
