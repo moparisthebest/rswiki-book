@@ -367,13 +367,6 @@ Client states are used to switch between different graphic and logic procedures.
 ! position y
 ! Action for the fifth option of a ground item.
 |-
-! 1003
-! [[443 Ground Item Examine|Ground Item Examine]]
-! id
-! position x
-! position y
-! Action for the examine option of a ground item.
-|-
 ! 29
 ! [[443 Close Window|Close Window]]
 ! NA
