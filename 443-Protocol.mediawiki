@@ -187,7 +187,7 @@ Client states are used to switch between different graphic and logic procedures.
 ! info hash
 ! position x
 ! position y
-! Action for the first option of a ground item.
+! Action for the first option of an object.
 |-
 ! 57
 ! [[443 Object Option 1|Object Option 1]]
