@@ -92,7 +92,15 @@ Client states are used to switch between different graphic and logic procedures.
 ===Entities===
 
 {| border=3
+|-
+! Opcode
+! Frame Name
+! Variable 0
+! Variable 1
+! Variable 2
+! Description
 ! 44
+|-
 ! [[443 Player Option 0|Player Option 0]]
 ! id
 ! position x
