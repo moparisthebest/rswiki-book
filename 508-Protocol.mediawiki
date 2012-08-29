@@ -12,9 +12,6 @@ Every connection to the main 'gateway' server sends a single byte of data, mostl
 * Fresh login - connection type 16
 * JAGGRAB - connection type 17
 * Reconnecting login - connection type 18
-* Personal Details step of the Create account dialogue - connection type 85
-* Username selection phase of the create account dialogue - connection type 118
-* Password stage of create account, sends all information from previous steps - connection type 48
 * Worldlist - varies, connection type 255 in #508
 * Potentially more...
 
