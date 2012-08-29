@@ -601,7 +601,7 @@ Client states are used to switch between different graphic and logic procedures.
 
 ===Client Frames===
 
-==== Social List Actions ====
+==== Actions ====
 
 
 {| border = 3, padding = 2
