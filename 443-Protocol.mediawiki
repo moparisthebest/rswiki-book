@@ -89,7 +89,7 @@ Client states are used to switch between different graphic and logic procedures.
 ! Action for when an ignore is removed.
 |}
 
-===Mobs===
+===Mobile Entities===
 
 {| border=3
 |-
