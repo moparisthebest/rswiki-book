@@ -171,7 +171,7 @@ Client states are used to switch between different graphic and logic procedures.
 ! Action for the fifth option of a NPC.
 |}
 
-===Other Entities===
+===Entities===
 
 {| border=3
 |-
