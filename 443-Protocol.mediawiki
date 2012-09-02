@@ -637,6 +637,36 @@ Client states are used to switch between different graphic and logic procedures.
 ! [[443 Remove Ignore|Remove Ignore]]
 ! Called when a name has been removed from the ignore list.
 |-
+! 11
+! FIXED
+! 2
+! [[443 Player Option 0|Player Option 0]]
+! Called when the first option of a player is activated.
+|-
+! 169
+! FIXED
+! 2
+! [[443 Player Option 1|Player Option 1]]
+! Called when the second option of a player is activated.
+|-
+! 229
+! FIXED
+! 2
+! [[443 Player Option 2|Player Option 2]]
+! Called when the third option of a player is activated.
+|-
+! 101
+! FIXED
+! 2
+! [[443 Player Option 3|Player Option 3]]
+! Called when the fourth option of a player is activated.
+|-
+! 206
+! FIXED
+! 2
+! [[443 Player Option 4|Player Option 4]]
+! Called when the fifth option of a player is activated.
+|-
 ! 70
 ! FIXED
 ! 0
