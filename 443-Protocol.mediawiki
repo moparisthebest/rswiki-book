@@ -470,7 +470,7 @@ Client states are used to switch between different graphic and logic procedures.
 ! 204
 ! VARIABLE SHORT
 ! NA
-! [[443 Class Check Request|Class Check Request]]
+! [[443 Class Check|Class Check Request]]
 ! Parses a request for a class check request.
 |-
 ! 74
