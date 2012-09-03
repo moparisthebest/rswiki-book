@@ -12,6 +12,8 @@ The class check originated with the new Runescape engine update which took place
 
 == Request Types ==
 
+For request types 0, 2, 4 there will only be one successful response code and a dword value of the value being requested will be sent. For request type 1, only the successful response code will be used but no value will be sent back.
+
 {| border=2px
 ! Opcode
 ! Name
