@@ -7,12 +7,12 @@ All the return codes are in descending priority by numerical order.
 {| border=2px
 ! Opcode
 ! Name
-! On Receive/Respond
+! On Receive/Response
 ! Description
 |-
 ! 0
 ! Successful
-! Respond
+! Response
 ! Successfully executed the request.
 |-
 ! -1
@@ -26,78 +26,78 @@ All the return codes are in descending priority by numerical order.
 ! A SecurityException was thrown while receiving a request from the server.
 |-
 ! -3
-! Receive
 ! NullPointerException
+! Receive
 ! A NullPointerException was thrown while receiving a request from the server.
 |-
 ! -4
-! Receive
 ! Exception
+! Receive
 ! An Exception was thrown while receiving a request from the server.
 |-
 ! -5
-! Receive
 ! Throwable
+! Receieve
 ! An error or exception was thrown while receiving a request from the server.
 |-
 ! -10
-! Respond
 ! ClassNotFoundException
+! Response
 ! A ClassNotFoundException was thrown while responding to a request from the server.
 |-
 ! -11
-! Respond
 ! InvalidClassException
+! Response
 ! An InvalidClassException was thrown while responding to a request from the server.
 |-
 ! -12
-! Response
 ! StreamCorruptedException
+! Response
 ! A StreamCorruptedException was thrown while responding to a request from the server. 
 |-
 ! -13
-! Response
 ! OptionalDataException
+! Response
 ! An OptionDataException was thrown while responding to a request from the server.
 |-
 ! -14
-! Response
 ! IllegalAccessException
+! Response
 ! An IllegalAccessException was thrown while responding to a request from the server.
 |-
 ! -15
-! Response
 ! IllegalArgumentException
+! Response
 ! An IllegalArgumentException was thrown while responding to a request from the server.
 |-
 ! -16
-! Response
 ! InvocationTargetException
+! Response
 ! An InvocationTargetException was thrown while responding to a request from the server.
 |-
 ! -17
-! Response
 ! SecurityException
+! Response
 ! A SecurityException was thrown while responding to a request from the server.
 !
 |-
 ! -18
-! Response
 ! IOException
+! Response
 ! An IOException was thrown while responding to a request from the server.
 |-
 ! -19
-! Response
 ! NullPointerException
+! Response
 ! A NullPointerException was thrown while responding to a request from the server.
 |-
 ! -20
-! Response
 ! Exception
+! Response
 ! An Exception was thrown while responding to a request from the server.
 |-
 ! -21
-! Response
 ! Throwable
+! Response
 ! An error or exception was thrown while receiving a request from the server.
 |}
