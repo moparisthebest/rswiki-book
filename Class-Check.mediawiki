@@ -2,7 +2,7 @@ The class check originated with the new Runescape engine update which took place
 
 == Return Codes ==
 
-All the return codes are in descending priority by numerical order. For opcode 0, there are cases where a numeric value is sent to the server on fetch requests. This value is always a dword. For an method invoke request, there isn't a value that is sent to the server. It is just assumed that there wasn't a return object from the invoked method.
+All the return codes are in descending priority by numerical order. For opcode 0, there are cases where a numeric value is sent to the server on fetch requests. This value is always a dword. For a method invoke request, there isn't a value that is sent to the server. It is just assumed that there wasn't a return object from the invoked method.
 
 {| border=2px
 ! Opcode
