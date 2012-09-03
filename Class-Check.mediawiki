@@ -52,7 +52,7 @@ All the return codes are in descending priority by numerical order. For opcode 0
 |-
 ! -5
 ! Throwable
-! Receieve
+! Receive
 ! An error or exception was thrown while receiving a request from the server.
 |-
 ! -10
