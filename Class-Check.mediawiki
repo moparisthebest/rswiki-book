@@ -23,4 +23,40 @@ The class check originated with the new Runescape engine update which took place
 |-
 ! -5
 ! Throwable - On receive.
+|-
+! -10
+! ClassNotFoundException - On send.
+|-
+! -11
+! InvalidClassException - On send.
+|-
+! -12
+! StreamCorruptedException - On send.
+|-
+! -13
+! OptionalDataException - On send.
+|-
+! -14
+! IllegalAccessException - On send.
+|-
+! -15
+! IllegalArgumentException - On send.
+|-
+! -16
+! InvocationTargetException - On send.
+|-
+! -17
+! SecurityException - On send.
+|-
+! -18
+! IOException - On send.
+|-
+! -19
+! NullPointerException - On receive.
+|-
+! -20
+! Exception - On receive.
+|-
+! -21
+! Throwable - On receive.
 |}
