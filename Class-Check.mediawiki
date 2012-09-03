@@ -1,62 +1,103 @@
 The class check originated with the new Runescape engine update which took place around the 4xx revisions. It gives the Jagex servers the ability to check the modifiers, update, or fetch the value for a field. It also gives functionality to invoke a method with parameters and get it's return value, or check it's modifiers. Each of these functionalities are described with a request type. A class check request is built up with many of these request types.
 
-== Response Return Codes ==
+== Return Codes ==
+
+All the return codes are in descending priority by numerical order.
 
 {| border=2px
 ! Opcode
+! Name
+! On Receive/Respond
 ! Description
 |-
 ! 0
+! Successful
+! Respond
 ! Successfully executed the request.
 |-
 ! -1
-! ClassNotFoundException - On receive.
+! ClassNotFoundException
+! Receive
+! A ClassNotFoundException was thrown while receiving a request from the server.
 |-
 ! -2
-! SecurityException - On receive.
+! SecurityException
+! Receive
+! A SecurityException was thrown while receiving a request from the server.
 |-
 ! -3
-! NullPointerException - On receive.
+! Receive
+! NullPointerException
+! A NullPointerException was thrown while receiving a request from the server.
 |-
 ! -4
-! Exception - On receive.
+! Receive
+! Exception
+! An Exception was thrown while receiving a request from the server.
 |-
 ! -5
-! Throwable - On receive.
+! Receive
+! Throwable
+! An error or exception was thrown while receiving a request from the server.
 |-
 ! -10
-! ClassNotFoundException - On send.
+! Respond
+! ClassNotFoundException
+! A ClassNotFoundException was thrown while responding to a request from the server.
 |-
 ! -11
-! InvalidClassException - On send.
+! Respond
+! InvalidClassException
+! An InvalidClassException was thrown while responding to a request from the server.
 |-
 ! -12
-! StreamCorruptedException - On send.
+! Response
+! StreamCorruptedException
+! A StreamCorruptedException was thrown while responding to a request from the server. 
 |-
 ! -13
-! OptionalDataException - On send.
+! Response
+! OptionalDataException
+! An OptionDataException was thrown while responding to a request from the server.
 |-
 ! -14
-! IllegalAccessException - On send.
+! Response
+! IllegalAccessException
+! An IllegalAccessException was thrown while responding to a request from the server.
 |-
 ! -15
-! IllegalArgumentException - On send.
+! Response
+! IllegalArgumentException
+! An IllegalArgumentException was thrown while responding to a request from the server.
 |-
 ! -16
-! InvocationTargetException - On send.
+! Response
+! InvocationTargetException
+! An InvocationTargetException was thrown while responding to a request from the server.
 |-
 ! -17
-! SecurityException - On send.
+! Response
+! SecurityException
+! A SecurityException was thrown while responding to a request from the server.
+!
 |-
 ! -18
-! IOException - On send.
+! Response
+! IOException
+! An IOException was thrown while responding to a request from the server.
 |-
 ! -19
-! NullPointerException - On send.
+! Response
+! NullPointerException
+! A NullPointerException was thrown while responding to a request from the server.
 |-
 ! -20
-! Exception - On send.
+! Response
+! Exception
+! An Exception was thrown while responding to a request from the server.
 |-
 ! -21
-! Throwable - On send.
+! Response
+! Throwable
+! An error or exception was thrown while receiving a request from the server.
 |}
