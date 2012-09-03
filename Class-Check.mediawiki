@@ -5,7 +5,7 @@ The class check originated with the new Runescape engine update which took place
  +---------------------+
  | uid : dword         |
  +---------------------+----------------------+------------------------+
- | request             | response code : byte | type dependent data... |
+ | for each request    | response code : byte | type dependent data... |
  +---------------------+----------------------+------------------------+
  | payload crc : dword |
  +---------------------+
