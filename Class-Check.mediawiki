@@ -15,6 +15,21 @@ All the return codes are in descending priority by numerical order.
 ! Response
 ! Successfully executed the request.
 |-
+! 1
+! Successful - Returned numeric value 
+! Response
+! Successfully executed the request, and returned a numeric value.
+|-
+! 2
+! Successful - Returned string value
+! Response
+! Successfully executed the request, and returned a string value.
+|-
+! 4
+! Successful - Returned object value
+! Response
+! Successfully executed the request, and returned an object value.
+|-
 ! -1
 ! ClassNotFoundException
 ! Receive
