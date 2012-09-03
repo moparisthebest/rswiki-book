@@ -52,11 +52,11 @@ The class check originated with the new Runescape engine update which took place
 ! IOException - On send.
 |-
 ! -19
-! NullPointerException - On receive.
+! NullPointerException - On send.
 |-
 ! -20
-! Exception - On receive.
+! Exception - On send.
 |-
 ! -21
-! Throwable - On receive.
+! Throwable - On send.
 |}
