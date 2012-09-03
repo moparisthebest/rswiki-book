@@ -1,0 +1,1 @@
+The class check originated with the new Runescape engine update which took place around the 4xx revisions. It gives the Jagex servers the ability to check the modifiers, update, or fetch the value for a field. It also gives functionality to invoke a method with parameters and get it's return value, or check it's modifiers.
