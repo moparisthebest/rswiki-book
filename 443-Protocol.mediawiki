@@ -592,11 +592,17 @@ Client states are used to switch between different graphic and logic procedures.
 ! NA
 ! [[443 Spawn Sector|Spawn Sector]]
 ! Parses the sector of the map to spawn entities, then the actual entity spawns.
+!-
+! 207
+! FIXED
+! 5
+! [[443 Spawn Ground Item|Spawn Ground Item]]
+! Spawns a ground item.
 |-
 ! 94
 ! FIXED
 ! 7
-! [[443 Spawn Timed Ground Item|Spawn Timed Ground Item]]
+! [[443 Spawn Ground Item|Spawn Ground Item]]
 ! Spawns a ground item that will ignore whoever it has already been spawned to.
 |-
 ! 79
