@@ -792,6 +792,10 @@ All flags are listed in order in which they are parsed.
 ! Face Position
 ! Turns to face the NPC to a position on the map.
 |-
+! 0x20
+! Animate
+! Animates the NPC.
+|-
 ! 0x40
 ! Display Hit One
 ! Displays a hit on the NPC.
