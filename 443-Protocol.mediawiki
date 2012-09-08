@@ -474,10 +474,10 @@ Client states are used to switch between different graphic and logic procedures.
 ! Parses a request for a class check request.
 |-
 ! 89
+! FIXED
 ! 5
 ! [[443 Player Sound Effect|Player Sound Effect]]
 ! Plays a sound effect.
-!
 |-
 ! 74
 ! FIXED
