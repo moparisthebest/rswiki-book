@@ -774,3 +774,19 @@ Client states are used to switch between different graphic and logic procedures.
 ! [[443 Command|Command]]
 ! Called when the client inputs a command.
 |}
+
+=== Update Flags ===
+
+==== Player ====
+
+==== NPC ====
+
+{| border=3px
+! Opcode
+! Name
+! Description
+|-
+! 0x2
+! Face Position
+! Turns to face the player to a position on the map.
+|}
