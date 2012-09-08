@@ -609,7 +609,7 @@ Client states are used to switch between different graphic and logic procedures.
 ! FIXED
 ! 7
 ! [[443 Update Ground Item|Update Ground Item]]
-! Updates a ground item.
+! Updates the item amount for a ground item.
 |-
 ! 84
 ! FIXED
