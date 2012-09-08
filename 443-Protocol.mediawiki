@@ -788,7 +788,7 @@ Client states are used to switch between different graphic and logic procedures.
 |-
 ! 0x2
 ! Face Position
-! Turns to face the player to a position on the map.
+! Turns to face the npc to a position on the map.
 |-
 ! 0x1
 ! Turn into NPC
