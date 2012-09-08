@@ -592,7 +592,7 @@ Client states are used to switch between different graphic and logic procedures.
 ! NA
 ! [[443 Spawn Sector|Spawn Sector]]
 ! Parses the sector of the map to spawn entities, then the actual entity spawns.
-!-
+|-
 ! 207
 ! FIXED
 ! 5
