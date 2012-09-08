@@ -777,6 +777,8 @@ Client states are used to switch between different graphic and logic procedures.
 
 === Update Flags ===
 
+All flags are listed in order in which they are parsed.
+
 ==== Player ====
 
 ==== NPC ====
