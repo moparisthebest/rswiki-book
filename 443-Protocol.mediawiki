@@ -788,9 +788,29 @@ Client states are used to switch between different graphic and logic procedures.
 |-
 ! 0x2
 ! Face Position
-! Turns to face the npc to a position on the map.
+! Turns to face the NPC to a position on the map.
+|-
+! 0x40
+! Display Hit One
+! Displays a hit on the NPC.
+|-
+! 0x4
+! Display Still Graphic
+! Displays a still graphic on the NPC.
+|-
+! 0x10
+! Turn to mobile entity
+! Turns to face the NPC to a mobile entity on the map.
+|-
+! 0x80
+! Display Hit Two
+! Displays a hit on the npc.
 |-
 ! 0x1
 ! Turn into NPC
 ! Changes the id of the NPC and its animations.
+|-
+! 0x8
+! Display chat text
+! Displays chat text above the head of the NPC.
 |}
