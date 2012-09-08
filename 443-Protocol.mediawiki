@@ -587,6 +587,12 @@ Client states are used to switch between different graphic and logic procedures.
 ! [[443 Spawn Sector|Spawn Sector]]
 ! Parses the sector of the map to spawn entities, then the actual entity spawns.
 |-
+! 109
+! FIXED
+! NA
+! [[443 Spawn Ambient Effect|Spawn Ambient Effect]]
+! Spawns an ambient effect.
+|-
 ! 133
 ! FIXED
 ! 2
