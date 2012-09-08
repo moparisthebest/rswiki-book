@@ -590,8 +590,8 @@ Client states are used to switch between different graphic and logic procedures.
 ! 109
 ! FIXED
 ! NA
-! [[443 Spawn Ambient Effect|Spawn Ambient Effect]]
-! Spawns an ambient effect.
+! [[443 Spawn Ambient Sound Effect|Spawn Ambient Sound Effect]]
+! Spawns an ambient sound effect.
 |-
 ! 133
 ! FIXED
