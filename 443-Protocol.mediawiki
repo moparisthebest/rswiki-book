@@ -733,11 +733,17 @@ Client states are used to switch between different graphic and logic procedures.
 ! [[443 Player Option 4|Player Option 4]]
 ! Called when the fifth option of a player is activated.
 |-
+! 54
+! FIXED
+! 4 
+! [[443 Widget Action|Widget Action]]
+! Called when a widget action is activated.
+|-
 ! 70
 ! FIXED
 ! 0
-! [[443 Closed Window|Closed Window]]
-! Called when the currently opened window is closed.
+! [[443 Closed Overlays|Closed Overlays]]
+! Called when the currently opened overlays are closed.
 |}
 
 ==== Other ====
