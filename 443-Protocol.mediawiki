@@ -835,6 +835,66 @@ Client states are used to switch between different graphic and logic procedures.
 ! [[443 Still Object Option 0|Still Object Option 0]]
 !
 |-
+!
+!
+!
+! [[443 Item On Player|Item On Player]]
+!
+|-
+!
+!
+!
+! [[443 Item On NPC|Item On NPC]]
+!
+|-
+!
+!
+!
+! [[443 Item On Ground Item|Item On Ground Item]]
+!
+|-
+!
+!
+!
+! [[443 Item On Still Object|Item On Still Object]]
+!
+|-
+!
+!
+!
+! [[443 Item On Item|Item On Item]]
+!
+|-
+!
+!
+!
+! [[443 Widget On Player|Widget On Player]]
+!
+|-
+!
+!
+!
+! [[443 Widget On NPC|Widget On NPC]]
+!
+|-
+!
+!
+!
+! [[443 Widget On Ground Item|Widget On Ground Item]]
+!
+|-
+!
+!
+!
+! [[443 Widget On Still Object|Widget On Still Object]]
+!
+|-
+!
+!
+!
+! [[443 Widget On Widget|Widget On Widget]]
+!
+|-
 ! 54
 ! FIXED
 ! 4 
