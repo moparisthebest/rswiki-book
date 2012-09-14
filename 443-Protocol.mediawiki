@@ -733,6 +733,108 @@ Client states are used to switch between different graphic and logic procedures.
 ! [[443 Player Option 4|Player Option 4]]
 ! Called when the fifth option of a player is activated.
 |-
+!
+!
+!
+! [[443 Npc Option 0|Npc Option 0]]
+!
+|-
+!
+!
+!
+! [[443 Npc Option 0|Npc Option 0]]
+!
+|-
+!
+!
+!
+! [[443 Npc Option 1|Npc Option 1]]
+!
+|-
+!
+!
+!
+! [[443 Npc Option 2|Npc Option 2]]
+!
+|-
+!
+!
+!
+! [[443 Npc Option 3|Npc Option 4]]
+!
+|-
+!
+!
+!
+! [[443 Npc Option 4|Npc Option 4]]
+!
+|-
+!
+!
+!
+! [[443 Ground Item Option 0|Ground Item Option 0]]
+!
+|-
+!
+!
+!
+! [[443 Ground Item Option 1|Ground Item Option 1]]
+!
+|-
+!
+!
+!
+! [[443 Ground Item Option 2|Ground Item Option 2]]
+!
+|-
+!
+!
+!
+! [[443 Ground Item Option 3|Ground Item Option 3]]
+!
+|-
+!
+!
+!
+! [[443 Ground Item Option 4|Ground Item Option 4]]
+!
+|-
+!
+!
+!
+! [[443 Still Object Option 0|Still Object Option 0]]
+!
+|-
+!
+!
+!
+! [[443 Still Object Option 1|Still Object Option 1]]
+!
+|-
+!
+!
+!
+! [[443 Still Object Option 2|Still Object Option 2]]
+!
+|-
+!
+!
+!
+! [[443 Still Object Option 3|Still Object Option 3]]
+!
+|-
+!
+!
+!
+! [[443 Still Object Option 4|Still Object Option 4]]
+!
+|-
+!
+!
+!
+! [[443 Still Object Option 0|Still Object Option 0]]
+!
+|-
 ! 54
 ! FIXED
 ! 4 
