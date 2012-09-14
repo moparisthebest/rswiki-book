@@ -901,6 +901,24 @@ Client states are used to switch between different graphic and logic procedures.
 ! [[443 Widget On Widget|Widget On Widget]]
 !
 |-
+!
+!
+!
+! [[443 Still Object Examine|Still Object Examine]]
+!
+|-
+!
+!
+!
+! [[443 Npc Examine|Npc Examine]]
+!
+|-
+!
+!
+!
+! [[443 Item Examine|Item Examine]]
+!
+|-
 ! 54
 ! FIXED
 ! 4 
