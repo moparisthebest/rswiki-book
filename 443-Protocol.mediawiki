@@ -832,12 +832,6 @@ Client states are used to switch between different graphic and logic procedures.
 !
 !
 !
-! [[443 Still Object Option 0|Still Object Option 0]]
-!
-|-
-!
-!
-!
 ! [[443 Item On Player|Item On Player]]
 !
 |-
