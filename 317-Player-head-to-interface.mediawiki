@@ -4,7 +4,7 @@
 
 === Description ===
 
-This packet attaches an interface to the chat box.
+This packet sends a players head to an interface
 
 === Packet Structure ===
 {|border=2
