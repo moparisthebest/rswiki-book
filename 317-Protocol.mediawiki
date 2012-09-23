@@ -617,6 +617,12 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 Open welcome screen|Open welcome screen]]
 | Displays the welcome screen.
 |-
+| 185
+| FIXED
+| 10
+| [[317 Send player head to interface|Send player head to interface]]
+| Sends a players head to an interface
+|-
 | 196
 | VARIABLE_BYTE
 | N/A
