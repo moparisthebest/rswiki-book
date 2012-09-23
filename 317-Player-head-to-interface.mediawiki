@@ -11,7 +11,7 @@ This packet sends a players head to an interface
 ! Data Type
 ! Description
 |-
-| [[Data Types#Little Endian Short A]]
+| [[Little Endian Short A]]
 | The interface ID.
 |-
 |}
