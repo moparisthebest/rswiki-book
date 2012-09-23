@@ -1,0 +1,17 @@
+[[Category Packet]]
+[[Category Packet 317]]
+== Send player head model to an interface ==
+
+=== Description ===
+
+This packet attaches an interface to the chat box.
+
+=== Packet Structure ===
+{|border=2
+! Data Type
+! Description
+|-
+| [[Data Types#Little Endian Short A]]
+| The interface ID.
+|-
+|}
