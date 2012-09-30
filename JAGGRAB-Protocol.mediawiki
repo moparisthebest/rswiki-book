@@ -4,7 +4,7 @@
 
 The JAGGRAB protocol is used to 'grab' cache files from the file server and download them.
 
-It is a text-based protocol, similar to HTTP, and the client will fall back to HTTP if JAGGRAB is unavailable. This generally happens in unsigned mode and helps users who are behind firewalls.
+It is a text-based protocol, similar to HTTP/0.9, and the client will fall back to HTTP if JAGGRAB is unavailable. This generally happens in unsigned mode and helps users who are behind firewalls.
 
 == Request format ==
 
@@ -34,5 +34,5 @@ There are a number of files which map to files in the cache.
 * '''/wordenc''' - cache 0, file 7
 * '''/sounds''' - cache 0, file 8
 
-NOTE: the client will usually postfix these with random numbers, so when checking for the file only the start of the string should be examined: not the whole one.<BR>
+NOTE: the client will usually postfix these with random numbers, so when checking for the file only the start of the string should be examined: not the whole one. This is to help avoid caches when these files are fetched over HTTP.<BR>
 NOTE: The crc is postfixed with the client revision
