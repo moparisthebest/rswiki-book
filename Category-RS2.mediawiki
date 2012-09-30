@@ -13,7 +13,7 @@ The Login Protocol is the protocol that is used to log a player into RuneScape. 
 
 == Game Protocol ==
 
-The Game Protocol is the protocol in which game action information is transmitted. The game protocol is encrypted using ISAAC ciphers in order to prevent third party programs from tampering with the stream. The game protocol is made up of packets that are structured like so:
+The Game Protocol is the protocol in which game action information is transmitted. The opcodes are encrypted using ISAAC in order to prevent third party programs from tampering with the stream. The game protocol is made up of packets that are structured like so:
 
 <pre>
 For fixed-size packets:
