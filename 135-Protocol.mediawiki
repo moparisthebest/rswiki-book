@@ -62,12 +62,27 @@ This page refers to the RSC #135 client revision.
       (.put-int64 l5)
       (.end-packet))))
 
+;; Opcode: 26
+(defn add-friend [stream name] ; name is string represenation of username
+  (doto stream
+    (.begin-packet 26)
+    (.put-int64 (Util/long-for-name name)
+    (.end-packet)))
+
 ;; Opcode: 27
-(defn remove-from-friends-list [stream name] ; name is long represenation of username (i.e Util/long-for-name username)
+(defn remove-friend [stream name] ; name is long represenation of username (i.e Util/long-for-name username)
   (doto stream
     (.begin-packet 27)
     (.put-int64 name)
     (.end-packet)))
+
+;; Opcode: 29
+(defn add-ignore [stream username] ; username is string representation of username
+  (let [name (Util/name-for-long username)]
+    (doto stream
+      (.begin-packet 29)
+      (.put-int64 name)
+      (.end-packet))))
 </pre>
 
 <table border="1" cellpadding="3" cellspacing="3">
