@@ -48,7 +48,7 @@ This page refers to the RSC #135 client revision.
     (.end-packet)))
 
 ;; Opcode: 6
-(defn packet-logout [stream]
+(defn logout [stream]
   (doto stream
     (.begin-packet 6)
     (.end-packet)))
