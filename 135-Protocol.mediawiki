@@ -1,0 +1,87 @@
+[[Category RSC]]
+
+This page refers to the RSC #135 client revision.
+
+
+== '''Packet structure''' ==
+?
+
+== '''Login''' ==
+?
+
+== '''Incoming Data''' ==
+'''TODO:'''
+<pre>
+</pre>
+
+<table border="1" cellpadding="3" cellspacing="3">
+	<tr>
+		<td><b>opcode</b></td>
+		<td><b>usage</b></td>
+		<td><b>size</b></td>
+		<td><b>payload</b></td>
+	</tr>
+
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+
+== '''Outgoing Data''' ==
+<pre>
+(ns rsc.135.packets
+  (:use [jagex.client.SocketStream]))
+
+;; Opcode: 2
+(defn newplayer [stream]
+  (doto stream
+    (.begin-packet 2)
+    (.put-int16 ???)
+    (.put-int64 (Util/long-for-name username))
+    (.put-int16 referrerid)
+    (.putline-rsa password server-session-id key-a key-b) ; keys for RSA?
+    (.flush)
+    (.read) ; newplayer response
+    (.end-packet)))
+
+;; Opcode: 6
+(defn packet-logout [stream]
+  (doto stream
+    (.begin-packet 6)
+    (.end-packet)))
+
+;; Opcode: 10
+(defn report-abuse [stream username]
+  (let [name (.substring username 12)
+	l5 (Util/long-for-name name)]
+    (doto stream
+      (.begin-packet 10)
+      (.put-int64 l5)
+      (.end-packet))))
+
+;; Opcode: 27
+(defn remove-from-friends-list [stream name] ; name is long represenation of username (i.e Util/long-for-name username)
+  (doto stream
+    (.begin-packet 27)
+    (.put-int64 name)
+    (.end-packet)))
+</pre>
+
+<table border="1" cellpadding="3" cellspacing="3">
+	<tr>
+		<td><b>opcode</b></td>
+		<td><b>usage</b></td>
+		<td><b>size</b></td>
+		<td><b>payload</b></td>
+	</tr>
+
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
