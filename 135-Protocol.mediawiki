@@ -158,6 +158,44 @@ public static long longForName(String arg0) {
 	}
 </pre>
 
+In the 135 client, messages that are to be drawn on the login screen are stored in an array. This makes it a bit tedious to understand what messages are being drawn. Here is the message table:
+
+<pre>
+static {
+		messageTable = new String[50];
+		messageTable[0] = "You must enter both a username";
+		messageTable[1] = "and a password - Please try again";
+		messageTable[2] = "Connection lost! Please wait...";
+		messageTable[3] = "Attempting to re-establish";
+		messageTable[4] = "That username is already in use.";
+		messageTable[5] = "Wait 60 seconds then retry";
+		messageTable[6] = "Please wait...";
+		messageTable[7] = "Connecting to server";
+		messageTable[8] = "Sorry! The server is currently full.";
+		messageTable[9] = "Please try again later";
+		messageTable[10] = "Invalid username or password.";
+		messageTable[11] = "Try again, or create a new account";
+		messageTable[12] = "Sorry! Unable to connect to server.";
+		messageTable[13] = "Check your internet settings";
+		messageTable[14] = "Username already taken.";
+		messageTable[15] = "Please choose another username";
+		messageTable[16] = "The client has been updated.";
+		messageTable[17] = "Please reload this page";
+		messageTable[18] = "You may only use 1 character at once.";
+		messageTable[19] = "Your ip-address is already in use";
+		messageTable[20] = "Login attempts exceeded!";
+		messageTable[21] = "Please try again in 5 minutes";
+		messageTable[22] = "Account has been temporarily disabled";
+		messageTable[23] = "for cheating or abuse";
+		messageTable[24] = "Account has been permanently disabled";
+		messageTable[25] = "for cheating or abuse";
+		messageTable[26] = "You need a members account";
+		messageTable[27] = "to login to this server";
+		messageTable[28] = "Please login to a members server";
+		messageTable[29] = "to access member-only features";
+	}
+</pre>
+
 == '''Packets''' ==
 Some 135 packets are documented ahead. First you will find the packets' body, then you will find a table (for easier reading)
 
