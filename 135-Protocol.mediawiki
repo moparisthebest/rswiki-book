@@ -17,8 +17,6 @@ This page refers to the RSC #135 client revision.
 <table border="1" cellpadding="3" cellspacing="3">
 	<tr>
 		<td><b>opcode</b></td>
-		<td><b>usage</b></td>
-		<td><b>size</b></td>
 		<td><b>payload</b></td>
 	</tr>
 
@@ -104,15 +102,13 @@ This page refers to the RSC #135 client revision.
 <table border="1" cellpadding="3" cellspacing="3">
 	<tr>
 		<td><b>opcode</b></td>
-		<td><b>usage</b></td>
-		<td><b>size</b></td>
 		<td><b>payload</b></td>
 	</tr>
 
 	<tr>
-		<td>Test</td>
-		<td>Test</td>
-		<td>Test</td>
-		<td>Test</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
 	</tr>
 </table>
