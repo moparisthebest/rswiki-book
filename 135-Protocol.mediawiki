@@ -1,5 +1,4 @@
 [[Category RSC]]
-
 This page refers to the RSC #135 client revision.
 
 
@@ -9,7 +8,7 @@ This page refers to the RSC #135 client revision.
 == '''Login''' ==
 ?
 
-=='''Reference'''==
+== '''Reference''' ==
 A lot of times, Util.longForName is referenced in the packets following:
 <pre>
 public static long longForName(String arg0) {
@@ -43,12 +42,15 @@ public static long longForName(String arg0) {
 	}
 </pre>
 
-== '''Incoming Data''' ==
+== '''Packets''' ==
+Some 135 packets are documented ahead. First you will find the packets' body, then you will find a table (for easier reading)
+
+=== '''Incoming Data''' ===
 '''TODO:'''
 <pre>
 </pre>
 
-== '''Outgoing Data''' ==
+=== '''Outgoing Data''' ===
 <pre>
 (ns rsc.rsc135.packets
   (:require [jagex.Util])
