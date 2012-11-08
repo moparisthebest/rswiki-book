@@ -50,7 +50,8 @@ public static long longForName(String arg0) {
 
 == '''Outgoing Data''' ==
 <pre>
-(ns rsc.135.packets
+(ns rsc.rsc135.packets
+  (:require [jagex.Util])
   (:use [jagex.client.SocketStream]))
 
 ;; Opcode: 2
