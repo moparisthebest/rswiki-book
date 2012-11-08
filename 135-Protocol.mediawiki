@@ -56,7 +56,7 @@ This page refers to the RSC #135 client revision.
 ;; Opcode: 10
 (defn report-abuse [stream username]
   (let [name (.substring username 12)
-				l5 (Util/long-for-name name)]
+	l5 (Util/long-for-name name)]
     (doto stream
       (.begin-packet 10)
       (.put-int64 l5)
@@ -79,11 +79,11 @@ This page refers to the RSC #135 client revision.
 ;; Opcode: 28
 ;; name is long representation of username, message is byte representation of message (.getBytes message), length is length of message (maximum length is 200)
 (defn send-message [stream name message length]
-	(doto stream
-		(.begin-packet 28)
-		(.put-int64 username)
-		(.read-bytes message 0 length)
-		(.end-packet)))
+  (doto stream
+    (.begin-packet 28)
+    (.put-int64 username)
+    (.read-bytes message 0 length)
+    (.end-packet)))
 
 ;; Opcode: 29
 (defn add-ignore [stream username] ; username is string representation of username
