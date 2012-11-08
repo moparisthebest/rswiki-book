@@ -95,11 +95,11 @@ This page refers to the RSC #135 client revision.
 |-
 ! Newplayer (Registration)
 | 2 ||
-* Short - unknown
-* Long - long represenation of username
-* Short - referrer ID
+* Short - Unknown
+* Long - Long represenation of username
+* Short - Referrer ID
 ** Integer.parseInt(getParameter("referrerid"));
-* Line-RSA - password, server session ID, bigintegers
+* Line-RSA - Password, server session ID, bigintegers
 | Registers a new user (probably not used in private servers)
 |-
 ! Logout
@@ -107,13 +107,34 @@ This page refers to the RSC #135 client revision.
 * None
 | Sends the logout packet to the server
 |-
-! Command
+! Execute Command
 | 7 ||
 * String - The command
 | Sends a command to the server to be executed
 |-
-! Add User to Friends List
+! Report Abuse
+| 10 ||
+* Long - The long representation of the username of the user to report
+| Sends an abuse report to the server
+|-
+! Add Friend
 | 26 ||
 * Long - long represenation of username
 | Adds a user to your friends list
+|-
+! Remove Friend
+| 27 ||
+* Long - The long representation of the username of the user to report
+| Removes a user from your friends list
+|-
+! Send Message
+| 28 ||
+* Long - The long representation of the username of the user to send the message to
+* Byte[] - A byte array containing the bytes of the message to send to the user
+| Sends a message to the specified user
+|-
+! Ignore User
+| 29 ||
+* Long - The long representation of the username of the user to ignore
+| Adds a user to your ignore list
 |}
