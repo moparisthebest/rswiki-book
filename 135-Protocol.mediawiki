@@ -110,9 +110,9 @@ This page refers to the RSC #135 client revision.
 	</tr>
 
 	<tr>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
+		<td>Test</td>
+		<td>Test</td>
+		<td>Test</td>
+		<td>Test</td>
 	</tr>
 </table>
