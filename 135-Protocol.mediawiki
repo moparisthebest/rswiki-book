@@ -92,7 +92,14 @@ This page refers to the RSC #135 client revision.
 ! Opcode
 ! Payload
 |-
+! Newplayer (Registration)
+| 2 ||
+* Short - unknown
+* Long - long represenation of username
+* Short - referrer ID
+** Integer.parseInt(getParameter("referrerid"));
+* Line-RSA - password, server session ID, bigintegers
 ! Add User to Friends List
 | 26 ||
-* Long - Long represenation of username
+* Long - long represenation of username
 |}
