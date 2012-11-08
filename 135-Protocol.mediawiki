@@ -85,7 +85,7 @@ This page refers to the RSC #135 client revision.
       (.end-packet))))
 </pre>
 
-{| class="wikitable" style="text-align:center; width:200px; height:200px;"
+{| class="wikitable"
 |+ Outgoing Packets
 |-
 ! Name
@@ -104,7 +104,7 @@ This page refers to the RSC #135 client revision.
 |-
 ! Logout
 | 6 ||
-*
+* None
 | Sends the logout packet to the server
 |-
 ! Add User to Friends List
