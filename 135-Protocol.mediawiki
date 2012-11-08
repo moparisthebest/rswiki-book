@@ -40,7 +40,7 @@ This page refers to the RSC #135 client revision.
 ;; Opcode: 7
 (defn send-command [stream command] ; sends command to server e.g ::home, command arg is (.substring command 2)
   (doto stream
-    (.begin-pacet 7)
+    (.begin-packet 7)
     (.putline command)
     (.end-packet)))
 
@@ -106,6 +106,11 @@ This page refers to the RSC #135 client revision.
 | 6 ||
 * None
 | Sends the logout packet to the server
+|-
+! Command
+| 7 ||
+* String - The command
+| Sends a command to the server to be executed
 |-
 ! Add User to Friends List
 | 26 ||
