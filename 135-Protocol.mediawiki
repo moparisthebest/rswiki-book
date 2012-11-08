@@ -9,6 +9,40 @@ This page refers to the RSC #135 client revision.
 == '''Login''' ==
 ?
 
+=='''Reference'''==
+A lot of times, Util.longForName is referenced in the packets following:
+<pre>
+public static long longForName(String arg0) {
+		String s = "";
+		for (int i = 0; i < arg0.length(); i++) {
+			char c = arg0.charAt(i);
+			if (c >= 'a' && c <= 'z')
+				s = s + c;
+			else if (c >= 'A' && c <= 'Z')
+				s = s + (char) ((c + 97) - 65);
+			else if (c >= '0' && c <= '9')
+				s = s + c;
+			else
+				s = s + ' ';
+		}
+
+		s = s.trim();
+		if (s.length() > 12)
+			s = s.substring(0, 12);
+		long l = 0L;
+		for (int j = 0; j < s.length(); j++) {
+			char c1 = s.charAt(j);
+			l *= 37L;
+			if (c1 >= 'a' && c1 <= 'z')
+				l += (1 + c1) - 97;
+			else if (c1 >= '0' && c1 <= '9')
+				l += (27 + c1) - 48;
+		}
+
+		return l;
+	}
+</pre>
+
 == '''Incoming Data''' ==
 '''TODO:'''
 <pre>
@@ -78,7 +112,7 @@ This page refers to the RSC #135 client revision.
 
 ;; Opcode: 29
 (defn add-ignore [stream username] ; username is string representation of username
-  (let [name (Util/name-for-long username)]
+  (let [name (Util/long-for-name username)]
     (doto stream
       (.begin-packet 29)
       (.put-int64 name)
