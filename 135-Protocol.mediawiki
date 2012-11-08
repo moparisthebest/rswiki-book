@@ -53,6 +53,13 @@ This page refers to the RSC #135 client revision.
     (.begin-packet 6)
     (.end-packet)))
 
+;; Opcode: 7
+(defn send-command [stream command] ; sends command to server e.g ::home, command arg is (.substring command 2)
+  (doto stream
+    (.begin-pacet 7)
+    (.putline command)
+    (.end-packet)))
+
 ;; Opcode: 10
 (defn report-abuse [stream username]
   (let [name (.substring username 12)
