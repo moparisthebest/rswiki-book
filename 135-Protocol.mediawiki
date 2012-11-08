@@ -6,7 +6,123 @@ This page refers to the RSC #135 client revision.
 ?
 
 == '''Login''' ==
-?
+(The login protocol documentation is currently a work in progress. Below you will find a partially refactored version of the login method found in the 135 client.)
+<pre>
+try {
+			username = user;
+			user = jagex.Util.formatString(user, 20);
+			password = pass;
+			pass = jagex.Util.formatString(pass, 20);
+			if (user.trim().length() == 0) {
+				drawMessage(messageTable[0], messageTable[1]);
+				return;
+			}
+			if (reconnecting)
+				d(messageTable[2], messageTable[3]);
+			else
+				drawMessage(messageTable[6], messageTable[7]);
+			if (appletStarted())
+				stream = new SocketStream(host, this, port);
+			else
+				stream = new SocketStream(host, null, port);
+			stream.oe = xc;
+			int ssk = stream.readInt32();
+			serverSessionID = ssk;
+			System.out.println("Session id: " + ssk);
+			if (reconnecting)
+				stream.beginFrame(19);
+			else
+				stream.beginFrame(0);
+			stream.putInt16(wc);
+			stream.putInt64(jagex.Util.longForName(user));
+			stream.putLineRSA(pass, ssk, pd, qd);
+			stream.putInt32(getSessionID());
+			stream.flush();
+			stream.read();
+			int response = stream.read();
+			System.out.println("Login response: " + response);
+			if (response == 0) {
+				ed = 0;
+				e_();
+				return;
+			}
+			if (response == 1) {
+				ed = 0;
+				a();
+				return;
+			}
+			if (reconnecting) {
+				user = "";
+				pass = "";
+				f();
+				return;
+			}
+			if (response == 3) {
+				drawMessage(messageTable[10], messageTable[11]);
+				return;
+			}
+			if (response == 4) {
+				drawMessage(messageTable[4], messageTable[5]);
+				return;
+			}
+			if (response == 5) {
+				drawMessage(messageTable[16], messageTable[17]);
+				return;
+			}
+			if (response == 6) {
+				drawMessage(messageTable[18], messageTable[19]);
+				return;
+			}
+			if (response == 7) {
+				drawMessage(messageTable[20], messageTable[21]);
+				return;
+			}
+			if (response == 11) {
+				drawMessage(messageTable[22], messageTable[23]);
+				return;
+			}
+			if (response == 12) {
+				drawMessage(messageTable[24], messageTable[25]);
+				return;
+			}
+			if (response == 13) {
+				drawMessage(messageTable[14], messageTable[15]);
+				return;
+			}
+			if (response == 14) {
+				drawMessage(messageTable[8], messageTable[9]);
+				sd = 1500;
+				return;
+			}
+			if (response == 15) {
+				drawMessage(messageTable[26], messageTable[27]);
+				return;
+			}
+			if (response == 16) {
+				drawMessage(messageTable[28], messageTable[29]);
+				return;
+			} else {
+				drawMessage(messageTable[12], messageTable[13]);
+				return;
+			}
+		} catch (Exception exception) {
+			System.out.println(String.valueOf(exception));
+		}
+		if (ed > 0) {
+			try {
+				Thread.sleep(5000L);
+			} catch (Exception _ex) {
+			}
+			ed--;
+			login(username, password, reconnecting);
+		}
+		if (reconnecting) {
+			username = "";
+			password = "";
+			f();
+		} else {
+			drawMessage(messageTable[12], messageTable[13]);
+		}</pre>
 
 == '''Reference''' ==
 A lot of times, Util.longForName is referenced in the packets following:
