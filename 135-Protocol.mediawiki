@@ -99,6 +99,7 @@ This page refers to the RSC #135 client revision.
 * Short - referrer ID
 ** Integer.parseInt(getParameter("referrerid"));
 * Line-RSA - password, server session ID, bigintegers
+|-
 ! Add User to Friends List
 | 26 ||
 * Long - long represenation of username
