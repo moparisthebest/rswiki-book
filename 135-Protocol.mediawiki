@@ -14,20 +14,6 @@ This page refers to the RSC #135 client revision.
 <pre>
 </pre>
 
-<table border="1" cellpadding="3" cellspacing="3">
-	<tr>
-		<td><b>opcode</b></td>
-		<td><b>payload</b></td>
-	</tr>
-
-	<tr>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-</table>
-
 == '''Outgoing Data''' ==
 <pre>
 (ns rsc.135.packets
@@ -99,29 +85,14 @@ This page refers to the RSC #135 client revision.
       (.end-packet))))
 </pre>
 
-<table border="1" cellpadding="3" cellspacing="3">
-	{| class="wikitable" style="text-align:center; width:200px; height:200px;"
-|+ Multiplication table
+{| class="wikitable" style="text-align:center; width:200px; height:200px;"
+|+ Outgoing Packets
 |-
-! Ă
-! 1
-! 2
-! 3
+! Name
+! Opcode
+! Payload
 |-
-! 1
-| 1 || 2 || 3
-|-
-! 2
-| 2 || 4 || 6
-|-
-! 3
-| 3 || 6 || 9
-|-
-! 4
-| 4 || 8 || 12
-|-
-! 5
-| 5 || 10 || 15
+! Add User to Friends List
+| 26 ||
+* Long - Long represenation of username
 |}
-
-</table>
