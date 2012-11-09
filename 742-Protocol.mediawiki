@@ -1,3 +1,5 @@
+[[Category RS2]]
+
 ===Server -> Client Packets===
 {| border=2
 |-
