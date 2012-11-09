@@ -11,13 +11,13 @@
 |-
 | 47
 | Unknown
-| - 23
+| 23
 | [[742 Interface Packet|Interface Packet]]
 | Produces an interface for the player to see.
 |-
 | 116
 | Unknown
-| - -1
+| -1
 | [[742 Commands Packet|Commands Packet]]
 | The packet to utilize commands.
 |-
@@ -29,25 +29,25 @@
 |-
 | 89
 | Unknown
-| - -2
+| -2
 | [[742 Maps Packet|Maps Packet]]
 | A packet that sends the loading of maps.
 |-
 | 90
 | Unknown
-| - -2
+| -2
 | [[742 Player Update Packet|Player Update Packet]]
 | A packet to update the player's appearance etcetera.
 |-
 | 72
 | Unknown
-| - -2
+| -2
 | [[742 NPC Update Packet|NPC Update Packet]]
 | A packet to update a NPC's appearance etcetera.
 |-
 | 29
 | Unkown
-| - -2
+| -2
 | [[742 RunScripts Packet|RunScripts Packet]]
 | A packet to send Runscripts.
 |-
