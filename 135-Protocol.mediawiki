@@ -210,6 +210,12 @@ Some 135 packets are documented ahead. First you will find the packets' body, th
   (:require [jagex.Util])
   (:use [jagex.client.SocketStream]))
 
+;; Opcode: 1
+(defn disconnect [stream]
+  (doto stream
+    (.begin-packet1)
+    (.flush)))
+
 ;; Opcode: 2
 (defn newplayer [stream]
   (doto stream
@@ -283,6 +289,11 @@ Some 135 packets are documented ahead. First you will find the packets' body, th
 ! Opcode
 ! Payload
 ! Description
+|-
+! Disconnect
+| 1 ||
+* None
+| Sends the disconnect packet.
 |-
 ! Newplayer (Registration)
 | 2 ||
