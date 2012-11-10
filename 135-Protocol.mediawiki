@@ -6,123 +6,7 @@ This page refers to the RSC #135 client revision.
 ?
 
 == '''Login''' ==
-(The login protocol documentation is currently a work in progress. Below you will find a partially refactored version of the login method found in the 135 client.)
-<pre>
-try {
-			username = user;
-			user = jagex.Util.formatString(user, 20);
-			password = pass;
-			pass = jagex.Util.formatString(pass, 20);
-			if (user.trim().length() == 0) {
-				drawMessage(messageTable[0], messageTable[1]);
-				return;
-			}
-			if (reconnecting)
-				d(messageTable[2], messageTable[3]);
-			else
-				drawMessage(messageTable[6], messageTable[7]);
-			if (appletStarted())
-				stream = new SocketStream(host, this, port);
-			else
-				stream = new SocketStream(host, null, port);
-			stream.oe = xc;
-			int ssk = stream.readInt32();
-			serverSessionID = ssk;
-			System.out.println("Session id: " + ssk);
-			if (reconnecting)
-				stream.beginFrame(19);
-			else
-				stream.beginFrame(0);
-			stream.putInt16(wc);
-			stream.putInt64(jagex.Util.longForName(user));
-			stream.putLineRSA(pass, ssk, pd, qd);
-			stream.putInt32(getSessionID());
-			stream.flush();
-			stream.read();
-			int response = stream.read();
-			System.out.println("Login response: " + response);
-			if (response == 0) {
-				ed = 0;
-				e_();
-				return;
-			}
-			if (response == 1) {
-				ed = 0;
-				a();
-				return;
-			}
-			if (reconnecting) {
-				user = "";
-				pass = "";
-				f();
-				return;
-			}
-			if (response == 3) {
-				drawMessage(messageTable[10], messageTable[11]);
-				return;
-			}
-			if (response == 4) {
-				drawMessage(messageTable[4], messageTable[5]);
-				return;
-			}
-			if (response == 5) {
-				drawMessage(messageTable[16], messageTable[17]);
-				return;
-			}
-			if (response == 6) {
-				drawMessage(messageTable[18], messageTable[19]);
-				return;
-			}
-			if (response == 7) {
-				drawMessage(messageTable[20], messageTable[21]);
-				return;
-			}
-			if (response == 11) {
-				drawMessage(messageTable[22], messageTable[23]);
-				return;
-			}
-			if (response == 12) {
-				drawMessage(messageTable[24], messageTable[25]);
-				return;
-			}
-			if (response == 13) {
-				drawMessage(messageTable[14], messageTable[15]);
-				return;
-			}
-			if (response == 14) {
-				drawMessage(messageTable[8], messageTable[9]);
-				sd = 1500;
-				return;
-			}
-			if (response == 15) {
-				drawMessage(messageTable[26], messageTable[27]);
-				return;
-			}
-			if (response == 16) {
-				drawMessage(messageTable[28], messageTable[29]);
-				return;
-			} else {
-				drawMessage(messageTable[12], messageTable[13]);
-				return;
-			}
-		} catch (Exception exception) {
-			System.out.println(String.valueOf(exception));
-		}
-		if (ed > 0) {
-			try {
-				Thread.sleep(5000L);
-			} catch (Exception _ex) {
-			}
-			ed--;
-			login(username, password, reconnecting);
-		}
-		if (reconnecting) {
-			username = "";
-			password = "";
-			f();
-		} else {
-			drawMessage(messageTable[12], messageTable[13]);
-		}</pre>
+?
 
 == '''Reference''' ==
 A lot of times, Util.longForName is referenced in the packets following:
@@ -157,45 +41,6 @@ public static long longForName(String arg0) {
 		return l;
 	}
 </pre>
-
-In the 135 client, messages that are to be drawn on the login screen are stored in an array. This makes it a bit tedious to understand what messages are being drawn. Here is the message table:
-
-<pre>
-static {
-		messageTable = new String[50];
-		messageTable[0] = "You must enter both a username";
-		messageTable[1] = "and a password - Please try again";
-		messageTable[2] = "Connection lost! Please wait...";
-		messageTable[3] = "Attempting to re-establish";
-		messageTable[4] = "That username is already in use.";
-		messageTable[5] = "Wait 60 seconds then retry";
-		messageTable[6] = "Please wait...";
-		messageTable[7] = "Connecting to server";
-		messageTable[8] = "Sorry! The server is currently full.";
-		messageTable[9] = "Please try again later";
-		messageTable[10] = "Invalid username or password.";
-		messageTable[11] = "Try again, or create a new account";
-		messageTable[12] = "Sorry! Unable to connect to server.";
-		messageTable[13] = "Check your internet settings";
-		messageTable[14] = "Username already taken.";
-		messageTable[15] = "Please choose another username";
-		messageTable[16] = "The client has been updated.";
-		messageTable[17] = "Please reload this page";
-		messageTable[18] = "You may only use 1 character at once.";
-		messageTable[19] = "Your ip-address is already in use";
-		messageTable[20] = "Login attempts exceeded!";
-		messageTable[21] = "Please try again in 5 minutes";
-		messageTable[22] = "Account has been temporarily disabled";
-		messageTable[23] = "for cheating or abuse";
-		messageTable[24] = "Account has been permanently disabled";
-		messageTable[25] = "for cheating or abuse";
-		messageTable[26] = "You need a members account";
-		messageTable[27] = "to login to this server";
-		messageTable[28] = "Please login to a members server";
-		messageTable[29] = "to access member-only features";
-	}
-</pre>
-
 == '''Packets''' ==
 Some 135 packets are documented ahead. First you will find the packets' body, then you will find a table (for easier reading)
 
@@ -280,6 +125,13 @@ Some 135 packets are documented ahead. First you will find the packets' body, th
       (.begin-packet 29)
       (.put-int64 name)
       (.end-packet))))
+
+;; Opcode: 251
+(defn drop-item [stream id]
+  (doto stream
+    (.begin-packet 251)
+    (.put-int16 id)
+    (.end-packet)))
 </pre>
 
 {| class="wikitable"
@@ -339,4 +191,9 @@ Some 135 packets are documented ahead. First you will find the packets' body, th
 | 29 ||
 * Long - The long representation of the username of the user to ignore
 | Adds a user to your ignore list
+|-
+! Drop Item
+| 251 ||
+* Short - The ID of the item to drop
+| Drops the specified item on the ground
 |}
