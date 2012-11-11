@@ -9,38 +9,56 @@ This page refers to the RSC #135 client revision.
 ?
 
 == '''Reference''' ==
-A lot of times, Util.longForName is referenced in the packets following:
+Player usernames are encoded and decoded as a long with the following methods:
 <pre>
-public static long longForName(String arg0) {
-		String s = "";
-		for (int i = 0; i < arg0.length(); i++) {
-			char c = arg0.charAt(i);
-			if (c >= 'a' && c <= 'z')
-				s = s + c;
-			else if (c >= 'A' && c <= 'Z')
-				s = s + (char) ((c + 97) - 65);
-			else if (c >= '0' && c <= '9')
-				s = s + c;
-			else
-				s = s + ' ';
-		}
-
-		s = s.trim();
-		if (s.length() > 12)
-			s = s.substring(0, 12);
-		long l = 0L;
-		for (int j = 0; j < s.length(); j++) {
-			char c1 = s.charAt(j);
-			l *= 37L;
-			if (c1 >= 'a' && c1 <= 'z')
-				l += (1 + c1) - 97;
-			else if (c1 >= '0' && c1 <= '9')
-				l += (27 + c1) - 48;
-		}
-
-		return l;
+public static long encode_37(String s) {
+	String s1 = "";
+	for (int i = 0; i < s.length(); i++) {
+		char c = s.charAt(i);
+		if (c >= 'a' && c <= 'z')
+			s1 = s1 + c;
+		else if (c >= 'A' && c <= 'Z')
+			s1 = s1 + (char) ((c + 97) - 65);
+		else if (c >= '0' && c <= '9')
+			s1 = s1 + c;
+		else
+			s1 = s1 + ' ';
 	}
+	s1 = s1.trim();
+	if (s1.length() > 12)
+		s1 = s1.substring(0, 12);
+	long l = 0L;
+	for (int j = 0; j < s1.length(); j++) {
+		char c1 = s1.charAt(j);
+		l *= 37L;
+		if (c1 >= 'a' && c1 <= 'z')
+			l += (1 + c1) - 97;
+		else if (c1 >= '0' && c1 <= '9')
+			l += (27 + c1) - 48;
+	}
+	return l;
+}
+
+public static String decode_37(long l) {
+	String s = "";
+	while (l != 0L) {
+		int i = (int) (l % 37L);
+		l /= 37L;
+		if (i == 0) {
+			s = " " + s;
+		} else if (i < 27) {
+			if (l % 37L == 0L)
+				s = (char) ((i + 65) - 1) + s;
+			else
+				s = (char) ((i + 97) - 1) + s;
+		} else {
+			s = (char) ((i + 48) - 27) + s;
+		}
+	}
+	return s;
+}
 </pre>
+
 == '''Packets''' ==
 Some 135 packets are documented ahead. First you will find the packets' body, then you will find a table (for easier reading)
 
