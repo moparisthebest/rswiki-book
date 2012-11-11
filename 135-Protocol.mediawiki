@@ -145,7 +145,7 @@ Some 135 packets are documented ahead. First you will find the packets' body, th
 ! Disconnect
 | 1 ||
 * None
-| Sends the disconnect packet.
+| Sends the disconnect packet
 |-
 ! Newplayer (Registration)
 | 2 ||
