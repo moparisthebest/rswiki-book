@@ -149,7 +149,7 @@ Some 135 packets are documented ahead. First you will find the packets' body, th
 |-
 ! Newplayer (Registration)
 | 2 ||
-* Short - Unknown
+* Short - The client revision number (135)
 * Long - Long represenation of username
 * Short - Referrer ID
 ** Integer.parseInt(getParameter("referrerid"));
