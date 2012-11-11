@@ -60,7 +60,7 @@ public static String decode_37(long l) {
 </pre>
 
 == '''Packets''' ==
-Some 135 packets are documented ahead. First you will find the packets' body, then you will find a table (for easier reading)
+The packet opcodes are unchanged from previous revisions, presumably this was before the protocol was being regularly modified to deter the developers of bots such as [[AutoRune]]. The payload/structure is quite similar to most other RSC revisions. Some 135 packets are documented ahead. First you will find the packets' body, then you will find a table (for easier reading)
 
 === '''Incoming Data''' ===
 '''TODO:'''
