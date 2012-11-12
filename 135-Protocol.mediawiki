@@ -145,10 +145,48 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
       (.end-packet))))
 
 ;; Opcode: 251
-(defn drop-item [stream id]
+(defn drop-item [stream slot]
   (doto stream
     (.begin-packet 251)
-    (.put-int16 id)
+    (.put-int16 slot)
+    (.end-packet)))
+
+;; Opcode: 220
+(defn cast-inv [stream slot spell]
+  (doto stream
+    (.begin-packet 220)
+    (.put-int16 slot)
+    (.put-int16 spell)
+    (.end-packet)))
+
+
+;; Opcode: 240
+(defn use2-items [stream slot1 slot2]
+  (doto stream
+    (.begin-packet 240)
+    (.put-int16 slot1)
+    (.put-int16 slot2)
+    (.end-packet)))
+
+;; Opcode: 248
+(defn remove-item [stream slot]
+  (doto stream
+    (.begin-packet 248)
+    (.put-int16 slot)
+    (.end-packet)))
+
+;; Opcode: 249
+(defn equip-item [stream slot]
+  (doto stream
+    (.begin-packet 249)
+    (.put-int16 slot)
+    (.end-packet)))
+
+;; Opcode: 246
+(defn item-cmd [stream slot]
+  (doto stream
+    (.begin-packet 246)
+    (.put-int16 slot)
     (.end-packet)))
 </pre>
 
@@ -212,6 +250,33 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 |-
 ! Drop Item
 | 251 ||
-* Short - The ID of the item to drop
+* Short - The slot of the item to drop
 | Drops the specified item on the ground
+|-
+! Cast on Inventory
+| 220 ||
+* Short - The slot of the item to cast a spell on
+* Short - The id of the spell to cast
+| Casts a spell (such as High Alchemy) on the specified item
+|-
+! Use Two Inventory Items
+| 240 ||
+* Short - The slot of the first item to use
+* Short - The slot of the second item to use
+| Uses an item in the player's inventory with another item in the player's inventory
+|-
+! Remove Item
+| 248 ||
+* Short - The slot of the item to unequip
+| Unequips the specified item
+|-
+! Wear Item
+| 249 ||
+* Short - The slot of the item to equip
+| Equips the specified item
+|-
+! Inventory Command
+| 246 ||
+* Short - The slot of the item to use
+| Burys, eats, etc the specified item
 |}
