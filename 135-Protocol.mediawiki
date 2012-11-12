@@ -83,7 +83,7 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 (defn newplayer [stream]
   (doto stream
     (.begin-packet 2)
-    (.put-int16 ???)
+    (.put-int16 revisionid)
     (.put-int64 (Util/long-for-name username))
     (.put-int16 referrerid)
     (.putline-rsa password server-session-id key-a key-b) ; keys for RSA?
@@ -188,6 +188,57 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
     (.begin-packet 246)
     (.put-int16 slot)
     (.end-packet)))
+
+;; Opcode: 237
+(defn dialog-select [stream index]
+  (doto stream
+    (.begin-packet 237)
+    (.put-int8 index)
+    (.end-packet)))
+
+;; Opcode: 231
+(defn combat-select [stream index]
+  (doto stream
+    (.begin-packet 231)
+    (.put-int8 index)
+    (.end-packet)))
+
+;; Opcode: 207
+(defn closebank [stream]
+  (doto stream
+    (.begin-packet 207)
+    (.end-packet)))
+
+
+;; Opcode: 206
+(defn withdraw [stream id amount]
+  (doto stream
+    (.begin-packet 206)
+    (.put-int16 id)
+    (.put-int16 amount)
+    (.end-packet)))
+
+;; Opcode: 205
+(defn deposit [stream id amount]
+  (doto stream
+    (.begin-packet 205)
+    (.put-int16 id)
+    (.put-int16 amount)
+    (.end-packet)))
+
+;; Opcode: 211
+(defn prayer-off [stream id]
+  (doto stream
+    (.begin-packet 211)
+    (.put-int8 id)
+    (.end-packet)))
+
+;; Opcode: 212
+(defn prayer-on [stream id]
+  (doto stream
+    (.begin-packet 212)
+    (.put-int8 id)
+    (.end-packet)))
 </pre>
 
 {| class="wikitable"
@@ -279,4 +330,41 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 | 246 ||
 * Short - The slot of the item to use
 | Burys, eats, etc the specified item
+|-
+! Select Option
+| 237 ||
+* Byte - The position of the option in the dialog_options array
+| Selects an option in a dialog (dialog referring to, for example, the menu displayed when certing)
+|-
+! Select Combat Style
+| 231 ||
+* Byte - The position of the combat style in the list
+| Selects the player's combat style.  * 0 - Controlled * 1 - Aggressive * 2 - Accurate * 3 - Defensive
+|-
+! Close Bank
+| 207 ||
+* None
+| Informs the server that the player has closed the banking interface.
+|-
+! Withdraw Item
+| 206 ||
+* Short - The ID of the item to withdraw
+* Short - The amount of the specified item to withdraw
+| Withdraws a single type of item from the player's bank.
+|-
+! Deposit Item
+| 205 ||
+* Short - The ID of the item to deposit
+* Short - The amount of the specified item to deposit
+| Deposits a single type of item into the player's bank.
+|-
+! Disable Prayer
+| 211 ||
+* Byte - The ID of the prayer to disable
+| Disables a prayer.
+|-
+! Enable Prayer
+| 212 ||
+* Byte - The ID of the prayer to enable
+| Enables a prayer.
 |}
