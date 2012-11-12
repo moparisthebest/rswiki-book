@@ -407,6 +407,11 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 | 204 ||
 * Short - The player's server index
 | Sends a duel request to another player.
+|-
+! RuntimeException
+| 17 ||
+* String - The text of the error.
+| Sent when the client throws an exception while processing data sent by the server.
 |}
 
 Notes:
