@@ -9,7 +9,7 @@ This page refers to the RSC #135 client revision.
 ?
 
 == '''Reference''' ==
-Player usernames are encoded and decoded as a long with the following methods:
+Player usernames can be encoded and decoded as a long with the following methods:
 <pre>
 public static long encode_37(String s) {
 	String s1 = "";
@@ -60,189 +60,36 @@ public static String decode_37(long l) {
 </pre>
 
 == '''Packets''' ==
-The packet opcodes are unchanged from previous revisions, presumably this was before the protocol was being regularly modified to deter the developers of bots such as [[AutoRune]]. The payload/structure is quite similar to most other RSC revisions. Some 135 packets are documented ahead. First you will find the packets' body, then you will find a table (for easier reading)
+The packet opcodes are unchanged from previous revisions, presumably this was before the protocol was being regularly modified to deter the developers of bots such as [[AutoRune]]. The payload/structure is quite similar to most other RSC revisions.
 
 === '''Incoming Data''' ===
 '''TODO:'''
-<pre>
-</pre>
-
-=== '''Outgoing Data''' ===
-<pre>
-(ns rsc.rsc135.packets
-  (:require [jagex.Util])
-  (:use [jagex.client.SocketStream]))
-
-;; Opcode: 1
-(defn disconnect [stream]
-  (doto stream
-    (.begin-packet1)
-    (.flush)))
-
-;; Opcode: 2
-(defn newplayer [stream]
-  (doto stream
-    (.begin-packet 2)
-    (.put-int16 revisionid)
-    (.put-int64 (Util/long-for-name username))
-    (.put-int16 referrerid)
-    (.putline-rsa password server-session-id key-a key-b) ; keys for RSA?
-    (.flush)
-    (.read) ; newplayer response
-    (.end-packet)))
-
-;; Opcode: 6
-(defn logout [stream]
-  (doto stream
-    (.begin-packet 6)
-    (.end-packet)))
-
-;; Opcode: 7
-(defn send-command [stream command] ; sends command to server e.g ::home, command arg is (.substring command 2)
-  (doto stream
-    (.begin-packet 7)
-    (.putline command)
-    (.end-packet)))
-
-;; Opcode: 10
-(defn report-abuse [stream username]
-  (let [name (.substring username 12)
-	l5 (Util/long-for-name name)]
-    (doto stream
-      (.begin-packet 10)
-      (.put-int64 l5)
-      (.end-packet))))
-
-;; Opcode: 26
-(defn add-friend [stream name] ; name is string represenation of username
-  (doto stream
-    (.begin-packet 26)
-    (.put-int64 (Util/long-for-name name)
-    (.end-packet)))
-
-;; Opcode: 27
-(defn remove-friend [stream name] ; name is long represenation of username (i.e Util/long-for-name username)
-  (doto stream
-    (.begin-packet 27)
-    (.put-int64 name)
-    (.end-packet)))
-
-;; Opcode: 28
-;; name is long representation of username, message is byte representation of message (.getBytes message), length is length of message (maximum length is 200)
-(defn send-message [stream name message length]
-  (doto stream
-    (.begin-packet 28)
-    (.put-int64 username)
-    (.read-bytes message 0 length)
-    (.end-packet)))
-
-;; Opcode: 29
-(defn add-ignore [stream username] ; username is string representation of username
-  (let [name (Util/long-for-name username)]
-    (doto stream
-      (.begin-packet 29)
-      (.put-int64 name)
-      (.end-packet))))
-
-;; Opcode: 251
-(defn drop-item [stream slot]
-  (doto stream
-    (.begin-packet 251)
-    (.put-int16 slot)
-    (.end-packet)))
-
-;; Opcode: 220
-(defn cast-inv [stream slot spell]
-  (doto stream
-    (.begin-packet 220)
-    (.put-int16 slot)
-    (.put-int16 spell)
-    (.end-packet)))
-
-
-;; Opcode: 240
-(defn use2-items [stream slot1 slot2]
-  (doto stream
-    (.begin-packet 240)
-    (.put-int16 slot1)
-    (.put-int16 slot2)
-    (.end-packet)))
-
-;; Opcode: 248
-(defn remove-item [stream slot]
-  (doto stream
-    (.begin-packet 248)
-    (.put-int16 slot)
-    (.end-packet)))
-
-;; Opcode: 249
-(defn equip-item [stream slot]
-  (doto stream
-    (.begin-packet 249)
-    (.put-int16 slot)
-    (.end-packet)))
-
-;; Opcode: 246
-(defn item-cmd [stream slot]
-  (doto stream
-    (.begin-packet 246)
-    (.put-int16 slot)
-    (.end-packet)))
-
-;; Opcode: 237
-(defn dialog-select [stream index]
-  (doto stream
-    (.begin-packet 237)
-    (.put-int8 index)
-    (.end-packet)))
-
-;; Opcode: 231
-(defn combat-select [stream index]
-  (doto stream
-    (.begin-packet 231)
-    (.put-int8 index)
-    (.end-packet)))
-
-;; Opcode: 207
-(defn closebank [stream]
-  (doto stream
-    (.begin-packet 207)
-    (.end-packet)))
-
-
-;; Opcode: 206
-(defn withdraw [stream id amount]
-  (doto stream
-    (.begin-packet 206)
-    (.put-int16 id)
-    (.put-int16 amount)
-    (.end-packet)))
-
-;; Opcode: 205
-(defn deposit [stream id amount]
-  (doto stream
-    (.begin-packet 205)
-    (.put-int16 id)
-    (.put-int16 amount)
-    (.end-packet)))
-
-;; Opcode: 211
-(defn prayer-off [stream id]
-  (doto stream
-    (.begin-packet 211)
-    (.put-int8 id)
-    (.end-packet)))
-
-;; Opcode: 212
-(defn prayer-on [stream id]
-  (doto stream
-    (.begin-packet 212)
-    (.put-int8 id)
-    (.end-packet)))
-</pre>
+{| class="wikitable"
+|-
+! Name
+! Opcode
+! Payload
+! Description
+|-
+|}
 
 {| class="wikitable"
-|+ Outgoing Packets
+|-
+! Login Response
+! Description
+|-
+|}
+
+{| class="wikitable"
+|-
+! Newplayer Response
+! Description
+|-
+|}
+
+=== '''Outgoing Data''' ===
+'''TODO: Dueling, document 254'''
+{| class="wikitable"
 |-
 ! Name
 ! Opcode
@@ -256,19 +103,28 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 |-
 ! Newplayer (Registration)
 | 2 ||
-* Short - The client revision number (135)
-* Long - Long represenation of username
+* Short - The client's revision number (135)
+* Long - Long representation of the username
 * Short - Referrer ID
 ** Integer.parseInt(getParameter("referrerid"));
 * Line-RSA - Password, server session ID, bigintegers
-| Registers a new user (probably not used in private servers)
+* Int - The "ranseed" value
+| Registers a new user.
+|-
+! Login
+| 0 or 19 ||
+* Short - The client's revision number (135)
+* Long - Long representation of the username
+* Line-RSA - Password, server session ID, bigintegers
+* Int - The "ranseed" value
+| Logs the player in. The opcode is 19 when the player is reconnecting after being disconnected.
 |-
 ! Logout
 | 6 ||
 * None
 | Sends the logout packet to the server
 |-
-! Execute Command
+! Admin Command
 | 7 ||
 * String - The command
 | Sends a command to the server to be executed
@@ -280,7 +136,7 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 |-
 ! Add Friend
 | 26 ||
-* Long - long represenation of username
+* Long - long representation of username
 | Adds a user to your friends list
 |-
 ! Remove Friend
@@ -299,18 +155,38 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * Long - The long representation of the username of the user to ignore
 | Adds a user to your ignore list
 |-
+! Walk to Tile
+| 255 ||
+* Short - (start_x + area_x). The initial position.
+* Short - (start_y + area_y)
+* Byte... - (route_x[i] - start_x)
+* Byte... - (route_y[i] - start_y)
+| Variable length. Walks to a tile. The number of steps can be calculated by dividing the available data by 2.
+|-
+! Walk to Entity
+| 215 ||
+* The same as 255.
+| Variable length. Walks to an entity. The number of steps can be calculated by dividing the available data by 2.
+|-
+! Acknowledge Players
+| 254 ||
+* Short - Size?
+* Short... - The player's server index
+* Short... - ???
+| Variable length. Informs the server of new players. Why?
+|-
 ! Drop Item
 | 251 ||
 * Short - The slot of the item to drop
 | Drops the specified item on the ground
 |-
-! Cast on Inventory
+! Cast on Item
 | 220 ||
 * Short - The slot of the item to cast a spell on
 * Short - The id of the spell to cast
 | Casts a spell (such as High Alchemy) on the specified item
 |-
-! Use Two Inventory Items
+! Use with Item
 | 240 ||
 * Short - The slot of the first item to use
 * Short - The slot of the second item to use
@@ -319,27 +195,31 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 ! Remove Item
 | 248 ||
 * Short - The slot of the item to unequip
-| Unequips the specified item
+| Unequips the specified inventory item
 |-
 ! Wear Item
 | 249 ||
 * Short - The slot of the item to equip
-| Equips the specified item
+| Equips the specified inventory item
 |-
-! Inventory Command
+! Item Command
 | 246 ||
 * Short - The slot of the item to use
-| Burys, eats, etc the specified item
+| Buries, eats, etc the specified inventory item
 |-
 ! Select Option
 | 237 ||
 * Byte - The position of the option in the dialog_options array
 | Selects an option in a dialog (dialog referring to, for example, the menu displayed when certing)
 |-
-! Select Combat Style
+! Combat Style
 | 231 ||
 * Byte - The position of the combat style in the list
-| Selects the player's combat style.  * 0 - Controlled * 1 - Aggressive * 2 - Accurate * 3 - Defensive
+| Sets the player's combat style.
+* 0 - Controlled 
+* 1 - Aggressive
+* 2 - Accurate
+* 3 - Defensive
 |-
 ! Close Bank
 | 207 ||
@@ -367,4 +247,169 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 | 212 ||
 * Byte - The ID of the prayer to enable
 | Enables a prayer.
+|-
+! Confirm Trade
+| 202 ||
+* None
+| Confirms the trade offer.
+|-
+! Accept Trade
+| 232 ||
+* None
+| Accepts the trade offer.
+|-
+! Decline Trade
+| 233 ||
+* None
+| Declines the trade offer.
+|-
+! Trade Update
+| 234 ||
+* Byte - The amount of traded items to send to the server
+* Short... - The id of the item
+* Int... - The amount/stack size of the item
+| Variable length. Updates the trade offer.
+|-
+! Cast on GItem
+| 224* ||
+* Short - The item's X coordinate
+* Short - The item's Y coordinate
+* Short - The item's ID
+* Short - The spell's ID
+| Casts a spell on an item on the ground.
+|-
+! Use with GItem
+| 250* ||
+* Short - The item's X coordinate
+* Short - The item's Y coordinate
+* Short - The item's ID
+* Short - The inventory slot
+| Uses an item in the player's inventory with an item on the ground.
+|-
+! Take GItem
+| 252* ||
+* Short - The item's X coordinate
+* Short - The item's Y coordinate
+* Short - The item's ID
+| Picks up an item on the ground.
+|-
+! Cast on Boundary
+| 223* ||
+* Short - The bound's X coordinate
+* Short - The bound's Y coordinate
+* Byte - The bound's direction
+* Short - The spell's ID
+| Casts a spell on a boundary (or 'wall object').
+|-
+! Use with Boundary
+| 239* ||
+* Short - The bound's X coordinate
+* Short - The bound's Y coordinate
+* Byte - The bound's direction
+* Short - The inventory slot
+| Uses an item in the player's inventory with a boundary (or 'wall object').
+|-
+! Boundary Cmd 1
+| 238* ||
+* Short - The bound's X coordinate
+* Short - The bound's Y coordinate
+* Byte - The bound's direction
+| Performs the primary action (usually 'open') on a boundary (or 'wall object').
+|-
+! Boundary Cmd 2
+| 229* ||
+* Short - The bound's X coordinate
+* Short - The bound's Y coordinate
+* Byte - The bound's direction
+| Performs the secondary action (usually 'close' or 'picklock') on a boundary (or 'wall object').
+|-
+! Cast on Object
+| 222* ||
+* Short - The object's X coordinate
+* Short - The object's Y coordinate
+* Short - The spell's ID
+| Casts a spell on an object. Unused?
+|-
+! Use with Object
+| 241* ||
+* Short - The object's X coordinate
+* Short - The object's Y coordinate
+* Short - The inventory slot
+| Uses an item in the player's inventory with an object.
+|-
+! Object Cmd 1
+| 241* ||
+* Short - The object's X coordinate
+* Short - The object's Y coordinate
+| Performs the primary action on an object (for example, 'mine').
+|-
+! Object Cmd 2
+| 230* ||
+* Short - The object's X coordinate
+* Short - The object's Y coordinate
+| Performs the secondary action on an object (for example, 'prospect').
+|-
+! Cast on NPC
+| 225* ||
+* Short - The NPC's server index
+* Short - The spell's ID
+| Casts a spell on a non-player character.
+|-
+! Use with NPC
+| 243* ||
+* Short - The NPC's server index
+* Short - The inventory slot
+| Uses an item in the player's inventory with a non-player character. 
+|-
+! Talk to NPC
+| 245* ||
+* Short - The NPC's server index
+| Starts talking to a non-player character.
+|-
+! Attack NPC
+| 244* ||
+* Short - The NPC's server index
+| Starts attacking a non-player character.
+|-
+! NPC Cmd 2
+| 195* ||
+* Short - The NPC's server index
+| Performs the secondary action on a non-player character, usually 'pickpocket'.
+|-
+! Cast on Player
+| 226* ||
+* Short - The player's server index
+* Short - The spell's ID
+| Casts a spell on another player.
+|-
+! Use with Player
+| 219* ||
+* Short - The player's server index
+* Short - The inventory slot
+| Uses an item (for example, a Gnomeball, or a Christmas cracker) on another player.
+|-
+! Attack Player
+| 228* ||
+* Short - The player's server index
+| Starts attacking another player.
+|-
+! Trade Player
+| 235 ||
+* Short - The player's server index
+| Sends a trade request to another player.
+|-
+! Follow Player
+| 214 ||
+* Short - The player's server index
+| Starts following another player.
+|-
+! Duel Player
+| 204 ||
+* Short - The player's server index
+| Sends a duel request to another player.
 |}
+
+Notes:
+
+* "ranseed" does not seed anything. RSC135 does not use ISAAC ciphering. It is an applet parameter or read from uid.dat. Presumably, it was used to identify players connecting from the same computer.
+* Opcodes marked with * are preceded by 215.
