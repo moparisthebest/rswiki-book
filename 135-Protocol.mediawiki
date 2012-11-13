@@ -3,7 +3,6 @@ This page refers to the RSC #135 client revision.
 
 
 == '''Packet structure''' ==
-
 RSC-135 uses big-endian byte order exclusively.
 
 == '''Login''' ==
@@ -59,6 +58,50 @@ public static String decode_37(long l) {
 	return s;
 }
 </pre>
+
+Player usernames are encoded like so exclusively in the account recovery process:
+<pre>
+public static long encode47(String arg0) {
+		arg0 = arg0.trim();
+		arg0 = arg0.toLowerCase();
+		long l = 0L;
+		int i = 0;
+		for (int j = 0; j < arg0.length(); j++) {
+			char c = arg0.charAt(j);
+			if (c >= 'a' && c <= 'z' || c >= '0' && c <= '9') {
+				char c1 = c;
+				l = l * 47L * (l - (long) (c1 * 6) - (long) (i * 7));
+				l += (c1 - 32) + i * c1;
+				i++;
+			}
+		}
+
+		return l;
+	}
+</pre>
+
+== '''Password Recovery''' ==
+Firstly, an integer is read from the stream.
+Then, the previous password and the new password are formatted and stored locally.
+The client begins a packet with opcode 8. The username is encoded and the long is written.
+Next, the client session ID is written.
+RSA line is put (old password + new password)
+(Presumably) The username is written as RSA long 5 times encoded with a special method used exclusively in the account recovery process (documented above).
+One byte is read and discarded.
+The next byte is the recovery response. The possible values:
+
+{| class="wikitable"
+|-
+! Response Code
+! Meaning
+|-
+| 0 || Sorry, recovery failed! You may try again in one hour.
+|-
+| 1 || Your pass has been reset. You may now use the new pass to login.
+|}
+
+Literally any other value results in a recovery failure and the following error message:
+"Recovery failed! Attempts exceeded?"
 
 == '''Packets''' ==
 The packet opcodes are unchanged from previous revisions, presumably this was before the protocol was being regularly modified to deter the developers of bots such as [[AutoRune]]. The payload/structure is quite similar to most other RSC revisions.
