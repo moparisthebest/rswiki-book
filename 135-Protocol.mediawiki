@@ -1,5 +1,5 @@
 [[Category RSC]]
-This page refers to the RSC #135 client revision.
+This page refers to the RSC #135 client revision. You can find a partially refactored RSC #135 client [https://bitbucket.org/_mthd0/rsc here].
 
 
 == '''Packet structure''' ==
