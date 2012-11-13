@@ -3,7 +3,8 @@ This page refers to the RSC #135 client revision.
 
 
 == '''Packet structure''' ==
-?
+
+RSC-135 uses big-endian byte order exclusively.
 
 == '''Login''' ==
 ?
