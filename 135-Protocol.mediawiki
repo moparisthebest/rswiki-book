@@ -73,22 +73,73 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 |-
 |}
 
+Login and newplayer responses are sent by the server like a typical frame. The first byte (the opcode) is skipped by the client.
+
 {| class="wikitable"
 |-
-! Login Response
+! Login Resp.
 ! Description
 |-
+| 0
+| Successful login
+|-
+| 1
+|?
+|-
+| 3
+| Invalid username or password
+|-
+| 4
+| Username already in use
+|-
+| 5
+| Client has been updated
+|-
+| 6
+| IP address is already in use
+|-
+| 7
+| Login attempts exceeded
+|-
+| 11
+| Account temporarily disabled
+|-
+| 12
+| Account permanently disabled
+|-
+| 15
+| Server is currently full
+|-
+| 16
+| Members-only server
+|-
+| 17
+| Members-only area
 |}
 
 {| class="wikitable"
 |-
-! Newplayer Response
+! Newp Resp.
 ! Description
 |-
+| 2
+| Successful registration
+|-
+| 3
+| Username already taken
+|-
+| 5
+| Client has been updated
+|-
+| 6
+| IP address is already in use
+|-
+| 7
+| Registration attempts exceeded?
 |}
 
 === '''Outgoing Data''' ===
-'''TODO: Dueling, document 254'''
+'''TODO: Dueling, password recovery, 254'''
 {| class="wikitable"
 |-
 ! Name
@@ -417,4 +468,4 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 Notes:
 
 * "ranseed" does not seed anything. RSC135 does not use ISAAC ciphering. It is an applet parameter or read from uid.dat. Presumably, it was used to identify players connecting from the same computer.
-* Opcodes marked with * are preceded by 215.
+* Opcodes marked with * are preceded by Walk to Entity.
