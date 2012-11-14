@@ -183,7 +183,7 @@ Login and newplayer responses are sent by the server like a typical frame. The f
 |}
 
 === '''Outgoing Data''' ===
-'''TODO: Dueling, password recovery, 254'''
+'''TODO: Password recovery & recovery questions, 254'''
 {| class="wikitable"
 |-
 ! Name
@@ -507,9 +507,40 @@ Login and newplayer responses are sent by the server like a typical frame. The f
 | 17 ||
 * String - The text of the error.
 | Sent when the client throws an exception while processing data sent by the server.
+|-
+! Confirm Duel Offer
+| 198 ||
+* None
+| Confirms the duel offer.
+|-
+! Accept Duel Offer
+| 199 ||
+* None
+| Accepts the duel offer.
+|-
+! Duel Settings
+| 200 ||
+* Byte - No retreating, 0 or 1
+* Byte - No magic, 0 or 1
+* Byte - No prayers, 0 or 1
+* Byte - No weapons, 0 or 1
+| Updates the duel settings.
+|-
+! Duel Items
+| 201 ||
+* Byte - The total number of offered items
+* Short... - Offered item ID
+* Int... - Offered item stack size
+| Variable length. Updates the stake.
+|-
+! Decline Duel Offer
+| 203 ||
+* None
+| Declines the duel offer.
 |}
 
 Notes:
 
 * "ranseed" does not seed anything. RSC135 does not use ISAAC ciphering. It is an applet parameter or read from uid.dat. Presumably, it was used to identify players connecting from the same computer.
 * Opcodes marked with * are preceded by Walk to Entity.
+* When closing the duel confirm screen, it may send the decline trade packet, for some reason.
