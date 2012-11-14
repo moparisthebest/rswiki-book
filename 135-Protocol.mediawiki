@@ -1,12 +1,11 @@
 [[Category RSC]]
 This page refers to the RSC #135 client revision. You can find a partially refactored RSC #135 client [https://bitbucket.org/_mthd0/rsc here].
 
-
 == '''Packet structure''' ==
-RSC-135 uses big-endian byte order exclusively.
 
-== '''Login''' ==
-?
+TODO.
+
+RSC-135 uses big-endian byte order exclusively.
 
 == '''Reference''' ==
 Player usernames can be encoded and decoded as a long with the following methods:
@@ -62,62 +61,36 @@ public static String decode_37(long l) {
 Player usernames are encoded like so exclusively in the account recovery process:
 <pre>
 public static long encode47(String arg0) {
-		arg0 = arg0.trim();
-		arg0 = arg0.toLowerCase();
-		long l = 0L;
-		int i = 0;
-		for (int j = 0; j < arg0.length(); j++) {
-			char c = arg0.charAt(j);
-			if (c >= 'a' && c <= 'z' || c >= '0' && c <= '9') {
-				char c1 = c;
-				l = l * 47L * (l - (long) (c1 * 6) - (long) (i * 7));
-				l += (c1 - 32) + i * c1;
-				i++;
-			}
+	arg0 = arg0.trim();
+	arg0 = arg0.toLowerCase();
+	long l = 0L;
+	int i = 0;
+	for (int j = 0; j < arg0.length(); j++) {
+		char c = arg0.charAt(j);
+		if (c >= 'a' && c <= 'z' || c >= '0' && c <= '9') {
+			char c1 = c;
+			l = l * 47L * (l - (long) (c1 * 6) - (long) (i * 7));
+			l += (c1 - 32) + i * c1;
+			i++;
 		}
-
-		return l;
 	}
+	return l;
+}
 </pre>
 
-== '''Password Recovery''' ==
-Firstly, an integer is read from the stream.
-Then, the previous password and the new password are formatted and stored locally.
-The client begins a packet with opcode 8. The username is encoded and the long is written.
-Next, the client session ID is written.
-RSA line is put (old password + new password)
-(Presumably) The username is written as RSA long 5 times encoded with a special method used exclusively in the account recovery process (documented above).
-One byte is read and discarded.
-The next byte is the recovery response. The possible values:
-
-{| class="wikitable"
-|-
-! Response Code
-! Meaning
-|-
-| 0 || Sorry, recovery failed! You may try again in one hour.
-|-
-| 1 || Your pass has been reset. You may now use the new pass to login.
-|}
-
-Literally any other value results in a recovery failure and the following error message:
-"Recovery failed! Attempts exceeded?"
-
-== '''Packets''' ==
-The packet opcodes are unchanged from previous revisions, presumably this was before the protocol was being regularly modified to deter the developers of bots such as [[AutoRune]]. The payload/structure is quite similar to most other RSC revisions.
-
-=== '''Incoming Data''' ===
-'''TODO:'''
-{| class="wikitable"
-|-
-! Name
-! Opcode
-! Payload
-! Description
-|-
-|}
-
-Login and newplayer responses are sent by the server like a typical frame. The first byte (the opcode) is skipped by the client.
+== '''Login''' ==
+* The username and password are prepared. This is done by replacing any spaces or illegal characters with _ and appending spaces to the string until its length is 20.
+* The connection with the server is established.
+* The client reads a raw long from the server, this is the "session id".
+* The client creates a new frame, opcode 0 or 19 if the player is reconnecting.
+* A short, the client's revision number (135) is placed in the buffer.
+* A long, the player's username encoded with mod37 (see above) is placed in the buffer.
+* A string encoded with RSA and the player's session id (the password) is placed in the buffer.
+* An integer, the player's "ranseed" value is placed in the buffer.
+** "ranseed" does not seed anything. RSC135 does not use ISAAC ciphering. It is an applet parameter or read from uid.dat. Presumably, it was used to identify players connecting from the same computer.
+* The stream is then flushed.
+* A byte is read from the stream and discarded.
+* Another byte is read, this is the login response code from the server.
 
 {| class="wikitable"
 |-
@@ -158,8 +131,24 @@ Login and newplayer responses are sent by the server like a typical frame. The f
 | Members-only server
 |-
 | 17
-| Members-only area
+| Members-only area?
 |}
+
+== '''Registration''' ==
+
+* The username and password are prepared. This is done by replacing any spaces or illegal characters with _ and appending spaces to the string until its length is 20.
+* The connection with the server is established.
+* The client reads a raw long from the server, this is the "session id".
+* The client creates a new frame, opcode 2.
+* A short, the client's revision number (135) is placed in the buffer.
+* A long, the player's username encoded with mod37 (see above) is placed in the buffer.
+* A short, the applet's "referid" parameter is placed in the buffer.
+* A string encoded with RSA and the player's session id (the password) is placed in the buffer.
+* An integer, the player's "ranseed" value is placed in the buffer.
+** "ranseed" does not seed anything. RSC135 does not use ISAAC ciphering. It is an applet parameter or read from uid.dat. Presumably, it was used to identify players connecting from the same computer.
+* The stream is then flushed.
+* A byte is read from the stream and discarded.
+* Another byte is read, this is the newplayer response code from the server.
 
 {| class="wikitable"
 |-
@@ -180,6 +169,248 @@ Login and newplayer responses are sent by the server like a typical frame. The f
 |-
 | 7
 | Registration attempts exceeded?
+|}
+
+== '''Password Recovery''' ==
+Firstly, an integer is read from the stream.
+Then, the previous password and the new password are formatted and stored locally.
+The client begins a packet with opcode 8. The username is encoded and the long is written.
+Next, the client session ID is written.
+RSA line is put (old password + new password)
+(Presumably) The username is written as RSA long 5 times encoded with a special method used exclusively in the account recovery process (documented above).
+One byte is read and discarded.
+The next byte is the recovery response. The possible values:
+
+{| class="wikitable"
+|-
+! Response Code
+! Meaning
+|-
+| 0 || Sorry, recovery failed! You may try again in one hour.
+|-
+| 1 || Your pass has been reset. You may now use the new pass to login.
+|}
+
+Literally any other value results in a recovery failure and the following error message:
+"Recovery failed! Attempts exceeded?"
+
+== '''Packets''' ==
+The packet opcodes are unchanged from previous revisions, presumably this was before the protocol was being regularly modified to deter the developers of bots such as [[AutoRune]]. The payload/structure is quite similar to most other RSC revisions.
+
+=== '''Incoming Data''' ===
+'''TODO:'''
+{| class="wikitable"
+|-
+! Name
+! Opcode
+! Payload
+! Description
+|-
+! Display Message
+| 8 ||
+* ?
+| ?
+|-
+! Close Connection
+| 9 ||
+* ?
+| ?
+|-
+! Logout Failed
+| 10 ||
+* ?
+| ?
+|-
+! Initialize Friends List
+| 23 ||
+* ?
+| ?
+|-
+! Update Friends List
+| 24 ||
+* ?
+| ?
+|-
+! Initialize Ignore List
+| 26 ||
+* ?
+| ?
+|-
+! Privacy Settings
+| 27 ||
+* ?
+| ?
+|-
+! Private Message
+| 28 ||
+* ?
+| ?
+|-
+! Player Positions
+| 255 ||
+* ?
+| ?
+|-
+! Ground Items
+| 254 ||
+* ?
+| ?
+|-
+! Objects
+| 253 ||
+* ?
+| ?
+|-
+! Inventory
+| 252 ||
+* ?
+| ?
+|-
+! Players
+| 250 ||
+* ?
+| ?
+|-
+! Boundaries
+| 249 ||
+* ?
+| ?
+|-
+! NPC Positions
+| 248 ||
+* ?
+| ?
+|-
+! NPCs
+| 247 ||
+* ?
+| ?
+|-
+! Dialog
+| 246 ||
+* ?
+| ?
+|-
+! Hide Dialog
+| 245 ||
+* ?
+| ?
+|-
+! Initialize Client
+| 244 ||
+* ?
+| ?
+|-
+! Skills
+| 243 ||
+* ?
+| ?
+|-
+! Equipment Bonuses
+| 242 ||
+* ?
+| ?
+|-
+! Player Death
+| 241 ||
+* ?
+| ?
+|-
+! Environment
+| 240 ||
+* ?
+| ?
+|-
+! Character Design
+| 239 ||
+* ?
+| ?
+|-
+! Display Trade Offer
+| 238 ||
+* ?
+| ?
+|-
+! Hide Trade
+| 237 ||
+* ?
+| ?
+|-
+! Update Trade Offer
+| 236 ||
+* ?
+| ?
+|-
+! Other's Trade Status
+| 235 ||
+* ?
+| ?
+|-
+! Display Shop
+| 234 ||
+* ?
+| ?
+|-
+! Hide Shop
+| 233 ||
+* ?
+| ?
+|-
+! Our Trade Status
+| 229 ||
+* ?
+| ?
+|-
+! Game Settings
+| 228 ||
+* ?
+| ?
+|-
+! Prayers
+| 227 ||
+* ?
+| ?
+|-
+! Quests
+| 226 ||
+* ?
+| ?
+|-
+! Display Bank
+| 222 ||
+* ?
+| ?
+|-
+! Hide Bank
+| 221 ||
+* ?
+| ?
+|-
+! Bank Update
+| 214 ||
+* ?
+| ?
+|-
+! XP Update
+| 220 ||
+* ?
+| ?
+|-
+! Update InvItem
+| 213 ||
+* ?
+| ?
+|-
+! Remove InvItem
+| 212 ||
+* ?
+| ?
+|-
+! Skill Update
+| 211 ||
+* ?
+| ?
+|-
 |}
 
 === '''Outgoing Data''' ===
@@ -207,12 +438,17 @@ Login and newplayer responses are sent by the server like a typical frame. The f
 | Registers a new user.
 |-
 ! Login
-| 0 or 19 ||
+| 0 ||
 * Short - The client's revision number (135)
 * Long - Long representation of the username
 * Line-RSA - Password, server session ID, bigintegers
 * Int - The "ranseed" value
-| Logs the player in. The opcode is 19 when the player is reconnecting after being disconnected.
+| Logs the player in.
+|-
+! Reconnect
+| 19 ||
+* Same as 0
+| Reconnects the player after they are disconnected.
 |-
 ! Logout
 | 6 ||
@@ -541,6 +777,5 @@ Login and newplayer responses are sent by the server like a typical frame. The f
 
 Notes:
 
-* "ranseed" does not seed anything. RSC135 does not use ISAAC ciphering. It is an applet parameter or read from uid.dat. Presumably, it was used to identify players connecting from the same computer.
 * Opcodes marked with * are preceded by Walk to Entity.
 * When closing the duel confirm screen, it may send the decline trade packet, for some reason.
