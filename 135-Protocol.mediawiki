@@ -773,6 +773,26 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 | 203 ||
 * None
 | Declines the duel offer.
+|-
+! Character Design
+| 236 ||
+* Byte - A value that is not used in the player update process.
+* Byte - The player's hair style.
+* Byte - The player's gender. 4 = Female, 1 = Male
+* Byte - Constant 2
+* Byte - The player's hair colour
+* Byte - The player's top colour
+* Byte - The player's leg colour
+* Byte - The player's skin colour
+* Byte - The player's class
+| Submits the player's chosen design when they log in for the first time.
+The first byte appears to be unused.
+The constant value is used in the update process, but why?
+* 0 - Adventurer class
+* 1 - Warrior class
+* 2 - Wizard class
+* 3 - Ranger class
+* 4 - Miner class
 |}
 
 Notes:
