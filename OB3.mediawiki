@@ -1,5 +1,4 @@
 [[Category RSC]]
-
 Work in progress.
 
 This page refers to .ob3, a custom format for 3D models created by Jagex. It is used by the RuneScape Classic engine.
