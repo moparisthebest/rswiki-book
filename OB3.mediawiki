@@ -13,8 +13,8 @@ public class OB3Model {
 	public int gouraud_shade[];
 	public int vert_count;
 	public int vert_x[];
-	public int vert_z[];
 	public int vert_y[];
+	public int vert_z[];
 	public int face_count;
 	public int face_v_count[];
 	public int face[][];
@@ -33,12 +33,12 @@ public class OB3Model {
 		}
 
 		for (int v = 0; v < vert_count; v++) {
-			vert_z[v] = Data.getSignedShort(data, offset);
+			vert_y[v] = Data.getSignedShort(data, offset);
 			offset += 2;
 		}
 
 		for (int v = 0; v < vert_count; v++) {
-			vert_y[v] = Data.getSignedShort(data, offset);
+			vert_z[v] = Data.getSignedShort(data, offset);
 			offset += 2;
 		}
 
