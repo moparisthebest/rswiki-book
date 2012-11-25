@@ -4,83 +4,32 @@ Work in progress.
 This page refers to .ob3, a custom format for 3D models created by Jagex. It is used by the RuneScape Classic engine.
 
 <pre>
-import util.Data;
+[Unsigned Short] vertex_count
+[Unsigned Short] face_count
 
-public class Ob3Model {
-	public int faceCount;
-	public int vertexCount;
+for (int i = 0; i < vertex_count; i++)
+  [Signed Short] vert_x
+for (int i = 0; i < vertex_count; i++)
+  [Signed Short] vert_z
+for (int i = 0; i < vertex_count; i++)
+  [Signed Short] vert_y
 
-	public int faceVertexCount[];
-	public int faceBack[];
-	public int faceFront[];
-	public int verticesX[];
-	public int verticesZ[];
-	public int verticesY[];
+for (int i = 0; i < face_count; i++)
+  [Unsigned Byte] face_vert_count
+for (int i = 0; i < face_count; i++)
+  [Signed Short] face_back
+for (int i = 0; i < face_count; i++)
+  [Signed Short] face_front
+for (int i = 0; i < face_count; i++)
+  [Unsigned Byte] Boolean. Gourad shading?
 
-	private static final int trigger = 0xbc614e;
-
-	public Ob3Model(byte data[], int position) {
-		int vertexCount = Data.readInt16(data, position);
-		position += 2;
-		int faceCount = Data.readInt16(data, position);
-		position += 2;
-
-		verticesX = new int[vertexCount];
-		verticesY = new int[vertexCount];
-		verticesZ = new int[vertexCount];
-
-		faceBack = new int[faceCount];
-		faceFront = new int[faceCount];
-		faceVertexCount = new int[faceCount];
-
-		for (int i = 0; i < vertexCount; i++) {
-			verticesX[i] = Data.readSignedInt16(data, position);
-			position += 2;
-		}
-
-		for (int i = 0; i < vertexCount; i++) {
-			verticesZ[i] = Data.readSignedInt16(data, position);
-			position += 2;
-		}
-
-		for (int i = 0; i < vertexCount; i++) {
-			verticesY[i] = Data.readSignedInt16(data, position);
-			position += 2;
-		}
-
-		for (int i = 0; i < faceCount; i++)
-			faceVertexCount[i] = data[position++] & 0xff;
-
-		for (int i = 0; i < faceCount; i++) {
-			faceBack[i] = Data.readSignedInt16(data, position);
-			position += 2;
-			if (faceBack[i] == 32767)
-				faceBack[i] = trigger;
-		}
-
-		for (int i = 0; i < faceCount; i++) {
-			faceFront[i] = Data.readSignedInt16(data, position);
-			position += 2;
-			if (faceFront[i] == 32767)
-				faceFront[i] = trigger;
-		}
-
-		position += faceCount - 1;
-
-		for (int i = 0; i < faceCount; i++) {
-			for (int j = 0; j < faceVertexCount[i]; j++) {
-				if (vertexCount < 256) {
-					position++;
-				} else {
-					Data.readInt16(data, position);
-					position += 2;
-				}
-			}
-		}
-
-		this.vertexCount = vertexCount;
-		this.faceCount = faceCount;
-	}
+for (int i = 0; i < face_count; i++) {
+  for (int j = 0; j < face_vert_count[i]; j++) {
+    if (vertex_count < 256)
+      [Unsigned Byte] Unknown
+    else
+      [Unsigned Short] Unknown
+  }
 }</pre>
 
 == '''Face sides''' ==
