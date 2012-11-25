@@ -21,7 +21,7 @@ This page refers to .ob3, a custom format for 3D models created by Jagex. It is 
  for (int i = 0; i < face_count; i++)
    [Signed Short] face_front
  for (int i = 0; i < face_count; i++)
-   [Unsigned Byte] Unknown boolean, something to do with shading.
+   [Unsigned Byte] Boolean. Gourad shading?
  
  for (int i = 0; i < face_count; i++) {
    for (int j = 0; j < face_vert_count[i]; j++) {
