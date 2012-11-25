@@ -87,4 +87,4 @@ public class OB3Model {
 == '''Face sides''' ==
 A '''negative''' face_back or face_front value indicates a '''solid colour''', whereas a '''positive''' value indicates a '''texture'''.
 
-The texture is defined by its offset in the client's sprite array.
+The texture is defined by its offset in the client's texture array.
