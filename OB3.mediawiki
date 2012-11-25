@@ -36,4 +36,4 @@ for (int i = 0; i < face_count; i++) {
 A '''negative''' face_back or face_front value indicates a '''solid colour''', whereas a '''positive''' value indicates a '''texture'''.
 
 == '''Shading''' ==
-The hex value '''0xbc614e''' (or 12345678 in decimal) is believed to be used as a trigger for Gouraud shading.
+The hex value '''0xbc614e''' (or '''12345678''' in decimal) is believed to be used as a trigger for Gouraud shading.
