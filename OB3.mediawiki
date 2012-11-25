@@ -3,37 +3,86 @@ Work in progress.
 
 This page refers to .ob3, a custom format for 3D models created by Jagex. It is used by the RuneScape Classic engine.
 
-<pre>
-[Unsigned Short] vertex_count
-[Unsigned Short] face_count
+<pre>package jagex.client;
 
-for (int i = 0; i < vertex_count; i++)
-  [Signed Short] vert_x
-for (int i = 0; i < vertex_count; i++)
-  [Signed Short] vert_z
-for (int i = 0; i < vertex_count; i++)
-  [Signed Short] vert_y
+import jagex.Data;
 
-for (int i = 0; i < face_count; i++)
-  [Unsigned Byte] face_vert_count
-for (int i = 0; i < face_count; i++)
-  [Signed Short] face_back
-for (int i = 0; i < face_count; i++)
-  [Signed Short] face_front
-for (int i = 0; i < face_count; i++)
-  [Unsigned Byte] Boolean. Gourad shading?
+public class OB3Model {
 
-for (int i = 0; i < face_count; i++) {
-  for (int j = 0; j < face_vert_count[i]; j++) {
-    if (vertex_count < 256)
-      [Unsigned Byte] Unknown
-    else
-      [Unsigned Short] Unknown
-  }
+	private static final int num_seq = 0xbc614e;
+	public int gouraud_shade[];
+	public int vert_count;
+	public int vert_x[];
+	public int vert_z[];
+	public int vert_y[];
+	public int face_count;
+	public int face_v_count[];
+	public int face[][];
+	public int face_back[];
+	public int face_front[];
+
+	public OB3Model(byte data[], int offset) {
+		int vert_count = Data.getUnsignedShort(data, offset);
+		offset += 2;
+		int face_count = Data.getUnsignedShort(data, offset);
+		offset += 2;
+
+		for (int v = 0; v < vert_count; v++) {
+			vert_x[v] = Data.getSignedShort(data, offset);
+			offset += 2;
+		}
+
+		for (int v = 0; v < vert_count; v++) {
+			vert_z[v] = Data.getSignedShort(data, offset);
+			offset += 2;
+		}
+
+		for (int v = 0; v < vert_count; v++) {
+			vert_y[v] = Data.getSignedShort(data, offset);
+			offset += 2;
+		}
+
+		this.vert_count = vert_count;
+		for (int f = 0; f < face_count; f++)
+			face_v_count[f] = (data[offset++] & 0xff);
+
+		for (int f = 0; f < face_count; f++) {
+			face_back[f] = Data.getSignedShort(data, offset);
+			offset += 2;
+			if (face_back[f] == 32767)
+				face_back[f] = num_seq;
+		}
+
+		for (int f = 0; f < face_count; f++) {
+			face_front[f] = Data.getSignedShort(data, offset);
+			offset += 2;
+			if (face_front[f] == 32767)
+				face_front[f] = num_seq;
+		}
+
+		for (int f = 0; f < face_count; f++) {
+			int i = data[offset++] & 0xff;
+			if (i == 0)
+				gouraud_shade[f] = 0;
+			else
+				gouraud_shade[f] = num_seq;
+		}
+
+		for (int f = 0; f < face_count; f++) {
+			face[f] = new int[face_v_count[f]];
+			for (int fv = 0; fv < face_v_count[f]; fv++) {
+				if (vert_count < 256) {
+					face[f][fv] = data[offset++] & 0xff;
+				} else {
+					face[f][fv] = Data.getUnsignedShort(data, offset);
+					offset += 2;
+				}
+			}
+		}
+
+		this.face_count = face_count;
+	}
 }</pre>
 
 == '''Face sides''' ==
 A '''negative''' face_back or face_front value indicates a '''solid colour''', whereas a '''positive''' value indicates a '''texture'''.
-
-== '''Shading''' ==
-The hex value '''0xbc614e''' (or '''12345678''' in decimal) is believed to be used as a trigger for Gouraud shading.
