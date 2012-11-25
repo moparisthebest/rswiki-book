@@ -296,7 +296,7 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * ?
 | ?
 |-
-! Initialize Client
+! Init Map Region
 | 244 ||
 * ?
 | ?
