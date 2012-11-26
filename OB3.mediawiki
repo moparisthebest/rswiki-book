@@ -27,6 +27,15 @@ public class OB3Model {
 		int face_count = Data.getUnsignedShort(data, offset);
 		offset += 2;
 
+		vert_x = new int[vert_count];
+		vert_y = new int[vert_count];
+		vert_z = new int[vert_count];
+		face_v_count = new int[face_count];
+		faces = new int[face_count][];
+		face_back = new int[face_count];
+		face_front = new int[face_count];
+		gouraud_shade = new int[face_count];
+
 		for (int v = 0; v < vert_count; v++) {
 			vert_x[v] = Data.getSignedShort(data, offset);
 			offset += 2;
