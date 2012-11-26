@@ -3,11 +3,7 @@ Work in progress.
 
 This page refers to .ob3, a custom format for 3D models created by Jagex. It is used by the RuneScape Classic engine since client version #74. For the earlier version of the format see [[OB2|OB2]].
 
-<pre>package jagex.client;
-
-import jagex.Data;
-
-public class OB3Model {
+<pre>public class OB3Model {
 
 	private static final int num_seq = 0xbc614e;
 	public int gouraud_shade[];
@@ -17,14 +13,14 @@ public class OB3Model {
 	public int vert_z[];
 	public int face_count;
 	public int face_v_count[];
-	public int face[][];
+	public int faces[][];
 	public int face_back[];
 	public int face_front[];
 
 	public OB3Model(byte data[], int offset) {
-		int vert_count = Data.getUnsignedShort(data, offset);
+		int vert_count = get_u_short(data, offset);
 		offset += 2;
-		int face_count = Data.getUnsignedShort(data, offset);
+		int face_count = get_u_short(data, offset);
 		offset += 2;
 
 		vert_x = new int[vert_count];
@@ -37,40 +33,40 @@ public class OB3Model {
 		gouraud_shade = new int[face_count];
 
 		for (int v = 0; v < vert_count; v++) {
-			vert_x[v] = Data.getSignedShort(data, offset);
+			vert_x[v] = get_short(data, offset);
 			offset += 2;
 		}
 
 		for (int v = 0; v < vert_count; v++) {
-			vert_y[v] = Data.getSignedShort(data, offset);
+			vert_y[v] = get_short(data, offset);
 			offset += 2;
 		}
 
 		for (int v = 0; v < vert_count; v++) {
-			vert_z[v] = Data.getSignedShort(data, offset);
+			vert_z[v] = get_short(data, offset);
 			offset += 2;
 		}
 
 		this.vert_count = vert_count;
 		for (int f = 0; f < face_count; f++)
-			face_v_count[f] = (data[offset++] & 0xff);
+			face_v_count[f] = get_u_byte(data[offset++]);
 
 		for (int f = 0; f < face_count; f++) {
-			face_back[f] = Data.getSignedShort(data, offset);
+			face_back[f] = get_short(data, offset);
 			offset += 2;
 			if (face_back[f] == 32767)
 				face_back[f] = num_seq;
 		}
 
 		for (int f = 0; f < face_count; f++) {
-			face_front[f] = Data.getSignedShort(data, offset);
+			face_front[f] = get_short(data, offset);
 			offset += 2;
 			if (face_front[f] == 32767)
 				face_front[f] = num_seq;
 		}
 
 		for (int f = 0; f < face_count; f++) {
-			int i = data[offset++] & 0xff;
+			int i = get_u_byte(data[offset++]);
 			if (i == 0)
 				gouraud_shade[f] = 0;
 			else
@@ -78,12 +74,12 @@ public class OB3Model {
 		}
 
 		for (int f = 0; f < face_count; f++) {
-			face[f] = new int[face_v_count[f]];
+			faces[f] = new int[face_v_count[f]];
 			for (int fv = 0; fv < face_v_count[f]; fv++) {
 				if (vert_count < 256) {
-					face[f][fv] = data[offset++] & 0xff;
+					faces[f][fv] = get_u_byte(data[offset++]);
 				} else {
-					face[f][fv] = Data.getUnsignedShort(data, offset);
+					faces[f][fv] = get_u_short(data, offset);
 					offset += 2;
 				}
 			}
@@ -91,7 +87,23 @@ public class OB3Model {
 
 		this.face_count = face_count;
 	}
-}</pre>
+
+	public static int get_u_byte(byte b) {
+		return (b & 0xff);
+	}
+
+	public static int get_u_short(byte b[], int start) {
+		return ((b[start] & 0xff) << 8) + (b[start + 1] & 0xff);
+	}
+
+	public static int get_short(byte b[], int start) {
+		int i = get_u_byte(b[start]) * 256 + get_u_byte(b[start + 1]);
+		if (i > 32767)
+			i -= 0x10000;
+		return i;
+	}
+}
+</pre>
 
 == '''Faces''' ==
 A '''negative''' face_back or face_front value indicates a '''solid colour''', whereas a '''positive''' value indicates a '''texture'''. The texture is defined by its offset in the client's texture array.
