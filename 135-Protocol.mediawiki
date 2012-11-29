@@ -786,7 +786,6 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * Byte - The player's skin colour
 * Byte - The player's class
 | Submits the player's chosen design when they log in for the first time.
-The first byte appears to be unused.
 * 0 - Adventurer class
 * 1 - Warrior class
 * 2 - Wizard class
