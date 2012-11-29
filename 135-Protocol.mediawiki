@@ -777,9 +777,9 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 ! Character Design
 | 236 ||
 * Byte - ?
-* Byte - The player's hair style.
-* Byte - The player's gender. 4 = Female, 1 = Male
-* Byte - The player's 'leg type' (always 2)
+* Byte - The player's hair style
+* Byte - The player's 'body type' 4 = Female, 1 = Male
+* Byte - The player's 'leg type' - Always 2
 * Byte - The player's hair colour
 * Byte - The player's top colour
 * Byte - The player's leg colour
