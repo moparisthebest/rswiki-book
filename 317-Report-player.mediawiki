@@ -14,4 +14,10 @@ This packet is sent when a player reports another player.
 |-
 | [[Data Types#Standard data types|Long]]
 | The players name as a long.
+|-
+| [[Data Types#Standard data types|Byte]]
+| The rule that's being reported
+|-
+| [[Data Types#Standard data types|Byte]]
+| Unknown - Sent as either 1 or 0 for a boolean client-side
 |}
