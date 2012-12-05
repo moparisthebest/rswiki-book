@@ -108,7 +108,7 @@ This page refers to .ob3, a custom format for 3D models created by Jagex. It is 
 == '''Faces''' ==
 A '''negative''' face_back or face_front value indicates a '''solid colour''', whereas a '''positive''' value indicates a '''texture'''. The texture is defined by its offset in the client's texture array.
 
-When converting to/from [http://en.wikipedia.org/wiki/Wavefront_.obj_file Wavefront OBJ] format, remember that the OB3 face values are one less than the OBJ face values.
+When converting to/from [http://en.wikipedia.org/wiki/Wavefront_.obj_file Wavefront OBJ] format, remember that the OB3 face vertices are one less than the OBJ face vertices.
 
 <pre>public static int decode_colour(int i) {
 	i = -(i + 1);
