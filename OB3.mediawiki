@@ -118,3 +118,8 @@ When converting to/from [http://en.wikipedia.org/wiki/Wavefront_.obj_file Wavefr
 	return (r << 19) + (g << 11) + (b << 3);
 }
 </pre>
+
+<pre>public static final int encode_colour(int r, int g, int b) {
+	return -1 - (r / 8) * 1024 - (g / 8) * 32 - b / 8;
+}
+</pre>
