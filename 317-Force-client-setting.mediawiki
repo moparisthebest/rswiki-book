@@ -1,0 +1,25 @@
+[[Category Packet]]
+[[Category Packet 317]]
+{{packet|name=Force client setting|description=Forcefully alters a client setting value and default value to some supplied value.|opcode=36|type=Fixed|length=4|revision=317}}
+== Force Client Setting ==
+
+=== Description ===
+
+The client stores various user settings in an array of integers of size 2000. The client also stores alternate (default?) values for these settings in a duplicate, equally-sized array.
+
+=== Packet Structure ===
+
+{| border=2
+! Data type
+! Description
+|-
+| [[Data Types#Standard data types|Short]] [[Data Types#Byte Order|Little Endian]]
+| Setting ID number.
+|-
+| [[Data Types#Standard data types|Byte]]
+| New value (and default value) for the setting.
+|-
+|}
+
+=== Other Information ===
+Opcode 87 is extremely similar in structure, but minute differences suggest that it is instead intended for use with "slider-bars."
