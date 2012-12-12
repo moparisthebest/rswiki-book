@@ -508,6 +508,12 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 Camera shake|Camera shake]]
 | Causes the camera to shake.
 |-
+| 36
+| FIXED
+| 3
+| [[317 Force client setting|Force client setting]]
+| Forcefully changes a client's setting's value. Also changes the default value for that setting.
+|-
 | 50
 | FIXED
 | 9
