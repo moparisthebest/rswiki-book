@@ -1,6 +1,6 @@
 [[Category Packet]]
 [[Category Packet 317]]
-{{packet|name=Force client setting|description=Forcefully alters a client setting value and default value to some supplied value.|opcode=36|type=Fixed|length=4|revision=317}}
+{{packet|name=Force client setting|description=Forcefully alters a client setting value and default value to some supplied value.|opcode=36|type=Fixed|length=3|revision=317}}
 == Force Client Setting ==
 
 === Description ===
