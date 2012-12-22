@@ -4,7 +4,7 @@ This page refers to .ob3, a custom format for 3D models created by Jagex. It is 
 
 <pre>public class OB3Model {
 
-    private static final int num_seq = 0xbc614e;
+    private static final int num_seq = 0xbc614e; // 12345678
     public int vertex_count;
     public int vertices_x[];
     public int vertices_y[];
