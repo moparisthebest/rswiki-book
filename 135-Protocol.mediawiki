@@ -35,6 +35,17 @@ if (len > 0 && in.available() >= len) {
 
 RSC-135 uses big-endian byte order exclusively.
 
+'''Data types'''
+
+int8 - an 8-bit integer, or byte.<br>
+int16 - a 16-bit integer, or short, or WORD.<br>
+int32 - a 32-bit integer, or int, or DWORD.<br>
+int64 - a 64-bit integer, or long, or QWORD.<br>
+u - unsigned<br>
+a - [[Data Types#Non Standard Data Types|Special A]]<br>
+
+'''[[Data Types#Bit Access|Bit access]]'''
+
 == '''Reference''' ==
 Player usernames are encoded and decoded with the following methods:
 
@@ -183,73 +194,93 @@ public static String decode_37(long l) {
 The packet opcodes are unchanged from previous revisions, presumably this was before the protocol was being regularly modified to deter the developers of bots such as [[AutoRune]]. The payload/structure is quite similar to most other RSC revisions.
 
 === '''Incoming Data''' ===
-'''TODO:'''
+'''TODO: Duelling stuff, fully document 244, 240, NPCs, player appearance update '''
 {| class="wikitable"
 |-
-! Name
-! Opcode
-! Payload
-! Description
+! scope="col" width="140px" | Name
+! scope="col" width="50px" | Opcode
+! scope="col" width="350px" | Payload
+! scope="col" width="300px" | Description
 |-
 ! Display Message
 | 8 ||
-* ?
-| ?
+* string - A raw string, the message.
+| Informs the client of a line to be printed in the in-game message box. Messages preceded by @que@ are sent to the quest history box, messages preceded by @pri@ are sent to the private chat history box.
 |-
 ! Close Connection
 | 9 ||
-* ?
-| ?
+* None
+| Forces the client to log out.
 |-
 ! Logout Failed
 | 10 ||
-* ?
-| ?
+* None
+| You can't log out now!
 |-
 ! Initialize Friends List
 | 23 ||
-* ?
-| ?
+* uint8 - The total number of players in the list.
+* uint64... - The friend's username, encoded with mod37.
+* uint8... - The world the friend is logged in to. 0 indicates the player is logged out.
+| Initializes the player's friends list. Variable length.
 |-
 ! Update Friends List
 | 24 ||
-* ?
-| ?
+* uint64 - The friend's username, encoded with mod37.
+* uint8 - 0 if the friend is logged in, 1 if the friend is logged out.
+| Informs the client that a friend has logged in/out or that a new friend has been added to the list.
 |-
-! Ignore List
+! Initialize Ignore List
 | 26 ||
-* ?
-| ?
+* uint8 - The total number of players in the list.
+* uint64... - The friend's username, encoded with mod37.
+| Initializes the player's ignore list. Variable length.
 |-
 ! Initialize Privacy Settings
 | 27 ||
-* ?
-| ?
+* int8 - 0/1. Block public chat messages.
+* int8 - 0/1. Block private chat messages.
+* int8 - 0/1. Block trade requests.
+* int8 - 0/1. Block duel requests.
+| Initializes the player's privacy settings.
 |-
 ! Private Message
 | 28 ||
-* ?
-| ?
+* uint64 - The sender's username, encoded with mod37.
+* string - The message, scrambled by the sender's client.
+| Sends a private message to the client.
 |-
-! Player Positions
+! Player Movement
 | 255 ||
-* ?
-| ?
+* bits[10] - The player's absx position.
+* bits[12] - The player's absy position.
+* bits[4] - The player's direction.
+* bits[8] - The number of players to update.
+* bits[1]... - 0 if the player has not moved and the dir has not changed, otherwise 1
+* bits[1]... - 1 if the player has not moved, but new dir
+* bits[3/4]... - player's last direction (3), player's direction (4), or -1 to remove the player (4).
+| Updates the position of the client's player and the movement status of nearby players. Usually sent every game engine tick (600ms) rather than when needed as with other packets. Variable length.
 |-
 ! Ground Item Positions
 | 254 ||
-* ?
-| ?
+* uint16 - The id of the item to update
+* int8 - The x position of the item relative to the player (item_x - player_x)
+* int8 - The y position of the item relative to the player (item_y - player_y)
+| Updates the positions of nearby ground items. if ((id & 0x8000) == 0), remove the item. Therefore, if the server increments the id by 0x8000, the item will be removed by the client. Variable length.
 |-
 ! Object Positions
 | 253 ||
-* ?
-| ?
+* uint16 - The id of the object to update
+* int8 - The x position of the object relative to the player (object_x - player_x)
+* int8 - The y position of the object relative to the player (object_y - player_y)
+| Updates the positions of nearby objects. Variable length. If the id is real fuckin' big, remove it.
 |-
 ! Whole Inventory
 | 252 ||
-* ?
-| ?
+* uint8 - The number of items in the player's inventory.
+* uint16... - The item's id. If equipped, increment by 0x8000.
+* uint32a... - The item's stack size. Only sent when the item is stackable.
+| Sends over the player's whole inventory. Variable length.
 |-
 ! Players (Appearance)
 | 250 ||
@@ -258,10 +289,13 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 |-
 ! Boundary Positions
 | 249 ||
-* ?
-| ?
+* uint16 - The id of the bound to update
+* int8 - The x position of the bound relative to the player (object_x - player_x)
+* int8 - The y position of the bound relative to the player (object_y - player_y)
+* int8 - The bound's direction
+| Updates the positions of nearby bounds. Variable length. If the id is real fuckin' big, remove it.
 |-
-! NPC Positions
+! NPC Movement
 | 248 ||
 * ?
 | ?
@@ -273,33 +307,49 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 |-
 ! Display Dialog
 | 246 ||
-* ?
-| ?
+* uint8 - The total number of options.
+* uint8... - The length of the option string.
+* string... - The option string.
+| Displays a NPC chat dialog. Variable length.
 |-
 ! Hide Dialog
 | 245 ||
-* ?
-| ?
+* None
+| Hides the NPC chat dialog.
 |-
 ! Initialize World
 | 244 ||
-* ?
-| ?
+* uint16 - The player's server index.
+* uint16 - ? (2304)
+* uint16 - ? (1776)
+* uint16 - The player's height level (abs_y / 944).
+* uint16 - ? (944)
+| Initializes the world. Sent when the player first logs in, and when the player is teleported or moves up/down a height.
 |-
 ! All Skills
 | 243 ||
-* ?
-| ?
+* for (int i = 0; i < skill_count; i++)
+* uint8... - The skill's current level.
+* for (int i = 0; i < skill_count; i++)
+* uint8... - The skill's base level.
+* for (int i = 0; i < skill_count; i++)
+* uint32... - The skill's xp points.
+* uint8 - The player's quest points.
+| Updates all of the player's skills and quest points. The 135 client reads 18 skills: Attack, Defense, Strength, Hits, Ranged, Prayer, Magic, Cooking, Woodcutting, Fletching, Fishing, Firemaking, Crafting, Smithing, Mining, Herblaw, Carpentry, Thieving.
 |-
 ! Equipment Bonuses
 | 242 ||
-* ?
-| ?
+* uint8 - The armour's bonus.
+* uint8 - The weapon's accuracy bonus.
+* uint8 - The weapon's strength bonus.
+* uint8 - The magic bonus.
+* unit8 - The prayer bonus.
+| Updates the player's equipment bonuses. Variable length.
 |-
 ! Player Death
 | 241 ||
-* ?
-| ?
+* None
+| Displays the "Oh dear! You are dead..." screen.
 |-
 ! Update Environment
 | 240 ||
@@ -308,93 +358,113 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 |-
 ! Display Character Design
 | 239 ||
-* ?
-| ?
+* None
+| Displays the character design interface.
 |-
 ! Display Trade Offer
 | 238 ||
-* ?
-| ?
+* uint16 - The server index of the player we are trading with.
+| Displays the trade offer interface.
 |-
 ! Hide Trade
 | 237 ||
-* ?
-| ?
+* None
+| Hides the trade offer and confirm interfaces.
 |-
 ! Update Trade Offer
 | 236 ||
-* ?
-| ?
+* int8 - The number of items the other player has traded.
+* uint16... - The item's id.
+* uint32a... - The item's stack size.
+| Updates the other player's trade offer.
 |-
 ! Other's Trade Status
 | 235 ||
-* ?
-| ?
+* int8 - 1 = yes, anything else = no
+| Has the other player accepted the trade offer?
 |-
 ! Display Shop
 | 234 ||
-* ?
-| ?
+* uint8 - The number of items in the shop.
+* int8 - 1 if the shop is a general store.
+* uint8 - This shop's selling price modifier.
+* uint8 - This shop's buying price modifier.
+* uint16... - The item's id.
+* uint16... - The item's stack size.
+* uint8... - The item's price.
+| Displays the shop interface. Variable length.
 |-
 ! Hide Shop
 | 233 ||
-* ?
-| ?
+* None
+| Hides the shop interface.
 |-
 ! Our Trade Status
 | 229 ||
-* ?
-| ?
+* int8 - 1 = yes, anything else = no
+| Have we accepted the trade offer?
 |-
 ! Init Game Settings
 | 228 ||
-* ?
-| ?
+* int8 - Automatic camera rotation. 1 = enabled, anything else is disabled.
+* int8 - Single mouse button.  1 = enabled, anything else is disabled.
+* int8 - Sound effects. 1 = disabled, anything else is enabled.
+| Sets the player's gameplay settings.
 |-
 ! Set Prayers
 | 227 ||
-* ?
-| ?
+* int8... - The prayer's status. 1 = enabled, anything else is disabled.
+| Sets the status of every prayer. Variable length.
 |-
 ! Set Quests
 | 226 ||
-* ?
-| ?
+* int8... - The quest's completion status. 1 = completed, anything else is incomplete.
+| Sets the player's quest completion status. Variable length.
 |-
 ! Display Bank
 | 222 ||
-* ?
-| ?
+* uint8 (so small!) - The number of items in the player's bank.
+* uint16... - The item's id.
+* uint32a... - The item's stack size.
+| Displays the bank interface. Variable length.
 |-
 ! Hide Bank
 | 221 ||
-* ?
-| ?
+* None
+| Hides the bank interface.
 |-
 ! Bank Update
 | 214 ||
-* ?
-| ?
+* uint8 - The item's slot.
+* uint16 - The item's id.
+* uint32a - The item's stack size. 0 to remove.
+| Updates/adds/removes a single item in the bank interface to save bytes.
 |-
 ! Single XP Update
 | 220 ||
-* ?
-| ?
+* uint8 - The skill's id.
+* uint32 - The skill's xp.
+| Updates a single skill's XP to save bytes.
 |-
 ! Update InvItem
 | 213 ||
-* ?
-| ?
+* uint8 - The item's slot.
+* uint16 - The item's id. Increment by 0x7fff to change stack size.
+* uint32a - The item's stack size. May not be read.
+| Adds a single item, or changes the ID, or changes the stack size to save bytes. If id / 32768 == 1, the item is equipped.
 |-
 ! Remove InvItem
 | 212 ||
-* ?
-| ?
+* uint8 - The item's slot.
+| Removes a single item from the player's inventory to save bytes.
 |-
 ! Single Skill Update
 | 211 ||
-* ?
-| ?
+* uint8 - The skill's id.
+* uint8 - The skill's current level.
+* uint8 - The skill's base level.
+* uint32 - The skill's experience points.
+| Updates a single skill to save bytes.
 |-
 |}
 
@@ -402,10 +472,10 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 '''TODO: Password recovery & recovery questions, 254'''
 {| class="wikitable"
 |-
-! Name
-! Opcode
-! Payload
-! Description
+! scope="col" width="140px" | Name
+! scope="col" width="50px" | Opcode
+! scope="col" width="350px" | Payload
+! scope="col" width="300px" | Description
 |-
 ! Disconnect
 | 1 ||
@@ -414,21 +484,26 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 |-
 ! Newplayer (Registration)
 | 2 ||
-* Short - The client's revision number (135)
-* Long - Long representation of the username
-* Short - Referrer ID
+* int16 - The client's revision number (135)
+* int64 - Long representation of the username
+* int16 - Referrer ID
 ** Integer.parseInt(getParameter("referrerid"));
-* Line-RSA - Password, server session ID, bigintegers
-* Int - The "ranseed" value
+* The password encrypted with RSA
+* int32 - The "ranseed" value
 | Registers a new user.
 |-
 ! Login
 | 0 ||
-* Short - The client's revision number (135)
-* Long - Long representation of the username
-* Line-RSA - Password, server session ID, bigintegers
-* Int - The "ranseed" value
+* int16 - The client's revision number (135)
+* int64 - Long representation of the username
+* The password encrypted with RSA
+* int32 - The "ranseed" value
 | Logs the player in.
+|-
+! Public Chat
+| 3 ||
+* String - The message, scrambled.
+| Sends a message to public chat.
 |-
 ! Reconnect
 | 19 ||
@@ -447,36 +522,36 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 |-
 ! Report Abuse
 | 10 ||
-* Long - The long representation of the username to report
+* int64 - The long representation of the username to report
 | Sends an abuse report to the server
 |-
 ! Add Friend
 | 26 ||
-* Long - long representation of username
+* int64 - long representation of username
 | Adds a user to your friends list
 |-
 ! Remove Friend
 | 27 ||
-* Long - The long representation of the username to report
+* int64 - The long representation of the username to report
 | Removes a user from your friends list
 |-
 ! Send Message
 | 28 ||
-* Long - The long representation of the username to send the message to
-* String - The message
+* int64 - The long representation of the username to send the message to
+* String - The message, scrambed
 | Sends a message to the specified user
 |-
 ! Ignore User
 | 29 ||
-* Long - The long representation of the username to ignore
+* int64 - The long representation of the username to ignore
 | Adds a user to your ignore list
 |-
 ! Walk to Tile
 | 255 ||
-* Short - (start_x + area_x). The initial position.
-* Short - (start_y + area_y)
-* Byte... - (route_x[i] - start_x)
-* Byte... - (route_y[i] - start_y)
+* int16 - (start_x + area_x). The initial position.
+* int16 - (start_y + area_y)
+* int8... - (route_x[i] - start_x)
+* int8... - (route_y[i] - start_y)
 | Variable length. Walks to a tile. The number of steps can be calculated by dividing the available data by 2.
 |-
 ! Walk to Entity
@@ -486,51 +561,51 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 |-
 ! Acknowledge Players
 | 254 ||
-* Short - Size?
-* Short... - The player's server index
-* Short... - ???
-| Variable length. Informs the server of new players. Why?
+* int16 - Size?
+* int16... - The player's server index
+* int16... - ???
+| Variable length. Informs the server of players. Why?
 |-
 ! Drop Item
 | 251 ||
-* Short - The slot of the item to drop
+* int16 - The slot of the item to drop
 | Drops the specified item on the ground
 |-
 ! Cast on Item
 | 220 ||
-* Short - The slot of the item to cast a spell on
-* Short - The id of the spell to cast
+* int16 - The slot of the item to cast a spell on
+* int16 - The id of the spell to cast
 | Casts a spell (such as High Alchemy) on the specified item
 |-
 ! Use with Item
 | 240 ||
-* Short - The slot of the first item to use
-* Short - The slot of the second item to use
+* int16 - The slot of the first item to use
+* int16 - The slot of the second item to use
 | Uses an item in the player's inventory with another item in the player's inventory
 |-
 ! Remove Item
 | 248 ||
-* Short - The slot of the item to unequip
+* int16 - The slot of the item to unequip
 | Unequips the specified inventory item
 |-
 ! Wear Item
 | 249 ||
-* Short - The slot of the item to equip
+* int16 - The slot of the item to equip
 | Equips the specified inventory item
 |-
 ! Item Command
 | 246 ||
-* Short - The slot of the item to use
+* int16 - The slot of the item to use
 | Buries, eats, etc the specified inventory item
 |-
 ! Select Option
 | 237 ||
-* Byte - The position of the option in the dialog_options array
+* int8 - The position of the option in the dialog_options array
 | Selects an option in a dialog (dialog referring to, for example, the menu displayed when certing)
 |-
 ! Combat Style
 | 231 ||
-* Byte - The position of the combat style in the list
+* int8 - The position of the combat style in the list
 | Sets the player's combat style.
 * 0 - Controlled 
 * 1 - Aggressive
@@ -544,24 +619,24 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 |-
 ! Withdraw Item
 | 206 ||
-* Short - The ID of the item to withdraw
-* Short - The amount of the specified item to withdraw
+* int16 - The ID of the item to withdraw
+* int16 - The amount of the specified item to withdraw
 | Withdraws a single type of item from the player's bank.
 |-
 ! Deposit Item
 | 205 ||
-* Short - The ID of the item to deposit
-* Short - The amount of the specified item to deposit
+* int16 - The ID of the item to deposit
+* int16 - The amount of the specified item to deposit
 | Deposits a single type of item into the player's bank.
 |-
 ! Disable Prayer
 | 211 ||
-* Byte - The ID of the prayer to disable
+* int8 - The ID of the prayer to disable
 | Disables a prayer.
 |-
 ! Enable Prayer
 | 212 ||
-* Byte - The ID of the prayer to enable
+* int8 - The ID of the prayer to enable
 | Enables a prayer.
 |-
 ! Confirm Trade
@@ -581,147 +656,147 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 |-
 ! Trade Update
 | 234 ||
-* Byte - The amount of traded items to send to the server
-* Short... - The id of the item
-* Int... - The amount/stack size of the item
+* int8 - The amount of traded items to send to the server
+* int16... - The id of the item
+* int32... - The amount/stack size of the item
 | Variable length. Updates the trade offer.
 |-
 ! Cast on GItem
 | 224* ||
-* Short - The item's X coordinate
-* Short - The item's Y coordinate
-* Short - The item's ID
-* Short - The spell's ID
+* int16 - The item's X coordinate
+* int16 - The item's Y coordinate
+* int16 - The item's ID
+* int16 - The spell's ID
 | Casts a spell on an item on the ground.
 |-
 ! Use with GItem
 | 250* ||
-* Short - The item's X coordinate
-* Short - The item's Y coordinate
-* Short - The item's ID
-* Short - The inventory slot
+* int16 - The item's X coordinate
+* int16 - The item's Y coordinate
+* int16 - The item's ID
+* int16 - The inventory slot
 | Uses an item in the player's inventory with an item on the ground.
 |-
 ! Take GItem
 | 252* ||
-* Short - The item's X coordinate
-* Short - The item's Y coordinate
-* Short - The item's ID
+* int16 - The item's X coordinate
+* int16 - The item's Y coordinate
+* int16 - The item's ID
 | Picks up an item on the ground.
 |-
 ! Cast on Boundary
 | 223* ||
-* Short - The bound's X coordinate
-* Short - The bound's Y coordinate
-* Byte - The bound's direction
-* Short - The spell's ID
+* int16 - The bound's X coordinate
+* int16 - The bound's Y coordinate
+* int8 - The bound's direction
+* int16 - The spell's ID
 | Casts a spell on a boundary (or 'wall object').
 |-
 ! Use with Boundary
 | 239* ||
-* Short - The bound's X coordinate
-* Short - The bound's Y coordinate
-* Byte - The bound's direction
-* Short - The inventory slot
+* int16 - The bound's X coordinate
+* int16 - The bound's Y coordinate
+* int8 - The bound's direction
+* int16 - The inventory slot
 | Uses an item in the player's inventory with a boundary (or 'wall object').
 |-
 ! Boundary Cmd 1
 | 238* ||
-* Short - The bound's X coordinate
-* Short - The bound's Y coordinate
-* Byte - The bound's direction
+* int16 - The bound's X coordinate
+* int16 - The bound's Y coordinate
+* int8 - The bound's direction
 | Performs the primary action (usually 'open') on a boundary (or 'wall object').
 |-
 ! Boundary Cmd 2
 | 229* ||
-* Short - The bound's X coordinate
-* Short - The bound's Y coordinate
-* Byte - The bound's direction
+* int16 - The bound's X coordinate
+* int16 - The bound's Y coordinate
+* int8 - The bound's direction
 | Performs the secondary action (usually 'close' or 'picklock') on a boundary (or 'wall object').
 |-
 ! Cast on Object
 | 222* ||
-* Short - The object's X coordinate
-* Short - The object's Y coordinate
-* Short - The spell's ID
+* int16 - The object's X coordinate
+* int16 - The object's Y coordinate
+* int16 - The spell's ID
 | Casts a spell on an object. Unused?
 |-
 ! Use with Object
 | 241* ||
-* Short - The object's X coordinate
-* Short - The object's Y coordinate
-* Short - The inventory slot
+* int16 - The object's X coordinate
+* int16 - The object's Y coordinate
+* int16 - The inventory slot
 | Uses an item in the player's inventory with an object.
 |-
 ! Object Cmd 1
 | 241* ||
-* Short - The object's X coordinate
-* Short - The object's Y coordinate
+* int16 - The object's X coordinate
+* int16 - The object's Y coordinate
 | Performs the primary action on an object (for example, 'mine').
 |-
 ! Object Cmd 2
 | 230* ||
-* Short - The object's X coordinate
-* Short - The object's Y coordinate
+* int16 - The object's X coordinate
+* int16 - The object's Y coordinate
 | Performs the secondary action on an object (for example, 'prospect').
 |-
 ! Cast on NPC
 | 225* ||
-* Short - The NPC's server index
-* Short - The spell's ID
+* int16 - The NPC's server index
+* int16 - The spell's ID
 | Casts a spell on a non-player character.
 |-
 ! Use with NPC
 | 243* ||
-* Short - The NPC's server index
-* Short - The inventory slot
+* int16 - The NPC's server index
+* int16 - The inventory slot
 | Uses an item in the player's inventory with a non-player character. 
 |-
 ! Talk to NPC
 | 245* ||
-* Short - The NPC's server index
+* int16 - The NPC's server index
 | Starts talking to a non-player character.
 |-
 ! Attack NPC
 | 244* ||
-* Short - The NPC's server index
+* int16 - The NPC's server index
 | Starts attacking a non-player character.
 |-
 ! NPC Cmd 2
 | 195* ||
-* Short - The NPC's server index
+* int16 - The NPC's server index
 | Performs the secondary action on a non-player character, usually 'pickpocket'.
 |-
 ! Cast on Player
 | 226* ||
-* Short - The player's server index
-* Short - The spell's ID
+* int16 - The player's server index
+* int16 - The spell's ID
 | Casts a spell on another player.
 |-
 ! Use with Player
 | 219* ||
-* Short - The player's server index
-* Short - The inventory slot
+* int16 - The player's server index
+* int16 - The inventory slot
 | Uses an item (for example, a Gnomeball, or a Christmas cracker) on another player.
 |-
 ! Attack Player
 | 228* ||
-* Short - The player's server index
+* int16 - The player's server index
 | Starts attacking another player.
 |-
 ! Trade Player
 | 235 ||
-* Short - The player's server index
+* int16 - The player's server index
 | Sends a trade request to another player.
 |-
 ! Follow Player
 | 214 ||
-* Short - The player's server index
+* int16 - The player's server index
 | Starts following another player.
 |-
 ! Duel Player
 | 204 ||
-* Short - The player's server index
+* int16 - The player's server index
 | Sends a duel request to another player.
 |-
 ! RuntimeException
@@ -741,17 +816,17 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 |-
 ! Duel Settings
 | 200 ||
-* Byte - No retreating, 0 or 1
-* Byte - No magic, 0 or 1
-* Byte - No prayers, 0 or 1
-* Byte - No weapons, 0 or 1
+* int8 - No retreating, 0 or 1
+* int8 - No magic, 0 or 1
+* int8 - No prayers, 0 or 1
+* int8 - No weapons, 0 or 1
 | Updates the duel settings.
 |-
 ! Duel Items
 | 201 ||
-* Byte - The total number of offered items
-* Short... - Offered item ID
-* Int... - Offered item stack size
+* int8 - The total number of offered items
+* int16... - Offered item ID
+* int32... - Offered item stack size
 | Variable length. Updates the stake.
 |-
 ! Decline Duel Offer
@@ -761,15 +836,15 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 |-
 ! Character Design
 | 236 ||
-* Byte - The player's gender - 2=Female, 1=Male
-* Byte - The player's hair style
-* Byte - The player's 'body type' - 4=Female, 1=Male
-* Byte - The player's 'leg type' - Always 2
-* Byte - The player's hair colour
-* Byte - The player's top colour
-* Byte - The player's leg colour
-* Byte - The player's skin colour
-* Byte - The player's class
+* int8 - The player's gender - 2=Female, 1=Male
+* int8 - The player's hair style
+* int8 - The player's 'body type' - 4=Female, 1=Male
+* int8 - The player's 'leg type' - Always 2
+* int8 - The player's hair colour
+* int8 - The player's top colour
+* int8 - The player's leg colour
+* int8 - The player's skin colour
+* int8 - The player's class
 | Submits the player's chosen design when they log in for the first time.
 * 0 - Adventurer class
 * 1 - Warrior class
@@ -777,7 +852,6 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * 3 - Ranger class
 * 4 - Miner class
 |}
-
 Notes:
 
 * Opcodes marked with * are preceded by Walk to Entity.
