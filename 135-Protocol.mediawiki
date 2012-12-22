@@ -3,78 +3,86 @@ This page refers to the RSC #135 client revision. You can find a partially refac
 
 == '''Packet structure''' ==
 
-TODO.
+<pre>byte tempbuf[];
+if (in.available() >= 2) {
+    len = in.read();
+    if (len >= 160)
+        len = (len - 160) * 256 + in.read();
+}
+if (len > 0 && in.available() >= len) {
+    if (len >= 160) {
+        opcode = in.read() & 0xff;
+        len--;
+        tempbuf = new byte[len];
+        in.read(tempbuf, 0, len);
+        put(tempbuf);
+    } else {
+        byte lastbyte = (byte) in.read();
+        len--;
+        if (len > 0) {
+            opcode = in.read() & 0xff;
+            len--;
+            tempbuf = new byte[len];
+            in.read(tempbuf, 0, len);
+            put(tempbuf);
+            put(lastbyte);
+        } else {
+            opcode = (lastbyte & 0xff);
+        }
+    }
+}
+</pre>
 
 RSC-135 uses big-endian byte order exclusively.
 
 == '''Reference''' ==
-Player usernames can be encoded and decoded as a long with the following methods:
-<pre>
-public static long encode_37(String s) {
-	String s1 = "";
-	for (int i = 0; i < s.length(); i++) {
-		char c = s.charAt(i);
-		if (c >= 'a' && c <= 'z')
-			s1 = s1 + c;
-		else if (c >= 'A' && c <= 'Z')
-			s1 = s1 + (char) ((c + 97) - 65);
-		else if (c >= '0' && c <= '9')
-			s1 = s1 + c;
-		else
-			s1 = s1 + ' ';
-	}
-	s1 = s1.trim();
-	if (s1.length() > 12)
-		s1 = s1.substring(0, 12);
-	long l = 0L;
-	for (int j = 0; j < s1.length(); j++) {
-		char c1 = s1.charAt(j);
-		l *= 37L;
-		if (c1 >= 'a' && c1 <= 'z')
-			l += (1 + c1) - 97;
-		else if (c1 >= '0' && c1 <= '9')
-			l += (27 + c1) - 48;
-	}
-	return l;
+Player usernames are encoded and decoded with the following methods:
+
+<pre>public static long encode_37(String s) {
+    String s1 = "";
+    for (int i = 0; i < s.length(); i++) {
+        char c = s.charAt(i);
+        if (c >= 'a' && c <= 'z')
+            s1 = s1 + c;
+        else if (c >= 'A' && c <= 'Z')
+            s1 = s1 + (char) ((c + 97) - 65);
+        else if (c >= '0' && c <= '9')
+            s1 = s1 + c;
+        else
+            s1 = s1 + ' ';
+    }
+    s1 = s1.trim();
+    if (s1.length() > 12)
+        s1 = s1.substring(0, 12);
+    long l = 0L;
+    for (int j = 0; j < s1.length(); j++) {
+        char c1 = s1.charAt(j);
+        l *= 37L;
+        if (c1 >= 'a' && c1 <= 'z')
+            l += (1 + c1) - 97;
+        else if (c1 >= '0' && c1 <= '9')
+            l += (27 + c1) - 48;
+    }
+    return l;
 }
 
 public static String decode_37(long l) {
-	String s = "";
-	while (l != 0L) {
-		int i = (int) (l % 37L);
-		l /= 37L;
-		if (i == 0) {
-			s = " " + s;
-		} else if (i < 27) {
-			if (l % 37L == 0L)
-				s = (char) ((i + 65) - 1) + s;
-			else
-				s = (char) ((i + 97) - 1) + s;
-		} else {
-			s = (char) ((i + 48) - 27) + s;
-		}
-	}
-	return s;
-}
-</pre>
-
-Player usernames are encoded like so exclusively in the account recovery process:
-<pre>
-public static long encode47(String arg0) {
-	arg0 = arg0.trim();
-	arg0 = arg0.toLowerCase();
-	long l = 0L;
-	int i = 0;
-	for (int j = 0; j < arg0.length(); j++) {
-		char c = arg0.charAt(j);
-		if (c >= 'a' && c <= 'z' || c >= '0' && c <= '9') {
-			char c1 = c;
-			l = l * 47L * (l - (long) (c1 * 6) - (long) (i * 7));
-			l += (c1 - 32) + i * c1;
-			i++;
-		}
-	}
-	return l;
+    String s = "";
+    while (l != 0L) {
+        int i = (int) (l % 37L);
+        l /= 37L;
+        if (i == 0) {
+            s = " " + s;
+        } else if (i < 27) {
+            if (l % 37L == 0L)
+                s = (char) ((i + 65) - 1) + s;
+            else
+                s = (char) ((i + 97) - 1) + s;
+        } else {
+            s = (char) ((i + 48) - 27) + s;
+        }
+    }
+    return s;
 }
 </pre>
 
@@ -171,29 +179,6 @@ public static long encode47(String arg0) {
 | Registration attempts exceeded?
 |}
 
-== '''Password Recovery''' ==
-Firstly, an integer is read from the stream.
-Then, the previous password and the new password are formatted and stored locally.
-The client begins a packet with opcode 8. The username is encoded and the long is written.
-Next, the client session ID is written.
-RSA line is put (old password + new password)
-(Presumably) The username is written as RSA long 5 times encoded with a special method used exclusively in the account recovery process (documented above).
-One byte is read and discarded.
-The next byte is the recovery response. The possible values:
-
-{| class="wikitable"
-|-
-! Response Code
-! Meaning
-|-
-| 0 || Sorry, recovery failed! You may try again in one hour.
-|-
-| 1 || Your pass has been reset. You may now use the new pass to login.
-|}
-
-Literally any other value results in a recovery failure and the following error message:
-"Recovery failed! Attempts exceeded?"
-
 == '''Packets''' ==
 The packet opcodes are unchanged from previous revisions, presumably this was before the protocol was being regularly modified to deter the developers of bots such as [[AutoRune]]. The payload/structure is quite similar to most other RSC revisions.
 
@@ -231,12 +216,12 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * ?
 | ?
 |-
-! Initialize Ignore List
+! Ignore List
 | 26 ||
 * ?
 | ?
 |-
-! Privacy Settings
+! Initialize Privacy Settings
 | 27 ||
 * ?
 | ?
@@ -251,27 +236,27 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * ?
 | ?
 |-
-! Ground Items
+! Ground Item Positions
 | 254 ||
 * ?
 | ?
 |-
-! Objects
+! Object Positions
 | 253 ||
 * ?
 | ?
 |-
-! Inventory
+! Whole Inventory
 | 252 ||
 * ?
 | ?
 |-
-! Players
+! Players (Appearance)
 | 250 ||
 * ?
 | ?
 |-
-! Boundaries
+! Boundary Positions
 | 249 ||
 * ?
 | ?
@@ -281,12 +266,12 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * ?
 | ?
 |-
-! NPCs
+! NPCs (Appearance)
 | 247 ||
 * ?
 | ?
 |-
-! Dialog
+! Display Dialog
 | 246 ||
 * ?
 | ?
@@ -296,12 +281,12 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * ?
 | ?
 |-
-! Init Map Region
+! Initialize World
 | 244 ||
 * ?
 | ?
 |-
-! Skills
+! All Skills
 | 243 ||
 * ?
 | ?
@@ -316,12 +301,12 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * ?
 | ?
 |-
-! Environment
+! Update Environment
 | 240 ||
 * ?
 | ?
 |-
-! Character Design
+! Display Character Design
 | 239 ||
 * ?
 | ?
@@ -361,17 +346,17 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * ?
 | ?
 |-
-! Game Settings
+! Init Game Settings
 | 228 ||
 * ?
 | ?
 |-
-! Prayers
+! Set Prayers
 | 227 ||
 * ?
 | ?
 |-
-! Quests
+! Set Quests
 | 226 ||
 * ?
 | ?
@@ -391,7 +376,7 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * ?
 | ?
 |-
-! XP Update
+! Single XP Update
 | 220 ||
 * ?
 | ?
@@ -406,7 +391,7 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * ?
 | ?
 |-
-! Skill Update
+! Single Skill Update
 | 211 ||
 * ?
 | ?
@@ -462,7 +447,7 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 |-
 ! Report Abuse
 | 10 ||
-* Long - The long representation of the username of the user to report
+* Long - The long representation of the username to report
 | Sends an abuse report to the server
 |-
 ! Add Friend
@@ -472,18 +457,18 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 |-
 ! Remove Friend
 | 27 ||
-* Long - The long representation of the username of the user to report
+* Long - The long representation of the username to report
 | Removes a user from your friends list
 |-
 ! Send Message
 | 28 ||
-* Long - The long representation of the username of the user to send the message to
-* Byte[] - A byte array containing the bytes of the message to send to the user
+* Long - The long representation of the username to send the message to
+* String - The message
 | Sends a message to the specified user
 |-
 ! Ignore User
 | 29 ||
-* Long - The long representation of the username of the user to ignore
+* Long - The long representation of the username to ignore
 | Adds a user to your ignore list
 |-
 ! Walk to Tile
