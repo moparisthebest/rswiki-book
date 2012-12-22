@@ -252,8 +252,8 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 |-
 ! Player Movement
 | 255 ||
-* bits[10] - The player's absx position.
-* bits[12] - The player's absy position.
+* bits[10] - The player's x position.
+* bits[12] - The player's y position.
 * bits[4] - The player's direction.
 * bits[8] - The number of players to update.
 * bits[1]... - 0 if the player has not moved and the dir has not changed, otherwise 1
@@ -322,7 +322,7 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * uint16 - The player's server index.
 * uint16 - ? (2304)
 * uint16 - ? (1776)
-* uint16 - The player's height level (abs_y / 944).
+* uint16 - The player's height level (player_y / 944).
 * uint16 - ? (944)
 | Initializes the world. Sent when the player first logs in, and when the player is teleported or moves up/down a height.
 |-
