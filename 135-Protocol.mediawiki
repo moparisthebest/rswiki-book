@@ -423,7 +423,8 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 |-
 ! Display Bank
 | 222 ||
-* uint8 (so small!) - The number of items in the player's bank.
+* uint8 - The number of items in the player's bank.
+* uint8 - The maximum number of items the player is allowed to store.
 * uint16... - The item's id.
 * uint32a... - The item's stack size.
 | Displays the bank interface. Variable length.
