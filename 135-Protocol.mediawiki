@@ -173,22 +173,22 @@ public static String decode_37(long l) {
 | Registration attempts exceeded?
 |}
 
-== '''Player Appearance Update''' ==
+== '''Mob Appearance Update''' ==
 
-First, create a new packet with the opcode 250. Add the total number of expected updates ([u]int16). 
+Firstly, create a new packet with the opcode 250. Add the total number of expected updates (uint16). 
 
-Then, for each 'thing' to update, write the (server) index of the player the update applies to ([u]int16), and the 'update type' (int8) followed by whatever data that update type expects.
+Secondly, for each 'thing' to update, write the (server) index of the mob the update applies to (uint16), and the 'update type' (int8) followed by whatever data that type expects.
 
 '''Update type 1 - Public chat messages'''
 
-* [u]int8 - The length of the chat message.
-* string (raw) - The chat message, scrambled by the sender's client.
+* uint8 - The length of the chat message.
+* string (raw) - The chat message, scrambled.
 
 '''Update type 2 - Combat damage'''
 
-* [u]int8 - The damage recieved.
-* [u]int8 - That player's 'current' hitpoints level.
-* [u]int8 - That player's 'base' hitpoints
+* uint8 - The damage recieved.
+* uint8 - That mob's 'current' hitpoints level.
+* uint8 - That mob's 'base' hitpoints.
 
 '''Update type 3/4 - Projectiles'''
 
@@ -196,40 +196,40 @@ The update type is 3 when the target is a NPC, or 4 is the target is a player.
 
 The standard magic projectile id is 1, and the standard ranged projectile id is 2.
 
-* [u]int16 - The projectile's id.
-* [u]int16 - The (server) index of the projectile's target entity.
+* uint16 - The projectile's id.
+* uint16 - The (server) index of the projectile's target entity.
 
 '''Update type 5 - Appearance'''
 
 Hair style, body type, leg type, and colours are as they are sent by the client's character design packet.
 
-* [u]int16 - The player's status? Doesn't appear to do anything. Jagex's server sends 9144.
-* [u]int64 - The player's username encoded with mod37.
-* [u]int8 - The size of the sub-update.
-** [u]int8 - The player's hair style + 1, or 0 if they are wearing a hemlet
-** [u]int8 - The player's body type + 1, or 0 if they are wearing a platebody
-** [u]int8 - The player's leg type + 1, or 0 if they are wearing legs
-** [u]int8 - The animation id + 1 (look in the client) of the player's offhand item or 0.
-** [u]int8 - The animation id + 1 of the player's hand item or 0.
-** [u]int8 - The animation id + 1 of the player's head item or 0.
-** [u]int8 - The animation id + 1 of the player's body item or 0.
-** [u]int8 - The animation id + 1 of the player's leg item or 0.
-** [u]int8 - The animation id + 1 of the player's neck item or 0.
-** [u]int8 - The animation id + 1 of the player's shoes or 0.
-** [u]int8 - The animation id + 1 of the player's gloves or 0.
-** [u]int8 - The animation id + 1 of the player's cape or 0.
-* [u]int8 - The player's hair colour.
-* [u]int8 - The player's top colour.
-* [u]int8 - The player's leg colour.
-* [u]int8 - The player's skin colour.
-* [u]int8 - The player's combat level.
-* [u]int8 - 1 if the player is skulled.
+* uint16 - The player's status? Doesn't appear to do anything.
+* uint64 - The player's username encoded with mod37.
+* uint8 - The size of the sub-update.
+** uint8 - The player's hair style + 1, or 0 if they are wearing a hemlet
+** uint8 - The player's body type + 1, or 0 if they are wearing a platebody
+** uint8 - The player's leg type + 1, or 0 if they are wearing legs
+** uint8 - The animation id + 1 (look in the client) of the player's offhand item or 0.
+** uint8 - The animation id + 1 of the player's hand item or 0.
+** uint8 - The animation id + 1 of the player's head item or 0.
+** uint8 - The animation id + 1 of the player's body item or 0.
+** uint8 - The animation id + 1 of the player's leg item or 0.
+** uint8 - The animation id + 1 of the player's neck item or 0.
+** uint8 - The animation id + 1 of the player's shoes or 0.
+** uint8 - The animation id + 1 of the player's gloves or 0.
+** uint8 - The animation id + 1 of the player's cape or 0.
+* uint8 - The player's hair colour.
+* uint8 - The player's top colour.
+* uint8 - The player's leg colour.
+* uint8 - The player's skin colour.
+* uint8 - The player's combat level.
+* uint8 - 1 if the player is skulled.
 
 == '''Packets''' ==
 The packet opcodes are unchanged from previous revisions, presumably this was before the protocol was being regularly modified to deter the developers of bots such as [[AutoRune]]. The payload/structure is quite similar to most other RSC revisions.
 
 === '''Incoming Data''' ===
-'''TODO: Duelling stuff, fully document 244, 240, NPCs '''
+'''TODO: Duelling stuff, 240, 244 '''
 {| class="wikitable"
 |-
 ! scope="col" width="140px" | Name
@@ -287,14 +287,19 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 |-
 ! Player Movement
 | 255 ||
-* bits[10] - The player's x position.
-* bits[12] - The player's y position.
-* bits[4] - The player's direction.
-* bits[8] - The number of players to update.
-* bits[1]... - 0 if the player has not moved and the dir has not changed, otherwise 1
-* bits[1]... - 1 if the player has not moved, but new dir
-* bits[3/4]... - player's last direction (3), player's direction (4), or -1 to remove the player (4).
-| Updates the position of the client's player and the movement status of nearby players. Usually sent every game engine tick (600ms) rather than when needed as with other packets. Variable length.
+* bits[10] - This player's x position.
+* bits[12] - This player's y position.
+* bits[4] - This player's direction.
+* bits[8] - The number of players the client already knows about to be sent (but it reads them in order?)
+** bits[1]... - If the player has not moved & does not need to be removed, 0 & don't send the next 2 lots of bits, otherwise 1.
+** bits[1]... - 1 if the player is to be removed.
+** bits[3/4]... - The player's direction. 4 bits with a value of 12 if the player is to be removed, otherwise 3 bits.
+* bits[11]... - The new player's (server) index.
+* bits[5]... - The new player's offset x position.
+* bits[5]... - The new player's offset y position.
+* bits[4]... - The new player's direction.
+* bits[1]... - something to do with c>s 254? 0
+| Updates the position/movement of the client's player and nearby players. Usually sent every game engine tick (600ms) rather than when needed as with other packets. Offset positions are this_x - player_x and are incremented by 32 if less than zero. Variable length.
 |-
 ! Ground Item Positions
 | 254 ||
@@ -317,9 +322,9 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * uint32a... - The item's stack size. Only sent when the item is stackable.
 | Sends over the player's whole inventory. Variable length.
 |-
-! Players (Appearance)
+! Player Appearance
 | 250 ||
-* See [[135 Protocol#Player Appearance Update|Player Appearance Update]]
+* See [[135 Protocol#Mob Appearance Update|Mob Appearance Update]]
 | Updates things to do with nearby players that aren't related to movement.
 |-
 ! Boundary Positions
@@ -332,13 +337,21 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 |-
 ! NPC Movement
 | 248 ||
-* ?
-| ?
+* bits[8] - The number of NPCs the client already knows about to be sent (but it reads them in order?).
+** bits[1]... - 1 if the NPC has moved, otherwise 0 & don't send the next 2 lots of bits.
+** bits[1]... - 1 if the NPC is to be removed, otherwise 0.
+** bits[3/4]... - The NPC's direction, 4 bits with a value of 12 if the NPC is to be removed, otherwise 3 bits.
+* bits[11] - The new NPC's (server) index.
+* bits[5] - The new NPC's offset x position.
+* bits[5] - The new NPC's offset y position.
+* bits[4] - The new NPC's direction.
+* bits[9] - The new NPC's id.
+| Updates the positions/movement of nearby NPCs. Usually sent every game engine tick (600ms) rather than when needed as with other packets. Offset positions are player_x - npc_x and are incremented by 32 if less than zero. Variable length.
 |-
-! NPCs (Appearance)
+! NPC Appearance
 | 247 ||
-* ?
-| ?
+* See [[135 Protocol#Mob Appearance Update|Mob Appearance Update]].
+| Updates things to do with nearby NPCs that aren't related to movement. Only the first two update types apply (NPCs cannot send projectiles or have changed sprites). NPC server index is used instead of player server index, obviously.
 |-
 ! Display Dialog
 | 246 ||
@@ -386,7 +399,7 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * None
 | Displays the "Oh dear! You are dead..." screen.
 |-
-! Update Environment
+! Environment
 | 240 ||
 * ?
 | ?
@@ -503,7 +516,6 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 | Updates a single skill to save bytes.
 |-
 |}
-
 === '''Outgoing Data''' ===
 '''TODO: Password recovery & recovery questions, 254'''
 {| class="wikitable"
@@ -521,7 +533,7 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 ! Newplayer (Registration)
 | 2 ||
 * int16 - The client's revision number (135)
-* int64 - Long representation of the username
+* int64 - mod37 encoded username
 * int16 - Referrer ID
 ** Integer.parseInt(getParameter("referrerid"));
 * The password encrypted with RSA
@@ -531,7 +543,7 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 ! Login
 | 0 ||
 * int16 - The client's revision number (135)
-* int64 - Long representation of the username
+* int64 - mod37 encoded username
 * The password encrypted with RSA
 * int32 - The "ranseed" value
 | Logs the player in.
@@ -558,28 +570,28 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 |-
 ! Report Abuse
 | 10 ||
-* int64 - The long representation of the username to report
+* int64 - The mod37 encoded username to report
 | Sends an abuse report to the server
 |-
 ! Add Friend
 | 26 ||
-* int64 - long representation of username
+* int64 - mod37 encoded username
 | Adds a user to your friends list
 |-
 ! Remove Friend
 | 27 ||
-* int64 - The long representation of the username to report
+* int64 - The mod37 encoded username to report
 | Removes a user from your friends list
 |-
-! Send Message
+! Private Message
 | 28 ||
-* int64 - The long representation of the username to send the message to
+* int64 - The mod37 encoded username to send the message to
 * String - The message, scrambed
 | Sends a message to the specified user
 |-
 ! Ignore User
 | 29 ||
-* int64 - The long representation of the username to ignore
+* int64 - The mod37 encoded username to ignore
 | Adds a user to your ignore list
 |-
 ! Walk to Tile
@@ -595,12 +607,12 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * The same as 255.
 | Variable length. Walks to an entity. The number of steps can be calculated by dividing the available data by 2.
 |-
-! Acknowledge Players
+! Player Response
 | 254 ||
-* int16 - Size?
+* int16 - The number of players sent
 * int16... - The player's server index
-* int16... - ???
-| Variable length. Informs the server of players. Why?
+* int16... - The player's status, as sent with the appearance update packet
+| Variable length. Informs the server of players after a movement/positions update packet. Why?
 |-
 ! Drop Item
 | 251 ||
@@ -637,7 +649,7 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 ! Select Option
 | 237 ||
 * int8 - The position of the option in the dialog_options array
-| Selects an option in a dialog (dialog referring to, for example, the menu displayed when certing)
+| Selects an option in a NPC dialog
 |-
 ! Combat Style
 | 231 ||
