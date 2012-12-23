@@ -341,11 +341,11 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 ** bits[1]... - 1 if the NPC has moved, otherwise 0 & don't send the next 2 lots of bits.
 ** bits[1]... - 1 if the NPC is to be removed, otherwise 0.
 ** bits[3/4]... - The NPC's direction, 4 bits with a value of 12 if the NPC is to be removed, otherwise 3 bits.
-* bits[11] - The new NPC's (server) index.
-* bits[5] - The new NPC's offset x position.
-* bits[5] - The new NPC's offset y position.
-* bits[4] - The new NPC's direction.
-* bits[9] - The new NPC's id.
+* bits[11]... - The new NPC's (server) index.
+* bits[5]... - The new NPC's offset x position.
+* bits[5]... - The new NPC's offset y position.
+* bits[4]... - The new NPC's direction.
+* bits[9]... - The new NPC's id.
 | Updates the positions/movement of nearby NPCs. Usually sent every game engine tick (600ms) rather than when needed as with other packets. Offset positions are player_x - npc_x and are incremented by 32 if less than zero. Variable length.
 |-
 ! NPC Appearance
