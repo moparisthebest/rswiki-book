@@ -205,7 +205,7 @@ Hair style, body type, leg type, and colours are as they are sent by the client'
 
 * [u]int16 - The player's status? Doesn't appear to do anything. Jagex's server sends 9144.
 * [u]int64 - The player's username encoded with mod37.
-* [u]int8 - The size of the sub-update (but it reads by order so what's the point?)
+* [u]int8 - The size of the sub-update.
 ** [u]int8 - The player's hair style + 1, or 0 if they are wearing a hemlet
 ** [u]int8 - The player's body type + 1, or 0 if they are wearing a platebody
 ** [u]int8 - The player's leg type + 1, or 0 if they are wearing legs
