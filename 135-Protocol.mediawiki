@@ -8,7 +8,7 @@ This page refers to the RSC #135 client revision. You can find a partially refac
     [byte] (len & 0xff)
 } else {
     [byte] len
-    [byte] data[len - 1] // last byte
+    [byte] data[len] // last byte
     len--; // skip it
 }
 [byte] opcode
