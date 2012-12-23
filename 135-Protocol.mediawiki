@@ -175,7 +175,7 @@ public static String decode_37(long l) {
 
 == '''Mob Appearance Update''' ==
 
-Firstly, create a new packet with the opcode 250. Add the total number of expected updates (uint16). 
+Firstly, create a new packet with the opcode 250. Write the total number of expected updates (uint16). 
 
 Secondly, for each 'thing' to update, write the (server) index of the mob the update applies to (uint16), and the 'update type' (int8) followed by whatever data that type expects.
 
