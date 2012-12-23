@@ -25,9 +25,42 @@ int16 - a 16-bit integer, or short, or WORD.<br>
 int32 - a 32-bit integer, or int, or DWORD.<br>
 int64 - a 64-bit integer, or long, or QWORD.<br>
 u - unsigned<br>
-a - [[Data Types#Non Standard Data Types|Special A]]<br>
+a - when writing, increment the MSB (most significant byte, or first byte) by 128. When reading, if the first byte unsigned is lower than 128, that's your value, otherwise decrement the first byte by 128 and read as normally.<br>
 
-'''[[Data Types#Bit Access|Bit access]]'''
+'''Bit Access'''
+
+<pre>private static final int bitmasks[] = {
+    0, 1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047, 4095, 8191, 16383, 32767, 65535,
+    0x1ffff, 0x3ffff, 0x7ffff, 0xfffff, 0x1fffff, 0x3fffff, 0x7fffff, 0xffffff, 0x1ffffff,
+    0x3ffffff, 0x7ffffff, 0xfffffff, 0x1fffffff, 0x3fffffff, 0x7fffffff, -1
+};
+
+public void start_bit_access() {
+    bitpos = offset * 8;
+}
+
+public void write_bits(int num, int val) {
+    int bytepos = bitpos >> 3;
+    int bitoffset = 8 - (bitpos & 7);
+    bitpos += num;
+    for (; num > bitoffset; bitoffset = 8) {
+        buffer[bytepos] &= ~bitmasks[bitoffset];
+        buffer[bytepos++] |= (val >> (num - bitoffset)) & bitmasks[bitoffset];
+        num -= bitoffset;
+    }
+    if (num == bitoffset) {
+        buffer[bytepos] &= ~bitmasks[bitoffset];
+        buffer[bytepos] |= val & bitmasks[bitoffset];
+    } else {
+        buffer[bytepos] &= ~(bitmasks[num] << (bitoffset - num));
+        buffer[bytepos] |= (val & bitmasks[num]) << (bitoffset - num);
+    }
+}
+
+public void end_bit_access() {
+    offset = (bitpos + 7) / 8;
+}</pre>
+
 
 == '''Reference''' ==
 Player usernames are encoded and decoded with the following methods:
@@ -79,6 +112,99 @@ public static String decode_37(long l) {
     return s;
 }
 </pre>
+
+Chat messages are encoded and decoded with the following methods:
+
+<pre>public static byte msgdata[] = new byte[100];
+public static char msgchars[] = new char[100];
+private static char charmap[] = {
+    ' ', 'e', 't', 'a', 'o', 'i', 'h', 'n', 's', 'r', 'd', 'l', 'u', 'm', 'w', 'c', 'y', 'f',
+    'g', 'p', 'b', 'v', 'k', 'x', 'j', 'q', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8',
+    '9', ' ', '!', '?', '.', ',', ':', ';', '(', ')', '-', '&', '*', '\\', '\'', '@', '#', '+',
+    '=', '\243', '$', '%', '"', '[', ']'
+};
+
+public static String dec_msg(byte buffer[], int off, int len) {
+    try {
+        int i = 0;
+        int j = -1;
+        for (int k = 0; k < len; k++) {
+            int l = buffer[off++] & 0xff;
+            int i1 = l >> 4 & 0xf;
+            if (j == -1) {
+                if (i1 < 13)
+                    msgchars[i++] = charmap[i1];
+                else
+                    j = i1;
+            } else {
+                msgchars[i++] = charmap[((j << 4) + i1) - 195];
+                j = -1;
+            }
+            i1 = l & 0xf;
+            if (j == -1) {
+                if (i1 < 13)
+                    msgchars[i++] = charmap[i1];
+                else
+                    j = i1;
+            } else {
+                msgchars[i++] = charmap[((j << 4) + i1) - 195];
+                j = -1;
+            }
+        }
+        boolean flag = true;
+        for (int j1 = 0; j1 < i; j1++) {
+            char c = msgchars[j1];
+            if (j1 > 4 && c == '@')
+                msgchars[j1] = ' ';
+            if (c == '%')
+                msgchars[j1] = ' ';
+            if (flag && c >= 'a' && c <= 'z') {
+                msgchars[j1] += '\uFFE0';
+                flag = false;
+            }
+            if (c == '.' || c == '!')
+                flag = true;
+        }
+        return new String(msgchars, 0, i);
+    } catch (Exception ex) {
+        return "Cabbage";
+    }
+}
+
+public static int enc_msg(String str) {
+    if (str.length() > 80)
+        str = str.substring(0, 80);
+    str = str.toLowerCase();
+    int len = 0;
+    int i = -1;
+    for (int j = 0; j < str.length(); j++) {
+        char c = str.charAt(j);
+        int k = 0;
+        for (int l = 0; l < charmap.length; l++) {
+            if (c != charmap[l])
+                continue;
+            k = l;
+            break;
+        }
+        if (k > 12)
+            k += 195;
+        if (i == -1) {
+            if (k < 13)
+                i = k;
+            else
+                msgdata[len++] = (byte) k;
+        } else if (k < 13) {
+            msgdata[len++] = (byte) ((i << 4) + k);
+            i = -1;
+        } else {
+            msgdata[len++] = (byte) ((i << 4) + (k >> 4));
+            i = k & 0xf;
+        }
+    }
+    if (i != -1)
+        msgdata[len++] = (byte) (i << 4);
+    return len;
+}</pre>
 
 == '''Login''' ==
 * The username and password are prepared. This is done by replacing any spaces or illegal characters with _ and appending spaces to the string until its length is 20.
@@ -182,7 +308,7 @@ Secondly, for each 'thing' to update, write the (server) index of the mob the up
 '''Update type 1 - Public chat messages'''
 
 * uint8 - The length of the chat message.
-* string (raw) - The chat message, scrambled.
+* string (raw) - The encoded chat message.
 
 '''Update type 2 - Combat damage'''
 
@@ -282,7 +408,7 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 ! Private Message
 | 28 ||
 * uint64 - The sender's username, encoded with mod37.
-* string - The message, scrambled by the sender's client.
+* string - The encoded message.
 | Sends a private message to the client.
 |-
 ! Player Movement
@@ -550,7 +676,7 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 |-
 ! Public Chat
 | 3 ||
-* String - The message, scrambled.
+* String - The encoded message.
 | Sends a message to public chat.
 |-
 ! Reconnect
