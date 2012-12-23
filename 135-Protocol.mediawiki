@@ -229,7 +229,7 @@ Hair style, body type, leg type, and colours are as they are sent by the client'
 The packet opcodes are unchanged from previous revisions, presumably this was before the protocol was being regularly modified to deter the developers of bots such as [[AutoRune]]. The payload/structure is quite similar to most other RSC revisions.
 
 === '''Incoming Data''' ===
-'''TODO: Duelling stuff, 240, 244 '''
+'''TODO: Duelling stuff, 240 '''
 {| class="wikitable"
 |-
 ! scope="col" width="140px" | Name
@@ -365,14 +365,14 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * None
 | Hides the NPC chat dialog.
 |-
-! Initialize World
+! Initialize Plane
 | 244 ||
 * uint16 - The player's server index.
-* uint16 - ? (2304)
-* uint16 - ? (1776)
-* uint16 - The player's height level (player_y / 944).
-* uint16 - ? (944)
-| Initializes the world. Sent when the player first logs in, and when the player is teleported or moves up/down a height.
+* uint16 - The width of the plane. (2304)
+* uint16 - The height of the plane. (1776)
+* uint16 - The index of the plane. (player_y / multiplier)
+* uint16 - The plane multiplier. (944)
+| Initializes the plane. Sent when the player first logs in, and when the player is teleported or moves up/down a height.
 |-
 ! All Skills
 | 243 ||
@@ -402,7 +402,7 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 ! Environment
 | 240 ||
 * ?
-| ?
+| Doesn't appear to be important when you have everything else. It might be useful to have though, so why don't you be kind and document it? :)
 |-
 ! Display Character Design
 | 239 ||
@@ -612,7 +612,7 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * int16 - The number of players sent
 * int16... - The player's server index
 * int16... - The player's status, as sent with the appearance update packet
-| Variable length. Informs the server of players after a movement/positions update packet. Why?
+| Variable length. Informs the server of players the client knows about after a positions/movement update packet.
 |-
 ! Drop Item
 | 251 ||
