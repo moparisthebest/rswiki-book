@@ -173,11 +173,63 @@ public static String decode_37(long l) {
 | Registration attempts exceeded?
 |}
 
+== '''Player Appearance Update''' ==
+
+First, create a new packet with the opcode 250. Add the total number of expected updates ([u]int16). 
+
+Then, for each 'thing' to update, write the (server) index of the player the update applies to ([u]int16), and the 'update type' (int8) followed by whatever data that update type expects.
+
+'''Update type 1 - Public chat messages'''
+
+* [u]int8 - The length of the chat message.
+* string (raw) - The chat message, scrambled by the sender's client.
+
+'''Update type 2 - Combat damage'''
+
+* [u]int8 - The damage recieved.
+* [u]int8 - That player's 'current' hitpoints level.
+* [u]int8 - That player's 'base' hitpoints
+
+'''Update type 3/4 - Projectiles'''
+
+The update type is 3 when the target is a NPC, or 4 is the target is a player.
+
+The standard magic projectile id is 1, and the standard ranged projectile id is 2.
+
+* [u]int16 - The projectile's id.
+* [u]int16 - The (server) index of the projectile's target entity.
+
+'''Update type 5 - Appearance'''
+
+Hair style, body type, leg type, and colours are as they are sent by the client's character design packet.
+
+* [u]int16 - The player's status? Doesn't appear to do anything. Jagex's server sends 9144.
+* [u]int64 - The player's username encoded with mod37.
+* [u]int8 - The size of the sub-update (but it reads by order so what's the point?)
+** [u]int8 - The player's hair style + 1, or 0 if they are wearing a hemlet
+** [u]int8 - The player's body type + 1, or 0 if they are wearing a platebody
+** [u]int8 - The player's leg type + 1, or 0 if they are wearing legs
+** [u]int8 - The animation id + 1 (look in the client) of the player's offhand item or 0.
+** [u]int8 - The animation id + 1 of the player's hand item or 0.
+** [u]int8 - The animation id + 1 of the player's head item or 0.
+** [u]int8 - The animation id + 1 of the player's body item or 0.
+** [u]int8 - The animation id + 1 of the player's leg item or 0.
+** [u]int8 - The animation id + 1 of the player's neck item or 0.
+** [u]int8 - The animation id + 1 of the player's shoes or 0.
+** [u]int8 - The animation id + 1 of the player's gloves or 0.
+** [u]int8 - The animation id + 1 of the player's cape or 0.
+* [u]int8 - The player's hair colour.
+* [u]int8 - The player's top colour.
+* [u]int8 - The player's leg colour.
+* [u]int8 - The player's skin colour.
+* [u]int8 - The player's combat level.
+* [u]int8 - 1 if the player is skulled.
+
 == '''Packets''' ==
 The packet opcodes are unchanged from previous revisions, presumably this was before the protocol was being regularly modified to deter the developers of bots such as [[AutoRune]]. The payload/structure is quite similar to most other RSC revisions.
 
 === '''Incoming Data''' ===
-'''TODO: Duelling stuff, fully document 244, 240, NPCs, player appearance update '''
+'''TODO: Duelling stuff, fully document 244, 240, NPCs '''
 {| class="wikitable"
 |-
 ! scope="col" width="140px" | Name
@@ -267,8 +319,8 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 |-
 ! Players (Appearance)
 | 250 ||
-* ?
-| ?
+* See [[135 Protocol#Player Appearance Update|Player Appearance Update]]
+| Updates things to do with nearby players that aren't related to movement.
 |-
 ! Boundary Positions
 | 249 ||
