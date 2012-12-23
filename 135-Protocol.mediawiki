@@ -3,34 +3,17 @@ This page refers to the RSC #135 client revision. You can find a partially refac
 
 == '''Packet structure''' ==
 
-<pre>byte tempbuf[];
-if (in.available() >= 2) {
-    len = in.read();
-    if (len >= 160)
-        len = (len - 160) * 256 + in.read();
+<pre>if (len >= 160 {
+    [byte] (160 + (len / 256))
+    [byte] (len & 0xff)
+} else {
+    [byte] len
+    [byte] data[len - 1] // last byte
+    len--; // skip it
 }
-if (len > 0 && in.available() >= len) {
-    if (len >= 160) {
-        opcode = in.read() & 0xff;
-        len--;
-        tempbuf = new byte[len];
-        in.read(tempbuf, 0, len);
-        put(tempbuf);
-    } else {
-        byte lastbyte = (byte) in.read();
-        len--;
-        if (len > 0) {
-            opcode = in.read() & 0xff;
-            len--;
-            tempbuf = new byte[len];
-            in.read(tempbuf, 0, len);
-            put(tempbuf);
-            put(lastbyte);
-        } else {
-            opcode = (lastbyte & 0xff);
-        }
-    }
-}
+[byte] opcode
+for (int i = 0; i < len; i++)
+    [byte] data[i]
 </pre>
 
 RSC-135 uses big-endian byte order exclusively.
