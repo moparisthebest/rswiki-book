@@ -115,8 +115,8 @@ public static String decode_37(long l) {
 
 Chat messages are encoded and decoded with the following methods:
 
-<pre>public static byte msgdata[] = new byte[100];
-public static char msgchars[] = new char[100];
+<pre>public static byte encodedmsg[] = new byte[100];
+public static char decodedmsg[] = new char[100];
 private static char charmap[] = {
     ' ', 'e', 't', 'a', 'o', 'i', 'h', 'n', 's', 'r', 'd', 'l', 'u', 'm', 'w', 'c', 'y', 'f',
     'g', 'p', 'b', 'v', 'k', 'x', 'j', 'q', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8',
@@ -124,58 +124,58 @@ private static char charmap[] = {
     '=', '\243', '$', '%', '"', '[', ']'
 };
 
-public static String dec_msg(byte buffer[], int off, int len) {
+public static String decode_msg(byte buffer[], int off, int enclen) {
     try {
         int i = 0;
         int j = -1;
-        for (int k = 0; k < len; k++) {
+        for (int k = 0; k < enclen; k++) {
             int l = buffer[off++] & 0xff;
             int i1 = l >> 4 & 0xf;
             if (j == -1) {
                 if (i1 < 13)
-                    msgchars[i++] = charmap[i1];
+                    decodedmsg[i++] = charmap[i1];
                 else
                     j = i1;
             } else {
-                msgchars[i++] = charmap[((j << 4) + i1) - 195];
+                decodedmsg[i++] = charmap[((j << 4) + i1) - 195];
                 j = -1;
             }
             i1 = l & 0xf;
             if (j == -1) {
                 if (i1 < 13)
-                    msgchars[i++] = charmap[i1];
+                    decodedmsg[i++] = charmap[i1];
                 else
                     j = i1;
             } else {
-                msgchars[i++] = charmap[((j << 4) + i1) - 195];
+                decodedmsg[i++] = charmap[((j << 4) + i1) - 195];
                 j = -1;
             }
         }
         boolean flag = true;
         for (int j1 = 0; j1 < i; j1++) {
-            char c = msgchars[j1];
+            char c = decodedmsg[j1];
             if (j1 > 4 && c == '@')
-                msgchars[j1] = ' ';
+                decodedmsg[j1] = ' ';
             if (c == '%')
-                msgchars[j1] = ' ';
+                decodedmsg[j1] = ' ';
             if (flag && c >= 'a' && c <= 'z') {
-                msgchars[j1] += '\uFFE0';
+                decodedmsg[j1] += '\uFFE0';
                 flag = false;
             }
             if (c == '.' || c == '!')
                 flag = true;
         }
-        return new String(msgchars, 0, i);
+        return new String(decodedmsg, 0, i);
     } catch (Exception ex) {
         return "Cabbage";
     }
 }
 
-public static int enc_msg(String str) {
+public static int encode_msg(String str) {
     if (str.length() > 80)
         str = str.substring(0, 80);
     str = str.toLowerCase();
-    int len = 0;
+    int enclen = 0;
     int i = -1;
     for (int j = 0; j < str.length(); j++) {
         char c = str.charAt(j);
@@ -192,18 +192,18 @@ public static int enc_msg(String str) {
             if (k < 13)
                 i = k;
             else
-                msgdata[len++] = (byte) k;
+                encodedmsg[enclen++] = (byte) k;
         } else if (k < 13) {
-            msgdata[len++] = (byte) ((i << 4) + k);
+            encodedmsg[enclen++] = (byte) ((i << 4) + k);
             i = -1;
         } else {
-            msgdata[len++] = (byte) ((i << 4) + (k >> 4));
+            encodedmsg[enclen++] = (byte) ((i << 4) + (k >> 4));
             i = k & 0xf;
         }
     }
     if (i != -1)
-        msgdata[len++] = (byte) (i << 4);
-    return len;
+        encodedmsg[enclen++] = (byte) (i << 4);
+    return enclen;
 }</pre>
 
 == '''Login''' ==
