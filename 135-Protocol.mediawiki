@@ -709,11 +709,6 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * int64 - The mod37 encoded username to report
 | Removes a user from your friends list
 |-
-! Add Ignore
-| 30 ||
-* int64 - mod37 encoded username
-| Adds a user to your ignore list
-|-
 ! Private Message
 | 28 ||
 * int64 - The mod37 encoded username to send the message to
@@ -724,6 +719,11 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 | 29 ||
 * int64 - The mod37 encoded username to ignore
 | Adds a user to your ignore list
+|-
+! Remove Ignore
+| 30 ||
+* int64 - mod37 encoded username
+| Removes a user from your ignore list
 |-
 ! Walk to Tile
 | 255 ||
