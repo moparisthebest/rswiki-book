@@ -8,8 +8,10 @@ This page refers to the RSC #135 client revision. You can find a partially refac
     [byte] (len & 0xff)
 } else {
     [byte] len
-    [byte] data[len] // last byte
-    len--; // skip it
+    if (len > 0) {
+        len--; // skip it
+        [byte] data[len] // last byte
+    }
 }
 [byte] opcode
 for (int i = 0; i < len; i++)
@@ -332,7 +334,7 @@ Hair style, body type, leg type, and colours are as they are sent by the client'
 * uint16 - The player's status? Doesn't appear to do anything.
 * uint64 - The player's username encoded with mod37.
 * uint8 - The size of the sub-update.
-** uint8 - The player's hair style + 1, or 0 if they are wearing a hemlet
+** uint8 - The player's hair style + 1, or 0 if they are wearing a helmet
 ** uint8 - The player's body type + 1, or 0 if they are wearing a platebody
 ** uint8 - The player's leg type + 1, or 0 if they are wearing legs
 ** uint8 - The animation id + 1 (look in the client) of the player's offhand item or 0.
@@ -651,43 +653,35 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 ! scope="col" width="350px" | Payload
 ! scope="col" width="300px" | Description
 |-
+! Login
+| 0 ||
+* See [[135 Protocol#Login|Login]]
+| Logs the player in.
+|-
+! Reconnect
+| 19 ||
+* See [[135 Protocol#Login|Login]]
+| Reconnects the player after they are disconnected.
+|-
 ! Disconnect
 | 1 ||
 * None
-| Sends the disconnect packet
+| Sent after the server sends Close Connection (opcode 9), possibly to notify the server that the player is to be removed.
 |-
 ! Newplayer (Registration)
 | 2 ||
-* int16 - The client's revision number (135)
-* int64 - mod37 encoded username
-* int16 - Referrer ID
-** Integer.parseInt(getParameter("referrerid"));
-* The password encrypted with RSA
-* int32 - The "ranseed" value
+* See [[135 Protocol#Registration|Registration]]
 | Registers a new user.
-|-
-! Login
-| 0 ||
-* int16 - The client's revision number (135)
-* int64 - mod37 encoded username
-* The password encrypted with RSA
-* int32 - The "ranseed" value
-| Logs the player in.
 |-
 ! Public Chat
 | 3 ||
 * String - The encoded message.
 | Sends a message to public chat.
 |-
-! Reconnect
-| 19 ||
-* Same as 0
-| Reconnects the player after they are disconnected.
-|-
-! Logout
+! Attempt Logout
 | 6 ||
 * None
-| Sends the logout packet to the server
+| Inform the server that the client is attempting to log out
 |-
 ! Admin Command
 | 7 ||
@@ -724,6 +718,14 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 | 30 ||
 * int64 - mod37 encoded username
 | Removes a user from your ignore list
+|-
+! Update Privacy Settings
+| 31 ||
+* int8 - 1 to block public chat
+* int8 - 1 to block private chat
+* int8 - 1 to block trade requests
+* int8 - 1 to block duel requests
+| Updates the privacy settings
 |-
 ! Walk to Tile
 | 255 ||
@@ -818,6 +820,15 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * int8 - The ID of the prayer to enable
 | Enables a prayer.
 |-
+! Update Game Setting
+| 213 || 
+* int8 - The setting type
+* int8 - The setting value (1 or 0)
+| Setting types:
+* 0 - Camera angle mode (auto/manual)
+* 1 - Number of mouse buttons (1/2)
+* 2 - Sound effects (off/on)
+|-
 ! Confirm Trade
 | 202 ||
 * None
@@ -898,7 +909,7 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * int16 - The object's X coordinate
 * int16 - The object's Y coordinate
 * int16 - The spell's ID
-| Casts a spell on an object. Unused?
+| Casts a spell on an object.
 |-
 ! Use with Object
 | 241* ||
@@ -945,6 +956,11 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 | 195* ||
 * int16 - The NPC's server index
 | Performs the secondary action on a non-player character, usually 'pickpocket'.
+|-
+! Cast on Self
+| 227 ||
+* int16 - The spell's ID
+| Cast a teleport or charge spell on the local player.
 |-
 ! Cast on Player
 | 226* ||
@@ -995,10 +1011,10 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 |-
 ! Duel Settings
 | 200 ||
-* int8 - No retreating, 0 or 1
-* int8 - No magic, 0 or 1
-* int8 - No prayers, 0 or 1
-* int8 - No weapons, 0 or 1
+* int8 - No retreating, 1 or 0
+* int8 - No magic, 1 or 0
+* int8 - No prayers, 1 or 0
+* int8 - No weapons, 1 or 0
 | Updates the duel settings.
 |-
 ! Duel Items
@@ -1018,7 +1034,7 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * int8 - The player's gender - 2=Female, 1=Male
 * int8 - The player's hair style
 * int8 - The player's 'body type' - 4=Female, 1=Male
-* int8 - The player's 'leg type' - Always 2
+* int8 - The player's 'leg type' - always 2
 * int8 - The player's hair colour
 * int8 - The player's top colour
 * int8 - The player's leg colour
