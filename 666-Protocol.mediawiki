@@ -1,0 +1,1552 @@
+[[Category RS2]]
+This page is an attempt to document the protocol and other relevant information for client build 666.
+
+== '''Handshakes''' ==
+This section documents the handshake packets sent from the client to the server to indicate the type of connection.
+
+{| class="wikitable" style="text-align: center"
+|-
+! Name
+! Opcode
+! Length
+! Fields
+! Description
+|-
+! Handshake 14
+| 14
+| 0
+| 
+| 
+|-
+! Handshake 15
+| 15
+| 4
+| 
+| 
+|-
+! Handshake 16
+| 16
+| Variable (short)
+| 
+| 
+|-
+! Handshake 17
+| 17
+| 0
+| 
+| 
+|-
+! Handshake 19
+| 19
+| Variable (short)
+| 
+| 
+|-
+! Handshake 22
+| 22
+| Variable (short)
+| 
+| 
+|-
+! Handshake 23
+| 23
+| 4
+| 
+| 
+|-
+! Handshake 24
+| 24
+| Variable (byte)
+| 
+| 
+|-
+! Handshake 26
+| 26
+| 0
+| 
+| 
+|-
+! Handshake 27
+| 27
+| 0
+| 
+| 
+|-
+! Handshake 28
+| 28
+| Variable (short)
+| 
+| 
+|-
+! Handshake 29
+| 29
+| Variable (short)
+| 
+| 
+|-
+! Handshake 30
+| 30
+| Variable (short)
+| 
+| 
+|-
+|}
+
+== '''Packets''' ==
+This section documents the packets sent between the client and server during normal gameplay.
+
+=== '''Client-to-Server''' ===
+{| class="wikitable" style="text-align: center"
+|-
+! Name
+! Opcode
+! Length
+! Fields
+! Description
+|-
+! Packet 0
+| 0
+| 0
+| 
+| 
+|-
+! Packet 1
+| 1
+| 7
+| 
+| 
+|-
+! Packet 2
+| 2
+| Variable (byte)
+| 
+| 
+|-
+! Packet 3
+| 3
+| 8
+| 
+| 
+|-
+! Packet 4
+| 4
+| 3
+| 
+| 
+|-
+! Packet 5
+| 5
+| Variable (byte)
+| 
+| 
+|-
+! Packet 6
+| 6
+| 15
+| 
+| 
+|-
+! Packet 7
+| 7
+| 8
+| 
+| 
+|-
+! Packet 8
+| 8
+| 6
+| 
+| 
+|-
+! Packet 9
+| 9
+| Variable (byte)
+| 
+| 
+|-
+! Packet 10
+| 10
+| 3
+| 
+| 
+|-
+! Packet 11
+| 11
+| 8
+| 
+| 
+|-
+! Packet 12
+| 12
+| Variable (byte)
+| 
+| 
+|-
+! Packet 13
+| 13
+| Variable (byte)
+| 
+| 
+|-
+! Packet 14
+| 14
+| 3
+| 
+| 
+|-
+! Packet 15
+| 15
+| 4
+| 
+| 
+|-
+! Packet 16
+| 16
+| 7
+| 
+| 
+|-
+! Packet 17
+| 17
+| 8
+| 
+| 
+|-
+! Packet 18
+| 18
+| 1
+| 
+| 
+|-
+! Packet 19
+| 19
+| Variable (byte)
+| 
+| 
+|-
+! Packet 20
+| 20
+| 4
+| 
+| 
+|-
+! Packet 21
+| 21
+| 2
+| 
+| 
+|-
+! Packet 22
+| 22
+| Variable (byte)
+| 
+| 
+|-
+! Packet 23
+| 23
+| 7
+| 
+| 
+|-
+! Packet 24
+| 24
+| 7
+| 
+| 
+|-
+! Packet 25
+| 25
+| 8
+| 
+| 
+|-
+! Packet 26
+| 26
+| 16
+| 
+| 
+|-
+! Packet 27
+| 27
+| 3
+| 
+| 
+|-
+! Packet 28
+| 28
+| 7
+| 
+| 
+|-
+! Packet 29
+| 29
+| 3
+| 
+| 
+|-
+! Packet 30
+| 30
+| Variable (byte)
+| 
+| 
+|-
+! Packet 31
+| 31
+| Variable (byte)
+| 
+| 
+|-
+! Packet 32
+| 32
+| 4
+| 
+| 
+|-
+! Packet 33
+| 33
+| 0
+| 
+| 
+|-
+! Packet 34
+| 34
+| 6
+| 
+| 
+|-
+! Packet 35
+| 35
+| Variable (byte)
+| 
+| 
+|-
+! Packet 36
+| 36
+| 6
+| 
+| 
+|-
+! Packet 37
+| 37
+| 4
+| 
+| 
+|-
+! Packet 38
+| 38
+| 7
+| 
+| 
+|-
+! Packet 39
+| 39
+| 7
+| 
+| 
+|-
+! Packet 40
+| 40
+| 8
+| 
+| 
+|-
+! Packet 41
+| 41
+| 12
+| 
+| 
+|-
+! Packet 42
+| 42
+| 15
+| 
+| 
+|-
+! Packet 43
+| 43
+| 3
+| 
+| 
+|-
+! Packet 44
+| 44
+| 3
+| 
+| 
+|-
+! Packet 45
+| 45
+| 7
+| 
+| 
+|-
+! Packet 46
+| 46
+| Variable (byte)
+| 
+| 
+|-
+! Packet 47
+| 47
+| 3
+| 
+| 
+|-
+! Packet 48
+| 48
+| 8
+| 
+| 
+|-
+! Packet 49
+| 49
+| 7
+| 
+| 
+|-
+! Packet 50
+| 50
+| Variable (byte)
+| 
+| 
+|-
+! Packet 51
+| 51
+| 3
+| 
+| 
+|-
+! Packet 52
+| 52
+| 4
+| 
+| 
+|-
+! Packet 53
+| 53
+| 18
+| 
+| 
+|-
+! Packet 54
+| 54
+| 8
+| 
+| 
+|-
+! Packet 55
+| 55
+| Variable (byte)
+| 
+| 
+|-
+! Packet 56
+| 56
+| 5
+| 
+| 
+|-
+! Packet 57
+| 57
+| 11
+| 
+| 
+|-
+! Packet 58
+| 58
+| 7
+| 
+| 
+|-
+! Packet 59
+| 59
+| Variable (byte)
+| 
+| 
+|-
+! Packet 60
+| 60
+| 1
+| 
+| 
+|-
+! Packet 61
+| 61
+| 3
+| 
+| 
+|-
+! Packet 62
+| 62
+| Variable (byte)
+| 
+| 
+|-
+! Packet 63
+| 63
+| 4
+| 
+| 
+|-
+! Packet 64
+| 64
+| 0
+| 
+| 
+|-
+! Packet 65
+| 65
+| 11
+| 
+| 
+|-
+! Packet 66
+| 66
+| 8
+| 
+| 
+|-
+! Packet 67
+| 67
+| 2
+| 
+| 
+|-
+! Packet 68
+| 68
+| Variable (byte)
+| 
+| 
+|-
+! Packet 69
+| 69
+| 3
+| 
+| 
+|-
+! Packet 70
+| 70
+| 3
+| 
+| 
+|-
+! Packet 71
+| 71
+| 16
+| 
+| 
+|-
+! Packet 72
+| 72
+| 3
+| 
+| 
+|-
+! Packet 73
+| 73
+| 2
+| 
+| 
+|-
+! Packet 74
+| 74
+| Variable (byte)
+| 
+| 
+|-
+! Packet 75
+| 75
+| 7
+| 
+| 
+|-
+! Packet 76
+| 76
+| 4
+| 
+| 
+|-
+! Packet 77
+| 77
+| 2
+| 
+| 
+|-
+! Packet 78
+| 78
+| 3
+| 
+| 
+|-
+! Packet 79
+| 79
+| Variable (byte)
+| 
+| 
+|-
+! Packet 80
+| 80
+| Variable (byte)
+| 
+| 
+|-
+! Packet 81
+| 81
+| Variable (byte)
+| 
+| 
+|-
+! Packet 82
+| 82
+| Variable (byte)
+| 
+| 
+|-
+! Packet 83
+| 83
+| 3
+| 
+| 
+|-
+! Packet 84
+| 84
+| 8
+| 
+| 
+|-
+! Packet 85
+| 85
+| 8
+| 
+| 
+|-
+! Packet 86
+| 86
+| 7
+| 
+| 
+|-
+! Packet 87
+| 87
+| 0
+| 
+| 
+|-
+! Packet 88
+| 88
+| Variable (byte)
+| 
+| 
+|-
+! Packet 89
+| 89
+| Variable (byte)
+| 
+| 
+|-
+! Packet 90
+| 90
+| 3
+| 
+| 
+|-
+! Packet 91
+| 91
+| 3
+| 
+| 
+|-
+! Packet 92
+| 92
+| 4
+| 
+| 
+|-
+! Packet 93
+| 93
+| Variable (byte)
+| 
+| 
+|-
+|}
+
+=== '''Server-to-Client''' ===
+{| class="wikitable" style="text-align: center"
+|-
+! Name
+! Opcode
+! Length
+! Fields
+! Description
+|-
+! Packet 0
+| 0
+| 2
+| 
+| 
+|-
+! Packet 1
+| 1
+| 0
+| 
+| 
+|-
+! Packet 2
+| 2
+| Variable (byte)
+| 
+| 
+|-
+! Packet 3
+| 3
+| Variable (byte)
+| 
+| 
+|-
+! Packet 4
+| 4
+| 0
+| 
+| 
+|-
+! Packet 5
+| 5
+| Variable (short)
+| 
+| 
+|-
+! Packet 6
+| 6
+| Variable (short)
+| 
+| 
+|-
+! Packet 7
+| 7
+| 20
+| 
+| 
+|-
+! Packet 8
+| 8
+| 6
+| 
+| 
+|-
+! Packet 9
+| 9
+| 10
+| 
+| 
+|-
+! Packet 10
+| 10
+| 2
+| 
+| 
+|-
+! Packet 11
+| 11
+| Variable (short)
+| 
+| 
+|-
+! Packet 12
+| 12
+| 7
+| 
+| 
+|-
+! Packet 13
+| 13
+| Variable (short)
+| 
+| 
+|-
+! Packet 14
+| 14
+| 6
+| 
+| 
+|-
+! Packet 15
+| 15
+| Variable (byte)
+| 
+| 
+|-
+! Packet 16
+| 16
+| 2
+| 
+| 
+|-
+! Packet 17
+| 17
+| Variable (byte)
+| 
+| 
+|-
+! Packet 18
+| 18
+| 1
+| 
+| 
+|-
+! Packet 19
+| 19
+| Variable (short)
+| 
+| 
+|-
+! Packet 20
+| 20
+| 4
+| 
+| 
+|-
+! Packet 21
+| 21
+| 3
+| 
+| 
+|-
+! Packet 22
+| 22
+| 6
+| 
+| 
+|-
+! Packet 23
+| 23
+| Variable (short)
+| 
+| 
+|-
+! Packet 24
+| 24
+| 5
+| 
+| 
+|-
+! Packet 25
+| 25
+| 17
+| 
+| 
+|-
+! Packet 26
+| 26
+| 6
+| 
+| 
+|-
+! Packet 27
+| 27
+| 16
+| 
+| 
+|-
+! Packet 28
+| 28
+| 0
+| 
+| 
+|-
+! Packet 29
+| 29
+| 4
+| 
+| 
+|-
+! Packet 30
+| 30
+| 3
+| 
+| 
+|-
+! Packet 31
+| 31
+| 10
+| 
+| 
+|-
+! Packet 32
+| 32
+| Variable (short)
+| 
+| 
+|-
+! Packet 33
+| 33
+| 6
+| 
+| 
+|-
+! Packet 34
+| 34
+| 6
+| 
+| 
+|-
+! Packet 35
+| 35
+| 7
+| 
+| 
+|-
+! Packet 36
+| 36
+| Variable (byte)
+| 
+| 
+|-
+! Packet 37
+| 37
+| 6
+| 
+| 
+|-
+! Packet 38
+| 38
+| Variable (short)
+| 
+| 
+|-
+! Packet 39
+| 39
+| 6
+| 
+| 
+|-
+! Packet 40
+| 40
+| 9
+| 
+| 
+|-
+! Packet 41
+| 41
+| Variable (short)
+| 
+| 
+|-
+! Packet 42
+| 42
+| 12
+| 
+| 
+|-
+! Packet 43
+| 43
+| 2
+| 
+| 
+|-
+! Packet 44
+| 44
+| 1
+| 
+| 
+|-
+! Packet 45
+| 45
+| Variable (byte)
+| 
+| 
+|-
+! Packet 46
+| 46
+| 3
+| 
+| 
+|-
+! Packet 47
+| 47
+| 8
+| 
+| 
+|-
+! Packet 48
+| 48
+| 4
+| 
+| 
+|-
+! Packet 49
+| 49
+| 3
+| 
+| 
+|-
+! Packet 50
+| 50
+| Variable (byte)
+| 
+| 
+|-
+! Packet 51
+| 51
+| 4
+| 
+| 
+|-
+! Packet 52
+| 52
+| Variable (byte)
+| 
+| 
+|-
+! Packet 53
+| 53
+| 0
+| 
+| 
+|-
+! Packet 54
+| 54
+| Variable (byte)
+| 
+| 
+|-
+! Packet 55
+| 55
+| 3
+| 
+| 
+|-
+! Packet 56
+| 56
+| Variable (short)
+| 
+| 
+|-
+! Packet 57
+| 57
+| 8
+| 
+| 
+|-
+! Packet 58
+| 58
+| 2
+| 
+| 
+|-
+! Packet 59
+| 59
+| 0
+| 
+| 
+|-
+! Packet 60
+| 60
+| 4
+| 
+| 
+|-
+! Packet 61
+| 61
+| 6
+| 
+| 
+|-
+! Packet 62
+| 62
+| Variable (byte)
+| 
+| 
+|-
+! Packet 63
+| 63
+| Variable (byte)
+| 
+| 
+|-
+! Packet 64
+| 64
+| 10
+| 
+| 
+|-
+! Packet 65
+| 65
+| 3
+| 
+| 
+|-
+! Packet 66
+| 66
+| 4
+| 
+| 
+|-
+! Packet 67
+| 67
+| 4
+| 
+| 
+|-
+! Packet 68
+| 68
+| 0
+| 
+| 
+|-
+! Packet 69
+| 69
+| Variable (short)
+| 
+| 
+|-
+! Packet 70
+| 70
+| Variable (short)
+| 
+| 
+|-
+! Packet 71
+| 71
+| Variable (byte)
+| 
+| 
+|-
+! Packet 72
+| 72
+| 8
+| 
+| 
+|-
+! Packet 73
+| 73
+| 3
+| 
+| 
+|-
+! Packet 74
+| 74
+| 6
+| 
+| 
+|-
+! Packet 75
+| 75
+| 4
+| 
+| 
+|-
+! Packet 76
+| 76
+| 7
+| 
+| 
+|-
+! Packet 77
+| 77
+| 3
+| 
+| 
+|-
+! Packet 78
+| 78
+| 4
+| 
+| 
+|-
+! Packet 79
+| 79
+| 1
+| 
+| 
+|-
+! Packet 80
+| 80
+| 6
+| 
+| 
+|-
+! Packet 81
+| 81
+| 10
+| 
+| 
+|-
+! Packet 82
+| 82
+| Variable (short)
+| 
+| 
+|-
+! Packet 83
+| 83
+| 1
+| 
+| 
+|-
+! Packet 84
+| 84
+| Variable (short)
+| 
+| 
+|-
+! Packet 85
+| 85
+| 0
+| 
+| 
+|-
+! Packet 86
+| 86
+| Variable (short)
+| 
+| 
+|-
+! Packet 87
+| 87
+| 8
+| 
+| 
+|-
+! Packet 88
+| 88
+| Variable (byte)
+| 
+| 
+|-
+! Packet 89
+| 89
+| 8
+| 
+| 
+|-
+! Packet 90
+| 90
+| Variable (byte)
+| 
+| 
+|-
+! Packet 91
+| 91
+| 10
+| 
+| 
+|-
+! Packet 92
+| 92
+| 28
+| 
+| 
+|-
+! Packet 93
+| 93
+| 12
+| 
+| 
+|-
+! Packet 94
+| 94
+| 0
+| 
+| 
+|-
+! Packet 95
+| 95
+| Variable (short)
+| 
+| 
+|-
+! Packet 96
+| 96
+| Variable (byte)
+| 
+| 
+|-
+! Packet 97
+| 97
+| 8
+| 
+| 
+|-
+! Packet 98
+| 98
+| Variable (byte)
+| 
+| 
+|-
+! Packet 99
+| 99
+| Variable (short)
+| 
+| 
+|-
+! Packet 100
+| 100
+| 3
+| 
+| 
+|-
+! Packet 101
+| 101
+| 4
+| 
+| 
+|-
+! Packet 102
+| 102
+| 5
+| 
+| 
+|-
+! Packet 103
+| 103
+| 0
+| 
+| 
+|-
+! Packet 104
+| 104
+| 1
+| 
+| 
+|-
+! Packet 105
+| 105
+| 6
+| 
+| 
+|-
+! Packet 106
+| 106
+| Variable (byte)
+| 
+| 
+|-
+! Packet 107
+| 107
+| 5
+| 
+| 
+|-
+! Packet 108
+| 108
+| 9
+| 
+| 
+|-
+! Packet 109
+| 109
+| 6
+| 
+| 
+|-
+! Packet 110
+| 110
+| 2
+| 
+| 
+|-
+! Packet 111
+| 111
+| 3
+| 
+| 
+|-
+! Packet 112
+| 112
+| Variable (short)
+| 
+| 
+|-
+! Packet 113
+| 113
+| 1
+| 
+| 
+|-
+! Packet 114
+| 114
+| Variable (byte)
+| 
+| 
+|-
+! Packet 115
+| 115
+| 6
+| 
+| 
+|-
+! Packet 116
+| 116
+| 12
+| 
+| 
+|-
+! Packet 117
+| 117
+| Variable (byte)
+| 
+| 
+|-
+! Packet 118
+| 118
+| Variable (byte)
+| 
+| 
+|-
+! Packet 119
+| 119
+| 11
+| 
+| 
+|-
+! Packet 120
+| 120
+| 6
+| 
+| 
+|-
+! Packet 121
+| 121
+| 4
+| 
+| 
+|-
+! Packet 122
+| 122
+| Variable (short)
+| 
+| 
+|-
+! Packet 123
+| 123
+| 3
+| 
+| 
+|-
+! Packet 124
+| 124
+| 7
+| 
+| 
+|-
+! Packet 125
+| 125
+| 0
+| 
+| 
+|-
+! Packet 126
+| 126
+| 0
+| 
+| 
+|-
+! Packet 127
+| 127
+| Variable (byte)
+| 
+| 
+|-
+! Packet 128
+| 128
+| 0
+| 
+| 
+|-
+! Packet 129
+| 129
+| 2
+| 
+| 
+|-
+! Packet 130
+| 130
+| Variable (byte)
+| 
+| 
+|-
+! Packet 131
+| 131
+| 6
+| 
+| 
+|-
+! Packet 132
+| 132
+| 5
+| 
+| 
+|-
+! Packet 133
+| 133
+| 6
+| 
+| 
+|-
+! Packet 134
+| 134
+| Variable (short)
+| 
+| 
+|-
+! Packet 135
+| 135
+| 6
+| 
+| 
+|-
+! Packet 136
+| 136
+| 6
+| 
+| 
+|-
+! Packet 137
+| 137
+| 2
+| 
+| 
+|-
+! Packet 138
+| 138
+| Variable (short)
+| 
+| 
+|-
+! Packet 139
+| 139
+| 7
+| 
+| 
+|-
+! Packet 140
+| 140
+| 1
+| 
+| 
+|-
+! Packet 141
+| 141
+| Variable (short)
+| 
+| 
+|-
+! Packet 142
+| 142
+| 10
+| 
+| 
+|-
+! Packet 143
+| 143
+| 6
+| 
+| 
+|-
+! Packet 144
+| 144
+| Variable (byte)
+| 
+| 
+|-
+|}
