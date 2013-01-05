@@ -2,7 +2,7 @@
 This page is an attempt to document the protocol and other relevant information for client build 666.
 
 == '''Handshakes''' ==
-This section documents the handshake packets sent from the client to the server to indicate the type of connection.
+This section documents the handshake packets sent from the client to the server.
 
 {| class="wikitable" style="text-align: center"
 |-
@@ -12,83 +12,248 @@ This section documents the handshake packets sent from the client to the server 
 ! Fields
 ! Description
 |-
-! Handshake 14
+! Init Game Connection
 | 14
 | 0
-| 
-| 
+| None
+| Indicates that the connection is for logging the client into the lobby or game.
 |-
-! Handshake 15
+! Init Update Connection
 | 15
 | 4
-| 
-| 
+| style="text-align: left" | 
+* client_build: int32
+| Indicates that the connection is for streaming the game's resources to the client.
 |-
-! Handshake 16
+! Game Login
 | 16
 | Variable (short)
-| 
-| 
+| style="text-align: left" | 
+* client_build: int32
+* reconnecting: int8
+* rsa_block_len: int16
+* RSA block
+** block_header: int8
+** xtea_key: int32[4]
+** unknown: int64
+** password: cstring
+** server_session_key: int64
+** client_session_key: int64
+* XTEA block
+** username: cstring
+** unknown: int8
+** screen_type: int8
+** screen_width: int16
+** screen_height: int16
+** multisampling_level: int8
+** uid: int8[24]
+** settings: cstring
+** affiliate_id: int32
+** preferences_length: int8
+** preferences_data: int8[preferences_length]
+** System info
+*** sysinfo_version: int8
+*** os_type: int8
+*** is_64bit: int8
+*** os_version: int8
+*** java_vendor: int8
+*** java_release: int8
+*** java_version: int8
+*** java_update: int8
+*** unsigned: int8
+*** heap_size: int16
+*** processor_count: int8
+*** total_memory: int24
+*** unknown: int16
+*** unknown: int8
+*** unknown: int8
+*** unknown: int8
+*** unknown: jstring
+*** unknown: jstring
+*** unknown: jstring
+*** unknown: jstring
+*** unknown: int8
+*** unknown: int16
+** unknown: int32
+** user_flow: int64
+** has_additional_info: int8
+*** additional_info: cstring
+** has_jagtheora: int8
+** using_javascript: int8
+** archive_checksums: int32[36]
+| Attempts to login to the game server.
 |-
 ! Handshake 17
 | 17
 | 0
-| 
-| 
+| None
+| Not used but present in the client.
 |-
-! Handshake 19
+! Lobby Login
 | 19
 | Variable (short)
-| 
-| 
+| style="text-align: left" | 
+* client_build: int32
+* rsa_block_len: int16
+* RSA block
+** block_header: int8
+** xtea_key: int32[4]
+** unknown: int64
+** password: cstring
+** server_session_key: int64
+** client_session_key: int64
+* XTEA block
+** username: cstring
+** game_id: int8
+** language: int8
+** uid: int8[24]
+** settings: cstring
+** affiliate_id: int32
+** archive_checksums: int32[36]
+| Attempts to login to the lobby server.
 |-
-! Handshake 22
+! Create Account
 | 22
 | Variable (short)
-| 
-| 
+| style="text-align: left" |
+* client_build: int32
+* rsa_block_len: int16
+* RSA block
+** block_header: int8
+** xtea_key: int32[4]
+** padding: int32[10]
+** unknown: int16
+* XTEA block
+** email: cstring
+** affiliate_id: int16
+** password: cstring
+** user_flow: int64
+** language: int8
+** game_id: int8
+** uid: int8[24]
+** has_additional_info: int8
+*** additional_info: cstring
+** age: int8
+** email_updates: int8
+** padding: int8[7]
+| Attempts to create an account with the given information.
 |-
 ! Handshake 23
 | 23
 | 4
-| 
-| 
+| None
+| Not used but present in the client.
 |-
 ! Handshake 24
 | 24
 | Variable (byte)
-| 
-| 
+| None
+| Not used but present in the client.
 |-
-! Handshake 26
+! Finished Advertisement
 | 26
 | 0
-| 
-| 
+| None
+| Notifies the server that the client has finished viewing the advertisement.
 |-
 ! Handshake 27
 | 27
 | 0
-| 
-| 
+| None
+| Not used but present in the client.
 |-
-! Handshake 28
+! Check Email
 | 28
 | Variable (short)
-| 
-| 
+| style="text-align: left" |
+* client_build: int32
+* rsa_block_len: int16
+* RSA block
+** block_header: int8
+** xtea_key: int32[4]
+** padding: int32[10]
+** unknown: int16
+* XTEA block
+** email: cstring
+** language: int8
+** padding: int8[7]
+| Asks the server to verify whether the given email can be used to create an account.
 |-
-! Handshake 29
+! Init Social Network Connection
 | 29
 | Variable (short)
-| 
-| 
+| style="text-align: left" |
+* client_build: int32
+* reconnecting: int8 (if game server connection)
+* rsa_block_len: int16
+* RSA block
+** block_header: int8
+** xtea_key: int32[4]
+** social_network_id: int8
+** unknown: int16
+** language: int8
+** affiliate_id: int32
+** padding: int32[6]
+** client_session_key: int64
+** game_id: int8
+** unknown: int8
+| Initializes a connection using a social network.
 |-
-! Handshake 30
+! Social Network Login
 | 30
 | Variable (short)
-| 
-| 
+| style="text-align: left" |
+* Game login
+** XTEA block
+*** unknown: int8
+*** screen_type: int8
+*** screen_width: int16
+*** screen_height: int16
+*** multisampling_level: int8
+*** uid: int8[24]
+*** settings: cstring
+*** affiliate_id: int32
+*** preferences_length: int8
+*** preferences_data: int8[preferences_length]
+*** System info
+**** sysinfo_version: int8
+**** os_type: int8
+**** is_64bit: int8
+**** os_version: int8
+**** java_vendor: int8
+**** java_release: int8
+**** java_version: int8
+**** java_update: int8
+**** unsigned: int8
+**** heap_size: int16
+**** processor_count: int8
+**** total_memory: int24
+**** unknown: int16
+**** unknown: int8
+**** unknown: int8
+**** unknown: int8
+**** unknown: jstring
+**** unknown: jstring
+**** unknown: jstring
+**** unknown: jstring
+**** unknown: int8
+**** unknown: int16
+*** unknown: int32
+*** user_flow: int64
+*** has_additional_info: int8
+**** additional_info: cstring
+*** has_jagtheora: int8
+*** using_javascript: int8
+*** archive_checksums: int32[36]
+* Lobby login
+** XTEA block
+*** game_id: int8
+*** language: int8
+*** uid: int8[24]
+*** settings: cstring
+*** affiliate_id: int32
+*** archive_checksums: int32[36]
+| Attempts to login to either the game or lobby server using a social network.
 |-
 |}
 
