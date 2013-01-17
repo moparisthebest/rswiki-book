@@ -10,7 +10,8 @@ The Login protocol is identical to the [[317 Protocol#Login Protocol Overview|31
 The game protocol is the in-game communication of player actions between the server and client.
 <br/>
 
-=== Server -> Client Packets ===
+===Server -> Client Packets===
+
 {| border=2
 |-
 ! Opcode
