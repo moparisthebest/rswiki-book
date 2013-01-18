@@ -447,7 +447,7 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 | 252 ||
 * uint8 - The number of items in the player's inventory.
 * uint16... - The item's id. If equipped, increment by 0x8000.
-* uint32a... - The item's stack size. Only sent when the item is stackable.
+* int32a... - The item's stack size. Only sent when the item is stackable.
 | Sends over the player's whole inventory. Variable length.
 |-
 ! Player Appearance
@@ -509,7 +509,7 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * for (int i = 0; i < skill_count; i++)
 * uint8... - The skill's base level.
 * for (int i = 0; i < skill_count; i++)
-* uint32... - The skill's xp points.
+* int32... - The skill's xp points.
 * uint8 - The player's quest points.
 | Updates all of the player's skills and quest points. The 135 client reads 18 skills: Attack, Defense, Strength, Hits, Ranged, Prayer, Magic, Cooking, Woodcutting, Fletching, Fishing, Firemaking, Crafting, Smithing, Mining, Herblaw, Carpentry, Thieving.
 |-
@@ -551,7 +551,7 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 | 236 ||
 * int8 - The number of items the other player has traded.
 * uint16... - The item's id.
-* uint32a... - The item's stack size.
+* int32a... - The item's stack size.
 | Updates the other player's trade offer.
 |-
 ! Other's Trade Status
@@ -602,7 +602,7 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * uint8 - The number of items in the player's bank.
 * uint8 - The maximum number of items the player is allowed to store.
 * uint16... - The item's id.
-* uint32a... - The item's stack size.
+* int32a... - The item's stack size.
 | Displays the bank interface. Variable length.
 |-
 ! Hide Bank
@@ -614,20 +614,20 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 | 214 ||
 * uint8 - The item's slot.
 * uint16 - The item's id.
-* uint32a - The item's stack size. 0 to remove.
+* int32a - The item's stack size. 0 to remove.
 | Updates/adds/removes a single item in the bank interface to save bytes.
 |-
 ! Single XP Update
 | 220 ||
 * uint8 - The skill's id.
-* uint32 - The skill's xp.
+* int32 - The skill's xp.
 | Updates a single skill's XP to save bytes.
 |-
 ! Update InvItem
 | 213 ||
 * uint8 - The item's slot.
 * uint16 - The item's id. Increment by 0x7fff to change stack size.
-* uint32a - The item's stack size. May not be read.
+* int32a - The item's stack size. May not be read.
 | Adds a single item, or changes the ID, or changes the stack size to save bytes. If id / 32768 == 1, the item is equipped.
 |-
 ! Remove InvItem
@@ -640,7 +640,7 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * uint8 - The skill's id.
 * uint8 - The skill's current level.
 * uint8 - The skill's base level.
-* uint32 - The skill's experience points.
+* int32 - The skill's experience points.
 | Updates a single skill to save bytes.
 |-
 |}
