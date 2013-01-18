@@ -332,7 +332,7 @@ The standard magic projectile id is 1, and the standard ranged projectile id is 
 Hair style, body type, leg type, and colours are as they are sent by the client's character design packet.
 
 * uint16 - The player's status? Doesn't appear to do anything.
-* uint64 - The player's username encoded with mod37.
+* int64 - The player's username encoded with mod37.
 * uint8 - The size of the sub-update.
 ** uint8 - The player's hair style + 1, or 0 if they are wearing a helmet
 ** uint8 - The player's body type + 1, or 0 if they are wearing a platebody
@@ -383,20 +383,20 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 ! Initialize Friends List
 | 23 ||
 * uint8 - The total number of players in the list.
-* uint64... - The friend's username, encoded with mod37.
+* int64... - The friend's username, encoded with mod37.
 * uint8... - The world the friend is logged in to. 0 indicates the player is logged out.
 | Initializes the player's friends list. Variable length.
 |-
 ! Update Friends List
 | 24 ||
-* uint64 - The friend's username, encoded with mod37.
+* int64 - The friend's username, encoded with mod37.
 * uint8 - 0 if the friend is logged in, 1 if the friend is logged out.
 | Informs the client that a friend has logged in/out or that a new friend has been added to the list.
 |-
 ! Initialize Ignore List
 | 26 ||
 * uint8 - The total number of players in the list.
-* uint64... - The friend's username, encoded with mod37.
+* int64... - The friend's username, encoded with mod37.
 | Initializes the player's ignore list. Variable length.
 |-
 ! Initialize Privacy Settings
@@ -409,7 +409,7 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 |-
 ! Private Message
 | 28 ||
-* uint64 - The sender's username, encoded with mod37.
+* int64 - The sender's username, encoded with mod37.
 * string - The encoded message.
 | Sends a private message to the client.
 |-
