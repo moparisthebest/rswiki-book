@@ -550,7 +550,12 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 Load map region|Load map region]]
 | Loads a new map region.
 |-
-| 79
+| 78
+| FIXED
+| 0
+| [[317 Reset destination|Reset destination]]
+| Resets the players' destination.
+|-| 79
 | FIXED
 | 4
 | [[317 Scroll position|Scroll position]]
