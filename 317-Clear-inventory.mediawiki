@@ -1,7 +1,7 @@
 [[Category Packet]]
 [[Category Packet 317]]
 {{packet|name=Clear Inventory|description=Used to set all of the items and item stacks in an inventory to nothing.|opcode=72|type=Fixed|length=2|revision=317}}
-== Interface Color ==
+== Clear inventory ==
 
 === Description ===
 
