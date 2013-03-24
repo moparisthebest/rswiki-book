@@ -1,7 +1,7 @@
 [[Category Packet]]
 [[Category Packet 317]]
-== Animation Reset ==
+== Input amount ==
 
 === Description ===
 
-Resets all animations for players and npcs in the surrounding area.
+Opens the "Input amount" interface in the chatbox.
