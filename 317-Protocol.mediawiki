@@ -550,6 +550,12 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 Load map region|Load map region]]
 | Loads a new map region.
 |-
+| 74
+| FIXED
+| 4
+| [[317 Play song|Play song]]
+| Starts playing a song.
+|-
 | 78
 | FIXED
 | 0
