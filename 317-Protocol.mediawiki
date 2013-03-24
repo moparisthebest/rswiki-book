@@ -677,6 +677,12 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 Send add ignore|Send add ignore]]
 | Sends a ignored player to the ignore list.
 |-
+| 218
+| FIXED
+| 2
+| [[317 Open chatbox interface|Open chatbox interface]]
+| Opens an interface over the chatbox.
+|-
 | 219
 | FIXED
 | 0
