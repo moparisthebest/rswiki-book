@@ -629,6 +629,12 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 Player head to interface|Player head to interface]]
 | Sends the players head model to an interface
 |-
+| 187
+| FIXED
+| 0
+| [[317 Enter name|Enter Name]]
+| Displays the "Enter name" interface.
+|-
 | 196
 | VARIABLE_BYTE
 | N/A
