@@ -520,6 +520,12 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 Send add friend|Send add friend]]
 | Sends a friend to the friend list.
 |-
+| 61
+| FIXED
+| 1
+| [[317 Show multi-combat|Show multi-combat]]
+| Shows the player that they are in a multi-combat zone.
+|-
 | 68
 | FIXED
 | 0
