@@ -3,3 +3,19 @@
 == Send Private Message ==
 
 === Description ===
+
+Sending messages to other users within the server.
+{| style="float:right; margin:1em; width:250px;" cellpadding="3" cellspacing="0" border="1"
+|-
+! scope="col" colspan="2" style="background-color:#3c5;" | Send Message 
+Sends Message to another user.
+|-
+! scope="row"| Opcode
+| 196
+|-
+! scope="row"| Type
+| VARIABLE_SHORT
+|-
+! scope="row"| Length
+| N/A
+|}
