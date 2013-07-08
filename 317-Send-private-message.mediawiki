@@ -5,7 +5,7 @@
 === Description ===
 
 Sending messages to other users within the server.
-{| style="position:fixed; right=15px; top= 90px;margin:1em; width:250px;" cellpadding="3" cellspacing="0" border="1"
+{| style="float=right; margin:1em; width:250px;" cellpadding="3" cellspacing="0" border="1"
 |-
 ! scope="col" colspan="2" style="background-color:#3c5;" | Send Message 
 Sends Message to another user.
