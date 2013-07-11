@@ -941,6 +941,12 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 Close window|Close window]]
 | Sent when a player presses the close, exit or cancel button on an interface.
 |-
+| 131
+| FIXED
+| 0
+| [[317 Mage NPC|Mage NPC]]
+| Sent when a player uses magic attacks on an NPC.
+|-
 | 132
 | FIXED
 | 6
