@@ -791,11 +791,17 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 NPC action 2|NPC action 2]]
 | Sent when a player clicks the second option of an NPC.
 |-
-| 21
+| 17
 | FIXED
 | 2
-| [[317 NPC action 3|NPC action 3]]
-| Sent when a player clicks the third option of an NPC.
+| [[317 NPC action 2|NPC action 2]]
+| Sent when a player clicks the second option of an NPC.
+|-
+| 18
+| FIXED
+| 2
+| [[317 NPC action 4|NPC action 4]]
+| Sent when a player clicks the fourth option of an NPC.
 |-
 | 25
 | FIXED
