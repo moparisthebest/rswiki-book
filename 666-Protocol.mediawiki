@@ -1717,3 +1717,43 @@ This section documents the packets sent between the client and server during nor
 | 
 |-
 |}
+
+== '''Update Protocol''' ==
+
+This section documents the communication between the client and server over the connection used to stream resources.
+
+=== '''Handshake Response''' ===
+
+After receiving a handshake for the update protocol, the server responds with one of the following packets:
+
+{| class="wikitable" style="text-align: center"
+|-
+! Name
+! Id
+! Fields
+! Description
+|-
+! OK
+| 0
+| style="text-align: left" | 
+* required_resource_sizes: int32[27]
+| Indicates a successful connection.
+|-
+! OUT_OF_DATE
+| 6
+| None
+| Indicates that the client is outdated.
+|-
+! SERVER_FULL
+| 7
+| None
+| Indicates that the server is full at the moment.
+|-
+! IP_LIMIT
+| 9
+| None
+| Indicates that the client is being rate limited.
+|-
+|}
+
+=== '''Packets''' ===
