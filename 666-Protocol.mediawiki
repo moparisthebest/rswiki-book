@@ -1846,4 +1846,4 @@ The server responds to the client's requests for particular resources by sending
 
 Of particular note is that the response is grouped into 512-byte blocks. For every block after the first, the first byte of the block '''must''' be 0xff (decimal 255).
 
-In addition, if the client has updated its XOR code to be nonzero, the server must XOR each byte of data with the chosen code before it responds to the client.
+In addition, if the client has updated its XOR code to be nonzero, the server must XOR each byte of the response with the chosen code before it sends it to the client.
