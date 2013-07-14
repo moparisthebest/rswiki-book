@@ -1757,3 +1757,93 @@ After receiving a handshake for the update protocol, the server responds with on
 |}
 
 === '''Packets''' ===
+This section documents the packets sent between the client and server over the update connection. 
+
+==== '''Client-to-Server''' ====
+All packets sent by the client are 4 bytes long. Each packet includes a 1-byte opcode and a 3-byte payload.
+
+{| class="wikitable" style="text-align: center"
+|-
+! Name
+! Opcode
+! Fields
+! Description
+|-
+! Prefetch Request
+| 0
+| style="text-align: left" |
+* index: int8
+* file: int16
+| A passive request for a resource.
+|-
+! Urgent Request
+| 1
+| style="text-align: left" |
+* index: int8
+* file: int16
+| An urgent request for a resource.
+|-
+! Client Logged In
+| 2
+| style="text-align: left" |
+* padding: int24
+| Indicates that the client has logged in. May be useful for adjusting response rate.
+|-
+! Client Logged Out
+| 3
+| style="text-align: left" |
+* padding: int24
+| Indicates that the client has logged out. May be useful for adjusting response rate.
+|-
+! Update XOR Code
+| 4
+| style="text-align: left" |
+* xor_code: int8
+* padding: int16
+| Proposes a code to be used to encrypt all traffic. May be used to bypass firewalls or related software.
+|-
+! Connection Information
+| 6
+| style="text-align: left" |
+* version: int24
+| Sent after a connection is established. The ''version'' field always has the value 3.
+|-
+! Drop Request Queue
+| 7
+| style="text-align: left" |
+* padding: int24
+| Asks for currently pending requests to be dropped by the server. This packet is restricted to administrators by the client.
+|-
+|}
+
+==== '''Server-to-Client''' ====
+The server responds to the client's requests for particular resources by sending back the (possibly compressed) files. The data is in the following format:
+
+{| class="wikitable" style="text-align: center"
+|-
+! Field
+! Description
+|-
+| index: int8
+| The resource's index.
+|-
+| file: int16
+| The resource's file number.
+|-
+| compression_type: int8
+| The compression type of the file. Can be 0 (uncompressed), 1 (compressed using BZIP2), or 2 (compressed using GZIP).
+|-
+| file_size: int32
+| The (possibly compressed) size of the file.
+|-
+| uncompressed_size: int32
+| The uncompressed size of the file. This is only present if the file is compressed (i.e. the ''compression_type'' field is set to 1 or 2).
+|-
+| data: int8[file_size]
+| The (possibly compressed) file data.
+|-
+|}
+
+Of particular note is that the response is grouped into 512-byte blocks. For every block after the first, the first byte of the block '''must''' be 0xff (decimal 255).
+
+In addition, if the client has updated its XOR code to be nonzero, the server must XOR each byte of data with the chosen code before it responds to the client.
