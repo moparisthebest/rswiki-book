@@ -13,12 +13,12 @@ This packet is sent when a player changes their privacy options (i.e. public cha
 ! Description
 |-
 | Unsigned [[Data Types#Standard data types|Byte]]
-| The private chat options.
-|-
-| Unsigned [[Data Types#Standard data types|Byte]]
 | The public chat options.
 |-
 | Unsigned [[Data Types#Standard data types|Byte]]
-| The trade/complete options.
+| The private chat options.
+|-
+| Unsigned [[Data Types#Standard data types|Byte]]
+| The trade/compete options.
 |-
 |}
