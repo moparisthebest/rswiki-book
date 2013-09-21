@@ -277,11 +277,15 @@ This section documents the packets sent between the client and server during nor
 | 
 | 
 |-
-! Packet 1
+! Location Option 1
 | 1
 | 7
-| 
-| 
+| style="text-align: left" |
+* pos_y: int16a
+* pos_x: le_int16a
+* location_id: le_int16
+* ctrl_pressed: int8
+| Sent when the first option for a location is selected.
 |-
 ! Packet 2
 | 2
@@ -515,17 +519,25 @@ This section documents the packets sent between the client and server during nor
 | 
 | 
 |-
-! Packet 38
+! Location Option 5
 | 38
 | 7
-| 
-| 
+| style="text-align: left" |
+* pos_y: int16a
+* pos_x: le_int16a
+* location_id: le_int16
+* ctrl_pressed: int8
+| Sent when the fifth option for a location is selected.
 |-
-! Packet 39
+! Location Option 2
 | 39
 | 7
-| 
-| 
+| style="text-align: left" |
+* pos_y: int16a
+* pos_x: le_int16a
+* location_id: le_int16
+* ctrl_pressed: int8
+| Sent when the second option for a location is selected.
 |-
 ! Packet 40
 | 40
@@ -643,11 +655,15 @@ This section documents the packets sent between the client and server during nor
 | 
 | 
 |-
-! Packet 58
+! Location Option 4
 | 58
 | 7
-| 
-| 
+| style="text-align: left" |
+* pos_y: int16a
+* pos_x: le_int16a
+* location_id: le_int16
+* ctrl_pressed: int8
+| Sent when the fourth option for a location is selected.
 |-
 ! Packet 59
 | 59
@@ -745,11 +761,15 @@ This section documents the packets sent between the client and server during nor
 | 
 | 
 |-
-! Packet 75
+! Location Option 6
 | 75
 | 7
-| 
-| 
+| style="text-align: left" |
+* pos_y: int16a
+* pos_x: le_int16a
+* location_id: le_int16
+* ctrl_pressed: int8
+| Sent when the sixth option for a location is selected.
 |-
 ! Packet 76
 | 76
@@ -811,11 +831,15 @@ This section documents the packets sent between the client and server during nor
 | 
 | 
 |-
-! Packet 86
+! Location Option 3
 | 86
 | 7
-| 
-| 
+| style="text-align: left" |
+* pos_y: int16a
+* pos_x: le_int16a
+* location_id: le_int16
+* ctrl_pressed: int8
+| Sent when the third option for a location is selected.
 |-
 ! Packet 87
 | 87
