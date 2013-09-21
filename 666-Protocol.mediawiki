@@ -367,10 +367,15 @@ This section documents the packets sent between the client and server during nor
 | 
 | 
 |-
-! Packet 16
+! Ground Object Option 5
 | 16
 | 7
-| 
+| style="text-align: left" | 
+* pos_y: int16
+* object_id: int16
+* pos_x: int16
+* ctrl_pressed: int8
+| Sent when the fifth option for a ground object is selected.
 | 
 |-
 ! Packet 17
@@ -409,17 +414,25 @@ This section documents the packets sent between the client and server during nor
 | 
 | 
 |-
-! Packet 23
+! Ground Object Option 2
 | 23
 | 7
-| 
-| 
+| style="text-align: left" | 
+* pos_y: int16
+* object_id: int16
+* pos_x: int16
+* ctrl_pressed: int8
+| Sent when the second option for a ground object is selected.
 |-
-! Packet 24
+! Ground Object Option 3
 | 24
 | 7
-| 
-| 
+| style="text-align: left" | 
+* pos_y: int16
+* object_id: int16
+* pos_x: int16
+* ctrl_pressed: int8
+| Sent when the third option for a ground object is selected.
 |-
 ! Packet 25
 | 25
@@ -439,11 +452,15 @@ This section documents the packets sent between the client and server during nor
 | 
 | 
 |-
-! Packet 28
+! Ground Object Option 6
 | 28
 | 7
-| 
-| 
+| style="text-align: left" | 
+* pos_y: int16
+* object_id: int16
+* pos_x: int16
+* ctrl_pressed: int8
+| Sent when the sixth option for a ground object is selected.
 |-
 ! Packet 29
 | 29
@@ -541,11 +558,15 @@ This section documents the packets sent between the client and server during nor
 | 
 | 
 |-
-! Packet 45
+! Ground Object Option 1
 | 45
 | 7
-| 
-| 
+| style="text-align: left" | 
+* pos_y: int16
+* object_id: int16
+* pos_x: int16
+* ctrl_pressed: int8
+| Sent when the first option for a ground object is selected.
 |-
 ! Packet 46
 | 46
@@ -565,11 +586,15 @@ This section documents the packets sent between the client and server during nor
 | 
 | 
 |-
-! Packet 49
+! Ground Object Option 4
 | 49
 | 7
-| 
-| 
+| style="text-align: left" | 
+* pos_y: int16
+* object_id: int16
+* pos_x: int16
+* ctrl_pressed: int8
+| Sent when the fourth option for a ground object is selected.
 |-
 ! Packet 50
 | 50
