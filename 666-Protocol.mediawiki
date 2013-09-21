@@ -299,11 +299,13 @@ This section documents the packets sent between the client and server during nor
 | 
 | 
 |-
-! Packet 4
+! Player Option 8
 | 4
 | 3
-| 
-| 
+| style="text-align: left" | 
+* player_index: int16
+* ctrl_pressed: int8
+| Sent when the eighth option for a player is selected.
 |-
 ! Packet 5
 | 5
@@ -361,11 +363,13 @@ This section documents the packets sent between the client and server during nor
 | 
 | 
 |-
-! Packet 14
+! Player Option 10
 | 14
 | 3
-| 
-| 
+| style="text-align: left" | 
+* player_index: int16
+* ctrl_pressed: int8
+| Sent when the tenth option for a player is selected.
 |-
 ! Packet 15
 | 15
@@ -563,17 +567,21 @@ This section documents the packets sent between the client and server during nor
 | 
 | 
 |-
-! Packet 43
+! Player Option 1
 | 43
 | 3
-| 
-| 
+| style="text-align: left" | 
+* player_index: int16
+* ctrl_pressed: int8
+| Sent when the first option for a player is selected.
 |-
-! Packet 44
+! Player Option 2
 | 44
 | 3
-| 
-| 
+| style="text-align: left" | 
+* player_index: int16
+* ctrl_pressed: int8
+| Sent when the second option for a player is selected.
 |-
 ! Ground Object Option 1
 | 45
@@ -591,11 +599,13 @@ This section documents the packets sent between the client and server during nor
 | 
 | 
 |-
-! Packet 47
+! Player Option 5
 | 47
 | 3
-| 
-| 
+| style="text-align: left" | 
+* player_index: int16
+* ctrl_pressed: int8
+| Sent when the fifth option for a player is selected. 
 |-
 ! Packet 48
 | 48
@@ -619,11 +629,13 @@ This section documents the packets sent between the client and server during nor
 | 
 | 
 |-
-! Packet 51
+! Player Option 9
 | 51
 | 3
-| 
-| 
+| style="text-align: left" | 
+* player_index: int16
+* ctrl_pressed: int8
+| Sent when the ninth option for a player is selected.
 |-
 ! Packet 52
 | 52
@@ -755,11 +767,13 @@ This section documents the packets sent between the client and server during nor
 | 
 | 
 |-
-! Packet 72
+! Player Option 7
 | 72
 | 3
-| 
-| 
+| style="text-align: left" | 
+* player_index: int16
+* ctrl_pressed: int8
+| Sent when the seventh option for a player is selected.
 |-
 ! Packet 73
 | 73
@@ -825,11 +839,13 @@ This section documents the packets sent between the client and server during nor
 | 
 | 
 |-
-! Packet 83
+! Player Option 4
 | 83
 | 3
-| 
-| 
+| style="text-align: left" | 
+* player_index: int16
+* ctrl_pressed: int8
+| Sent when the fourth option for a player is selected.
 |-
 ! Packet 84
 | 84
@@ -871,17 +887,21 @@ This section documents the packets sent between the client and server during nor
 | 
 | 
 |-
-! Packet 90
+! Player Option 3
 | 90
 | 3
-| 
-| 
+| style="text-align: left" | 
+* player_index: int16
+* ctrl_pressed: int8
+| Sent when the third option for a player is selected.
 |-
-! Packet 91
+! Player Option 6
 | 91
 | 3
-| 
-| 
+| style="text-align: left" | 
+* player_index: int16
+* ctrl_pressed: int8
+| Sent when the sixth option for a player is selected.
 |-
 ! Packet 92
 | 92
