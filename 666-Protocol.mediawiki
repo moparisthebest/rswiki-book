@@ -376,7 +376,6 @@ This section documents the packets sent between the client and server during nor
 * pos_x: int16
 * ctrl_pressed: int8
 | Sent when the fifth option for a ground object is selected.
-| 
 |-
 ! Packet 17
 | 17
