@@ -335,11 +335,13 @@ This section documents the packets sent between the client and server during nor
 | 
 | 
 |-
-! Packet 10
+! Npc Option 3
 | 10
 | 3
-| 
-| 
+| style="text-align: left" | 
+* npc_index: le_int16a
+* ctrl_pressed: int8c
+| Sent when the third option for an npc is selected.
 |-
 ! Packet 11
 | 11
@@ -449,11 +451,13 @@ This section documents the packets sent between the client and server during nor
 | 
 | 
 |-
-! Packet 27
+! Npc Option 6
 | 27
 | 3
-| 
-| 
+| style="text-align: left" | 
+* npc_index: le_int16a
+* ctrl_pressed: int8c
+| Sent when the sixth option for an npc is selected.
 |-
 ! Ground Object Option 6
 | 28
@@ -465,11 +469,13 @@ This section documents the packets sent between the client and server during nor
 * ctrl_pressed: int8
 | Sent when the sixth option for a ground object is selected.
 |-
-! Packet 29
+! Npc Option 1
 | 29
 | 3
-| 
-| 
+| style="text-align: left" | 
+* npc_index: le_int16a
+* ctrl_pressed: int8c
+| Sent when the first option for an npc is selected.
 |-
 ! Packet 30
 | 30
@@ -677,11 +683,13 @@ This section documents the packets sent between the client and server during nor
 | 
 | 
 |-
-! Packet 61
+! Npc Option 5
 | 61
 | 3
-| 
-| 
+| style="text-align: left" | 
+* npc_index: le_int16a
+* ctrl_pressed: int8c
+| Sent when the fifth option for an npc is selected.
 |-
 ! Packet 62
 | 62
@@ -725,17 +733,21 @@ This section documents the packets sent between the client and server during nor
 | 
 | 
 |-
-! Packet 69
+! Npc Option 4
 | 69
 | 3
-| 
-| 
+| style="text-align: left" | 
+* npc_index: le_int16a
+* ctrl_pressed: int8c
+| Sent when the fourth option for an npc is selected.
 |-
-! Packet 70
+! Npc Option 2
 | 70
 | 3
-| 
-| 
+| style="text-align: left" | 
+* npc_index: le_int16a
+* ctrl_pressed: int8c
+| Sent when the second option for an npc is selected.
 |-
 ! Packet 71
 | 71
