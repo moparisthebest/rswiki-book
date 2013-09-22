@@ -271,11 +271,11 @@ This section documents the packets sent between the client and server during nor
 ! Fields
 ! Description
 |-
-! Packet 0
+! Map Build Complete
 | 0
 | 0
-| 
-| 
+| None
+| Indicates that the client has just finished rebuilding its map.
 |-
 ! Location Option 1
 | 1
@@ -493,11 +493,13 @@ This section documents the packets sent between the client and server during nor
 | 
 | 
 |-
-! Packet 32
+! Detect Modified Client
 | 32
 | 4
-| 
-| 
+| style="text-align: left" | 
+* value: int32
+| Sent on each map rebuild if the client detects that it is not running as an applet.
+The ''value'' field will always have value 0x3f008edd.
 |-
 ! Packet 33
 | 33
