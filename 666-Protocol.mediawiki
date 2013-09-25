@@ -645,11 +645,29 @@ The ''value'' field will always have value 0x3f008edd.
 | 
 | 
 |-
-! Packet 53
+! Minimap Walk
 | 53
 | 18
-| 
-| 
+| style="text-align: left" | 
+* dest_y: le_int16
+* ctrl_pressed: int8c
+* dest_x: le_int16a
+* dummy1: int8
+* dummy2: int8
+* camera_yaw: int16
+* dummy3: int8
+* yaw_random: int8
+* scale_random: int8
+* dummy4: int8
+* world_x: int16
+* world_y: int16
+* dummy5: int8
+| Sent when a position on the minimap is clicked.
+Fields ''dummy1'' and ''dummy2'' should have value -1. ''dummy3'' should have value 57. ''dummy4'' should have value 89. ''dummy5'' should have value 63.
+
+The ''yaw_random'' and ''scale_random'' contain the current random offsets added to the client's camera yaw and minimap scale values.
+
+The ''world_x'' and ''world_y'' fields contain the client's current position in world coordinates. 
 |-
 ! Packet 54
 | 54
@@ -663,11 +681,14 @@ The ''value'' field will always have value 0x3f008edd.
 | 
 | 
 |-
-! Packet 56
+! Game View Walk
 | 56
 | 5
-| 
-| 
+| style="text-align: left" | 
+* dest_y: le_int16
+* ctrl_pressed: int8c
+* dest_x: le_int16a
+| Sent when a position in the 3d game world is clicked.
 |-
 ! Packet 57
 | 57
