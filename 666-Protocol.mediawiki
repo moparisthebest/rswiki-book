@@ -287,11 +287,12 @@ This section documents the packets sent between the client and server during nor
 * ctrl_pressed: int8
 | Sent when the first option for a location is selected.
 |-
-! Packet 2
+! Remove Ignore
 | 2
 | Variable (byte)
-| 
-| 
+| style="text-align: left" |
+* name: cstring
+| Sent when the client wants to stop ignoring a player.
 |-
 ! Packet 3
 | 3
@@ -487,11 +488,12 @@ This section documents the packets sent between the client and server during nor
 | 
 | 
 |-
-! Packet 31
+! Add Friend
 | 31
 | Variable (byte)
-| 
-| 
+| style="text-align: left" |
+* name: cstring
+| Sent when the client wants to be friends with a player.
 |-
 ! Detect Modified Client
 | 32
@@ -513,11 +515,12 @@ The ''value'' field will always have value 0x3f008edd.
 | 
 | 
 |-
-! Packet 35
+! Remove Friend
 | 35
 | Variable (byte)
-| 
-| 
+| style="text-align: left" |
+* name: cstring
+| Sent when the client wants to stop being friends with a player.
 |-
 ! Packet 36
 | 36
@@ -762,11 +765,13 @@ The ''world_x'' and ''world_y'' fields contain the client's current position in 
 | 
 | 
 |-
-! Packet 68
+! Add Ignore
 | 68
 | Variable (byte)
-| 
-| 
+| style="text-align: left" |
+* name: cstring
+* temporary: int8
+| Sent when the client wants to ignore a player.
 |-
 ! Npc Option 4
 | 69
