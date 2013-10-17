@@ -24,7 +24,11 @@
 
 
 * [[Category RS2|RS2 Documentation]]
- The current game play available to all users. (2004 - present)
+ The second major overhaul of the game. (2004 - 2013)
+
+
+* [[Category RS3|RS3 Documentation]]
+ The current game play available to all users. (2013 - present)
 </div>
 
 | style="padding:0 0.5em;" |
