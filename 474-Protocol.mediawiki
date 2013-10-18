@@ -53,6 +53,12 @@ When the client sends a packet to the server, the first byte encapsulates its op
 | [[474 Remove ignore|Remove ignore]]
 | Sent when a player removes a player from their ignore list. 
 |-
+| 3
+| FIXED
+| N/A
+| [[474 Fourth Interface Option|Remove ignore]]
+| This is triggered when a fourth interface option has been clicked. 
+|-
 | 13
 | FIXED
 | 12
