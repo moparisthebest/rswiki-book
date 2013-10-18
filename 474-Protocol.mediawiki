@@ -61,7 +61,7 @@ When the client sends a packet to the server, the first byte encapsulates its op
 |-
 | 4
 | FIXED
-| N/A
+| 6
 | [[474 Fourth Object Option|Fourth Object Option]]
 | This is triggered when a fourth object option has been clicked. 
 |-
