@@ -1,7 +1,7 @@
 [[Category Packet]]
 [[Category Packet 474]]
 {{packet|name=Remove ignore|description=Sent when a player removes a player from their ignore list.|opcode=1|type=Fixed|length=8|revision=474}}
-== Open Welcome Screen ==
+== Remove ignore ==
 
 === Description ===
 
