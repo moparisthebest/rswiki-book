@@ -12,7 +12,7 @@ Signals the player wants to remove an ignore.
 ! Data Type
 ! Description
 |-
-| Long
+| [[Data Types#Standard data types|Long]]
 | The player that is going to be removed from the ignore's name.
 |-
 |}
