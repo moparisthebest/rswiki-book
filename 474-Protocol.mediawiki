@@ -56,7 +56,7 @@ When the client sends a packet to the server, the first byte encapsulates its op
 | 3
 | FIXED
 | N/A
-| [[474 Fourth Interface Option|Remove ignore]]
+| [[474 Fourth Interface Option|Fourth Interface Option]]
 | This is triggered when a fourth interface option has been clicked. 
 |-
 | 13
