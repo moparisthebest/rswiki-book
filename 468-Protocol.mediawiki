@@ -20,11 +20,11 @@ Blank at the moment.
 ! Name
 ! Description
 |-
-| 163
-| Fixed
+| 147
+| DataType.SHORT, DataOrder.LITTLE,
 | 1
 | [[317 Run Energy|Run Energy]]
-| Sends the players run energy percentage.
+| Sends the Mapregion
 |-
 |}
 
