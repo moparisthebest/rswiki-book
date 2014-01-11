@@ -18,7 +18,7 @@ This packet is sent when a player clicks the first option of an item, such as "B
 | [[Data Types#Standard data types|Short]] [[Data Types#Non Standard Data Types|Special A]]
 | The slot the item is in.
 |-
-| [[Data Types#Big Endian|Big Endian]] [[Data Types#Standard data types|Short]]
+| [[Data Types#LITTLE Endian|Little Endian]] [[Data Types#Standard data types|Short]]
 | The ID of the item.
 |-
 |}
