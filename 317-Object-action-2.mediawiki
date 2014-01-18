@@ -15,7 +15,7 @@ This packet is sent when a player clicks the second option available of an objec
 | [[Data Types#Big Endian|Big Endian]] [[Data Types#Standard data types|Short]] [[Data Types#Non Standard Data Types|Special A]]
 | The objects ID.
 |-
-| [[Data Types#Little Endian|Little Endian]] [[Data Types#Standard data types|Short]] [[Data Types#Non Standard Data Types|Special A]]
+| [[Data Types#Standard data types|Short]] [[Data Types#Non Standard Data Types|Special A]]
 | The objects Y coordinate.
 |-
 | [[Data Types#Standard data types|Short]] [[Data Types#Non Standard Data Types|Special A]]
