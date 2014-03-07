@@ -1,10 +1,10 @@
 [[Category Packet]]
 [[Category Packet 377]]
-{{packet|name=Run Energy|description=Sets the player's run energy in the client.|opcode=125|type=Fixed|length=1|revision=377}}
+{{packet|name=Run Energy|description=Sends the players run energy level.|opcode=125|type=Fixed|length=1|revision=377}}
 == Run Energy ==
 
 === Description ===
-Sets the player's run energy in the client.
+Sends the players run energy level.
 
 === Packet Structure ===
 
