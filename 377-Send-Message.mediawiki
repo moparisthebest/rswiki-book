@@ -1,0 +1,18 @@
+[[Category Packet]]
+[[Category Packet 377]]
+{{packet|name=Send Message|description=Sends the specified message to the client.|opcode=63|type=Variable Byte|length=N/A|revision=377}}
+== Send Message ==
+
+=== Description ===
+Sends the specified message to the client.
+
+=== Packet Structure ===
+
+{| border=2
+! Data type
+! Description
+|-
+| [[RS String|RS String]]
+| Message.
+|-
+|}
