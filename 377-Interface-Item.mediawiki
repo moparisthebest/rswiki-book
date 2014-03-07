@@ -1,7 +1,7 @@
 [[Category Packet]]
 [[Category Packet 377]]
 {{packet|name=Interface Item|description=Sends an item to an interface.|opcode=21|type=Fixed|length=6|revision=377}}
-== Run Energy ==
+== Interface Item ==
 
 === Description ===
 Sends an item to an interface.
