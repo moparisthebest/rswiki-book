@@ -1,10 +1,10 @@
 [[Category Packet]]
 [[Category Packet 377]]
-{{packet|name=Send Message|description=Sends the specified message to the client.|opcode=63|type=Variable Byte|length=N/A|revision=377}}
+{{packet|name=Send Message|description=Sends a server message (e.g. 'Welcome to RuneScape') or trade/duel request.|opcode=63|type=Variable Byte|length=N/A|revision=377}}
 == Send Message ==
 
 === Description ===
-Sends the specified message to the client.
+Sends a server message (e.g. 'Welcome to RuneScape') or trade/duel request.
 
 === Packet Structure ===
 
