@@ -1,0 +1,18 @@
+[[Category Packet]]
+[[Category Packet 377]]
+{{packet|name=Run Energy|description=Sets the player's run energy in the client.|opcode=125|type=Fixed|length=1|revision=377}}
+== Run Energy ==
+
+=== Description ===
+Sets the player's run energy in the client.
+
+=== Packet Structure ===
+
+{| border=2
+! Data type
+! Description
+|-
+| Unsigned [[Data Types#Standard data types|Byte]]
+| The energy level.
+|-
+|}
