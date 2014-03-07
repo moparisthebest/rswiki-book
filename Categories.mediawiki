@@ -2,10 +2,10 @@
 The following categories contain pages or media.
 * [[Category Cache]] (3 members)
 * [[Category Data Type]] (3 members)
-* [[Category Packet]] (105 members)
+* [[Category Packet]] (106 members)
 * [[Category Packet 194]] (4 members)
 * [[Category Packet 317]] (90 members)
-* [[Category Packet 377]] (7 members)
+* [[Category Packet 377]] (8 members)
 * [[Category Packet 474]] (3 members)
 * [[Category Packet {{{revision}}}]] (1 members)
 * [[Category RS2]] (14 members)
