@@ -1,10 +1,10 @@
 [[Category Packet]]
 [[Category Packet 377]]
-{{packet|name=Inventory Overlay|description=Sets the interface overlay for the inventory.|opcode=128|type=Fixed|length=4|revision=377}}
+{{packet|name=Inventory Overlay|description=Displays the specified interface over the specified inventory.|opcode=128|type=Fixed|length=4|revision=377}}
 == Inventory Overlay ==
 
 === Description ===
-Sets the specified interface to the specified inventory.
+Displays the specified interface over the specified inventory.
 
 === Packet Structure ===
 
