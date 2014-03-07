@@ -2,7 +2,7 @@
 [[Category Packet 194]]
 [[Category RS2]]
 
-Just for fun if anyone gives two shits.
+Just in case somebody cares about this.
 
 == '''Packet structure''' ==
 ?
