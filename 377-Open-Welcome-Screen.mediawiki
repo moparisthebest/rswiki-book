@@ -36,13 +36,13 @@ Displays the welcome screen.
 | [[Data Types#Standard data types|Short]]
 | Amount of members credit (days) remaining.
 |-
-| [[Data Types#Standard data types|Int]] [[Data Types#Non Standard Data Types|Special A]]
+| [[Data Types#Big Endian|Big Endian]] [[Data Types#Standard data types|Int]]
 | Last log-in IPV4 address.
 |-
 | [[Data Types#Big Endian|Big Endian]] [[Data Types#Standard data types|Short]] [[Data Types#Non Standard Data Types|Special A]]
 | Recovery question change status.
 |-
-| [[Data Types#Standard data types|Byte]] [[Data Types#Standard data types|offset_t]]
+| [[Data Types#Standard data types|Byte]] [[Data Types#Non Standard Data Types|Special A]]
 | Unused #2.
 |-
 |}
