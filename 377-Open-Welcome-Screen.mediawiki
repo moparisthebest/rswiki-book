@@ -46,3 +46,4 @@ Displays the welcome screen.
 | Unused #2.
 |-
 |}
+* May be inaccurate.
