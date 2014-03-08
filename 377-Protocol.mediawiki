@@ -56,11 +56,24 @@ The game protocol is the in-game communication of player actions between the ser
 ! [[377 Send Sound|Send Sound]]
 ! Sends a sound to be played.
 |-
+! 29
+! FIXED
+! 0
+! [[377 Reset Open Interfaces|Reset Open Interfaces]]
+! Resets all opened interfaces.
+|-
 ! 40
 ! FIXED
 ! 2
 ! [[377 Reset Ground Items and Objects|Reset Ground Items and Objects]]
 ! Resets all ground items and objects in a 8x8 region.
+|-
+|-
+! 41
+! FIXED
+! 4
+! [[377 Environment Play Ambient Wave|Environment Play Ambient Wave]]
+! Plays an ambient wave.
 |-
 ! 49
 ! FIXED
@@ -85,6 +98,12 @@ The game protocol is the in-game communication of player actions between the ser
 ! 0
 ! [[377 Input Amount|Input Amount]]
 ! Displays the "Input amount" interface.
+|-
+! 61
+! FIXED
+! 0
+! [[377 Clear Waypoint|Input Amount]]
+! Resets the waypoint.
 |-
 ! 63
 ! VARIABLE_BYTE
