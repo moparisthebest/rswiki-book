@@ -26,6 +26,12 @@ The game protocol is the in-game communication of player actions between the ser
 ! [[377 Interface Animation|Interface Animation]]
 ! Sets an interface's model animation.
 |-
+! 3
+! FIXED
+! 6
+! [[377 Move Camera|Camera Move]]
+! Moves the camera.
+|-
 ! 5
 ! FIXED
 ! 0
@@ -42,7 +48,13 @@ The game protocol is the in-game communication of player actions between the ser
 ! FIXED
 ! 0
 ! [[377 Animation Reset|Animation Reset]]
-! Resets all animations in the immediate area.
+! Resets all entity animations in the immediate area.
+|-
+! 18
+! FIXED
+! 6
+! [[377 Interface Model Rotation|Interface Model Rotation]]
+! Sets the rotation speed of an item in an interface.
 |-
 ! 21
 ! FIXED
@@ -123,6 +135,12 @@ The game protocol is the in-game communication of player actions between the ser
 ! [[377 Camera Shake|Camera Shake]]
 ! Causes the camera to shake.
 |-
+! 71
+! VARIABLE_SHORT
+! N/A
+! [[377 Update Npcs|Update Npcs]]
+! Updates NPCs.
+|-
 ! 75
 ! FIXED
 ! 2
@@ -140,6 +158,24 @@ The game protocol is the in-game communication of player actions between the ser
 ! 9
 ! [[377 Send Add Friend|Send Add Friend]]
 ! Sends a friend to be added to the friend list.
+|-
+! 82
+! FIXED
+! 3
+! [[377 Set Widget Mouse Triggered|Set Widget Mouse Triggered]]
+! Set widget mouse triggered.
+|-
+! 88
+! FIXED
+! 2
+! [[377 Create Object|Create Object]]
+! Sends a friend to be added to the friend list.
+|-
+! 90
+! VARIABLE_SHORT
+! N/A
+! [[377 Update Players|Update Players]]
+! Updates players.
 |-
 ! 107
 ! FIXED
