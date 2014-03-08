@@ -12,10 +12,10 @@ Sets the animation for a model on an interface.
 ! Data type
 ! Description
 |-
-| [[Data Types#Byte Order|Little Endian]] [[Data Types#Standard data types|Short]] [[Data Types#Non Standard Data Types|Special A]]
+| [[Data Types#Byte Order|Little Endian]] [[Data Types#Standard data types|Short]]
 | Interface ID
 |-
-| [[Data Types#Standard data types|Short]] [[Data Types#Non Standard Data Types|Special A]]
+| [[Data Types#Standard data types|Short]]
 | Animation ID
 |-
 |}
