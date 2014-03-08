@@ -13,7 +13,7 @@ Adds a ground item to the server.
 ! Description
 |-
 | [[Data Types#Standard data types|Short]]
-| Item id.
+| Item ID.
 |-
 | [[Data Types#Standard data types|Byte]] [[Data Types#Non Standard Data Types|Special S]]
 | Packed (xxxxyyyy) coordinates of the ground item.
