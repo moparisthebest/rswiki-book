@@ -13,6 +13,6 @@ Sends the players run energy level.
 ! Description
 |-
 | Unsigned [[Data Types#Standard data types|Byte]]
-| The energy level.
+| The amount of energy remaining.
 |-
 |}
