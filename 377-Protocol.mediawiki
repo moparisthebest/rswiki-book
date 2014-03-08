@@ -99,6 +99,12 @@ The game protocol is the in-game communication of player actions between the ser
 ! [[377 Input Amount|Input Amount]]
 ! Displays the "Input amount" interface.
 |-
+! 59
+! FIXED
+! 6
+! [[377 Create Static Graphic|Create Static Graphic]]
+! Creates a static graphic.
+|-
 ! 61
 ! FIXED
 ! 0
