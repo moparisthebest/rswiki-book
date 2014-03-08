@@ -72,7 +72,7 @@ The game protocol is the in-game communication of player actions between the ser
 ! 41
 ! FIXED
 ! 4
-! [[377 Environment Play Ambient Wave|Environment Play Ambient Wave]]
+! [[377 Play Ambient Wave|Play Ambient Wave]]
 ! Plays an ambient wave.
 |-
 ! 49
