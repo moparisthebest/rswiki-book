@@ -108,7 +108,7 @@ The game protocol is the in-game communication of player actions between the ser
 ! 61
 ! FIXED
 ! 0
-! [[377 Clear Waypoint|Input Amount]]
+! [[377 Clear Waypoint|Clear Waypoint]]
 ! Resets the waypoint.
 |-
 ! 63
