@@ -15,7 +15,7 @@ Sets the specified interface to the specified sidebar.
 | [[Data Types#Standard data types|Byte]] [[Data Types#Standard data types|Special S]]
 | Sidebar Index
 |-
-| [[Data Types#Byte Order|Big Endian]] [[Data Types#Standard data types|Short]] [[Data Types#Non Standard Data Types|Special A]]
+| [[Data Types#Standard data types|Short]] [[Data Types#Non Standard Data Types|Special A]]
 | Interface ID
 |-
 |}
