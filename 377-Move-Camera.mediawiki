@@ -6,6 +6,8 @@
 === Description ===
 Moves the camera.
 
+See: void client#updateCamera
+
 === Packet Structure ===
 
 {| border=2
