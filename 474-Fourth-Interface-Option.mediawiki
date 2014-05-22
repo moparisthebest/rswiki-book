@@ -1,6 +1,6 @@
 [[Category Packet]]
 [[Category Packet 474]]
-{{packet|name=Fourth Interface Option|description=Triggered when a fourth interface option has been clicked.|opcode=3|type=Fixed|length=N/A|revision=474}}
+{{packet|name=Fourth Interface Option|description=Triggered when a fourth interface option has been clicked.|opcode=3|type=Fixed|length=6|revision=474}}
 == Fourth Interface Option ==
 
 === Description ===
