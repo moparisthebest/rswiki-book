@@ -13,13 +13,13 @@ Every connection to the main 'gateway' server sends a single byte of data, mostl
 * New connection login - connection type 16
 * Reconnecting login - connection type 18
 
-The connection type we will cover in the following paragraphs is the login connection type, 14. After the login handshake initiating connection type, the client writes a small bit of data derived from the logging in player's username. This is believed to help select the appropriate login server. On successful handshake, the server sends back 8 ignored bytes.
+The connection type we will cover in the following paragraphs is the login connection type, 14. After the login handshake initiating connection type, the client writes hash derived from the logging in player's username. This is believed to help select the appropriate login server. On successful handshake, the server sends back 8 ignored bytes.
 
-<pre>long l = TextUtils.encodeAsBase37Integer(username);
-int i = (int) (l >> 16 & 31L);
+<pre>long encodedUsername = TextUtils.encodeAsBase37Integer(username);
+int usernameHash = (int) (encodedUsername >> 16 & 31L);
 out.offset = 0;
 out.writeByte(14); // Initiate connection type
-out.writeByte(i); // "small bit of data derived from... player's username"
+out.writeByte(usernameHash);
 in.queueBytes(2, out.payload);
 for (int j = 0; j < 8; j++) in.read();</pre>
 
