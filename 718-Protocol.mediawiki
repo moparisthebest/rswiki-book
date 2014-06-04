@@ -1,6 +1,34 @@
 [[Category Packet]]
 [[Category Packet 718]]
-This page is for arham to add his 718 data. Since he doesn't know how to add pages.
-
-
 [[Category RS2]]
+
+
+== '''Packet structure''' ==
+?
+
+== '''Login''' ==
+?
+
+== '''Game Protocol''' ==
+
+===Server -> Client Packets===
+
+{| border=2
+|-
+! Opcode
+! Type
+! Length (bytes)
+! Name
+! Description
+|}
+
+===Client -> Server Packets===
+
+{| border=2
+|-
+! Opcode
+! Type
+! Length (bytes)
+! Name
+! Description
+|}
