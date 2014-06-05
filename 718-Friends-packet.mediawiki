@@ -1,0 +1,21 @@
+[[Category Packet]]
+[[Category Packet 718]]
+<h3><span class="mw-headline"> Description </span></h3>
+
+<p>Sends friend data to the client
+</p>
+<h3><span class="mw-headline"> Packet Structure </span></h3>
+<table border="2">
+<tr>
+<th> Data type
+</th><th> Description
+</th></tr>
+<tr>
+
+<td> Byte </td><td> If it is a warning message </td></tr>
+<td> String </td> <td> Display name </td>
+<td> String </td> <td> If the display name does not equal the player's username, then this send the username </td>
+<td> Short </td> <td> The World ID </td>
+<td> Byte </td> <td> The player's rank </td>
+<td> String </td> <td> Display name </td>
+</table>
