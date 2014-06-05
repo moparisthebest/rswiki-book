@@ -158,4 +158,29 @@
 ! Length (bytes)
 ! Name
 ! Description
+|-
+| 3
+| FIXED
+| 16
+| [[718 Item on item|Item on item]]
+| Send an item on item request.
+|-
+| 4
+| FIXED
+| -1
+| [[718 Add ignore|Add ignore]]
+| Sends a request to add a person to a person's ignore list.
+|-
+| 8
+| FIXED
+| -1
+| [[718 Walk|Walk]]
+| Sends a request to walk to specific coordinates.
+|-
+| 9
+| FIXED
+| 3
+| [[718 NPC Examine|NPC Examine]]
+| Sends a request to examine an NPC.
+|-
 |}
