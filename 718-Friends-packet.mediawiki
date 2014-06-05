@@ -13,9 +13,9 @@
 <tr>
 
 <td> Byte </td><td> If it is a warning message </td></tr>
-<td> String </td> <td> Display name </td></tr>
-<td> String </td> <td> If the display name does not equal the player's username, then this send the username </td></tr>
-<td> Short </td> <td> The World ID </td></tr>
-<td> Byte </td> <td> The player's rank </td></tr>
-<td> String </td> <td> Display name </td></tr>
+<td> String </td> <td> Display name </td>
+<td> String </td> <td> If the display name does not equal the player's username, then this send the username </td>
+<td> Short </td> <td> The World ID </td>
+<td> Byte </td> <td> The player's rank </td>
+<td> String </td> <td> Display name </td>
 </table>
