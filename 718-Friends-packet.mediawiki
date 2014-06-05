@@ -16,7 +16,7 @@
 <tr>
 <td> String </td> <td> Display name </td></tr>
 <tr>
-<td> String </td> <td> If the display name does not equal the player's username, then this send the username </td></tr>
+<td> String </td> <td> If the display name does not equal the player's username, then this sends the username </td></tr>
 <tr>
 <td> Short </td> <td> The World ID </td></tr>
 <tr>
