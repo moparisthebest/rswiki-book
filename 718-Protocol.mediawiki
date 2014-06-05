@@ -20,6 +20,133 @@
 ! Length (bytes)
 ! Name
 ! Description
+|-
+| 2
+| N/A
+| -2
+| [[718 Friends packet|Friends packet]]
+| Sends a friend to the friend list.
+|-
+| 5
+| N/A
+| 4
+| [[718 Close window|Close window]]
+| Closes an interface.
+|-
+| 6
+| N/A
+| 1
+| [[718 Player under NPC priority|Player under NPC priority]]
+| N/A
+|-
+| 9
+| N/A
+| 6
+| [[718 Music effect|Music effect]]
+| Plays a music effect.
+|-
+| 10
+| N/A
+| -1
+| [[718 Set mouse|Set mouse]]
+| N/A
+|-
+| 11
+| N/A
+| -2
+| [[718 World list|World list]]
+| Sends the world list.
+|-
+| 14
+| N/A
+| 23
+| [[718 Interface|Interface]]
+| Opens an interface.
+|-
+| 17
+| N/A
+| -2
+| [[718 Open URL|Open URL]]
+| Opens a hyperlink.
+|-
+| 20
+| N/A
+| 16
+| [[718 Projectile|Projectile]]
+| Plays a projectile.
+|-
+| 23
+| N/A
+| 4
+| [[718 Player on IComponent|Music effect]]
+| N/A
+|-
+| 25
+| N/A
+| 1
+| [[718 Run energy|Run energy]]
+| Sends the run energy.
+|-
+| 30
+| N/A
+| -1
+| [[718 Send friend quick chat|Send friend quick chat]]
+| Sends a friend a quick chat message.
+|-
+| 31
+| N/A
+| 8
+| [[718 Model on IComponent|Model on IComponent]]
+| Sends a model to an IComponent (child interface).
+|-
+| 32
+| N/A
+| -1
+| [[718 Receive friend quick chat|Receive friend quick chat]]
+| Displays a received quick chat message to a friend.
+|-
+| 33
+| N/A
+| -1
+| [[718 Receive personal message|Receive personal message]]
+| Received a private message (PM) and displays it.
+|-
+| 39
+| N/A
+| 19
+| [[718 Game pane|Game pane]]
+| Sends the game pane.
+|-
+| 40
+| N/A
+| 12
+| [[718 IComponent Settings|IComponent Settings]]
+| N/A
+|-
+| 42
+| N/A
+| -2
+| [[718 Load map scene|Load map scene]]
+| Loads a map.
+|-
+| 44
+| N/A
+| 6
+| [[718 Shake camera|Shake camera]]
+| Shakes the camera of the character.
+|-
+| 45
+| N/A
+| 2
+| [[718 Destroy object|Destroy object]]
+| Removes an object from the screen.
+|-
+| 55
+| N/A
+| -2
+| [[718 Ignores|Ignores]]
+| Sends a player to a player's ignore list.
+|-
 |}
 
 ===Client -> Server Packets===
