@@ -1,25 +1,25 @@
 [[Category Packet]]
 [[Category Packet 718]]
-<h3><span class="mw-headline"> Description </span></h3>
+{{packet|name=Friends packet|description=Sends friend data to the client|opcode=2|type=VARIABLE_SHORT|length=-2|revision=718}}
+== Friends packet ==
 
-<p>Sends friend data to the client
-</p>
-<h3><span class="mw-headline"> Packet Structure </span></h3>
-<table border="2">
-<tr>
-<th> Data type
-</th><th> Description
-</th></tr>
-<tr>
+=== Description ===
 
-<td> Byte </td><td> If it is a warning message </td>
-<tr>
-<td> String </td> <td> Display name </td></tr>
-<tr>
-<td> String </td> <td> If the display name does not equal the player's username, then this sends the username </td></tr>
-<tr>
-<td> Short </td> <td> The World ID </td></tr>
-<tr>
-<td> Byte </td> <td> The player's rank </td></tr>
-<td> String </td> <td> Display name </td>
-</table>
+Sends friend data to the client
+
+=== Packet Structure ===
+
+{| border=2
+! Data type
+! Description
+|-
+| [[Data Types#Standard data types|Short]] || If it is a warning message.
+|-
+| [[Data Types#Standard data types|String]] || Display name
+|-
+| [[Data Types#Standard data types|String]] || If the display name does not equal the player's username, then this sends the username
+|-
+| [[Data Types#Standard data types|Short]] || The World ID
+|-
+| [[Data Types#Standard data types|Byte]] || The player's rank
+|}
