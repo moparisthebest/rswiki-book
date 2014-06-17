@@ -1,5 +1,6 @@
 [[Category Packet]]
 [[Category Packet 317]]
+{{packet|name=Send player head model to an interface|description=Sends the player head model to an interface.|opcode=185|type=Fixed|length=2|revision=317}}
 == Send player head model to an interface ==
 
 === Description ===
