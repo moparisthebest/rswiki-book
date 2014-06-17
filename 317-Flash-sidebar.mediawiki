@@ -12,7 +12,7 @@ This packet causes a sidebar icon to start flashing.
 ! Data Type
 ! Description
 |-
-| [[Data Types#Standard data types|Byte]] [[Data Types#Non Standard data types|Special A]]
+| [[Data Types#Standard data types|Byte]] [[Data Types#Non Standard data types|Special S]]
 | The sidebar ID.
 |-
 |}
