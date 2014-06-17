@@ -12,7 +12,7 @@ Sending this packet to the client will cause the client to open an interface ove
 ! Data Type
 ! Description
 |-
-| [[Data Types#Little Endian|Little Endian]] [[Data Types#Standard data types|Short]]
+| [[Data Types#Little Endian|Little Endian]] [[Data Types#Standard data types|Short]] [[Data Types#Non Standard data types|Special A]]
 | Interface ID.
 |-
 |}
