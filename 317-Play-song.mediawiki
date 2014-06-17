@@ -12,7 +12,7 @@ Sending this packet to the client will cause the client to start playing a song.
 ! Data Type
 ! Description
 |-
-| [[Data Types#Big Endian|Big Endian]] [[Data Types#Standard data types|Word]]
+| [[Data Types#Little Endian|Little Endian]] [[Data Types#Standard data types|Short]]
 | The song ID.
 |-
 |}
