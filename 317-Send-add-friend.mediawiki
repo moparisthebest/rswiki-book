@@ -3,6 +3,9 @@
 <h3><span class="mw-headline"> Description </span></h3>
 
 <p>Sends friend data to the client
+
+Attempts to update player node, if player isn't in the friends list and there is space,
+the player is added to the friend list.
 </p>
 <h3><span class="mw-headline"> Packet Structure </span></h3>
 <table border="2">
@@ -15,3 +18,7 @@
 <td> Long </td><td> The player name </td></tr>
 <td> Byte </td> <td> The world (10 = "online" for most clients) </td>
 </table>
+
+
+
+* TODO format.
