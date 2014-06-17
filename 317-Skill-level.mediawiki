@@ -15,7 +15,7 @@ This packet changes the experience and level of a given skill id.
 | [[Data Types#Byte|Byte]]
 | The skill ID.
 |-
-| [[Data Types#DWord|DWord]]
+| [[Data Types#Non Standard data types|Middle-Endian Small Integer]]
 | The skill experience.
 |-
 | [[Data Types#Byte|Byte]]
