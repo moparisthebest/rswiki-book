@@ -12,19 +12,19 @@ This packet displays the welcome screen.
 ! Data Type
 ! Description
 |-
-| [[Data Types#Standard data type|Byte]]
+| Unsigned [[Data Types#Standard data type|Byte]] [[Data Types#Non Standard data types|Special C]]
 | Days since last recovery change (200 for not yet set, 201 for members server).
 |-
-| [[Data Types#Standard data type|Short]] [[Data Types#Non Standard data types|Special A]]
+| Unsigned [[Data Types#Standard data type|Short]] [[Data Types#Non Standard data types|Special A]]
 | Number of unread messages.
 |-
-| [[Data Types#Standard data types|Byte]]
+| Unsigned [[Data Types#Standard data types|Byte]]
 | Member warning (1 for member, 0 for non-member).
 |-
-| [[Data Types#Non Standard data types|Integer 2]]
+| [[Data Types#Non Standard data types|Middle-Endian Big Integer]]
 | Last logged IP.
 |-
-| [[Data Types#Standard data types|Short]]
-| Last logged successful login.
+| Unsigned [[Data Types#Standard data types|Short]]
+| Last logged successful log-n.
 |-
 |}
