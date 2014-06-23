@@ -1,5 +1,19 @@
 [[Category Packet]]
 [[Category Packet 317]]
+{| style="float:right; margin:1em; width:250px;" cellpadding="3" cellspacing="0" border="1"
+|-
+| colspan="2" style="background-color:#3c5;" | '''Song Queue'''<br/>Queue's a song to be played next.
+|-
+! '''Opcode'''
+| 121
+|-
+! '''Type'''
+| FIXED
+|-
+! '''Length'''
+| 4
+|-
+|}
 == Song Queue ==
 
 === Description ===
