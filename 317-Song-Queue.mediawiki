@@ -1,0 +1,21 @@
+[[Category Packet]]
+[[Category Packet 317]]
+== Song Queue ==
+
+=== Description ===
+
+This packet queue's a song to be played next.
+
+=== Packet Structure ===
+{|border=2
+! Data Type
+! Description
+|-
+| [[Data Types#Little Endian|Little Endian]] [[Data Types#Standard data types|Short]] [[Data Types#Non Standard Data Types|Special A]]
+| The id of the next song.
+|-
+| [[Data Types#Standard data types|Short]] [[Data Types#Non Standard Data Types|Special A]]
+| The id of the previous song.
+|-
+|}
+[[Category Packet]] [[Category Packet 317]]
