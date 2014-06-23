@@ -611,6 +611,12 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 System update|System update]]
 | Sends how many seconds until a 'System Update.'
 |-
+| 121
+| FIXED
+| 4
+| [[317 Song Queue|Song Queue]]
+| Queues a song to be played next.
+|-
 | 122
 | FIXED
 | 4
