@@ -5,7 +5,7 @@
 
 === Description ===
 
-The client stores various user settings in an array of integers of size 2000. The client also stores alternate (default?) values for these settings in a duplicate, equally-sized array.
+The client stores various user settings in an array, the default values are also stored in another array. This packet changes the default value for a setting and its current value to the one given.
 
 === Packet Structure ===
 
@@ -21,5 +21,6 @@ The client stores various user settings in an array of integers of size 2000. Th
 |-
 |}
 
+
 === Other Information ===
-Opcode 87 is extremely similar in structure, but minute differences suggest that it is instead intended for use with "slider-bars."
+Opcode 87 (length 6) is extremely similar in structure, but the new value is received as an Middle Endian Small Int. This suggests its for use with bigger setting values.
