@@ -27,9 +27,8 @@ The rest in pseudo-code:
 for (int i = 0; i < amt_of_items; i++) {
   item_amount = read_u_byte(); // Item Amount: U Byte
 
-
-  if (item_amount == 255)
+  if (item_amount == 255) {
     item_amount = read_int_me_b(); // Item Amount (if entered as 255 previously - to allow bigger amounts than 254): Integer Middle-Endian Big (Inverse middle)
-
+  }
   item_id = read_u_short_le_a(); // Item ID: U Short Little Endian Special A
 }
