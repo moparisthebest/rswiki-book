@@ -562,6 +562,12 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 Play song|Play song]]
 | Starts playing a song.
 |-
+| 75
+| FIXED
+| 4
+| [[317 NPC head on interface|NPC head on interface]]
+| Place the head of an NPC on an interface
+|-
 | 78
 | FIXED
 | 0
