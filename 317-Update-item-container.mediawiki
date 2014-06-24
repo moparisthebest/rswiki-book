@@ -23,6 +23,7 @@ Updates the items in a given interface component.
 
 The rest in pseudo-code:
 
+
 for (i = 0; i < amt_of_items; i++) {
   item_amount = read_u_byte(); // Item Amount: U Byte
 
