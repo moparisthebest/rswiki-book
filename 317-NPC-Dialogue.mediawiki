@@ -2,4 +2,4 @@
 [[Category Packet 317]]
 === Description ===
 
-This packet is sent when a player answers a trade request from another player.
+This packet is what handles when the player hits the "Click here to continue".
