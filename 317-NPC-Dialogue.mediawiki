@@ -1,0 +1,5 @@
+[[Category Packet]]
+[[Category Packet 317]]
+=== Description ===
+
+This packet is sent when a player answers a trade request from another player.
