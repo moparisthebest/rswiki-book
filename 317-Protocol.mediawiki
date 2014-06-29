@@ -831,7 +831,7 @@ The game protocol is the in-game communication of player actions between the ser
 | FIXED
 | N/A
 | [[317 NPC Dialogue|NpcDialogue]]
-| N/A
+| Sent when a player clicks the "Click here to continue" on any dialogue.
 |-
 | 41
 | FIXED
