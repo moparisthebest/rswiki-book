@@ -35,8 +35,8 @@ Game packet header:
 
 <pre>
 ubyte - opcode
-ubyte - packet size only if packet size is sent as -1
-ushort - packet size only if packet size is sent as -2
+ubyte - packet size only if packet size is sent as -1 (length: VAR_BYTE)
+ushort - packet size only if packet size is sent as -2 (length: VAR_SHORT)
 </pre>
 
 After the header is read by the server, the packet specific data is then read and decoded by the server.
