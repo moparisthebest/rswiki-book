@@ -1,6 +1,6 @@
 [[Category Packet]]
 [[Category Packet 317]]
-{{packet|name=Camera oscillate|description=Updates items in an interface component.|opcode=53|type=VARIABLE_SHORT|length=N/A|revision=317}}
+{{packet|name=Update item container|description=Updates items in an interface component.|opcode=53|type=VARIABLE_SHORT|length=N/A|revision=317}}
 == Camera oscillate ==
 
 === Description ===
