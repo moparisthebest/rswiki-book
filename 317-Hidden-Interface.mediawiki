@@ -1,5 +1,7 @@
 [[Category Packet]]
 [[Category Packet 317]]
+{{packet|name=Hidden interface|description=Sets an interface to be hidden until hovered over.|opcode=171|type=Fixed|length=3|revision=317}}
+
 == Hidden Interface ==
 
 === Description ===
