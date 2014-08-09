@@ -768,7 +768,7 @@ The game protocol is the in-game communication of player actions between the ser
 | Sends a server message (e.g. 'Welcome to RuneScape') or trade/duel request.
 |-
 | 254
-| N/A
+| VARIABLE
 | N/A
 | [[317 Display hint icon|Display hint icon]]
 | Displays a hint icon.
