@@ -653,6 +653,12 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 Chat interface|Chat interface]]
 | Shows an interface in the chat box.
 |-
+| 171
+| N/A
+| N/A
+| [[317 Hidden Interface|Hidden Interface]]
+| Sets an interface to be hidden until hovered over.
+|-
 | 176
 | FIXED
 | 10
@@ -762,7 +768,7 @@ The game protocol is the in-game communication of player actions between the ser
 | Sends a server message (e.g. 'Welcome to RuneScape') or trade/duel request.
 |-
 | 254
-| FIXED
+| N/A
 | N/A
 | [[317 Display hint icon|Display hint icon]]
 | Displays a hint icon.
