@@ -603,7 +603,7 @@ The game protocol is the in-game communication of player actions between the ser
 | FIXED
 | 1
 | [[317 Interface over tab|Interface over tab]]
-| Resets the camera position.
+| Draws an interface over the tab area.
 |-
 | 107
 | FIXED
