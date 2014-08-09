@@ -580,6 +580,12 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 Scroll position|Scroll position]]
 | Sets the scrollbar position of an interface.
 |-
+| 81
+| VARIABLE
+| N/A
+| [[317 Begin player updating|Begin player updating]]
+| Begins the player update procedure
+|-
 | 97
 | FIXED
 | 2
