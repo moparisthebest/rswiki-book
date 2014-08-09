@@ -599,6 +599,12 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 Minimap State|Minimap State]]
 | Sets the mini map's state.
 |-
+| 106
+| FIXED
+| 1
+| [[317 Interface over tab|Interface over tab]]
+| Resets the camera position.
+|-
 | 107
 | FIXED
 | 0
