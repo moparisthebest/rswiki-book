@@ -654,8 +654,8 @@ The game protocol is the in-game communication of player actions between the ser
 | Shows an interface in the chat box.
 |-
 | 171
-| N/A
-| N/A
+| FIXED
+| 3
 | [[317 Hidden Interface|Hidden Interface]]
 | Sets an interface to be hidden until hovered over.
 |-
