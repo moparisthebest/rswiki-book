@@ -1,5 +1,7 @@
 [[Category Packet]]
 [[Category Packet 317]]
+{{packet|name=Display hint icon|description=Display a hint icon to the player.|opcode=254|type=Variable Byte|length=N/A|revision=317}}
+
 == Display Hint Icon ==
 
 === Description ===
