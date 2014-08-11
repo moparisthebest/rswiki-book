@@ -15,7 +15,7 @@ Displays a hint icon.
 ! Description
 |-
 | [[Data Types#Standard data types|Byte]]
-| The Icon type.
+| The Icon type
 |-
 |}
 
@@ -26,7 +26,7 @@ Displays a hint icon.
 ! Description
 |-
 | [[Data Types#Standard data type|Short]]
-| Icon NPC target.
+| Icon NPC target
 |-
 |}
 
@@ -37,13 +37,13 @@ Displays a hint icon.
 ! Description
 |-
 | [[Data Types#Standard data type|Short]]
-| Icon X.
+| Icon X
 |-
 | [[Data Types#Standard data type|Short]]
-| Icon Y.
+| Icon Y
 |-
 | [[Data Types#Standard data types|Byte]]
-| Icon draw height.
+| Icon draw height
 |-
 |}
 
@@ -54,6 +54,6 @@ Displays a hint icon.
 ! Description
 |-
 | [[Data Types#Standard data type|Short]]
-| Icon player target.
+| Icon player target
 |-
 |}
