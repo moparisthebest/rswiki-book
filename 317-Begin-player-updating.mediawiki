@@ -23,7 +23,15 @@ Step 5: We need to write the current size of the player list so we put bits (8, 
 
 Step 6: Loop through every player and check if there is room left in the local list. If the size is >= 255 then there is no more room left. Therefore, we cannot add more players, so we just ignore them until they get replaced by the other players that get removed. After that, we check if they should not be added, by going through the local player list and seeing if it contains the other player, if so, ignore them (continue). After those checks we add the player to the list, add the player in the packet, and update the player forcing the appearance flag.
 
-Step 7: Check if the update block is not empty, if so, write a magic id indicating an update block follows. We do that by putting bits (11, 2047), then we are finished with the bit access. Still in the update block check, we add the update block at the end of this packet. If the update block is empty, we terminate the packet normally (which means finish the bit access).
+Step 7: Check if the update block is not empty, if so, write a magic id indicating an update block follows (look below). Then we are finished with the bit access. Still in the update block check, we add the update block at the end of this packet. If the update block is empty, we terminate the packet normally (which means finish the bit access).
+{| border=2
+! Data
+! Description
+|-
+| putBits(11, 2047);
+| Indicates an update block follows
+|-
+|}
 
 Step 8: We write the packet.
 
@@ -31,7 +39,21 @@ Step 8: We write the packet.
 Check which type of movement took place. (PRIMARY) If no movement did take place, check if an update is required. If an update is required put bits (1, 1)//Update happened  and (2, 0)//No movement. If no update is required put bits (1, 0)//Nothing changed. (SECONDARY) The player moved but didn't run? Put bits (1, 1)//Update required (2, 1)//moved one tile (3, (PRIMARY))//Write the primary sprite and (1, isUpdateRequired() ? 1 : 0). We then put an else statement for the (SECONDARY) check. Within that, we put bits (1, 1)//Update happened (2, 2)//Two tiles (3, (PRIMARY))// Walking direction (3, (SECONDARY))//Run direction and (1, isUpdateRequired() ? 1 : 0)//Block update happened.
 
 === Add Player ===
-putBits(11, otherPlayer.getIndex()); int yPos = other players y - players y; int xPos = other players x - players x;
+
+{| border=2
+! Data
+! Description
+|-
+| putBits(11, otherPlayer.getIndex());
+| N/A
+|-
+| int yPos = other player y - player y;
+| N/A
+|-
+| int xPos = other player x - player x;
+| N/A
+|-
+|}
 
 === Explaining (1) ===
 The update block packet holds update blocks and is sent after the main packet.
