@@ -14,9 +14,9 @@ Sets an interface to be hidden until hovered over.
 ! Description
 |-
 | [[Data Types#Standard data types|Byte]]
-| Hidden until hovered.
+| Hidden until hovered
 |-
 | [[Data Types#Standard data types|Short]]
-| Interface Id.
+| Interface Id
 |-
 |}
