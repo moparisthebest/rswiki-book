@@ -629,6 +629,12 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 System update|System update]]
 | Sends how many seconds until a 'System Update.'
 |-
+| 117
+| N/A
+| N/A
+| [[317 Create Projectile|Create Projectile]]
+| Creates a projectile.
+|-
 | 121
 | FIXED
 | 4
