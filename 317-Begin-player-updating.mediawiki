@@ -209,5 +209,13 @@ Then we convert the block builder to a packet.
 
 Now it is over, cache the block if we can and finally append the block at the end.
 
+=== Animation Update ===
+
+This update appends an animation update. This will contain parameters block and otherPlayer. The block will put a short of the current animations id and then put a byte of the current animations delay.
+
+=== Graphics Update ===
+
+This update appends a graphics update. This will contain parameters block and otherPlayer. The block will put a short of the current graphics id and then put an int of the current graphics delay.
+
 === Explaining (1) ===
 The update block packet holds update blocks and is sent after the main packet.
