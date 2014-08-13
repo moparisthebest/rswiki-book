@@ -33,11 +33,25 @@ I need time to finish trying to explain this packet to my best ability. If you h
 |-
 |}
 
-'''Step 4''': We then need to update both the players movement and the player itself. For this go to Player Movement and Update Player.
+'''Step 4''': We then need to update both the players movement and the player itself. For this go to [https://rswiki.moparisthebest.com/index.php?title=317:Begin_player_updating#Player_Movement Player Movement] and Update Player.
 
 '''Step 5''': We need to write the current size of the player list so we put bits (8, and the size of the local players). Then we need to iterate through the local player list with a, for loop. And within that for loop we get the next player. Then check if the player should still be in our list. If so, then we send the update player movement method and check if an update is required. If so, send the player update. If the player should not be in our list still, then remove the player from the list and tell the client to remove the player by putting bits (1, 1) and (2, 3).
+{| border=2
+! Data
+! Description
+|-
+| putBits(8, local player size);
+| Writes the current local player size
+|-
+| putBits(1, 1);
+| N/A
+|-
+| putBits(2, 3);
+| N/A
+|-
+|}
 
-'''Step 6''': Loop through every player and check if there is room left in the local list. If the size is >= 255 then there is no more room left. Therefore, we cannot add more players, so we just ignore them until they get replaced by the other players that get removed. After that, we check if they should not be added, by going through the local player list and seeing if it contains the other player, if so, ignore them (continue). After those checks we add the player to the list, add the player in the packet, and update the player forcing the appearance flag.
+'''Step 6''': Loop through every player and check if there is room left in the local list. If the size is '''>= 255''' then there is no more room left. Therefore, we cannot add more players, so we just ignore them until they get replaced by the other players that get removed. After that, we check if they should not be added, by going through the local player list and seeing if it contains the other player, if so, ignore them (continue). After those checks we add the player to the list, add the player in the packet, and update the player forcing the appearance flag.
 
 '''Step 7''': Check if the update block is not empty, if so, write a magic id indicating an update block follows (look below). Then we are finished with the bit access. Still in the update block check, we add the update block at the end of this packet. If the update block is empty, we terminate the packet normally (which means finish the bit access).
 {| border=2
@@ -53,6 +67,48 @@ I need time to finish trying to explain this packet to my best ability. If you h
 
 === Player Movement ===
 Check which type of movement took place. (PRIMARY) If no movement did take place, check if an update is required. If an update is required put bits (1, 1)//Update happened  and (2, 0)//No movement. If no update is required put bits (1, 0)//Nothing changed. (SECONDARY) The player moved but didn't run? Put bits (1, 1)//Update required (2, 1)//moved one tile (3, (PRIMARY))//Write the primary sprite and (1, isUpdateRequired() ? 1 : 0). We then put an else statement for the (SECONDARY) check. Within that, we put bits (1, 1)//Update happened (2, 2)//Two tiles (3, (PRIMARY))// Walking direction (3, (SECONDARY))//Run direction and (1, isUpdateRequired() ? 1 : 0)//Block update happened.
+
+{| border=2
+! Data
+! Description
+|-
+| putBits(1, 1);
+| Update happened
+|-
+| putBits(2, 0);
+| No movement
+|-
+| putBits(1, 0);
+| Nothing changed
+|-
+| putBits(1, 1);
+| Update required
+|-
+| putBits(2, 1);
+| Moved one tile
+|-
+| putBits(3, otherPlayer.getSprites().getPrimarySprite());
+| Walking direction
+|-
+| putBits(1, otherPlayer.getUpdateFlags().isUpdateRequired ? 1 : 0);
+| Block update happened
+|-
+| putBits(1, 1);
+| Update happened
+|-
+| putBits(2, 2);
+| Moved two tiles
+|-
+| putBits(3, otherPlayer.getSprites().getPrimarySprite());
+| Walking direction
+|-
+| putBits(3, otherPlayer.getSprites().getSecondarySprite());
+| Running direction
+|-
+| putBits(1, otherPlayer.getUpdateFlags().isUpdateRequired ? 1 : 0);
+| Block update happened
+|-
+|}
 
 === Add Player ===
 
