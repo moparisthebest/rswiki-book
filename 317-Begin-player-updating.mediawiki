@@ -117,13 +117,25 @@ Check which type of movement took place. (PRIMARY) If no movement did take place
 ! Description
 |-
 | putBits(11, otherPlayer.getIndex());
-| N/A
+| Write the player index
 |-
 | int yPos = other player y - player y;
-| N/A
+| Calculate the y offsets
 |-
 | int xPos = other player x - player x;
-| N/A
+| Calculate the x offsets
+|-
+| putBits(5, xPos);
+| Write the x offsets
+|-
+| putBits(5, yPos);
+| Write the y offsets
+|-
+| putBits(1, 1);
+| Indicates update is required (this is always true!)
+|-
+| putBits(1, 1);
+| Indicates we should discard client-side walk queues
 |-
 |}
 
