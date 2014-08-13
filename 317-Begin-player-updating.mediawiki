@@ -156,5 +156,58 @@ Check which type of movement took place. (PRIMARY) If no movement did take place
 
 '''Step 4''': Now we get into the masks! Yippee! To refer to the different mask go to the 317 Protocol [https://rswiki.moparisthebest.com/index.php?title=317_Protocol#Player_Updating Player Update Masks].
 
+So we first make an integer named 'mask' and make a field named 'flags' that equals the otherPlayer update flags.
+
+* Appearance: If we have a flag that equals our apperance flag and a force appearance is enabled. Our mask |= 0x1.
+
+* Animation: If we have a flag that equals our animation flag, our mask |= 0x2.
+
+* Chat: If we have a flag that equals our chat flag and !no chat, our mask |= 0x40.
+
+* Graphics: If we have a flag that equals our graphics flag, our mask |= 0x100.
+
+So after that we check if the bitmask would overflow a byte. Like so: 
+{| border=2
+! Method
+|-
+| if (mask >= 0x100)
+|-
+|}
+If so, our mask |= 0x80 and we write as a short and indicate we have done so.
+{| border=2
+! Method
+|-
+| block.put((byte) (mask & 0xFF))
+|-
+| block.put((byte) (mask >> 8))
+|-
+|}
+If not, we write it as a byte.
+{| border=2
+! Method
+|-
+| block.put((byte) (mask))
+|-
+|}
+And then we get into what the flags contain.
+
+* Apperance: If our flag gets the update flag appearance or the appearance is forced we go to method > Player Appearance Update.
+
+* Animation: If our flag gets the update flag animation, we go to the method > Animation Update.
+
+* Graphics: If our flag gets the update flag graphics, we go to method > Graphics Update.
+
+* Chat: If our flag gets the update flag chat and !noChat, we go to method > Chat Update.
+
+Then we convert the block builder to a packet.
+{| border=2
+! Method
+|-
+| Packet blockPacket = block.toPacket()
+|-
+|}
+
+Now it is over, cache the block if we can and finally append the block at the end.
+
 === Explaining (1) ===
 The update block packet holds update blocks and is sent after the main packet.
