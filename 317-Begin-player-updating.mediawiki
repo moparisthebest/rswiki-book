@@ -197,7 +197,7 @@ And then we get into what the flags contain.
 
 * Graphics: If our flag gets the update flag graphics, we go to method > [https://rswiki.moparisthebest.com/index.php?title=317:Begin_player_updating#Graphics_Update Graphics Update].
 
-* Chat: If our flag gets the update flag chat and !noChat, we go to method > Chat Update.
+* Chat: If our flag gets the update flag chat and !noChat, we go to method > [https://rswiki.moparisthebest.com/index.php?title=317:Begin_player_updating#Chat_Update Chat Update].
 
 Then we convert the block builder to a packet.
 {| border=2
