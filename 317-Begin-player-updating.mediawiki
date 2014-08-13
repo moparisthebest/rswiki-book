@@ -193,7 +193,7 @@ And then we get into what the flags contain.
 
 * Apperance: If our flag gets the update flag appearance or the appearance is forced we go to method > Player Appearance Update.
 
-* Animation: If our flag gets the update flag animation, we go to the method > Animation Update.
+* Animation: If our flag gets the update flag animation, we go to the method > [https://rswiki.moparisthebest.com/index.php?title=317:Begin_player_updating#Animation_Update Animation Udpate].
 
 * Graphics: If our flag gets the update flag graphics, we go to method > Graphics Update.
 
