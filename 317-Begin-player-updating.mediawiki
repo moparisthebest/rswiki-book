@@ -217,5 +217,31 @@ This update appends an animation update. This will contain parameters block and 
 
 This update appends a graphics update. This will contain parameters block and otherPlayer. The block will put a short of the current graphics id and then put an int of the current graphics delay.
 
+=== Chat Update ===
+
+This update appends a chat text update. This will contain parameters packet and otherPlayer. We first make 2 fields:
+{| border=2
+! Method
+|-
+| ChatMessage cm = otherPlayer.getCurrentChatMessage();
+|-
+| byte[] bytes = cm.getText()
+|-
+|}
+Then we put a range of data:
+{| border=2
+! Method
+|-
+| putShort(((cm.getColor() & 0xFF) << 8) | (cm.getEffects() & 0xFF))
+|-
+| put((byte) otherPlayer.getRights().toInteger())
+|-
+| put((byte) bytes.length)
+|-
+| put(bytes)
+|-
+|}
+Then we are finished with this update.
+
 === Explaining (1) ===
 The update block packet holds update blocks and is sent after the main packet.
