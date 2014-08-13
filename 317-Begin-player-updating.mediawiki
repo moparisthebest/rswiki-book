@@ -9,9 +9,8 @@ This packet begins the player updating. (I will use Hyperions player updating to
 MAY TAKE A BIT READING :P
 
 I need time to finish trying to explain this packet to my best ability. If you hate what I have so far or doesn't make ANY sense. Just edit it. I wouldn't mind. Or START OVER COMPLETELY
-
 === Setup  ===
-Step 1: The first thing we need to do before this packet is fully received, we need to check if the player's map region has changed. If it has, then we need to send the Map Region packet (241). 
+Step 1: The first thing we need to do before this packet is fully received, we need to check if the player's map region has changed. If it has, then we need to send the [https://rswiki.moparisthebest.com/index.php?title=317:Construct_map_region Map Region Packet]
 
 Step 2: Then we set up an update block, like so: { (1)...PacketBuilder updateBlock = new PacketBuilder(); } 
 
