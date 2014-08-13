@@ -66,6 +66,7 @@ I need time to finish trying to explain this packet to my best ability. If you h
 '''Step 8''': We write the packet.
 
 === Player Movement ===
+'''This is not for the 'this' player movement. That method will come later!'''
 Check which type of movement took place. (PRIMARY) If no movement did take place, check if an update is required. If an update is required put bits (1, 1)//Update happened  and (2, 0)//No movement. If no update is required put bits (1, 0)//Nothing changed. (SECONDARY) The player moved but didn't run? Put bits (1, 1)//Update required (2, 1)//moved one tile (3, (PRIMARY))//Write the primary sprite and (1, isUpdateRequired() ? 1 : 0). We then put an else statement for the (SECONDARY) check. Within that, we put bits (1, 1)//Update happened (2, 2)//Two tiles (3, (PRIMARY))// Walking direction (3, (SECONDARY))//Run direction and (1, isUpdateRequired() ? 1 : 0)//Block update happened.
 
 {| border=2
