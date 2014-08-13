@@ -33,7 +33,7 @@ I need time to finish trying to explain this packet to my best ability. If you h
 |-
 |}
 
-'''Step 4''': We then need to update both the players movement and the player itself. For this go to [https://rswiki.moparisthebest.com/index.php?title=317:Begin_player_updating#Player_Movement Player Movement] and Update Player.
+'''Step 4''': We then need to update both the players movement and the player itself. For this go to [https://rswiki.moparisthebest.com/index.php?title=317:Begin_player_updating#Player_Movement Player Movement] and [https://rswiki.moparisthebest.com/index.php?title=317:Begin_player_updating#Player_Update Update Player].
 
 '''Step 5''': We need to write the current size of the player list so we put bits (8, and the size of the local players). Then we need to iterate through the local player list with a, for loop. And within that for loop we get the next player. Then check if the player should still be in our list. If so, then we send the update player movement method and check if an update is required. If so, send the player update. If the player should not be in our list still, then remove the player from the list and tell the client to remove the player by putting bits (1, 1) and (2, 3).
 {| border=2
