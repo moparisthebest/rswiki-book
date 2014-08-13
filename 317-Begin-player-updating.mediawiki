@@ -139,5 +139,22 @@ Check which type of movement took place. (PRIMARY) If no movement did take place
 |-
 |}
 
+=== Player Update ===
+
+'''Step 1''': Before we start, we need to check if there is no update required flag nor a force appearance flag. If there is not, return.
+
+'''Step 2''': Now we use the cached update block in a synchronized block. '''(All of the below will be within this synchronized block)'''. We check if the player has a cached update block then we put the cached update block into the payload and flip it, then return.
+
+'''Step 3''': We have to construct and cache our own block.
+
+{| border=2
+! Method
+|-
+| PacketBuilder block = new PacketBuilder();
+|-
+|} 
+
+'''Step 4''': Now we get into the masks! Yippee! To refer to the different mask go to the 317 Protocol [https://rswiki.moparisthebest.com/index.php?title=317_Protocol#Player_Updating Player Update Masks].
+
 === Explaining (1) ===
 The update block packet holds update blocks and is sent after the main packet.
