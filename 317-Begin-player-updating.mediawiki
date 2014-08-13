@@ -243,5 +243,8 @@ Then we put a range of data:
 |}
 Then we are finished with this update.
 
+=== Appearance Update ===
+...
+
 === Explaining (1) ===
 The update block packet holds update blocks and is sent after the main packet.
