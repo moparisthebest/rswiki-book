@@ -678,6 +678,11 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * String - The encoded message.
 | Sends a message to public chat.
 |-
+! Ping
+| 5 ||
+* None
+| Ping
+|-
 ! Attempt Logout
 | 6 ||
 * None
