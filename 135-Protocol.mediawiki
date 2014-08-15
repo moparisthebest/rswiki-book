@@ -643,6 +643,16 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * int32 - The skill's experience points.
 | Updates a single skill to save bytes.
 |-
+! Play Sound
+| 207 ||
+* byte[] - The name of the sound.
+| Plays a sound/audio file in the client.
+|-
+! Open Character Design Panel
+| 203 ||
+* None.
+| Open the character design panel.
+|-
 |}
 === '''Outgoing Data''' ===
 '''TODO: Password recovery & recovery questions'''
