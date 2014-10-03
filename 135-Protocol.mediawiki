@@ -708,6 +708,13 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 * int64 - The mod37 encoded username to report
 | Sends an abuse report to the server
 |-
+! Change Password
+| 25 ||
+* RSAString - Your old password + new password encoded with RSA
+* Old password substring - RSAString.substring(0,20).trim()
+* New password substring - RSAString.substring(20, RSAString.length()).trim();
+| Is used to change your password ingame
+|-
 ! Add Friend
 | 26 ||
 * int64 - mod37 encoded username
