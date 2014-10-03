@@ -655,7 +655,7 @@ The packet opcodes are unchanged from previous revisions, presumably this was be
 |-
 |}
 === '''Outgoing Data''' ===
-'''TODO: Password recovery & recovery questions'''
+'''TODO: recovery questions'''
 {| class="wikitable"
 |-
 ! scope="col" width="140px" | Name
