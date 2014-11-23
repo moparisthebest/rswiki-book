@@ -630,6 +630,11 @@ The game protocol is the in-game communication of player actions between the ser
 | 4
 | [[289 Scroll position|Scroll position]]
 | Sets the scrollbar position of an interface.
+|-| 184
+| FIXED
+| 5
+| [[289 Player Dialogue Head|Player Dialogue Head]]
+| Sends the player's head on the dialogue.
 |-
 | 187
 | FIXED
