@@ -23,6 +23,7 @@ This packet constructs the map region.
 After the region y is sent, you need to initialize the bit access. Then, loop through the z (which can only go up to 3). Still in the for-loop, you need to go through the x's (up to 12). Then, loop through the y's (up to 12).
 
 All of this is in the all three for-loops! 
+
 Step 1: Then you'll get the tile of x, y, and z.
 
 Step 2: Then you need to send the bits 1 and (if tile is null) 1 otherwise, 0.
