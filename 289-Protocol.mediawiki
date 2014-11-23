@@ -589,6 +589,12 @@ The game protocol is the in-game communication of player actions between the ser
 | [[289 Reset camera|Reset camera]]
 | Resets the camera position.
 |-
+| 154
+| FIXED
+| N/A
+| [[317 Send Skill|Send Skill]]
+| Sends a specific skill.
+|-
 | 155
 | FIXED
 | 3
