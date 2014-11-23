@@ -703,6 +703,12 @@ The game protocol is the in-game communication of player actions between the ser
 | [[289 Send private message|Send private message]]
 | Sends a private message to another player.
 |-
+| 241
+| VARIABLE_SHORT
+| N/A
+| [[289 Construct Map Region|Construct Map Region]]
+| Constructs the map region.
+|-
 | 244
 | FIXED
 | 5
