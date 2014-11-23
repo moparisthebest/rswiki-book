@@ -24,8 +24,11 @@ After the region y is sent, you need to initialize the bit access. Then, loop th
 
 All of this is in the all three for-loops! 
 Step 1: Then you'll get the tile of x, y, and z.
+
 Step 2: Then you need to send the bits 1 and (if tile is null) 1 otherwise, 0.
+
 Step 3: Check if the tile is not null. Within this if-statement, you put these bits...
+
 {|border=2
 ! Method
 |-
@@ -34,6 +37,7 @@ Step 3: Check if the tile is not null. Within this if-statement, you put these b
 |}
 
 Out of the for-loops!
+
 Step 1: Finish the bit access and send the region x.
 
 Done.
