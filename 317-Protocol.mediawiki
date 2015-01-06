@@ -671,6 +671,12 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 Hidden Interface|Hidden Interface]]
 | Sets an interface to be hidden until hovered over.
 |-
+| 174
+| FIXED
+| N/A
+| [[317 Music|Music]]
+| Sets the track to play, whether to loop, and delay of the track.
+|-
 | 176
 | FIXED
 | 10
