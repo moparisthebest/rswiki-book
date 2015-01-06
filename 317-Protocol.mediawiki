@@ -674,8 +674,8 @@ The game protocol is the in-game communication of player actions between the ser
 | 174
 | FIXED
 | N/A
-| [[317 Music|Music]]
-| Sets the track to play, whether to loop, and delay of the track.
+| [[317 Audio|Audio]]
+| Sets what audio/sound is to play at a certain time.
 |-
 | 176
 | FIXED
