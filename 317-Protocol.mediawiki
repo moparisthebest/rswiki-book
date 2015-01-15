@@ -599,6 +599,12 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 Minimap State|Minimap State]]
 | Sets the mini map's state.
 |-
+| 101
+| FIXED
+| 3
+| [[317 Object removal|Object removal]]
+| Sends an object removal request to the client.
+|-
 | 106
 | FIXED
 | 1
@@ -658,6 +664,12 @@ The game protocol is the in-game communication of player actions between the ser
 | 6
 | [[317 Skill level|Skill level]]
 | Sends a skill level to the client.
+|-
+| 151
+| FIXED
+| 5
+| [[317 Object spawn|Object spawn]]
+| Sends an object spawn request to the client.
 |-
 | 164
 | FIXED
