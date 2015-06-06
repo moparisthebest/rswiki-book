@@ -605,6 +605,12 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 Object removal|Object removal]]
 | Sends an object removal request to the client.
 |-
+| 104
+| VARIABLE
+| N/A
+| [[317 Player Option|Player Option]]
+| Adds a player option to the right click menu of player(s).
+|-
 | 106
 | FIXED
 | 1
