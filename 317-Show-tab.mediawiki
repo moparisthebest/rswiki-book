@@ -1,7 +1,7 @@
 [[Category Packet]]
 [[Category Packet 317]]
 {{packet|name=Show Tab|description=Shows the given tab.|opcode=106|type=Fixed|length=1|revision=317}}
-== Clear inventory ==
+== Show Tab ==
 
 === Description ===
 
