@@ -1009,7 +1009,7 @@ The game protocol is the in-game communication of player actions between the ser
 |-
 | 131
 | FIXED
-| 0
+| 4
 | [[317 Mage NPC|Mage NPC]]
 | Sent when a player uses magic attacks on an NPC.
 |-
