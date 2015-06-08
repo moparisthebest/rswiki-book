@@ -1,6 +1,6 @@
 [[Category Packet]]
 [[Category Packet 317]]
-{{packet|name=Player Option|description=Adds an option to a player's right click context menu.|opcode=104|type=Variable|length=?|revision=317}}
+{{packet|name=Player Option|description=Adds an option to a player's right click context menu.|opcode=104|type=Variable|length=N/A|revision=317}}
 == Player Option ==
 
 === Packet Structure ===
