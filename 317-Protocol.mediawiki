@@ -445,7 +445,7 @@ Inside this method, many different bitwise masks are compared to the player's fl
 * '''0x100''' The 0x100 mask is responsible for player graphics updating. The data associated is a little-endian unsigned short which represents the graphics id, and an int which is the graphics delay.
 
 
-* '''0x8''' Animations are handled by the 0x8 mask. The payload for this update is a little-endian unsigned short that is the animation id, and an unsigned inversed byte (Special C) which states the animation's delay.
+* '''0x8''' Animations are handled by the 0x8 mask. The payload for this update is a little-endian unsigned short that is the animation id, and an unsigned inversed byte which states the animation's delay.
 
 
 * '''0x4''' The beloved 0x4 mask takes care of forced player text that is only displayed above the player's model. The only data associated with this is a jagex ASCII string with a terminator of 10.
