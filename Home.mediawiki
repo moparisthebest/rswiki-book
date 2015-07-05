@@ -1,53 +1,28 @@
-<!--------------------------------------Main heading----------------------------------------->
-{| id="mainpage-welcome-box" style="width:100%; background:#f6f6f6; border:1px solid #ccc;"
-| style="width:61%; text-align:center; white-space:nowrap; color:#000;" |
-<div style="font-size:150%; border:none; margin:0; padding:.1em; color:#000;">Welcome to RSWiki</div>
-<div style="top:+0.2em; font-size:90%;">Our goal is to accurately document the rsc/rs2 protocol(s) and much more!</div>
-| style="width:13%;" |
-'''[[Rules]]'''<br />
-'''[[DMCA Policy|DMCA Policy]]'''
-| style="width:13%;" |
-'''[[RSWiki General disclaimer|Disclaimer]]'''<br />
-'''[[RSWiki Privacy policy|Privacy Policy]]'''
-| style="width:13%;" |
-'''[[RSWiki IRC|Official IRC]]'''<br />
-'''[[RSWiki About|About RSWiki]]'''
-|}
+# RSWiki
+
+A source of documentation for the RSC/RS2/RS3 protocols and related systems.
+
+### Navigation
+* [[Rules]]
+* [[DMCA Policy]]
+* [[Disclaimer|RSWiki General disclaimer]]
+* [[Privacy Policy|RSWiki Privacy policy]]
+* [[Official IRC|RSWiki IRC]]
+* [[About|RSWiki About]]
+
+## Documentation
+
+### Game Protocol
+* [[RSC|Category RSC]]  (2001 - 2004)
+* [[RS2|Category RS2]] (2004 - 2013)
+* [[RS3|Category RS3]] (2013 - present)
+
+### Cache
+* [[JAGGRAB|JAGGRAB Protocol]]
+* [[Ondemand|Ondemand Protocol]]
+* [[Archive Format]]
 
 
-{| cellspacing="0" cellpadding="0" style="margin:0 0 1em; width:100%"
-| style="width:50%; vertical-align:top; border:1px solid #fad67d; background-color:#faf6ed;" |
-<div style="border-bottom:1px solid #fad67d; background-color:#faecc8; padding:0.2em 0.5em; font-size:110%;">'''Game Protocol'''</div>
-<div style="padding:0.4em 1em 0.3em;">
-* [[Category RSC|RSC Documentation]] 
- The first public game play that was soon replaced by RS2 after the RS2 Beta. (2001 - 2004)
-
-
-* [[Category RS2|RS2 Documentation]]
- The second major overhaul of the game. (2004 - 2013)
-
-
-* [[Category RS3|RS3 Documentation]]
- The current game play available to all users. (2013 - present)
-</div>
-
-| style="padding:0 0.5em;" |
-| style="width:50%; vertical-align:top; border:1px solid #abd5f5; background-color:#f1f5fc;" |
-<div style="border-bottom:1px solid #abd5f5; background-color:#d0e5f5; padding:0.2em 0.5em; font-size:110%;">'''[[Category Cache|Cache Documentation]]'''</div>
-<div style="border-bottom:1px solid #abd5f5; padding:0.4em 1em 0.3em;">
-* [[JAGGRAB Protocol|JAGGRAB Documentation]]
-* [[Ondemand Protocol|Ondemand Documentation]]
-* [[Archive Format|Archive Format Documentation]]
-</div>
-
-<div style="border-bottom:1px solid #abd5f5; background-color:#d0e5f5; padding:0.2em 0.5em; font-size:110%;">'''Data Types'''</div>
-<div style="border-bottom:1px solid #abd5f5; padding:0.4em 1em 0.3em;">
-* [[Data Types|Custom Data Types]]
-</div>
-
-<div style="border-bottom:1px solid #abd5f5; background-color:#d0e5f5; padding:0.2em 0.5em; font-size:110%;">'''Miscellaneous'''</div>
-<div style="padding:0.4em 1em 0.3em;">
+### Miscellaneous
+* [[Custom Data Types|Data Types]]
 * [[Map Region System]]
-* More to come...
-</div>
-|}
