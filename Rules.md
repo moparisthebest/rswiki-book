@@ -1,5 +1,3 @@
-# Rules
-
 ### Vandalism
 Obviously, we do not allow vandalism of any kind - users found in violation of this rule will face severe sanctions.
 
