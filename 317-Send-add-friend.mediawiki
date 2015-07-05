@@ -16,9 +16,5 @@ the player is added to the friend list.
 <tr>
 
 <td> Long </td><td> The player name </td></tr>
-<td> Byte </td> <td> The world (10 = "online" for most clients) </td>
+<td> Byte </td> <td> The world (10 = "online" for most clients, 0 = logged out) </td>
 </table>
-
-
-
-* TODO format.
