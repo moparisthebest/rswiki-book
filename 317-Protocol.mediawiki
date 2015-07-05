@@ -703,7 +703,7 @@ The game protocol is the in-game communication of player actions between the ser
 |-
 | 185
 | FIXED
-| N/A
+| 2
 | [[317 Player head to interface|Player head to interface]]
 | Sends the players head model to an interface
 |-
