@@ -5,7 +5,9 @@
 
 === Description ===
 
-Sends a server side message (e.g. 'Welcome to RuneScape'), or trade/duel request (:tradereq:playername and :duelreq:playername) to the client.
+Sends a server side message (e.g. 'Welcome to RuneScape'), or trade/duel/challenge request.
+
+The format for sending such requests is: '[player name][request type]'. Where request type can be one of the following: ':duelreq:', ':chalreq:' or ':tradereq:'. An example for trading the player 'mopar' would be: 'mopar:tradereq:'.
 
 === Packet Structure ===
 
