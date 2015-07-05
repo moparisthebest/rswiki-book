@@ -18,4 +18,20 @@ Sends Message to another user.
 
 === Description ===
 
-Sending messages to other users within the server.
+Sending a private message to another user on the server.
+
+=== Packet Structure ===
+{|border=2
+! Data Type
+! Description
+|-
+| [[Data Types#Standard data types|Long]]
+| Player name.
+|-
+| [[Data Types#Standard data types|Int]]
+| ?
+|-
+| [[Data Types#Standard data types|Byte]]
+| Player rights.
+|-
+|}
