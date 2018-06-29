@@ -490,6 +490,18 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 Animation reset|Animation reset]]
 | Resets all animations in the immediate area.
 |-
+| 4
+| FIXED
+| 6
+| [[317 Draw graphic at position|Draw graphic at position]]
+| Draw a graphic at a given x/y position after a delay.
+|-
+| 8
+| FIXED
+| 4
+| [[317 Set interface model|Set interface model]]
+| Draw a given model on a given interface.
+|-
 | 24
 | FIXED
 | 1
@@ -501,6 +513,12 @@ The game protocol is the in-game communication of player actions between the ser
 | 0
 | [[317 Input amount|Input amount]]
 | Displays the "Input amount" interface.
+|-
+| 34
+| VARIABLE_SHORT
+| N/A
+| [[317 Draw items on interface|Draw items on interface]]
+| Draw a collection of items on an interface.
 |-
 | 35
 | FIXED
@@ -514,17 +532,47 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 Force client setting|Force client setting]]
 | Forcefully changes a client's setting's value. Also changes the default value for that setting.
 |-
+| 44
+| FIXED
+| 5
+| [[317 Send ground item|Send ground item]]
+| Place an item stack on the ground.
+|-
 | 50
 | FIXED
 | 9
 | [[317 Send add friend|Send add friend]]
 | Sends a friend to the friend list.
 |-
+| 53
+| VARIABLE_SHORT
+| N/A
+| [[317 Draw items on interface|Draw items on interface]]
+| Draw a collection of items on an interface.
+|-
+| 60
+| VARIABLE_SHORT
+| N/A
+| [[317 Begin processing position related packets|Begin processing position related packets]]
+| Begin processing position related packets.
+|-
 | 61
 | FIXED
 | 1
 | [[317 Show multi-combat|Show multi-combat]]
 | Shows the player that they are in a multi-combat zone.
+|-
+| 64
+| FIXED
+| 2
+| [[317 Delete ground item|Delete ground item]]
+| Delete ground item.
+|-
+| 65
+| VARIABLE_SHORT
+| N/A
+| [[317 NPC updating|NPC updating]]
+| NPC updating
 |-
 | 68
 | FIXED
@@ -586,12 +634,29 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 Begin player updating|Begin player updating]]
 | Begins the player update procedure
 |-
+| 84
+| FIXED
+| 7
+| [[317 Edit ground item amount|Edit ground item amount]]
+| Edit ground item amount
+|-
+| 85
+| FIXED
+| 2
+| [[317 Set local player coordinates|Set local player coordinates]]
+| Set local player coordinates
+|-
+| 87
+| FIXED
+| 7
+| [[317 Force client setting|Force client setting]]
+| Forcefully changes a client's setting's value. Also changes the default value for that setting.
+|-
 | 97
 | FIXED
 | 2
 | [[317 Show interface|Show interface]]
 | Displays a normal interface.
-|-
 |-
 | 99
 | FIXED
@@ -610,6 +675,12 @@ The game protocol is the in-game communication of player actions between the ser
 | N/A
 | [[317 Player Option|Player Option]]
 | Adds a player option to the right click menu of player(s).
+|-
+| 105
+| FIXED
+| 4
+| [[317 Play sound in location|Play sound in location]]
+| Play sound in location.
 |-
 | 106
 | FIXED
@@ -671,17 +742,47 @@ The game protocol is the in-game communication of player actions between the ser
 | [[317 Skill level|Skill level]]
 | Sends a skill level to the client.
 |-
+| 142
+| FIXED
+| 2
+| [[317 Show inventory interface|Show inventory interface]]
+| Show inventory interface
+|-
+| 147
+| FIXED
+| 14
+| [[317 Player to object transformation|Player to object transformation]]
+| Player to object transformation
+|-
 | 151
 | FIXED
 | 5
 | [[317 Object spawn|Object spawn]]
 | Sends an object spawn request to the client.
 |-
+| 156
+| FIXED
+| 3
+| [[317 Remove non-specified ground items???|Remove non-specified ground items???]]
+| Remove non-specified ground items??????
+|-
+| 160
+| FIXED
+| 4
+| [[317 Spawn an animated object???|Spawn an animated object???]]
+| Shows an interface in the chat box??????
+|-
 | 164
 | FIXED
 | 2
 | [[317 Chat interface|Chat interface]]
 | Shows an interface in the chat box.
+|-
+| 166
+| FIXED
+| 6
+| [[317 Spin camera|Spin camera]]
+| Spin camera
 |-
 | 171
 | FIXED
@@ -700,6 +801,12 @@ The game protocol is the in-game communication of player actions between the ser
 | 10
 | [[317 Open welcome screen|Open welcome screen]]
 | Displays the welcome screen.
+|-
+| 177
+| FIXED
+| 6
+| [[317 Set cutscene camera|Set cutscene camera]]
+| Set cutscene camera
 |-
 | 185
 | FIXED
@@ -742,6 +849,12 @@ The game protocol is the in-game communication of player actions between the ser
 | N/A
 | [[317 Send add ignore|Send add ignore]]
 | Sends a ignored player to the ignore list.
+|-
+| 215
+| FIXED
+| 7
+| [[317 Spawn ground item for all except specified player|Spawn ground item for all except specified player]]
+| Spawn ground item for all except specified player
 |-
 | 218
 | FIXED
