@@ -102,18 +102,20 @@ null character \0 or 0 to support multi-line strings.
 | Old engine: write and finish with newline delimiter ("\n") <br />New engine: write and finish with null byte (value 0).
 |}
 
-Additionally, RuneScape also uses two integers that are different from a big- or low endian order. Both byte orders are called middle endian. Their orders could be described as following:
+Additionally, RuneScape also uses two endian orders for integers that are different from a big- or low endian order. Both byte orders are called middle-endian.
 
-Middle endian big int: C3 D4 A1 B2
+Their orders could be described as following:
 
-Middle endian small int: B2 A1 D4 C3
+Middle-endian big int: C3 D4 A1 B2
 
-(A1 smallest D4 biggest byte)
+Middle-endian small int: B2 A1 D4 C3
+
+Where A1 is the smallest byte (LSB), and D4 the biggest byte (MSB).
 
 == Bit Access ==
 
 === Initiating Bit Access ===
 
-Whenever data is to be sent to the server or to the client using bits; the stream needs to be prepared by setting the bit position. The bit position can be calculated by grabbing the current buffer position and multiplying it by 8. This can be seen below.
+Whenever data is to be sent to the server or to the client using bits; the stream needs to be prepared by setting the bit position. The bit position can be calculated by multiplying the current buffer position by 8. This is because each byte is comprised of 8 bits.
 
- int bitPos = bufferPos * 8;
+Example: int bitPos = bufferPos * 8;
