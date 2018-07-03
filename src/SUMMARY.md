@@ -19,7 +19,6 @@
   - [OB3](./OB3.md)
 - [Class-Check](./Class-Check.md)
 - [Map-Region-System](./Map-Region-System.md)
-- [RS-String](./RS-String.md)
 - [Template-Packet](./Template-Packet.md)
 - [135-Protocol](./135-Protocol.md)
 - [194-Clear-screen](./194-Clear-screen.md)
