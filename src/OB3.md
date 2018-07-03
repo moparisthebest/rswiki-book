@@ -1,10 +1,17 @@
-\[\[Category RSC\]\]
+# 0B3
 
-This page refers to .ob3, a custom format for 3D models created by
-Jagex. It is used by the RuneScape Classic engine since client version
-\#74. For the earlier version of the format see \[\[OB2\|OB2\]\].
+This page documents the `.ob3` format, a bespoke format for 3D models
+created by Jagex.
+It is used by the RuneScape Classic engine since client version
+\#74.
 
-<pre>public class OB3Model {
+Note: There is also an earlier version of this format called `.ob2`.
+
+## OB3 Model Class
+The following is the fully renamed client code used to represent OB3 models.
+
+```java
+public class OB3Model {
 
     private static final int num_seq = 0xbc614e; // 12345678
     public int vertex_count;
@@ -104,26 +111,29 @@ Jagex. It is used by the RuneScape Classic engine since client version
         return i;
     }
 }
-</pre>
-== '''Faces''' == A '''negative''' face\_fill\_back or face\_fill\_front
-value indicates a '''solid colour''', whereas a'''positive''' value
-indicates a '''texture'''. The texture is defined by its offset in the
-client's texture array.
+```
 
-When converting to/from
-\[http://en.wikipedia.org/wiki/Wavefront\_.obj\_file Wavefront OBJ\]
+## Faces
+
+A negative face_fill_back or face_fill_front value indicates a solid colour, whereas a positive value indicates a texture.
+The texture is defined by its offset in the client's texture array.
+
+When converting to/from [Wavefront OBJ](https://en.wikipedia.org/wiki/Wavefront_.obj_file)
 format, remember that the OB3 face vertices are one less than the OBJ
 face vertices.
 
-<pre>public static int decode_colour(int i) {
+The below code will allow you to encode or decode colours in this format.
+
+```java
+public static int decode_colour(int i) {
     i = -(i + 1);
     int r = i >> 10 & 0x1f;
     int g = i >> 5 & 0x1f;
     int b = i & 0x1f;
     return (r << 19) + (g << 11) + (b << 3);
 }
-</pre>
-<pre>public static int encode_colour(int r, int g, int b) {
+
+public static int encode_colour(int r, int g, int b) {
     return -1 - (r / 8) * 1024 - (g / 8) * 32 - b / 8;
 }
-</pre>
+```

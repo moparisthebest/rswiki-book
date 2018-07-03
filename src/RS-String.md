@@ -1,11 +1,15 @@
-== Introduction ==
+# RS String
 
-RS String is a codename for a custom string data-type used in the
-RuneScape protocol. <br /> The string data-type is used to hold a series
-of characters in order to form a message.
+RS String is the internal name for a custom string data-type used in the
+RuneScape protocol.
+The string data-type stores a collection of characters in order to
+represent a textual message.
 
-===Old Engine Protocol=== In the old engine client, the RS String
-datatype is delimited by a newline character (value "\n").
+## Old Engine
 
-===New Engine Protocol=== In the new-engine client, the RS String
-datatype is delimited by a null byte (value 0).
+In the old engine client, the RS String datatype is terminated by the new line
+character (i.e. `\n`).
+
+# New Engine
+
+In the new-engine client, the RS String datatype is terminated by a null byte (i.e. `0`).

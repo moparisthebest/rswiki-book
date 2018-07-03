@@ -16,9 +16,9 @@ A source of documentation for the RSC/RS2/RS3 protocols and related systems.
 * [[RS3|Category RS3]] (2013 - present)
 
 ### Cache
-* [[JAGGRAB|JAGGRAB Protocol]]
-* [[Ondemand|Ondemand Protocol]]
-* [[Archive Format]]
+* [JAGGRAB protocol](./JAGGRAB-Protocol.html)
+* [Ondemand protocol](./Ondemand-Protocol.html)
+* [Archive format](./Archive-Format.html)
 
 
 ### Miscellaneous
