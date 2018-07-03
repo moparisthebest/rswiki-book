@@ -1,7 +1,7 @@
 Want to chat with RSWiki members? Discuss anything and everything? Join our IRC network!
 
 ### Connection Information
-Server: irc.moparisthebest.xxx  
+Server: irc.moparisthebest.com  
 Port: 6667 (or 6697 for SSL)  
 Channel: #moparscape
 

@@ -3,14 +3,12 @@
 A source of documentation for the RSC/RS2/RS3 protocols and related systems.
 
 ### Navigation
-* [[Rules]]
-* [[DMCA Policy]]
-* [[Disclaimer|RSWiki General disclaimer]]
-* [[Privacy Policy|RSWiki Privacy policy]]
-* [[Official IRC|RSWiki IRC]]
-* [[About|RSWiki About]]
-
-## Documentation
+* [About](About.html)
+* [IRC](IRC.html)
+* [Rules](Rules.html)
+* [General disclaimer](General-disclaimer.html)
+* [DMCA Policy](DMCA-Policy.html)
+* [Privacy Policy](Privacy-policy.html)
 
 ### Game Protocol
 * [[RSC|Category RSC]]  (2001 - 2004)
