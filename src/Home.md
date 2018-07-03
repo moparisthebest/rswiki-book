@@ -4,8 +4,8 @@ A source of documentation for the RSC/RS2/RS3 protocols and related systems.
 
 ### Navigation
 * [About](About.html)
-* [IRC](IRC.html)
 * [Rules](Rules.html)
+* [IRC](IRC.html)
 * [General disclaimer](General-disclaimer.html)
 * [DMCA Policy](DMCA-Policy.html)
 * [Privacy Policy](Privacy-policy.html)
