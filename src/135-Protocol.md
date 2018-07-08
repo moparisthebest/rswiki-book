@@ -1,10 +1,12 @@
-\[\[Category RSC\]\] This page refers to the RSC \#135 client revision.
-You can find a partially refactored RSC \#135 client
-\[https://bitbucket.org/\_mthd0/rsc here\].
+# Protocol #135 (RSC)
 
-== '''Packet structure''' ==
+This is a RuneScape Classic protocol.
+You can find a partially refactored client for it [here](https://bitbucket.org/_mthd0/rsc/).
 
-<pre>if (len >= 160 {
+## Packet structure
+
+```
+if (len >= 160 {
     [byte] (160 + (len / 256))
     [byte] (len & 0xff)
 } else {
@@ -17,22 +19,32 @@ You can find a partially refactored RSC \#135 client
 [byte] opcode
 for (int i = 0; i < len; i++)
     [byte] data[i]
-</pre>
-RSC-135 uses big-endian byte order exclusively.
+```
 
-'''Data types'''
+## Byte order
 
-int8 - an 8-bit integer, or byte.<br> int16 - a 16-bit integer, or
-short, or WORD.<br> int32 - a 32-bit integer, or int, or DWORD.<br>
-int64 - a 64-bit integer, or long, or QWORD.<br> u - unsigned<br> a -
-when writing, increment the MSB (most significant byte, or first byte)
-by 128. When reading, if the first byte unsigned is lower than 128,
-that's your value, otherwise decrement the first byte by 128 and read as
-normally.<br>
+This protocol uses big-endian byte order exclusively.
 
-'''Bit Access'''
+## Data types
 
-<pre>private static final int bitmasks[] = {
+| Name | Description |
+|---|---|
+| int8 | An 8-bit integer (i.e. byte) |
+| int16 | An 16-bit integer (i.e. short/Word) |
+| int32 | An 32-bit integer (i.e. int/DWord) |
+| int64 | An 64-bit integer (i.e. long/QWord) |
+
+Note: If the name is postfixed with `u`, it means that the type is unsigned.
+
+Note: If the name is postfixed with `a`, then when writing, increment the MSB
+(most significant byte, or first byte) by 128.
+When reading, if the first byte unsigned is lower than 128, that's your
+value, otherwise decrement the first byte by 128 and read as normally.
+
+## Bit access
+
+```java
+private static final int bitmasks[] = {
     0, 1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047, 4095, 8191, 16383, 32767, 65535,
     0x1ffff, 0x3ffff, 0x7ffff, 0xfffff, 0x1fffff, 0x3fffff, 0x7fffff, 0xffffff, 0x1ffffff,
     0x3ffffff, 0x7ffffff, 0xfffffff, 0x1fffffff, 0x3fffffff, 0x7fffffff, -1
@@ -62,11 +74,15 @@ public void write_bits(int num, int val) {
 
 public void end_bit_access() {
     offset = (bitpos + 7) / 8;
-}</pre>
-== '''Reference''' == Player usernames are encoded and decoded with the
-following methods:
+}
+```
 
-<pre>public static long encode_37(String s) {
+## Reference
+
+Player usernames are encoded and decoded with the following methods:
+
+```java
+public static long encode_37(String s) {
     String s1 = "";
     for (int i = 0; i < s.length(); i++) {
         char c = s.charAt(i);
@@ -112,10 +128,12 @@ public static String decode_37(long l) {
     }
     return s;
 }
-</pre>
+```
+
 Chat messages are encoded and decoded with the following methods:
 
-<pre>public static byte encodedmsg[] = new byte[100];
+```java
+public static byte encodedmsg[] = new byte[100];
 public static char decodedmsg[] = new char[100];
 private static char charmap[] = {
     ' ', 'e', 't', 'a', 'o', 'i', 'h', 'n', 's', 'r', 'd', 'l', 'u', 'm', 'w', 'c', 'y', 'f',
@@ -204,89 +222,100 @@ public static int encode_msg(String str) {
     if (i != -1)
         encodedmsg[enclen++] = (byte) (i << 4);
     return enclen;
-}</pre>
-== '''Login''' == \* The username and password are prepared. This is
-done by replacing any spaces or illegal characters with \_ and appending
-spaces to the string until its length is 20. \* The connection with the
-server is established. \* The client reads a raw long from the server,
-this is the "session id". \* The client creates a new frame, opcode 0 or
-19 if the player is reconnecting. \* A short, the client's revision
-number (135) is placed in the buffer. \* A long, the player's username
-encoded with mod37 (see above) is placed in the buffer. \* A string
-encoded with RSA and the player's session id (the password) is placed in
-the buffer. \* An integer, the player's "ranseed" value is placed in the
-buffer. \*\* "ranseed" does not seed anything. RSC135 does not use ISAAC
-ciphering. It is an applet parameter or read from uid.dat. Presumably,
-it was used to identify players connecting from the same computer. \*
-The stream is then flushed. \* A byte is read from the stream and
-discarded. \* Another byte is read, this is the login response code from
-the server.
+}
+```
 
-  {
-  ---
+## Login
 
-! Login Resp. ! Description \|- \| 0 \| Successful login \|- \| 1 \|?
-\|- \| 3 \| Invalid username or password \|- \| 4 \| Username already in
-use \|- \| 5 \| Client has been updated \|- \| 6 \| IP address is
-already in use \|- \| 7 \| Login attempts exceeded \|- \| 11 \| Account
-temporarily disabled \|- \| 12 \| Account permanently disabled \|- \| 15
-\| Server is currently full \|- \| 16 \| Members-only server \|- \| 17
-\| Members-only area? \|}
+* The username and password are prepared by replacing any spaces or
+illegal characters with _ and appending spaces to the string until its
+length is 20.
+* The connection with the server is established.
+* The client reads a raw long from the server, this is the "session id".
+* The client creates a new frame, opcode 0 or 19 if the player is reconnecting.
+* A short, the client's revision number (135) is placed in the buffer.
+* A long, the player's username encoded with mod37 (see above) is placed in the
+buffer.
+* A string encoded with RSA and the player's session id (the password) is
+placed in the buffer.
+* An integer, the player's "ranseed" value is placed in the buffer.
+* "ranseed" does not seed anything. RSC135 does not use ISAAC ciphering.
+  It is an applet parameter or read from uid.dat. Presumably, it was
+  used to identify players connecting from the same computer.
+* The stream is then flushed.
+* A byte is read from the stream and discarded.
+* Another byte is read, this is the login response code from the server.
 
-== '''Registration''' ==
+Login responses
 
--   The username and password are prepared. This is done by replacing
-    any spaces or illegal characters with \_ and appending spaces to the
-    string until its length is 20.
--   The connection with the server is established.
--   The client reads a raw long from the server, this is the "session
-    id".
--   The client creates a new frame, opcode 2.
--   A short, the client's revision number (135) is placed in the buffer.
--   A long, the player's username encoded with mod37 (see above) is
-    placed in the buffer.
--   A short, the applet's "referid" parameter is placed in the buffer.
--   A string encoded with RSA and the player's session id (the password)
-    is placed in the buffer.
--   An integer, the player's "ranseed" value is placed in the buffer.
-    \*\* "ranseed" does not seed anything. RSC135 does not use ISAAC
-    ciphering. It is an applet parameter or read from uid.dat.
-    Presumably, it was used to identify players connecting from the same
-    computer.
--   The stream is then flushed.
--   A byte is read from the stream and discarded.
--   Another byte is read, this is the newplayer response code from the
-    server.
+| Response Code | Description
+|---|---|
+| 0 | Success. |
+| 1 | ? |
+| 3 | Invalid username or password. |
+| 4 | Username already in use. |
+| 5 | Client has been updated. |
+| 6 | IP address already in use. |
+| 7 | Login attempts exceeded. |
+| 11 | Account temporarily disabled. |
+| 12 | Account permanently disabled. |
+| 15 | Server is currently full. |
+| 16 | Members-only server. |
+| 17 | Members only area? |
 
-  {
-  ---
+## Registration
 
-! Newp Resp. ! Description \|- \| 2 \| Successful registration \|- \| 3
-\| Username already taken \|- \| 5 \| Client has been updated \|- \| 6
-\| IP address is already in use \|- \| 7 \| Registration attempts
-exceeded? \|}
+* The username and password are prepared.
+  This is done by replacing any spaces or illegal characters
+  with \_ and appending spaces to the string until its length is 20.
+* The connection with the server is established.
+* The client reads a raw long from the server, this is the "session id".
+* The client creates a new frame, opcode 2.
+* A short, the client's revision number (135) is placed in the buffer.
+* A long, the player's username encoded with mod37 (see above) is placed
+  in the buffer.
+* A short, the applet's "referid" parameter is placed in the buffer.
+* A string encoded with RSA and the player's session id (the password)
+is placed in the buffer.
+* An integer, the player's "ranseed" value is placed in the buffer.
+  "ranseed" does not seed anything. RSC135 does not use ISAAC ciphering.
+  It is an applet parameter or read from uid.dat.
+  Presumably, it was used to identify players connecting from the same computer.
+* The stream is then flushed.
+* A byte is read from the stream and discarded.
+* Another byte is read, this is the newplayer response code from the server.
 
-== '''Mob Appearance Update''' ==
+Registration responses
 
-Firstly, create a new packet with the opcode 250. Write the total number
-of expected updates (uint16).
+| Response Code | Description |
+|---|---|
+| 2 | Success. |
+| 3 | Username already taken. |
+| 5 | Client has been updated. |
+| 6 | IP address already in use. |
+| 7 | Registration attempts exceeded? |
 
-Secondly, for each 'thing' to update, write the (server) index of the
+## Mob Appearance Update
+
+Firstly, create a new packet with the opcode 250.
+Write the total number of expected updates (uint16).
+
+Secondly, for each entity to update, write the (server) index of the
 mob the update applies to (uint16), and the 'update type' (int8)
 followed by whatever data that type expects.
 
-'''Update type 1 - Public chat messages'''
+### Update type 1: Public chat messages
 
--   uint8 - The length of the chat message.
--   string (raw) - The encoded chat message.
+* uint8 - The length of the chat message.
+* string (raw) - The encoded chat message.
 
-'''Update type 2 - Combat damage'''
+### Update type 2: Combat damage
 
--   uint8 - The damage recieved.
--   uint8 - That mob's 'current' hitpoints level.
--   uint8 - That mob's 'base' hitpoints.
+* uint8 - The damage recieved.
+* uint8 - That mob's 'current' hitpoints level.
+* uint8 - That mob's 'base' hitpoints.
 
-'''Update type 3/4 - Projectiles'''
+### Update type 3/4: Projectiles
 
 The update type is 3 when the target is a NPC, or 4 is the target is a
 player.
@@ -294,43 +323,45 @@ player.
 The standard magic projectile id is 1, and the standard ranged
 projectile id is 2.
 
--   uint16 - The projectile's id.
--   uint16 - The (server) index of the projectile's target entity.
+* uint16 - The projectile's id.
+* uint16 - The (server) index of the projectile's target entity.
 
-'''Update type 5 - Appearance'''
+### Update type 5: Appearance
 
 Hair style, body type, leg type, and colours are as they are sent by the
 client's character design packet.
 
--   uint16 - The player's status? Doesn't appear to do anything.
--   int64 - The player's username encoded with mod37.
--   uint8 - The size of the sub-update. \*\* uint8 - The player's hair
-    style + 1, or 0 if they are wearing a helmet \*\* uint8 - The
-    player's body type + 1, or 0 if they are wearing a platebody \*\*
-    uint8 - The player's leg type + 1, or 0 if they are wearing legs
-    \*\* uint8 - The animation id + 1 (look in the client) of the
-    player's offhand item or 0. \*\* uint8 - The animation id + 1 of the
-    player's hand item or 0. \*\* uint8 - The animation id + 1 of the
-    player's head item or 0. \*\* uint8 - The animation id + 1 of the
-    player's body item or 0. \*\* uint8 - The animation id + 1 of the
-    player's leg item or 0. \*\* uint8 - The animation id + 1 of the
-    player's neck item or 0. \*\* uint8 - The animation id + 1 of the
-    player's shoes or 0. \*\* uint8 - The animation id + 1 of the
-    player's gloves or 0. \*\* uint8 - The animation id + 1 of the
-    player's cape or 0.
--   uint8 - The player's hair colour.
--   uint8 - The player's top colour.
--   uint8 - The player's leg colour.
--   uint8 - The player's skin colour.
--   uint8 - The player's combat level.
--   uint8 - 1 if the player is skulled.
+* uint16 - The player's status? Doesn't appear to do anything.
+* int64 - The player's username encoded with mod37.
+* uint8 - The size of the sub-update.
+* uint8 - The player's hair style + 1, or 0 if they are wearing a helmet.
+* uint8 - The player's body type + 1, or 0 if they are wearing a platebody.
+* uint8 - The player's leg type + 1, or 0 if they are wearing legs.
+* uint8 - The animation id + 1 (look in the client) of the player's offhand item or 0.
+* uint8 - The animation id + 1 of the player's hand item or 0.
+* uint8 - The animation id + 1 of the player's head item or 0.
+* uint8 - The animation id + 1 of the player's body item or 0.
+* uint8 - The animation id + 1 of the player's leg item or 0.
+* uint8 - The animation id + 1 of the player's neck item or 0.
+* uint8 - The animation id + 1 of the player's shoes or 0.
+* uint8 - The animation id + 1 of the player's gloves or 0.
+* uint8 - The animation id + 1 of the player's cape or 0.
+* uint8 - The player's hair colour.
+* uint8 - The player's top colour.
+* uint8 - The player's leg colour.
+* uint8 - The player's skin colour.
+* uint8 - The player's combat level.
+* uint8 - 1 if the player is skulled.
 
-== '''Packets''' == The packet opcodes are unchanged from previous
-revisions, presumably this was before the protocol was being regularly
-modified to deter the developers of bots such as \[\[AutoRune\]\]. The
-payload/structure is quite similar to most other RSC revisions.
+## Packets
+The packet opcodes are unchanged from previous revisions, presumably
+this was before the protocol was being regularly modified to deter the
+developers of bots such as AutoRune.
 
-=== '''Incoming Data''' === '''TODO: Duelling stuff, 240''' {\|
+The payload/structure is quite similar to most other RSC revisions.
+
+### Incoming packets
+'''TODO: Duelling stuff, 240''' {\|
 class="wikitable" \|- ! scope="col" width="140px" \| Name ! scope="col"
 width="50px" \| Opcode ! scope="col" width="350px" \| Payload !
 scope="col" width="300px" \| Description \|- ! Display Message \| 8 \|\|
@@ -640,6 +671,6 @@ player's chosen design when they log in for the first time. \* 0 -
 Adventurer class \* 1 - Warrior class \* 2 - Wizard class \* 3 - Ranger
 class \* 4 - Miner class \|} Notes:
 
--   Opcodes marked with \* are preceded by Walk to Entity.
--   When closing the duel confirm screen, it may send the decline trade
-    packet, for some reason.
+* Opcodes marked with \* are preceded by Walk to Entity.
+* When closing the duel confirm screen, it may send the decline trade packet,
+  for some reason.
