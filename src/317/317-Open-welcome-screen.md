@@ -1,20 +1,21 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\] {{packet\|name=Open
-welcome screen\|description=Displays the welcome
-screen.\|opcode=176\|type=Fixed\|length=10\|revision=317}} == Open
-Welcome Screen ==
-
-=== Description ===
-
+# Open Welcome Screen
 This packet displays the welcome screen.
 
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-\[\[Data Types\#Standard data type\|Byte\]\] \[\[Data Types\#Non
-Standard data types\|Special C\]\] \| Days since last recovery change
-(200 for not yet set, 201 for members server). \|- \| \[\[Data
-Types\#Standard data type\|Short\]\] \[\[Data Types\#Non Standard data
-types\|Special A\]\] \| Number of unread messages. \|- \| \[\[Data
-Types\#Standard data types\|Byte\]\] \| Member warning (1 for member, 0
-for non-member). \|- \| \[\[Data Types\#Non Standard data
-types\|Middle-Endian Big Integer\]\] \| Last logged IP. \|- \| \[\[Data
-Types\#Standard data types\|Short\]\] \| Last logged successful log-n.
-\|- \|}
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Open welcome screen |
+| Description | Displays the welcome screen. |
+| Opcode | 176 |
+| Type | Fixed |
+| Length | 10 |
+| Revision | 317 |
+
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Byte](/Data-Types.html#common-data-types) [Special C](/Data-Types.html#bespoke-data-types) | Days since last recovery change (200 for not yet set, 201 for members server). |
+| [Short](/Data-Types.html#common-data-types) [Special A](/Data-Types.html#bespoke-data-types) | Number of unread messages. |
+| [Byte](/Data-Types.html#common-data-types) | Member warning (1 for member, 0 for non-member). |
+| [Middle-Endian Big Integer](/Data-Types.html#middle-endian-big-integer) | Last logged IP. |
+| [Short](/Data-Types.html#common-data-types) | Last logged successful log-in. |

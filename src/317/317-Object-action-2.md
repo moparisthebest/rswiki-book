@@ -1,19 +1,19 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\]
-{{packet\|name=Object action 2\|description=Sent when the player clicks
-the second option available for an an
-object.\|opcode=252\|type=Fixed\|length=6\|revision=317}} == Object
-action 2 ==
+# Object action 2
+This packet is sent when a player clicks the second option available of an object, such as "Prospect" for rocks.
 
-=== Description ===
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Object action 2 |
+| Description | Sent when the player clicks the second option available for an an object. |
+| Opcode | 252 |
+| Type | Fixed |
+| Length | 6 |
+| Revision | 317 |
 
-This packet is sent when a player clicks the second option available of
-an object, such as "Prospect" for rocks.
-
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-\[\[Data Types\#Little Endian\|Little Endian\]\] \[\[Data
-Types\#Standard data types\|Short\]\] \[\[Data Types\#Non Standard Data
-Types\|Special A\]\] \| The objects ID. \|- \| \[\[Data Types\#Little
-Endian\|Little Endian\]\] \[\[Data Types\#Standard data types\|Short\]\]
-\| The objects Y coordinate. \|- \| \[\[Data Types\#Standard data
-types\|Short\]\] \[\[Data Types\#Non Standard Data Types\|Special A\]\]
-\| The objects X coordinate. \|}
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Little Endian](/Data-Types.html#little-endian) [Short](/Data-Types.html#common-data-types) [Special A](/Data-Types.html#bespoke-data-types) | The objects ID. |
+| [Little Endian](/Data-Types.html#little-endian) [Short](/Data-Types.html#common-data-types) | The objects Y coordinate. |
+| [Short](/Data-Types.html#common-data-types) [Special A](/Data-Types.html#bespoke-data-types) | The objects X coordinate. |

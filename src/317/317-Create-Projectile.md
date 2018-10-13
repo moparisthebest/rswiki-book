@@ -1,22 +1,17 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\] == Create Projectile
-==
-
-=== Description ===
-
+# Create Projectile
 Creates a projectile.
 
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-\[\[Data Types\#Standard data types\|Byte\]\] \| Position offset \|- \|
-\[\[Data Types\#Standard data types\|Byte\]\] \| Second X offset \|- \|
-\[\[Data Types\#Standard data types\|Byte\]\] \| Second Y offset \|- \|
-\[\[Data Types\#Standard data types\|Short\]\] \| Target \|- \| \[\[Data
-Types\#Little Endian\|Little Endian\]\] \[\[Data Types\#Standard data
-types\|Short\]\] \| Graphic ID \|- \| \[\[Data Types\#Standard data
-types\|Byte\]\] \| Starting height \|- \| \[\[Data Types\#Standard data
-types\|Byte\]\] \| Ending height \|- \| \[\[Data Types\#Little
-Endian\|Little Endian\]\] \[\[Data Types\#Standard data types\|Short\]\]
-\| Starting time \|- \| \[\[Data Types\#Little Endian\|Little Endian\]\]
-\[\[Data Types\#Standard data types\|Short\]\] \| Speed \|- \| \[\[Data
-Types\#Standard data types\|Byte\]\] \| Initial slope \|- \| \[\[Data
-Types\#Standard data types\|Byte\]\] \| Initial distance from source \|-
-\|}
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Byte](/Data-Types.html#common-data-types) | Position offset |
+| [Byte](/Data-Types.html#common-data-types) | Second X offset |
+| [Byte](/Data-Types.html#common-data-types) | Second Y offset |
+| [Short](/Data-Types.html#common-data-types) | Target |
+| [Little Endian](/Data-Types.html#little-endian) [Short](/Data-Types.html#common-data-types) | Graphic ID |
+| [Byte](/Data-Types.html#common-data-types) | Starting height |
+| [Byte](/Data-Types.html#common-data-types) | Ending height |
+| [Little Endian](/Data-Types.html#little-endian) [Short](/Data-Types.html#common-data-types) | Starting time |
+| [Little Endian](/Data-Types.html#little-endian) [Short](/Data-Types.html#common-data-types) | Speed |
+| [Byte](/Data-Types.html#common-data-types) | Initial slope |
+| [Byte](/Data-Types.html#common-data-types) | Initial distance from source |

@@ -1,22 +1,22 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\] {{packet\|name=Force
-client setting\|description=Forcefully alters a client setting value and
-default value to some supplied
-value.\|opcode=36\|type=Fixed\|length=3\|revision=317}} == Force Client
-Setting ==
+# Force Client Setting
+The client stores various user settings in an array, the default values are also stored in another array. This packet changes the default value for a setting and its current value to the one given.
 
-=== Description ===
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Force client setting |
+| Description | Forcefully alters a client setting value and default value to some supplied value. |
+| Opcode | 36 |
+| Type | Fixed |
+| Length | 3 |
+| Revision | 317 |
 
-The client stores various user settings in an array, the default values
-are also stored in another array. This packet changes the default value
-for a setting and its current value to the one given.
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Short](/Data-Types.html#common-data-types) [Little Endian](/Data-Types.html#little-endian) | Setting ID number. |
+| [Byte](/Data-Types.html#common-data-types) | New value (and default value) for the setting. |
 
-=== Packet Structure ===
-
-{\| border=2 ! Data type ! Description \|- \| \[\[Data Types\#Standard
-data types\|Short\]\] \[\[Data Types\#Byte Order\|Little Endian\]\] \|
-Setting ID number. \|- \| \[\[Data Types\#Standard data types\|Byte\]\]
-\| New value (and default value) for the setting. \|- \|}
-
-=== Other Information === Opcode 87 (length 6) is extremely similar in
-structure, but the new value is received as an Middle Endian Small Int.
+## Other Information
+Opcode 87 (length 6) is extremely similar in structure, but the new value is received as an Middle Endian Small Int.
 This suggests its for use with bigger setting values.

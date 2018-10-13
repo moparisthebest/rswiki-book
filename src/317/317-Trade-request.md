@@ -1,12 +1,17 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\] {{packet\|name=Trade
-request\|description=Sent when a player requests a trade with another
-player.\|opcode=73\|type=Fixed\|length=2\|revision=317}} == Trade
-Request ==
-
-=== Description ===
-
+# Trade Request
 This packet is sent when a player requests a trade with another player.
 
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-\[\[Data Types\#Little Endian\|Little Endian\]\] \[\[Data
-Types\#Standard data types\|Short\]\] \| The other players ID. \|}
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Trade request |
+| Description | Sent when a player requests a trade with another player. |
+| Opcode | 73 |
+| Type | Fixed |
+| Length | 2 |
+| Revision | 317 |
+
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Little Endian](/Data-Types.html#little-endian) [Short](/Data-Types.html#common-data-types) | The other players ID. |

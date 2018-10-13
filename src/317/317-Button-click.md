@@ -1,14 +1,17 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\]
-{{packet\|name=Button click\|description=Sent when a player clicks an
-in-game button.\|opcode=185\|type=Fixed\|length=2\|revision=317}} ==
-Button click ==
+# Button click
+This is sent when a player clicks a button in-game, with the id of the button being clicked.
 
-=== Description ===
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Button click |
+| Description | Sent when a player clicks an in-game button. |
+| Opcode | 185 |
+| Type | Fixed |
+| Length | 2 |
+| Revision | 317 |
 
-This is sent when a player clicks a button in-game, with the id of the
-button being clicked.
-
-=== Packet Structure ===
-
-{\| border=2 ! Data type ! Description \|- \| \[\[Data Types\#Standard
-data types\|Short\]\] \| The button id. \|- \|}
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Short](/Data-Types.html#common-data-types) | The button id. |

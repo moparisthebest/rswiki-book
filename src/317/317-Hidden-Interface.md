@@ -1,15 +1,18 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\]
-{{packet\|name=Hidden interface\|description=Sets an interface to be
-hidden until hovered
-over.\|opcode=171\|type=Fixed\|length=3\|revision=317}}
-
-== Hidden Interface ==
-
-=== Description ===
-
+# Hidden Interface
 Sets an interface to be hidden until hovered over.
 
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-\[\[Data Types\#Standard data types\|Byte\]\] \| Hidden until hovered
-\|- \| \[\[Data Types\#Standard data types\|Short\]\] \| Interface Id
-\|- \|}
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Hidden interface |
+| Description | Sets an interface to be hidden until hovered over. |
+| Opcode | 171 |
+| Type | Fixed |
+| Length | 3 |
+| Revision | 317 |
+
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Byte](/Data-Types.html#common-data-types) | Hidden until hovered |
+| [Short](/Data-Types.html#common-data-types) | Interface Id |

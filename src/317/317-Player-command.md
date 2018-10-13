@@ -1,13 +1,17 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\]
-{{packet\|name=Player command\|description=Sent when a player types a
-command in the chat box.\|opcode=103\|type=Variable
-Byte\|length=N/A\|revision=317}} == Player Command ==
+# Player Command
+This packet is sent when a player types a message with the prefix '::', the message is then sent to the server and an appropriate action is taken (e.g. spawning an item).
 
-=== Description ===
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Player command |
+| Description | Sent when a player types a command in the chat box. |
+| Opcode | 103 |
+| Type | Variable Byte |
+| Length | N/A |
+| Revision | 317 |
 
-This packet is sent when a player types a message with the prefix '::',
-the message is then sent to the server and an appropriate action is
-taken (e.g. spawning an item).
-
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-\[\[RS String\|RS String\]\] \| The command name and parameters. \|}
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [RS String](/RS-String.html) | The command name and parameters. |

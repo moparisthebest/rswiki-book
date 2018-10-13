@@ -1,23 +1,27 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\]
-{{packet\|name=Interface color\|description=This packet changes the
-color of an interface that is
-text.\|opcode=122\|type=Fixed\|length=4\|revision=317}} == Interface
-Color ==
-
-=== Description ===
-
+# Interface Color
 This packet changes the color of an interface that is text.
 
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-\[\[Data Types\#Little Endian\|Little Endian\]\] \[\[Data
-Types\#Standard data types\|Short\]\] \[\[Data Types\#Non Standard Data
-Types\|Special A\]\] \| The interface ID. \|- \| \[\[Data Types\#Little
-Endian\|Little Endian\]\] \[\[Data Types\#Standard data types\|Short\]\]
-\[\[Data Types\#Non Standard Data Types\|Special A\]\] \| The color. \|-
-\|}
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Interface color |
+| Description | This packet changes the color of an interface that is text. |
+| Opcode | 122 |
+| Type | Fixed |
+| Length | 4 |
+| Revision | 317 |
 
-=== Information === You use this packet to change the color of text in
-an interface.
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Little Endian](/Data-Types.html#little-endian) [Short](/Data-Types.html#common-data-types) [Special A](/Data-Types.html#bespoke-data-types) | The interface ID. |
+| [Little Endian](/Data-Types.html#little-endian) [Short](/Data-Types.html#common-data-types) [Special A](/Data-Types.html#bespoke-data-types) | The color. |
 
-{\|border=2 ! Color ! Code \|- \| Green \| 0x3366 \|- \| Yellow \|
-0x33FF66 \|- \| Red \| 0x6000 \|- \|}
+##  Information
+You use this packet to change the color of text in an interface.
+
+| Color | Code |
+|--|--|
+| Green | 0x3366 |
+| Yellow | 0x33FF66 |
+| Red | 0x6000 |

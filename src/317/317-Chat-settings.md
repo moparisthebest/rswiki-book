@@ -1,14 +1,19 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\] {{packet\|name=Chat
-settings\|description=Sends the chat privacy
-settings\|opcode=206\|type=Fixed\|length=3\|revision=317}} == Chat
-Settings ==
-
-=== Description ===
-
+# Chat Settings
 This packet sends the chat privacy settings.
 
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-\[\[Data Types\#Standard data types\|Byte\]\] \| Public chat setting.
-\|- \| \[\[Data Types\#Standard data types\|Byte\]\] \| Private chat
-setting. \|- \| \[\[Data Types\#Standard data types\|Byte\]\] \| Trade
-setting. \|- \|}
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Chat settings |
+| Description | Sends the chat privacy settings |
+| Opcode | 206 |
+| Type | Fixed |
+| Length | 3 |
+| Revision | 317 |
+
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Byte](/Data-Types.html#common-data-types) | Public chat setting. |
+| [Byte](/Data-Types.html#common-data-types) | Private chat setting. |
+| [Byte](/Data-Types.html#common-data-types) | Trade setting. |

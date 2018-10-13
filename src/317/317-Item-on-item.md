@@ -1,14 +1,18 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\] {{packet\|name=Item
-on item\|description=Sent when a player uses an item on another
-item.\|opcode=53\|type=Fixed\|length=4\|revision=317}} == Item on Item
-==
-
-=== Description ===
-
+# Item on Item
 This packet is sent when a player uses an item on another item.
 
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-\[\[Data Types\#Standard data types\|Short\]\] \| The item being used
-on's slot. \|- \| \[\[Data Types\#Standard data types\|Short\]\]
-\[\[Data Types\#Non Standard Data Types\|Special A\]\] \| The item being
-used's slot. \|- \|}
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Item on item |
+| Description | Sent when a player uses an item on another item. |
+| Opcode | 53 |
+| Type | Fixed |
+| Length | 4 |
+| Revision | 317 |
+
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Short](/Data-Types.html#common-data-types) | The item being used on's slot. |
+| [Short](/Data-Types.html#common-data-types) [Special A](/Data-Types.html#bespoke-data-types) | The item being used's slot. |

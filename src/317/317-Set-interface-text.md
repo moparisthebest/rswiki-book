@@ -1,17 +1,22 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\] {{packet\|name=Set
-interface text\|description=Sets the text for a specified
-interface\|opcode=126\|type=VARIABLE\_SHORT\|length=N/A\|revision=317}}
-== Set Interface Text ==
-
-=== Description ===
-
+# Set Interface Text
 Sets the text for the specific interface.
 
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-\[\[Data Types\#Non Standard Data Types\|RS\_String\]\] \| The new text
-for the interface \|- \| \[\[Data Types\#Non Standard Data Types\|Short
-A\]\] \| The interface id \|- \|}
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Set interface text |
+| Description | Sets the text for a specified interface |
+| Opcode | 126 |
+| Type | VARIABLE_SHORT |
+| Length | N/A |
+| Revision | 317 |
 
-=== Information === I do not recommend you use this to change the text
-color. I refer you to \[\[317 Interface color\|Interface Color\]\] for
-the proper way to do so.
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [RS String](/RS-String.html) | The new text for the interface |
+| [Short](/Data-Types.html#common-data-types) [Special A](/Data-Types.html#bespoke-data-types) | The interface id |
+
+## Information
+I do not recommend you use this to change the text color.
+I refer you to [Interface Color](317-Interface-color.html) packet for the proper way to do so.

@@ -1,17 +1,20 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\] {{packet\|name=Magic
-on items\|description=Sent when a player casts magic on the items in
-their inventory.\|opcode=237\|type=Fixed\|length=8\|revision=317}} ==
-Magic on Items ==
+# Magic on Items
+This packet is sent when a player casts magic (i.e. High Level Alchemy) on the items in their inventory.
 
-=== Description ===
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Magic on items |
+| Description | Sent when a player casts magic on the items in their inventory. |
+| Opcode | 237 |
+| Type | Fixed |
+| Length | 8 |
+| Revision | 317 |
 
-This packet is sent when a player casts magic (i.e. High Level Alchemy)
-on the items in their inventory.
-
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-\[\[Data Types\#Standard data types\|Short\]\] \| The items slot ID. \|-
-\| \[\[Data Types\#Standard data types\|Short\]\] \[\[Data Types\#Non
-Standard Data Types\|Special A\]\] \| The item ID. \|- \| \[\[Data
-Types\#Standard data types\|Short\]\] \| The frame ID. \|- \| \[\[Data
-Types\#Standard data types\|Short\]\] \[\[Data Types\#Non Standard Data
-Types\|Special A\]\] \| The spell ID. \|- \|}
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Short](/Data-Types.html#common-data-types) | The items slot ID. |
+| [Short](/Data-Types.html#common-data-types) [Special A](/Data-Types.html#bespoke-data-types) | The item ID. |
+| [Short](/Data-Types.html#common-data-types) | The frame ID. |
+| [Short](/Data-Types.html#common-data-types) [Special A](/Data-Types.html#bespoke-data-types) | The spell ID. |

@@ -1,13 +1,17 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\] {{packet\|name=Run
-energy\|description=Sends the players run energy
-level.\|opcode=110\|type=Fixed\|length=1\|revision=317}} == Run Energy
-==
-
-=== Description ===
-
+# Run Energy
 Sends how much run energy the player currently has.
 
-=== Packet Structure ===
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Run energy |
+| Description | Sends the players run energy level. |
+| Opcode | 110 |
+| Type | Fixed |
+| Length | 1 |
+| Revision | 317 |
 
-{\| border=2 ! Data type ! Description \|- \| \[\[Data Types\#Standard
-data types\|Byte\]\] \| The energy level. \|- \|}
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Byte](/Data-Types.html#common-data-types) | The energy level. |

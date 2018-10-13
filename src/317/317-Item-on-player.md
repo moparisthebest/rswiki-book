@@ -1,16 +1,20 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\] {{packet\|name=Item
-on player\|description=Sent when a player uses an item on another
-player.\|opcode=14\|type=Fixed\|length=8\|revision=317}} == Item on
-Player ==
-
-=== Description ===
-
+# Item on Player
 This packet is sent when a player uses an item on another player.
 
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-\[\[Data Types\#Standard data types\|Short\]\] \[\[Data Types\#Non
-Standard Data Types\|Special A\]\] \| The frame ID. \|- \| \[\[Data
-Types\#Standard data types\|Short\]\] \| The other players ID. \|- \|
-\[\[Data Types\#Standard data types\|Short\]\] \| The item ID. \|- \|
-\[\[Data Types\#Little Endian\|Little Endian\]\] \[\[Data
-Types\#Standard data types\|Short\]\] \| The items slot ID. \|- \|}
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Item on player |
+| Description | Sent when a player uses an item on another player. |
+| Opcode | 14 |
+| Type | Fixed |
+| Length | 8 |
+| Revision | 317 |
+
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Short](/Data-Types.html#common-data-types) [Special A](/Data-Types.html#bespoke-data-types) | The frame ID. |
+| [Short](/Data-Types.html#common-data-types) | The other players ID. |
+| [Short](/Data-Types.html#common-data-types) | The item ID. |
+| [Little Endian](/Data-Types.html#little-endian) [Short](/Data-Types.html#common-data-types) | The items slot ID. |

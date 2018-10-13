@@ -1,13 +1,19 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\] {{packet\|name=Skill
-level\|description=Changes the experience and level of a given skill
-id.\|opcode=134\|type=Fixed\|length=6\|revision=317}} == Skill Level ==
-
-=== Description ===
-
+# Skill Level
 This packet changes the experience and level of a given skill id.
 
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-\[\[Data Types\#Byte\|Byte\]\] \| The skill ID. \|- \| \[\[Data
-Types\#Non Standard data types\|Middle-Endian Small Integer\]\] \| The
-skill experience. \|- \| \[\[Data Types\#Byte\|Byte\]\] \| The skill
-level. \|- \|}
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Skill level |
+| Description | Changes the experience and level of a given skill id. |
+| Opcode | 134 |
+| Type | Fixed |
+| Length | 6 |
+| Revision | 317 |
+
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Byte](/Data-Types.html#common-data-types) | The skill ID. |
+| [Middle-Endian Small Integer](/Data-Types.html#middle-endian-small-int) | The skill experience. |
+| [Byte](/Data-Types.html#common-data-types) | The skill level. |

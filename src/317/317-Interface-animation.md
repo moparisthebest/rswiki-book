@@ -1,13 +1,18 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\]
-{{packet\|name=Interface animation\|description=Sets an interface's
-model animation\|opcode=200\|type=Fixed\|length=4\|revision=317}} ==
-Interface animation ==
-
-=== Description ===
-
+# Interface animation
 Sets an interface's model animation.
 
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-\[\[Data Types\#Standard data types\|Short\]\] \| The interface ID \|-
-\| \[\[Data Types\#Standard data types\|Short\]\] \| The animation ID
-\|- \|}
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Interface animation |
+| Description | Sets an interface's model animation |
+| Opcode | 200 |
+| Type | Fixed |
+| Length | 4 |
+| Revision | 317 |
+
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Short](/Data-Types.html#common-data-types) | The interface ID |
+| [Short](/Data-Types.html#common-data-types) | The animation ID |

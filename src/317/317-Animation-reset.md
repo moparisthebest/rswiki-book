@@ -1,8 +1,12 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\]
-{{packet\|name=Animation reset\|description=Resets all animations in the
-immediate area. \|opcode=1\|type=Fixed\|length=0\|revision=317}} ==
-Animation Reset ==
-
-=== Description ===
-
+# Animation Reset
 Resets all animations for players and npcs in the surrounding area.
+
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Animation reset |
+| Description | Resets all animations in the immediate area. |
+| Opcode | 1 |
+| Type | Fixed |
+| Length | 0 |
+| Revision | 317 |

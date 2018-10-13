@@ -1,11 +1,17 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\]
-{{packet\|name=Attack (NPC)\|description=Sent when a player attacks an
-NPC\|opcode=72\|type=Fixed\|length=2\|revision=317}} == Attack (NPC) ==
-
-=== Description ===
-
+# Description
 This packet is sent when a player attacks an NPC.
 
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-Unsigned \[\[Data Types\#Standard data types\|Short\]\] \[\[Data
-Types\#Non Standard Data Types\|Special A\]\] \| The NPC ID. \|- \|}
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Attack (NPC) |
+| Description | Sent when a player attacks an NPC |
+| Opcode | 72 |
+| Type | Fixed |
+| Length | 2 |
+| Revision | 317 |
+
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| Unsigned [Short](/Data-Types.html#common-data-types) [Special A](/Data-Types.html#bespoke-data-types) | The NPC ID. |

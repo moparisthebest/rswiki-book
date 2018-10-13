@@ -1,14 +1,19 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\] {{packet\|name=Drop
-item\|description=Sent when a player wants to drop an item onto the
-ground.\|opcode=87\|type=Fixed\|length=6\|revision=317}} == Drop Item ==
-
-=== Description ===
-
+# Drop Item
 This packet is sent when a player wants to drop an item onto the ground.
 
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-\[\[Data Types\#Standard data types\|Short\]\] \[\[Data Types\#Non
-Standard Data Types\|Special A\]\] \| The item ID. \|- \| \[\[Data
-Types\#Standard data types\|Short\]\] \| The frame ID. \|- \| \[\[Data
-Types\#Standard data types\|Short\]\] \[\[Data Types\#Non Standard Data
-Types\|Special A\]\] \| The slot ID. \|- \|}
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Drop item |
+| Description | Sent when a player wants to drop an item onto the ground. |
+| Opcode | 87 |
+| Type | Fixed |
+| Length | 6 |
+| Revision | 317 |
+
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Short](/Data-Types.html#common-data-types) [Special A](/Data-Types.html#bespoke-data-types) | The item ID. |
+| [Short](/Data-Types.html#common-data-types) | The frame ID. |
+| [Short](/Data-Types.html#common-data-types) [Special A](/Data-Types.html#bespoke-data-types) | The slot ID. |

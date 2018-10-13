@@ -1,14 +1,17 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\]
-{{packet\|name=Remove ignore\|description=Sent when a player removes
-another player from their ignore
-list.\|opcode=74\|type=Fixed\|length=8\|revision=317}} == Remove Ignore
-==
+# Remove Ignore
+This packet is sent when a player removes another player from their ignore list.
 
-=== Description ===
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Remove ignore |
+| Description | Sent when a player removes another player from their ignore list. |
+| Opcode | 74 |
+| Type | Fixed |
+| Length | 8 |
+| Revision | 317 |
 
-This packet is sent when a player removes another player from their
-ignore list.
-
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-\[\[Data Types\#Standard data types\|Long\]\] \| The other players ID.
-\|- \|}
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Long](/Data-Types.html#common-data-types) | The other players ID. |

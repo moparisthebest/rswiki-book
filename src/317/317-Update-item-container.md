@@ -1,26 +1,31 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\]
-{{packet\|name=Update item container\|description=Updates items in an
-interface
-component.\|opcode=53\|type=VARIABLE\_SHORT\|length=N/A\|revision=317}}
-== Update item container ==
+# Update item container
+Updates the items in a given interface component.
 
-=== Description === Updates the items in a given interface component.
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Update item container |
+| Description | Updates items in an interface component. |
+| Opcode | 53 |
+| Type | VARIABLE_SHORT |
+| Length | N/A |
+| Revision | 317 |
 
-=== Packet Structure ===
-
-{\| border=2 ! Data type ! Description \|- \| Unsigned \[\[Data
-Types\#Standard data types\|Short\]\] \| Interface ID. \|- \| Unsigned
-\[\[Data Types\#Standard data types\|Short\]\] \| Amount of items. \|-
-\|}
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| Unsigned [Short](/Data-Types.html#common-data-types) | Interface ID. |
+| Unsigned [Short](/Data-Types.html#common-data-types) | Amount of items. |
 
 The rest in pseudo-code:
 
-for (i = 0; i \< amt\_of\_items; i++) { item\_amount = read\_u\_byte();
-// Item Amount: U Byte
+```java
+for (i = 0; i < amt_of_items; i++) {
+    item_amount = read_u_byte(); // Item Amount: U Byte
+    
+    if (item_amount == 255)
+        item_amount = read_int_me_b(); // Item Amount (if entered as 255 previously - to allow bigger amounts than 254): Middle-Endian Big Integer
 
-if (item\_amount == 255) item\_amount = read\_int\_me\_b(); // Item
-Amount (if entered as 255 previously - to allow bigger amounts than
-254): Integer Middle-Endian Big (Inverse middle)
-
-item\_id = read\_u\_short\_le\_a(); // Item ID: U Short Little Endian
-Special A }
+    item_id = read_u_short_le_a(); // Item ID: U Short Little Endian Special A
+}
+```

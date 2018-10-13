@@ -1,13 +1,17 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\] {{packet\|name=Add
-ignore\|description=Sent when a player adds another player to their
-ignore list.\|opcode=133\|type=Fixed\|length=8\|revision=317}} == Add
-Ignore ==
+# Add Ignore
+This packet is sent when a player adds another player to their ignore list.
 
-=== Description ===
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Add ignore |
+| Description | Sent when a player adds another player to their ignore list. |
+| Opcode | 133 |
+| Type | Fixed |
+| Length | 8 |
+| Revision | 317 |
 
-This packet is sent when a player adds another player to their ignore
-list.
-
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-\[\[Data Types\#Standard data types\|Long\]\] \| The other players ID.
-\|- \|}
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Long](/Data-Types.html#common-data-types) | The other players ID. |

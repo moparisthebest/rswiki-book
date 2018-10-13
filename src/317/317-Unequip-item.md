@@ -1,16 +1,19 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\]
-{{packet\|name=Unequip item\|description=Sent when a player unequips an
-item.\|opcode=145\|type=Fixed\|length=6\|revision=317}} == Unequip Item
-==
-
-=== Description ===
-
+# Unequip Item
 This packet is sent when a player unequips an item.
 
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-Unsigned \[\[Data Types\#Standard data types\|Short\]\] \[\[Data
-Types\#Non Standard Data Types\|Special A\]\] \| The interface ID. \|-
-\| Unsigned \[\[Data Types\#Standard data types\|Short\]\] \[\[Data
-Types\#Non Standard Data Types\|Special A\]\] \| The items slot ID. \|-
-\| Unsigned \[\[Data Types\#Standard data types\|Short\]\] \[\[Data
-Types\#Non Standard Data Types\|Special A\]\] \| The item ID. \|- \|}
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Unequip item |
+| Description | Sent when a player unequips an item. |
+| Opcode | 145 |
+| Type | Fixed |
+| Length | 6 |
+| Revision | 317 |
+
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| Unsigned [Short](/Data-Types.html#common-data-types) [Special A](/Data-Types.html#bespoke-data-types) | The interface ID. |
+| Unsigned [Short](/Data-Types.html#common-data-types) [Special A](/Data-Types.html#bespoke-data-types) | The items slot ID. |
+| Unsigned [Short](/Data-Types.html#common-data-types) [Special A](/Data-Types.html#bespoke-data-types) | The item ID. |
