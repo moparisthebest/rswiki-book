@@ -1,9 +1,8 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\] == Object removal ==
-
-=== Description ===
-
+# Object removal
 This packet requests the client to remove an object.
 
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-Negated \[\[Data Types\#byte\|byte\]\] \| object type \<\< 2 + object
-rotation & 3 \|- \| \[\[Data Types\#byte\|byte\]\] \| 0 \|- \|}
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| Unsigned [Byte](/Data-Types.html#common-data-types) | `object_type << 2 + object_rotation & 3` |
+| [Byte](/Data-Types.html#common-data-types) | `0` |

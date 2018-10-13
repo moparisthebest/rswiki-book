@@ -1,8 +1,12 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\] {{packet\|name=Reset
-setting states\|description=Resets the states for all
-settings.\|opcode=68\|type=Fixed\|length=0\|revision=317}} == Reset
-setting states ==
-
-=== Description ===
-
+# Reset setting states
 This packet resets the states for all user settings (inc. buttons).
+
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Reset setting states |
+| Description | Resets the states for all settings. |
+| Opcode | 68 |
+| Type | Fixed |
+| Length | 0 |
+| Revision | 317 |

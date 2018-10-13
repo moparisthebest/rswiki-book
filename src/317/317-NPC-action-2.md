@@ -1,12 +1,17 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\] {{packet\|name=NPC
-action 2\|description=Sent when a player clicks the second action of an
-NPC.\|opcode=17\|type=Fixed\|length=2\|revision=317}} == NPC Action 2 ==
-
-=== Description ===
-
+# NPC Action 2
 This packet is sent when a player clicks the second action of an NPC.
 
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-\[\[Data Types\#Little Endian\|Little Endian\]\] \[\[Data
-Types\#Standard data types\|Short\]\] \[\[Data Types\#Non Standard Data
-Types\|Special A\]\] \| The NPC index. \|- \|}
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | NPC action 2 |
+| Description | Sent when a player clicks the second action of an NPC. |
+| Opcode | 17 |
+| Type | Fixed |
+| Length | 2 |
+| Revision | 317 |
+
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Little Endian](/Data-Types.html#little-endian) [Short](/Data-Types.html#common-data-types) [Special A](/Data-Types.html#bespoke-data-types) | The NPC index. |

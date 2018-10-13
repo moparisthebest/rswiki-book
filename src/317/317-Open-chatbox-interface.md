@@ -1,14 +1,17 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\] {{packet\|name=Open
-chatbox interface\|description=Displays an interface over the
-chatbox.\|opcode=218\|type=Fixed\|length=2\|revision=317}} == Open
-chatbox interface ==
+# Open chatbox interface
+Sending this packet to the client will cause the client to open an interface over the chatbox.
 
-=== Description ===
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Open chatbox interface |
+| Description | Displays an interface over the chatbox. |
+| Opcode | 218 |
+| Type | Fixed |
+| Length | 2 |
+| Revision | 317 |
 
-Sending this packet to the client will cause the client to open an
-interface over the chatbox.
-
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-\[\[Data Types\#Little Endian\|Little Endian\]\] \[\[Data
-Types\#Standard data types\|Short\]\] \[\[Data Types\#Non Standard data
-types\|Special A\]\] \| Interface ID. \|- \|}
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Little Endian](/Data-Types.html#little-endian) [Short](/Data-Types.html#common-data-types) [Special A](/Data-Types.html#bespoke-data-types) | Interface ID. |

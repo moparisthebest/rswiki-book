@@ -1,15 +1,24 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\] {{packet\|name=Show
-multi-combat\|description=Shows the player if they are in a multi-combat
-zone.\|opcode=61\|type=Fixed\|length=1\|revision=317}} == Show
-multi-combat ==
+# Show multi-combat
+Sending this packet to the client will make the client show the player if they are in a multi-combat zone.
 
-=== Description ===
+States:
 
-Sending this packet to the client will make the client show the player
-if they are in a multi-combat zone.
+| ID | Name |
+|--|--|
+| 0 | Not in a multi-combat zone (i.e. no crossbones in bottom-right). |
+| 1 | In a multi-combat zone (i.e. crossbones in bottom-right). |
 
-'''States:''' \* 0 - Not in a multi-combat zone, no crossbones in
-bottom-right. \* 1 - In a multi-combat zone, crossbones in bottom-right.
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Show multi-combat |
+| Description | Shows the player if they are in a multi-combat zone. |
+| Opcode | 61 |
+| Type | Fixed |
+| Length | 1 |
+| Revision | 317 |
 
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-\[\[Data Types\#byte\|byte\]\] \| The state. \|- \|}
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Byte](/Data-Types.html#common-data-types) | The state. |

@@ -1,12 +1,17 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\] {{packet\|name=Play
-song\|description=Starts playing a
-song.\|opcode=74\|type=Fixed\|length=2\|revision=317}} == Play song ==
+# Play song
+Sending this packet to the client will cause the client to start playing a song.
 
-=== Description ===
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Play song |
+| Description | Starts playing a song. |
+| Opcode | 74 |
+| Type | Fixed |
+| Length | 2 |
+| Revision | 317 |
 
-Sending this packet to the client will cause the client to start playing
-a song.
-
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-\[\[Data Types\#Little Endian\|Little Endian\]\] \[\[Data
-Types\#Standard data types\|Short\]\] \| The song ID. \|- \|}
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Little Endian](/Data-Types.html#little-endian) [Short](/Data-Types.html#common-data-types) | The song ID. |

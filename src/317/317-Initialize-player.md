@@ -1,18 +1,18 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\]
-{{packet\|name=Initialize player\|description=Sends the player's
-membership status and their current index on the server's player
-list.\|opcode=249\|type=Fixed\|length=3\|revision=317}} == Initialize
-Player ==
-
-=== Description ===
-
+# Initialize Player
 Sends the player membership flag and player list index.
 
-=== Packet Structure ===
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Initialize player |
+| Description | Sends the player's membership status and their current index on the server's player list. |
+| Opcode | 249 |
+| Type | Fixed |
+| Length | 3 |
+| Revision | 317 |
 
-{\| border=2 ! Data type ! Description \|- \| \[\[Data Types\#Standard
-data types\|Byte\]\] \[\[Data Types\#Non Standard Data Types\|Special
-A\]\] \| Membership flag (1 = member, 0 = free). \|- \| \[\[Data
-Types\#Little Endian\|Little Endian\]\] \[\[Data Types\#Standard data
-types\|Short\]\] \[\[Data Types\#Non Standard Data Types\|Special A\]\]
-\| Player list index. \|- \|}
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Byte](/Data-Types.html#common-data-types) [Special A](/Data-Types.html#bespoke-data-types) | Membership flag (1 = member, 0 = free). |
+| [Little Endian](/Data-Types.html#little-endian) [Short](/Data-Types.html#common-data-types) [Special A](/Data-Types.html#bespoke-data-types) | Player list index. |

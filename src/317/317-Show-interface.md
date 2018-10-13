@@ -1,14 +1,17 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\] {{packet\|name=Show
-interface\|description=Displays a normal
-interface.\|opcode=97\|type=Fixed\|length=2\|revision=317}} == Show
-Interface ==
+# Show Interface
+Displays a normal non-walkable interface.
 
-=== Description ===
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Show interface |
+| Description | Displays a normal interface. |
+| Opcode | 97 |
+| Type | Fixed |
+| Length | 2 |
+| Revision | 317 |
 
-Displays a normal non-walkable \[\[Interfaces\|interface\]\] with the
-given id.
-
-=== Packet Structure ===
-
-{\| border=2 ! Data type ! Description \|- \| \[\[Data Types\#Standard
-data types\|Short\]\] \| The interface id. \|- \|}
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Short](/Data-Types.html#common-data-types) | The interface id. |

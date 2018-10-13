@@ -1,16 +1,19 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\]
-{{packet\|name=Privacy options\|description=Sent when a player changes
-their privacy options.\|opcode=95\|type=Fixed\|length=3\|revision=317}}
-== Privacy Options ==
+# Privacy Options
+This packet is sent when a player changes their privacy options (i.e. public chat).
 
-=== Description ===
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Privacy options |
+| Description | Sent when a player changes their privacy options. |
+| Opcode | 95 |
+| Type | Fixed |
+| Length | 3 |
+| Revision | 317 |
 
-This packet is sent when a player changes their privacy options
-(i.e. public chat).
-
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-Unsigned \[\[Data Types\#Standard data types\|Byte\]\] \| The public
-chat options. \|- \| Unsigned \[\[Data Types\#Standard data
-types\|Byte\]\] \| The private chat options. \|- \| Unsigned \[\[Data
-Types\#Standard data types\|Byte\]\] \| The trade/compete options. \|-
-\|}
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| Unsigned [Byte](/Data-Types.html#common-data-types) | The public chat options. |
+| Unsigned [Byte](/Data-Types.html#common-data-types) | The private chat options. |
+| Unsigned [Byte](/Data-Types.html#common-data-types) | The trade/compete options. |

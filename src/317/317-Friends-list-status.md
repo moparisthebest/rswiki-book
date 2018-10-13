@@ -1,16 +1,17 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\]
-{{packet\|name=Friends list status\|description=Sends the friends list
-load status\|opcode=221\|type=Fixed\|length=1\|revision=317}} == Friends
-List Status ==
-
-=== Description ===
-
+# Friends List Status
 This packet sends the first list load status.
 
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-\[\[Data Types\#Standard data types\|Byte\]\] \| The status of the
-friends list. \|- \|}
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Friends list status |
+| Description | Sends the friends list load status |
+| Opcode | 221 |
+| Type | Fixed |
+| Length | 1 |
+| Revision | 317 |
 
-==== Values ==== The below are the different values for this packet. {\|
-border=2 ! Value ! Response \|- \| 0 \| Loading \|- \| 1 \| Connecting
-\|- \| 2 \| Loaded \|- \|}
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Byte](/Data-Types.html#common-data-types) | The status of the friends list. |

@@ -1,19 +1,21 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\] {{packet\|name=Bank
-5 items\|description=Sent when a player attempts to bank 5 of a certain
-item.\|opcode=117\|type=Fixed\|length=6\|revision=317}} == Bank 5 Items
-==
+# Bank 5 Items
+This packet is sent when a player attempts to bank 5 of a certain item.
 
-=== Description ===
+Note: This packet is also used for buying/selling 1 of an item from a shop.
 
-This packet is sent when a player attempts to bank 5 of a certain
-item.<br> '''Note:''' This packet is also used for buying/selling 1 of
-an item from a shop.
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Bank 5 items |
+| Description | Sent when a player attempts to bank 5 of a certain item. |
+| Opcode | 117 |
+| Type | Fixed |
+| Length | 6 |
+| Revision | 317 |
 
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-\[\[Data Types\#Little Endian\|Little Endian\]\] \[\[Data
-Types\#Standard data types\|Short\]\] \[\[Data Types\#Non Standard Data
-Types\|Special A\]\] \| The frame ID. \|- \| \[\[Data Types\#Little
-Endian\|Little Endian\]\] \[\[Data Types\#Standard data types\|Short\]\]
-\[\[Data Types\#Non Standard Data Types\|Special A\]\] \| The item ID.
-\|- \| \[\[Data Types\#Little Endian\|Little Endian\]\] \[\[Data
-Types\#Standard data types\|Short\]\] \| The slot ID. \|- \|}
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Little Endian](/Data-Types.html#little-endian) [Short](/Data-Types.html#common-data-types) [Special A](/Data-Types.html#bespoke-data-types) | The frame ID. |
+| [Little Endian](/Data-Types.html#little-endian) [Short](/Data-Types.html#common-data-types) [Special A](/Data-Types.html#bespoke-data-types) | The item ID. |
+| [Little Endian](/Data-Types.html#little-endian) [Short](/Data-Types.html#common-data-types) | The slot ID. |

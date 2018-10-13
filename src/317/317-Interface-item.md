@@ -1,16 +1,19 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\]
-{{packet\|name=Interface item\|description=Displays an item model inside
-an interface.\|opcode=246\|type=Fixed\|length=6\|revision=317}} ==
-Interface Item ==
-
-=== Description ===
-
+# Interface Item
 Displays an item model inside an interface.
 
-=== Packet Structure ===
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Interface item |
+| Description | Displays an item model inside an interface. |
+| Opcode | 246 |
+| Type | Fixed |
+| Length | 6 |
+| Revision | 317 |
 
-{\| border=2 ! Data type ! Description \|- \| \[\[Data Types\#Little
-Endian\|Little Endian\]\] \[\[Data Types\#Standard data types\|Short\]\]
-\|\| Interface ID. \|- \| \[\[Data Types\#Standard data types\|Short\]\]
-\|\| The item's model zoom. \|- \| \[\[Data Types\#Standard data
-types\|Short\]\] \|\| The item ID. \|}
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Little Endian](/Data-Types.html#little-endian) [Short](/Data-Types.html#common-data-types) | Interface ID. |
+| [Short](/Data-Types.html#common-data-types) | The item's model zoom. |
+| [Short](/Data-Types.html#common-data-types) | The item ID. |

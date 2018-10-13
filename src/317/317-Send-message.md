@@ -1,19 +1,22 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\] {{packet\|name=Send
-message\|description=Sends a server message, trade or duel request to
-the client's chat panel.\|opcode=253\|type=Variable
-Byte\|length=N/A\|revision=317}} == Send Message ==
+# Send Message
+Sends a server side message (e.g. 'Welcome to RuneScape'), or a trade/duel/challenge request. 
 
-=== Description ===
+The format for sending such requests is: `[player name][request type]`.
+Where `[request type]` is one of `:duelreq:`, `:chalreq:`, or `:tradereq:`.
 
-Sends a server side message (e.g. 'Welcome to RuneScape'), or
-trade/duel/challenge request.
+Example: Trading a player called 'mopar': `mopar:tradereq:`.
 
-The format for sending such requests is: '\[player name\]\[request
-type\]'. Where request type can be one of the following: ':duelreq:',
-':chalreq:' or ':tradereq:'. An example for trading the player 'mopar'
-would be: 'mopar:tradereq:'.
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Send message |
+| Description | Sends a server message, trade or duel request to the client's chat panel. |
+| Opcode | 253 |
+| Type | Variable Byte |
+| Length | N/A |
+| Revision | 317 |
 
-=== Packet Structure ===
-
-{\| border=2 ! Data type ! Description \|- \| \[\[RS String\|RS
-String\]\] \| The message. \|- \|}
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [RS String](/RS-String.html) | The message. |

@@ -1,8 +1,12 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\] {{packet\|name=Reset
-camera\|description=Resets the camera
-position.\|opcode=107\|type=Fixed\|length=0\|revision=317}} == Reset
-Camera ==
-
-=== Description ===
-
+# Reset Camera
 Resets the game's camera position to the client default.
+
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Reset camera |
+| Description | Resets the camera position. |
+| Opcode | 107 |
+| Type | Fixed |
+| Length | 0 |
+| Revision | 317 |

@@ -1,15 +1,24 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\]
-{{packet\|name=Minimap State\|description=Sets the state of the clients
-minimap.\|opcode=99\|type=Fixed\|length=1\|revision=317}} == Minimap
-State ==
+# Minimap State
+This packet sets the Minimaps state, possible values are shown below.
 
-=== Description ===
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Minimap State |
+| Description | Sets the state of the clients minimap. |
+| Opcode | 99 |
+| Type | Fixed |
+| Length | 1 |
+| Revision | 317 |
 
-This packet sets the Minimaps state
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Byte](/Data-Types.html#common-data-types) | The state. |
 
-'''States:''' \* 0 - '''Active''': Clickable and viewable \* 1
--'''Locked''': viewable but not clickable \* 2 -'''Blacked-out''':
-Minimap is replaced with black background
-
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-\[\[Data Types\#byte\|byte\]\] \| The state. \|- \|}
+## Values
+| State | Description |
+|--|--|
+| 0 | **Active**: Clickable and viewable |
+| 1 | **Locked**: viewable but not clickable |
+| 2 | **Blacked-out**: Minimap is replaced with black background |

@@ -1,6 +1,2 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\] == Player Updating
-==
-
-=== Description ===
-
+# Player Updating
 This packet begins the player updating.

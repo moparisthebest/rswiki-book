@@ -1,28 +1,29 @@
-\[\[Category Packet\]\] \[\[Category Packet 317\]\]
-{{packet\|name=Design screen\|description=Sent when a player is choosing
-their character design
-options.\|opcode=101\|type=Fixed\|length=13\|revision=317}} == Design
-Screen ==
+# Design Screen
+This packet is sent when a player is choosing their character design options.
 
-=== Description ===
+## Packet Details
+| Key | Value |
+|--|--|
+| Name | Design screen |
+| Description | Sent when a player is choosing their character design options. |
+| Opcode | 101 |
+| Type | Fixed |
+| Length | 13 |
+| Revision | 317 |
 
-This packet is sent when a player is choosing their character design
-options.
-
-=== Packet Structure === {\|border=2 ! Data Type ! Description \|- \|
-\[\[Data Types\#Standard data types\|Byte\]\] \| The players gender. \|-
-\| \[\[Data Types\#Standard data types\|Byte\]\] \| The players head
-model. \|- \| \[\[Data Types\#Standard data types\|Byte\]\] \| The
-players beard model. \|- \| \[\[Data Types\#Standard data
-types\|Byte\]\] \| The players torso model. \|- \| \[\[Data
-Types\#Standard data types\|Byte\]\] \| The players arm model. \|- \|
-\[\[Data Types\#Standard data types\|Byte\]\] \| The players hand model.
-\|- \| \[\[Data Types\#Standard data types\|Byte\]\] \| The players leg
-model \|- \| \[\[Data Types\#Standard data types\|Byte\]\] \| The
-players foot model. \|- \| \[\[Data Types\#Standard data types\|Byte\]\]
-\| The players hair color. \|- \| \[\[Data Types\#Standard data
-types\|Byte\]\] \| The players torso color. \|- \| \[\[Data
-Types\#Standard data types\|Byte\]\] \| The players leg color. \|- \|
-\[\[Data Types\#Standard data types\|Byte\]\] \| The players foot color.
-\|- \| \[\[Data Types\#Standard data types\|Byte\]\] \| The players skin
-color. \|- \|}
+## Packet Structure
+| Data Type | Description |
+|--|--|
+| [Byte](/Data-Types.html#common-data-types) | The players gender. |
+| [Byte](/Data-Types.html#common-data-types) | The players head model. |
+| [Byte](/Data-Types.html#common-data-types) | The players beard model. |
+| [Byte](/Data-Types.html#common-data-types) | The players torso model. |
+| [Byte](/Data-Types.html#common-data-types) | The players arm model. |
+| [Byte](/Data-Types.html#common-data-types) | The players hand model. |
+| [Byte](/Data-Types.html#common-data-types) | The players leg model |
+| [Byte](/Data-Types.html#common-data-types) | The players foot model. |
+| [Byte](/Data-Types.html#common-data-types) | The players hair color. |
+| [Byte](/Data-Types.html#common-data-types) | The players torso color. |
+| [Byte](/Data-Types.html#common-data-types) | The players leg color. |
+| [Byte](/Data-Types.html#common-data-types) | The players foot color. |
+| [Byte](/Data-Types.html#common-data-types) | The players skin color. |
